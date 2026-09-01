@@ -60,7 +60,7 @@ empieza en Fase 2.
 
 - **Fecha:** 2026-09-01
 - **Rama:** `feature/mvp-scaffold` (desde `develop`), sin mergear
-- **Commit:** pendiente (ver `git log feature/mvp-scaffold` para el hash exacto tras el commit de esta sesión)
+- **Commit:** `4c7554d`
 - **Qué se hizo:** Scaffold real de Next.js 16.3.4 (App Router, `src/`) con TypeScript 6.0.3, Tailwind CSS
   4.3.3, ESLint 9.39.5. Sistema de diseño implementado (paleta, tipografía Playfair Display/Inter, modo
   oscuro). Layout raíz con skip link, header/nav responsive, footer institucional. Home completo (Hero sin

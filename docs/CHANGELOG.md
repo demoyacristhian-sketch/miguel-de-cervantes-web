@@ -35,7 +35,7 @@ Fase 0 completada. Pendiente de aprobación explícita del usuario para iniciar 
 
 ## 2026-09-01 — v0.1.0-mvp-scaffold — rama `feature/mvp-scaffold`
 
-**Commit:** pendiente (ver `git log`)
+**Commit:** `4c7554d`
 
 ### Añadido
 
