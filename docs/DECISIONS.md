@@ -117,3 +117,27 @@ sustituye a la anterior, dejando ambas visibles.
 - **Aprobado por:** Decisión técnica alineada con reglas explícitas del prompt maestro (secciones 13 y 15).
 - **Estado:** VIGENTE. Sustituir por `<video>` real solo cuando el usuario apruebe un recurso con licencia
   verificada.
+
+---
+
+## ADR-007
+
+- **Fecha:** 2026-09-01
+- **Tema:** Incidente — primer despliegue de Vercel promovido a producción sin querer
+- **Contexto:** Al ejecutar `vercel deploy` (sin `--prod`) sobre un proyecto Vercel recién creado, la CLI
+  promovió automáticamente ese primer despliegue a producción (comportamiento propio de Vercel: el primer
+  deployment de un proyecto nuevo se convierte en producción aunque no se pase `--prod`), quedando publicado
+  en el alias de producción `miguel-de-cervantes-web.vercel.app` sin que mediara la aprobación explícita que
+  exige la regla human-in-the-loop del proyecto.
+- **Impacto evaluado:** bajo — contenido 100% placeholder marcado `pendiente_de_verificacion`, sin dominio
+  propio, sin datos reales, sin usuarios. Comunicado de inmediato al usuario, que decidió dejarlo así.
+- **Decisión:** (1) Aceptar el estado actual (usuario informado y conforme). (2) A partir de ahora, **no
+  usar `vercel deploy` sin flags desde la CLI** para desplegar este proyecto. Los despliegues deben ocurrir
+  vía integración Git (push a una rama → Vercel genera Preview automáticamente; push/merge a `main` →
+  producción), que es el flujo que ya exige `docs/DEPLOYMENT.md`. Si en algún momento se necesita un deploy
+  manual por CLI, usar explícitamente `--target=preview` y nunca ejecutar el comando por defecto en un
+  proyecto donde aún no exista un despliegue de producción previo sin verificar antes el comportamiento.
+- **Razón:** Evitar que se repita esta clase de error; la integración Git es más segura porque separa
+  claramente qué rama produce qué tipo de despliegue.
+- **Aprobado por:** Usuario (conforme con dejar el despliegue actual, 2026-09-01).
+- **Estado:** VIGENTE.

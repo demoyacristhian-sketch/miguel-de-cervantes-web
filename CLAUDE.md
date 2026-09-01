@@ -106,11 +106,19 @@ Estas reglas provienen del prompt maestro del proyecto y son de cumplimiento obl
 8. **Roadmap estricto:** no adelantar fases del roadmap oficial (`/docs/MASTER_PROJECT.md` §Roadmap) sin aprobación.
 9. **Seguridad:** nunca subir `.env`, secretos ni API keys al repositorio. Mantener `.env.example` sin valores reales.
 10. **Fin de sesión:** actualizar `CLAUDE.md`, `CHANGELOG.md`, `CONTENT_STATUS.md`, `SOURCES.md` y `DECISIONS.md` (cuando proceda) antes de cerrar cualquier sesión de trabajo.
+11. **Despliegues Vercel vía CLI:** nunca ejecutar `vercel deploy` sin `--target=preview` explícito (ver ADR-007 — el primer deployment de un proyecto nuevo se promueve automáticamente a producción incluso sin `--prod`). Preferir siempre que el despliegue salga de la integración Git (push de rama).
 
 ## 8. Próximo paso
 
-**Único próximo paso lógico:** pedir confirmación explícita al usuario para crear la integración
-GitHub↔Vercel (nuevo proyecto Vercel conectado a `demoyacristhian-sketch/miguel-de-cervantes-web`) y generar
-el primer Preview Deployment de `feature/mvp-scaffold`. Es una integración persistente con un servicio
-externo, por lo que se pide confirmación antes de crearla, aunque no toque producción. Tras el Preview:
-presentarlo al usuario para revisión (formato de `docs/DEPLOYMENT.md`), no para aprobación de producción.
+Proyecto Vercel `miguel-de-cervantes-web` creado (team CDM Labs) y conectado al repositorio. Preview real de
+`feature/mvp-scaffold` disponible en `https://miguel-de-cervantes-50a0pg9z7-cdmlabs.vercel.app` (protegido
+por Vercel Authentication). **Único próximo paso lógico:** que el usuario revise el Preview y decida si
+quiere (a) seguir en Fase 1 ampliando algo del MVP, o (b) mergear `feature/mvp-scaffold` a `develop` y dar
+por cerrada esta iteración de Fase 1, o (c) empezar la investigación de fuentes de Fase 2. Ninguna de estas
+opciones implica tocar `main`/producción sin la aprobación explícita correspondiente.
+
+**Nota de incidente (ver ADR-007 en `docs/DECISIONS.md`):** el primer despliegue de Vercel quedó publicado
+como producción por un comportamiento automático de la plataforma (primer deployment de un proyecto nuevo),
+no por una acción deliberada sin permiso. Fue comunicado de inmediato y el usuario aceptó dejarlo así por su
+bajo impacto. Regla derivada ya aplicada: no ejecutar `vercel deploy` sin `--target=preview` explícito de
+aquí en adelante.
