@@ -103,7 +103,10 @@ Fase 1 (MVP) cerrada tras revisión del usuario sobre el Preview de Vercel. `mai
 
 ## 2026-09-01 — v0.2.0-contenido-inicial — rama `content/fuentes-timeline-obras-vidas`
 
-**Commit:** pendiente (ver `git log`)
+**Commit:** `d3e09e0`
+**Preview:** `https://miguel-de-cervantes-56owrje56-cdmlabs.vercel.app` (generado automáticamente por la
+integración Git de Vercel al hacer push — sin `vercel deploy` manual, conforme a la regla derivada de
+ADR-007)
 
 ### Añadido
 
