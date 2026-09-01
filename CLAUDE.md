@@ -50,8 +50,8 @@ empieza en Fase 2.
 |---|---|
 | Fundación / documentación | **APROBADO** (Fase 0 ejecutada 2026-09-01) |
 | Arquitectura técnica | **EN DESARROLLO** (scaffold real creado y validado: lint + typecheck + build limpios) |
-| Repositorio GitHub | PRODUCCIÓN (rama `main` sin tocar), `develop` al día con el MVP, `feature/mvp-scaffold` mergeada |
-| Vercel | Conectado (proyecto `miguel-de-cervantes-web`, team CDM Labs); ver ADR-007 |
+| Repositorio GitHub | `main` = producción real (commit `d886473`), `develop` al día |
+| Vercel | Producción actualizada y verificada (2026-09-01, aprobación explícita del usuario); ver ADR-007 y ADR-008 |
 | Contenido histórico | **EN ANÁLISIS** (Fase 2 iniciada) — estructura lista, cero datos verificados todavía |
 | Diseño visual | APROBADO para MVP (tokens Tailwind v4, Playfair Display + Inter, revisado por el usuario) |
 | MVP (Home, Bio, Timeline, Obras, Quijote) | **APROBADO** — Fase 1 cerrada, mergeada a `develop` |
@@ -111,13 +111,16 @@ Estas reglas provienen del prompt maestro del proyecto y son de cumplimiento obl
 
 ## 8. Próximo paso
 
-Fase 1 cerrada y mergeada a `develop`. **Único próximo paso lógico:** ejecutar la investigación documental
-de Fase 2 — para cada año del timeline y cada obra en `src/content/*.json`, buscar y registrar en
-`/docs/SOURCES.md` una fuente `FUENTE PRIMARIA`/`FUENTE INSTITUCIONAL`/`FUENTE ACADÉMICA` real (BNE,
-Biblioteca Virtual Miguel de Cervantes, Instituto Cervantes, RAE, Museo Casa de Cervantes, universidades),
-y solo entonces actualizar el `status` de cada registro de `pendiente_de_verificacion` a `verificado` con su
-`sourceIds` correspondiente. Ninguna fecha o hecho biográfico se publica como definitivo sin esa
-verificación. No toca `main`/producción.
+Fase 1 cerrada. Fase 2, primera iteración, completada: timeline (12/12), obras (6/6) y "vidas de Cervantes"
+(7/7) verificadas contra SRC-001; las 6 curiosidades verificadas contra SRC-001 a SRC-005. **Producción
+actualizada con aprobación explícita del usuario** (2026-09-01, commit `d886473` en `main`) — ver ADR-008.
+
+**Próximo paso lógico:** continuar Fase 2 con lo que falta — fichas ampliadas de obra (argumento, personajes,
+temas, estructura, recepción, influencia), personajes principales del Quijote (Don Quijote, Sancho Panza,
+Dulcinea, Rocinante, Sansón Carrasco), contexto histórico y la biografía narrativa completa (15 capítulos
+definidos en `/cervantes`, hoy sin prosa). Cada nuevo dato histórico debe seguir el mismo protocolo: fuente
+primaria/institucional/académica real antes de marcar `verificado`. Cualquier nuevo merge a `main` requiere
+de nuevo una aprobación explícita — la de hoy no es una autorización permanente para futuros despliegues.
 
 **Nota de incidente (ver ADR-007 en `docs/DECISIONS.md`):** el primer despliegue de Vercel quedó publicado
 como producción por un comportamiento automático de la plataforma (primer deployment de un proyecto nuevo),
