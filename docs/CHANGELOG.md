@@ -6,7 +6,7 @@ Formato por entrada: Fecha, Versión, Rama, Commit, Añadido/Modificado/Corregid
 
 ## 2026-09-01 — v0.0.0-foundation — rama `main`
 
-**Commit:** _(se completa tras el commit — ver primer commit del repositorio)_
+**Commit:** `b458800`
 
 ### Añadido
 

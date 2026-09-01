@@ -54,7 +54,7 @@ Detalle y relaciones en [`/docs/CONTENT_MODEL.md`](docs/CONTENT_MODEL.md). **Nin
 
 - **Fecha:** 2026-09-01
 - **Rama:** `main`
-- **Commit:** ver `/docs/CHANGELOG.md` (se registra tras el commit de fundación)
+- **Commit:** `b458800`
 - **Qué se hizo:** Ejecución completa de FASE 0 — auditoría de entorno, verificación de versiones oficiales, creación de estructura documental (`/docs`), definición de arquitectura propuesta, modelo de contenido, política de fuentes/derechos, sistema de diseño preliminar, arquitectura de información, estrategias Git/GitHub y Vercel, roadmap.
 - **Archivos afectados:** `CLAUDE.md`, `docs/*.md`, `.gitignore`, `.env.example`, `README.md`.
 - **Pruebas:** N/A (no hay código ejecutable todavía).
