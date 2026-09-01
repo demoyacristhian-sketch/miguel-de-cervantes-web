@@ -1,4 +1,5 @@
 import { getLifeProfiles } from "@/lib/content";
+import { VerificationBadge } from "@/components/ui/VerificationBadge";
 
 export function LivesOfCervantes() {
   const lives = getLifeProfiles();
@@ -11,13 +12,14 @@ export function LivesOfCervantes() {
         <h2 className="mt-3 max-w-2xl font-serif-display text-3xl font-semibold sm:text-4xl">
           Un solo hombre, siete vidas
         </h2>
-        <ul className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-7">
+        <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {lives.map((life) => (
-            <li
-              key={life.id}
-              className="rounded-xl border border-border-subtle bg-background p-4 text-center"
-            >
-              <p className="font-serif-display text-base font-semibold">{life.role}</p>
+            <li key={life.id} className="rounded-xl border border-border-subtle bg-background p-5">
+              <div className="flex items-center justify-between gap-2">
+                <p className="font-serif-display text-lg font-semibold">{life.role}</p>
+                <VerificationBadge status={life.status} />
+              </div>
+              <p className="mt-2 text-sm text-foreground/70">{life.description}</p>
             </li>
           ))}
         </ul>

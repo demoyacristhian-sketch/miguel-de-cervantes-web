@@ -1,8 +1,20 @@
 [
-  { "id": "cur-shakespeare", "question": "¿Cervantes y Shakespeare murieron realmente el mismo día?", "status": "pendiente_de_verificacion", "answer": null },
-  { "id": "cur-manco-lepanto", "question": "¿Por qué se habla del \"manco de Lepanto\"?", "status": "pendiente_de_verificacion", "answer": null },
-  { "id": "cur-restos", "question": "¿Dónde están sus restos?", "status": "pendiente_de_verificacion", "answer": null },
-  { "id": "cur-publicacion-quijote", "question": "¿Cómo llegó a publicar Don Quijote?", "status": "pendiente_de_verificacion", "answer": null },
-  { "id": "cur-ingresos", "question": "¿Qué sabemos de sus ingresos?", "status": "pendiente_de_verificacion", "answer": null },
-  { "id": "cur-aspecto", "question": "¿Qué conocemos realmente de su aspecto físico?", "status": "pendiente_de_verificacion", "answer": null }
+  {
+    "id": "cur-shakespeare",
+    "question": "¿Cervantes y Shakespeare murieron realmente el mismo día?",
+    "status": "verificado",
+    "answer": "No en tiempo real, aunque ambos se registraron con la fecha \"23 de abril de 1616\". España ya usaba el calendario gregoriano (reforma de 1582) e Inglaterra siguió con el juliano hasta 1752, con un desfase de 10 días entre ambos. Hay una discrepancia entre nuestras fuentes sobre el orden: la cronología académica de la Biblioteca Virtual Miguel de Cervantes (SRC-001) sitúa la muerte de Cervantes como posterior a la de Shakespeare (\"una semana después\"), mientras que la conversión calendárica juliano→gregoriano reportada por prensa (SRC-002) sitúa la muerte de Cervantes unos 10 días antes que la de Shakespeare en tiempo real. No resolvemos aquí esa discrepancia: lo verificado es que la coincidencia de fecha es un artefacto de calendario, no un mismo día real.",
+    "sourceIds": ["SRC-001", "SRC-002"]
+  },
+  {
+    "id": "cur-manco-lepanto",
+    "question": "¿Por qué se habla del \"manco de Lepanto\"?",
+    "status": "verificado",
+    "answer": "En la batalla de Lepanto (1571), combatiendo desde la galera Marquesa, Cervantes recibió dos disparos en el pecho y uno en la mano izquierda, que quedó inutilizada. De ahí el apodo \"el manco de Lepanto\". El detalle anatómico exacto (amputación vs. pérdida de movilidad por daño nervioso) no está precisado en la fuente consultada y queda como PENDIENTE DE VERIFICACIÓN adicional.",
+    "sourceIds": ["SRC-001"]
+  },
+  { "id": "cur-restos", "question": "¿Dónde están sus restos?", "status": "pendiente_de_verificacion", "answer": null, "sourceIds": [] },
+  { "id": "cur-publicacion-quijote", "question": "¿Cómo llegó a publicar Don Quijote?", "status": "pendiente_de_verificacion", "answer": null, "sourceIds": [] },
+  { "id": "cur-ingresos", "question": "¿Qué sabemos de sus ingresos?", "status": "pendiente_de_verificacion", "answer": null, "sourceIds": [] },
+  { "id": "cur-aspecto", "question": "¿Qué conocemos realmente de su aspecto físico?", "status": "pendiente_de_verificacion", "answer": null, "sourceIds": [] }
 ]

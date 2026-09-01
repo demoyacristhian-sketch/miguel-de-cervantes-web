@@ -98,3 +98,45 @@ entrada siguiente para el cierre de Fase 1.
 
 Fase 1 (MVP) cerrada tras revisión del usuario sobre el Preview de Vercel. `main`/producción sin tocar. Fase
 2 (Contenido — investigación de fuentes reales) iniciada por instrucción explícita del usuario.
+
+---
+
+## 2026-09-01 — v0.2.0-contenido-inicial — rama `content/fuentes-timeline-obras-vidas`
+
+**Commit:** pendiente (ver `git log`)
+
+### Añadido
+
+- `docs/SOURCES.md`: SRC-001 (Cronología de la Biblioteca Virtual Miguel de Cervantes, por Florencio Sevilla
+  Arroyo y Begoña Rodríguez Rodríguez — FUENTE INSTITUCIONAL) y SRC-002 (CNN en Español, cruzada con Cope y
+  otras coberturas — FUENTE SECUNDARIA VERIFICADA, sobre el desfase de calendario juliano/gregoriano).
+- `src/content/timeline.json`: los 12 años ancla pasan de `pendiente_de_verificacion` a `verificado`, con
+  descripción real y `sourceIds: ["SRC-001"]`.
+- `src/content/works.json`: las 6 obras pasan a `verificado` para título/tipo/año de publicación
+  (`sourceIds: ["SRC-001"]`); las fichas ampliadas siguen pendientes.
+- `src/content/lives.json`: los 7 perfiles de "Las vidas de Cervantes" pasan a `verificado` con descripción
+  real y fuente; se añaden campos `status`/`sourceIds` al tipo `LifeProfile`.
+- `src/content/curiosities.json`: 2 de 6 curiosidades verificadas y respondidas ("¿murieron el mismo día
+  Cervantes y Shakespeare?", "¿por qué el manco de Lepanto?"); se añade `sourceIds` a todas las entradas.
+
+### Modificado
+
+- `src/components/sections/LivesOfCervantes.tsx` y `CuriositiesTeaser.tsx`: ahora muestran descripción o
+  respuesta real y el `VerificationBadge` correspondiente por entrada.
+- `src/app/linea-de-tiempo/page.tsx`: texto introductorio actualizado para reflejar que los 12 eventos ya
+  están verificados.
+
+### Documentación
+
+- `docs/CONTENT_STATUS.md` actualizado con el desglose real de verificación por módulo.
+
+### Pruebas
+
+- `tsc --noEmit`, `npm run lint` y `npm run build`: limpios. Verificación visual en navegador de Home
+  (Las vidas de Cervantes, Timeline) y `/linea-de-tiempo`: badges "Verificado" renderizando correctamente,
+  sin errores de consola.
+
+### Estado
+
+Primera iteración de Fase 2 completada. Pendiente: las 4 curiosidades restantes, las fichas ampliadas de
+obra, personajes, contexto histórico y la biografía narrativa completa.
