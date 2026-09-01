@@ -261,7 +261,8 @@ Verificado visualmente tras el despliegue. Aprobación puntual, no permanente pa
 
 ## 2026-09-01 — v1.2.0-fichas-obras — rama `content/fichas-ampliadas-obras`
 
-**Commit:** pendiente (ver `git log`)
+**Commit:** `ae61ab5`
+**Preview:** `https://miguel-de-cervantes-1rmh2jjp4-cdmlabs.vercel.app`
 
 ### Añadido
 
