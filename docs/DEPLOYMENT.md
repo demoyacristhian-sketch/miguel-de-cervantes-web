@@ -22,6 +22,17 @@ Estado: **EN USO** (Fase 1). Proyecto Vercel creado y conectado al repositorio d
   --target=preview` (`target: null` confirmado, no tocó el alias de producción). Protegido por Vercel
   Authentication por defecto (requiere sesión de Vercel del equipo CDM Labs para verse) — comportamiento
   estándar de Preview Deployments en un team, no configurado manualmente.
+- **Rama de producción confirmada:** `main` (verificado vía API de Vercel, campo `link.productionBranch`).
+  Desde el 2026-09-01, cualquier push a `main` dispara automáticamente un despliegue de producción — por
+  eso ningún push a `main` debe hacerse sin la aprobación explícita correspondiente.
+- **Actualización de producción aprobada (2026-09-01):** el despliegue de producción accidental (ADR-007)
+  había quedado congelado mostrando contenido sin verificar (todo el timeline/obras/vidas/curiosidades en
+  estado "pendiente de verificación"). El usuario lo notó al revisar `miguel-de-cervantes-web.vercel.app` y,
+  tras explicárselo, aprobó explícitamente actualizarlo ("Actualiza ya la producción con el contenido
+  verificado actual"). Se mergeó `content/fuentes-timeline-obras-vidas` → `develop` → `main` (commit
+  `d886473`) y Vercel desplegó automáticamente vía integración Git (deployment
+  `https://miguel-de-cervantes-61ziii0ok-cdmlabs.vercel.app`, alias `miguel-de-cervantes-web.vercel.app`).
+  Verificado visualmente que la producción ya muestra los badges "Verificado" correctos.
 
 ## Flujo
 

@@ -22,6 +22,16 @@ export function getTimelineEvents(): TimelineEvent[] {
   return [...(timelineData as TimelineEvent[])].sort((a, b) => a.year - b.year);
 }
 
+/** Tres hitos más reconocibles para la vista resumida de Home (nacimiento, Quijote, muerte). */
+const HOME_TIMELINE_HIGHLIGHT_IDS = ["tl-1547", "tl-1605", "tl-1616"];
+
+export function getTimelineHighlights(): TimelineEvent[] {
+  const byId = new Map(getTimelineEvents().map((event) => [event.id, event]));
+  return HOME_TIMELINE_HIGHLIGHT_IDS.map((id) => byId.get(id)).filter(
+    (event): event is TimelineEvent => Boolean(event),
+  );
+}
+
 export function getLifeProfiles(): LifeProfile[] {
   return livesData as LifeProfile[];
 }

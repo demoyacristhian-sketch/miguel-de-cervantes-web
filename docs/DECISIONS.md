@@ -141,3 +141,26 @@ sustituye a la anterior, dejando ambas visibles.
   claramente qué rama produce qué tipo de despliegue.
 - **Aprobado por:** Usuario (conforme con dejar el despliegue actual, 2026-09-01).
 - **Estado:** VIGENTE.
+
+---
+
+## ADR-008
+
+- **Fecha:** 2026-09-01
+- **Tema:** Primera actualización aprobada de producción (MVP + verificación de Fase 2)
+- **Contexto:** El usuario, revisando el sitio, preguntó por qué todo seguía apareciendo "sin verificación".
+  Se detectó que estaba mirando la URL de producción (`miguel-de-cervantes-web.vercel.app`), congelada desde
+  el incidente de ADR-007 en el estado del scaffold anterior a toda investigación de fuentes — mientras que
+  todo el trabajo de Fase 2 solo existía en Preview Deployments, nunca en producción, por diseño.
+- **Decisión:** Ante la instrucción explícita del usuario — "Actualiza ya la producción con el contenido
+  verificado actual" — se mergeó `content/fuentes-timeline-obras-vidas` → `develop` → `main` (commit
+  `d886473`) y se dejó que la integración Git de Vercel desplegara automáticamente a producción (rama de
+  producción confirmada como `main` vía API de Vercel), en vez de usar `vercel deploy --prod` manual.
+- **Razón:** Esta es exactamente el tipo de instrucción inequívoca que la regla de aprobación humana del
+  proyecto exige antes de tocar producción. Se prefirió el camino Git (merge a `main`) sobre un deploy manual
+  por CLI, seguiendo la regla derivada de ADR-007.
+- **Impacto:** La producción ahora refleja fielmente el estado verificado de Fase 1 + primera iteración de
+  Fase 2. Verificado visualmente tras el despliegue.
+- **Aprobado por:** Usuario, instrucción explícita, 2026-09-01.
+- **Estado:** VIGENTE. **No es una autorización permanente**: cualquier futuro merge a `main` requiere una
+  nueva aprobación explícita, no se generaliza a partir de esta.

@@ -3,7 +3,7 @@ import { getWorks } from "@/lib/content";
 import { VerificationBadge } from "@/components/ui/VerificationBadge";
 
 export function FeaturedWorks() {
-  const works = getWorks();
+  const works = getWorks().slice(0, 3);
   return (
     <section className="bg-surface py-20">
       <div className="mx-auto max-w-6xl px-6">
