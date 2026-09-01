@@ -16,9 +16,9 @@ export default function TimelinePage() {
       </p>
       <h1 className="mt-3 font-serif-display text-4xl font-semibold sm:text-5xl">Línea de tiempo</h1>
       <p className="mt-6 max-w-2xl text-foreground/70">
-        Los años ancla de esta línea de tiempo están definidos; los acontecimientos asociados a cada año
-        deben verificarse documentalmente antes de publicarse (ver <code>/docs/SOURCES.md</code>). En Fase 3
-        se añadirá el nivel de contexto histórico general junto al biográfico.
+        Los 12 acontecimientos de esta línea de tiempo están verificados contra la cronología académica de
+        la Biblioteca Virtual Miguel de Cervantes (ver <code>/docs/SOURCES.md</code>, SRC-001). En Fase 3 se
+        añadirá el nivel de contexto histórico general junto al biográfico, y más eventos intermedios.
       </p>
       <ol className="relative mt-12 space-y-8 border-l border-border-subtle pl-8">
         {events.map((event) => (

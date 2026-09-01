@@ -30,7 +30,9 @@ export interface TimelineEvent {
 export interface LifeProfile {
   id: string;
   role: string;
+  status: VerificationStatus;
   description: string;
+  sourceIds: string[];
 }
 
 export interface Curiosity {
@@ -38,4 +40,5 @@ export interface Curiosity {
   question: string;
   status: VerificationStatus;
   answer: string | null;
+  sourceIds: string[];
 }

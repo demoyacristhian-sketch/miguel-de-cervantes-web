@@ -98,3 +98,83 @@ entrada siguiente para el cierre de Fase 1.
 
 Fase 1 (MVP) cerrada tras revisión del usuario sobre el Preview de Vercel. `main`/producción sin tocar. Fase
 2 (Contenido — investigación de fuentes reales) iniciada por instrucción explícita del usuario.
+
+---
+
+## 2026-09-01 — v0.2.0-contenido-inicial — rama `content/fuentes-timeline-obras-vidas`
+
+**Commit:** `d3e09e0`
+**Preview:** `https://miguel-de-cervantes-56owrje56-cdmlabs.vercel.app` (generado automáticamente por la
+integración Git de Vercel al hacer push — sin `vercel deploy` manual, conforme a la regla derivada de
+ADR-007)
+
+### Añadido
+
+- `docs/SOURCES.md`: SRC-001 (Cronología de la Biblioteca Virtual Miguel de Cervantes, por Florencio Sevilla
+  Arroyo y Begoña Rodríguez Rodríguez — FUENTE INSTITUCIONAL) y SRC-002 (CNN en Español, cruzada con Cope y
+  otras coberturas — FUENTE SECUNDARIA VERIFICADA, sobre el desfase de calendario juliano/gregoriano).
+- `src/content/timeline.json`: los 12 años ancla pasan de `pendiente_de_verificacion` a `verificado`, con
+  descripción real y `sourceIds: ["SRC-001"]`.
+- `src/content/works.json`: las 6 obras pasan a `verificado` para título/tipo/año de publicación
+  (`sourceIds: ["SRC-001"]`); las fichas ampliadas siguen pendientes.
+- `src/content/lives.json`: los 7 perfiles de "Las vidas de Cervantes" pasan a `verificado` con descripción
+  real y fuente; se añaden campos `status`/`sourceIds` al tipo `LifeProfile`.
+- `src/content/curiosities.json`: 2 de 6 curiosidades verificadas y respondidas ("¿murieron el mismo día
+  Cervantes y Shakespeare?", "¿por qué el manco de Lepanto?"); se añade `sourceIds` a todas las entradas.
+
+### Modificado
+
+- `src/components/sections/LivesOfCervantes.tsx` y `CuriositiesTeaser.tsx`: ahora muestran descripción o
+  respuesta real y el `VerificationBadge` correspondiente por entrada.
+- `src/app/linea-de-tiempo/page.tsx`: texto introductorio actualizado para reflejar que los 12 eventos ya
+  están verificados.
+
+### Documentación
+
+- `docs/CONTENT_STATUS.md` actualizado con el desglose real de verificación por módulo.
+
+### Pruebas
+
+- `tsc --noEmit`, `npm run lint` y `npm run build`: limpios. Verificación visual en navegador de Home
+  (Las vidas de Cervantes, Timeline) y `/linea-de-tiempo`: badges "Verificado" renderizando correctamente,
+  sin errores de consola.
+
+### Estado
+
+Primera iteración de Fase 2 completada. Pendiente: las 4 curiosidades restantes, las fichas ampliadas de
+obra, personajes, contexto histórico y la biografía narrativa completa.
+
+---
+
+## 2026-09-01 — v0.2.1-curiosidades-completas — rama `content/fuentes-timeline-obras-vidas`
+
+**Commit:** `df024d4`
+**Preview:** `https://miguel-de-cervantes-hhvm0usyq-cdmlabs.vercel.app` (generado automáticamente por la
+integración Git de Vercel)
+
+### Añadido
+
+- `docs/SOURCES.md`: SRC-003 (informe oficial del Ayuntamiento de Madrid/Sociedad de Ciencias Aranzadi,
+  2015, sobre la búsqueda de los restos de Cervantes — FUENTE PRIMARIA), SRC-004 (Centro Virtual Cervantes,
+  Instituto Cervantes, sobre el proceso de impresión del Quijote — FUENTE INSTITUCIONAL) y SRC-005 (ensayo
+  académico de Daniel Eisenberg en la Biblioteca Virtual Miguel de Cervantes — FUENTE ACADÉMICA).
+- `src/content/curiosities.json`: las 4 curiosidades restantes quedan verificadas y respondidas — dónde
+  están sus restos (con la cita textual de la conclusión oficial de 2015, sin sobreafirmar identificación
+  individual ni ADN), cómo llegó a publicarse el Quijote, qué se sabe de sus ingresos (con la advertencia
+  académica explícita de que Cervantes solía exagerar su pobreza ante mecenas) y qué se sabe de su aspecto
+  físico (autorretrato del prólogo de las Novelas ejemplares; ningún retrato pictórico de autenticidad
+  confirmada).
+
+### Documentación
+
+- `docs/CONTENT_STATUS.md`: curiosidades marcadas TERMINADO/VERIFICADO (6/6).
+
+### Pruebas
+
+- `tsc --noEmit`, `npm run lint` y `npm run build`: limpios. Verificación visual de las 6 tarjetas de
+  curiosidades en Home, sin errores de consola.
+
+### Estado
+
+Las 6 curiosidades del MVP quedan verificadas contra fuentes primarias/institucionales/académicas. Pendiente
+en Fase 2: fichas ampliadas de obra, personajes, contexto histórico y biografía narrativa completa.
