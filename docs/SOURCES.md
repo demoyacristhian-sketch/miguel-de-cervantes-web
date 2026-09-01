@@ -187,8 +187,33 @@ Información utilizada: (1) Advertencia metodológica explícita del propio auto
   acabados, aunque no con las recompensas elevadas que quisiera haber percibido." (4) Confirmación de que no
   existe representación gráfica auténtica de Cervantes ("No existe una representación gráfica auténtica"),
   usada para la curiosidad sobre su aspecto físico.
-Página/sección: Secciones "¿Quién fue Cervantes?" y "¿Qué tipo de hombre fue Cervantes?".
-Observaciones: Es un ensayo interpretativo, no una base de datos de cifras; no proporciona montos exactos de
-  ingresos, lo cual se refleja en la respuesta publicada (no se inventan cifras que esta fuente no da).
+Página/sección: Secciones "¿Quién fue Cervantes?", "¿Qué tipo de hombre fue Cervantes?", "Cervantes, autor
+  prolífico" (subsecciones "Las Novelas ejemplares", "La Galatea; el Persiles", "Cervantes poeta",
+  "Cervantes dramaturgo") y "Don Quijote" (subsecciones sobre su propósito como ataque a los libros de
+  caballerías, estructura de la interpretación, recepción crítica).
+Observaciones: Es un ensayo interpretativo extenso, no una base de datos de cifras; no proporciona montos
+  exactos de ingresos (reflejado en la respuesta publicada, sin inventar cifras). Reutilizado también como
+  fuente principal para las fichas ampliadas de las 6 obras en `src/content/works.json` (contexto, argumento,
+  temas, curiosidades, recepción e influencia), dado que es un único ensayo que cubre la producción completa
+  de Cervantes con rigor académico.
 Derechos: Se parafrasea, sin reproducir extensamente el ensayo.
+```
+
+### SRC-006
+
+```text
+ID: SRC-006
+Título: «Don Quijote de la Mancha». Índice.
+Institución: Centro Virtual Cervantes (portal oficial del Instituto Cervantes)
+Autor: Instituto Cervantes (equipo editorial del CVC)
+URL: https://cvc.cervantes.es/literatura/clasicos/quijote/indice.htm
+Fecha de consulta: 2026-09-01
+Tipo: FUENTE INSTITUCIONAL
+Fiabilidad: Alta.
+Información utilizada: Estructura capitular exacta: Primera Parte (1605) con 52 capítulos organizados en
+  4 partes internas (I: caps. 1-8, II: caps. 9-14, III: caps. 15-27, IV: caps. 28-52); Segunda Parte (1615)
+  con 74 capítulos sin división interna.
+Página/sección: Página índice completa.
+Observaciones: Ninguna.
+Derechos: Se parafrasea, sin reproducir el texto.
 ```

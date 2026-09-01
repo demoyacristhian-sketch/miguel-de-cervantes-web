@@ -6,8 +6,30 @@
     "type": "novela",
     "publicationYear": 1585,
     "status": "verificado",
-    "summary": "Primera novela publicada por Cervantes, en 1585. Ficha ampliada (argumento, personajes, temas) pendiente de redacción en Fase 2.",
-    "sourceIds": ["SRC-001"]
+    "summary": "Primera novela publicada por Cervantes, en 1585: una novela pastoril que usa a los pastores como recurso literario para tratar problemas amorosos.",
+    "sourceIds": ["SRC-001"],
+    "profile": {
+      "context": {
+        "text": "Publicada en 1585, es el primer libro de Cervantes. Se inscribe en el género de la novela pastoril, muy popular en la España del siglo XVI tras el éxito de La Diana de Jorge de Montemayor (1559).",
+        "status": "verificado",
+        "sourceIds": ["SRC-001", "SRC-005"]
+      },
+      "themes": {
+        "text": "Usa el recurso popular de los pastores para tratar problemas amorosos. Incluye una extensa defensa del papel benéfico, saludable y necesario del amor, y el \"Canto de Calíope\", el primer trabajo de crítica literaria de Cervantes.",
+        "status": "verificado",
+        "sourceIds": ["SRC-005"]
+      },
+      "curiosities": {
+        "text": "Cervantes mencionó en varias ocasiones a lo largo de su vida su intención de escribir una segunda parte de La Galatea, pero nunca llegó a publicarla. Es la obra a la que, según los especialistas, más veces expresó el deseo de volver.",
+        "status": "verificado",
+        "sourceIds": ["SRC-005"]
+      },
+      "editions": {
+        "text": "Primera edición: 1585. No se publicó la prometida segunda parte.",
+        "status": "verificado",
+        "sourceIds": ["SRC-001"]
+      }
+    }
   },
   {
     "id": "work-quijote",
@@ -16,8 +38,55 @@
     "type": "novela",
     "publicationYear": 1605,
     "status": "verificado",
-    "summary": "La Primera Parte se publicó en 1605 (Juan de la Cuesta, Madrid) y la Segunda Parte en 1615. Sección dedicada ampliada en /quijote. Ficha ampliada pendiente de redacción en Fase 2.",
-    "sourceIds": ["SRC-001"]
+    "summary": "La Primera Parte se publicó en 1605 (Juan de la Cuesta, Madrid) y la Segunda Parte en 1615. Sección dedicada ampliada en /quijote.",
+    "sourceIds": ["SRC-001"],
+    "profile": {
+      "context": {
+        "text": "Escrita como un ataque directo contra los libros de caballerías, un género extremadamente popular en España durante todo el siglo XVI (Amadís de Gaula, Palmerín de Oliva, las obras de Feliciano de Silva) que Cervantes consideraba una \"literatura mentirosa\": presentada como historia real siendo pura ficción, y con eventual contenido moralmente cuestionable para la época. El propio texto declara su propósito desde el prólogo: \"derribar la máquina mal fundada de los libros de caballerías\".",
+        "status": "verificado",
+        "sourceIds": ["SRC-005"]
+      },
+      "plot": {
+        "text": "Un hidalgo que ha perdido el juicio leyendo libros de caballerías se hace pasar por caballero andante y sale en busca de aventuras para defender ideales de justicia, acompañado de su escudero Sancho Panza. La obra se organiza en tres \"salidas\": dos en la Primera Parte y una en la Segunda, en la que Don Quijote y Sancho viajan hasta Barcelona, donde es derrotado por el Caballero de la Blanca Luna (en realidad el bachiller Sansón Carrasco disfrazado). Regresa a su aldea, recupera la cordura y muere rodeado de familia y amigos.",
+        "status": "verificado",
+        "sourceIds": ["SRC-001", "SRC-006"]
+      },
+      "structure": {
+        "text": "Primera Parte (1605): 52 capítulos organizados en 4 partes internas. Segunda Parte (1615): 74 capítulos, presentados como una sección continua sin subdivisiones internas.",
+        "status": "verificado",
+        "sourceIds": ["SRC-006"]
+      },
+      "themes": {
+        "text": "El eje declarado es la oposición entre la \"literatura verdadera\" (histórica o verosímil) y la \"literatura mentirosa\" (los libros de caballerías, que se presentaban falsamente como historia). También aparecen el idealismo frente a una realidad decepcionante, y —señalado por la crítica— una representación de mujeres que buscan decidir sus propias vidas, no solo permanecer en el ámbito doméstico.",
+        "status": "verificado",
+        "sourceIds": ["SRC-005"]
+      },
+      "curiosities": {
+        "text": "En 1614 circuló una continuación apócrifa de un tal \"Alonso Fernández de Avellaneda\", cuando Cervantes ya tenía muy avanzada su propia Segunda Parte; esto le obligó a apresurar su publicación en 1615. La Primera Parte fue traducida al inglés por Thomas Shelton ya en 1612, antes incluso de que existiera la Segunda Parte en español.",
+        "status": "verificado",
+        "sourceIds": ["SRC-001"]
+      },
+      "fragments": {
+        "text": "\"En un lugar de la Mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero, adarga antigua, rocín flaco y galgo corredor.\" — línea de apertura de la Primera Parte (1605), de dominio público.",
+        "status": "verificado",
+        "sourceIds": []
+      },
+      "editions": {
+        "text": "Primera Parte: Madrid, imprenta de Juan de la Cuesta, a costa de Francisco de Robles, 1605 (con varias ediciones piratas ese mismo año). Segunda Parte: mismo impresor y editor, 1615.",
+        "status": "verificado",
+        "sourceIds": ["SRC-001", "SRC-004"]
+      },
+      "reception": {
+        "text": "Tuvo éxito inmediato desde 1605, pero durante años fue considerado sobre todo un autor \"festivo\" (cómico), no una obra de gran prestigio literario. Esa percepción cambió tras la publicación de las Novelas ejemplares (1613), que le ganaron reconocimiento como \"honra y lustre de nuestra nación\".",
+        "status": "verificado",
+        "sourceIds": ["SRC-005"]
+      },
+      "influence": {
+        "text": "En el siglo XIX, el Romanticismo alemán reinterpretó a Don Quijote como un soñador que representa la aspiración del espíritu humano a lo infinito. Su influencia es visible en novelistas rusos como Fiódor Dostoievski (Crimen y castigo, El idiota, Los hermanos Karamázov). Miguel de Unamuno lo consideró símbolo del espíritu español y del anhelo de inmortalidad.",
+        "status": "verificado",
+        "sourceIds": ["SRC-005"]
+      }
+    }
   },
   {
     "id": "work-novelas-ejemplares",
@@ -26,8 +95,40 @@
     "type": "novela corta",
     "publicationYear": 1613,
     "status": "verificado",
-    "summary": "Colección de novelas cortas publicada en 1613 (Juan de la Cuesta, Madrid). Ficha ampliada pendiente de redacción en Fase 2.",
-    "sourceIds": ["SRC-001"]
+    "summary": "Colección de doce novelas cortas publicada en 1613 (Juan de la Cuesta, Madrid), que consolidó el prestigio literario de Cervantes.",
+    "sourceIds": ["SRC-001"],
+    "profile": {
+      "context": {
+        "text": "Publicada en 1613, marcó un punto de inflexión en la reputación de Cervantes: lo sacó de la categoría de autor meramente \"festivo\" (cómico) y le ganó, por primera vez, el reconocimiento como \"honra y lustre de nuestra nación, admiración y envidia de las extrañas\".",
+        "status": "verificado",
+        "sourceIds": ["SRC-005"]
+      },
+      "plot": {
+        "text": "Colección de doce novelas independientes. Entre las más destacadas: \"Rinconete y Cortadillo\" (dos jóvenes se integran en el submundo delictivo de Sevilla), \"La gitanilla\" (un joven adopta la vida gitana por amor a una cantaora y bailarina que resulta ser de origen noble), \"El celoso extremeño\" (un anciano rico encierra a su joven esposa para impedirle todo contacto externo) y \"El coloquio de los perros\" (un perro, dotado por una noche del don del habla, narra su azarosa vida a otro perro).",
+        "status": "verificado",
+        "sourceIds": ["SRC-005"]
+      },
+      "structure": {
+        "text": "Colección de doce novelas cortas independientes entre sí.",
+        "status": "verificado",
+        "sourceIds": ["SRC-005"]
+      },
+      "curiosities": {
+        "text": "\"El coloquio de los perros\", considerada la más innovadora de la colección, fue leída en castellano por Sigmund Freud y contribuyó, según los especialistas, a la gestación de su teoría psicoanalítica.",
+        "status": "verificado",
+        "sourceIds": ["SRC-005"]
+      },
+      "editions": {
+        "text": "Madrid, imprenta de Juan de la Cuesta, 1613.",
+        "status": "verificado",
+        "sourceIds": ["SRC-001"]
+      },
+      "reception": {
+        "text": "Recibida con gran aplauso general; fue la obra que consolidó el prestigio literario serio de Cervantes, más allá de su fama como autor de comedias o del propio Quijote.",
+        "status": "verificado",
+        "sourceIds": ["SRC-005"]
+      }
+    }
   },
   {
     "id": "work-viaje-parnaso",
@@ -36,8 +137,25 @@
     "type": "poesía",
     "publicationYear": 1614,
     "status": "verificado",
-    "summary": "Poema publicado en 1614 (viuda de Alonso Martín, Madrid). Ficha ampliada pendiente de redacción en Fase 2.",
-    "sourceIds": ["SRC-001"]
+    "summary": "Poema extenso de crítica literaria publicado en 1614 (viuda de Alonso Martín, Madrid).",
+    "sourceIds": ["SRC-001"],
+    "profile": {
+      "context": {
+        "text": "Cervantes se consideraba, en sus propias palabras, alguien que siempre quiso ser poeta, \"gracia que no le concedió el cielo\" — según los especialistas, con \"poeta\" se refería más bien a versificador. Buena parte de su obra poética suelta se ha perdido.",
+        "status": "verificado",
+        "sourceIds": ["SRC-005"]
+      },
+      "plot": {
+        "text": "Un libro de viajes imaginario: todos los poetas importantes de la época viajan en un barco hecho de versos (la chusma son romances, las jarcias seguidillas) hasta el Monte Parnaso para visitar a Apolo. Esta forma le permite a Cervantes hacer observaciones, favorables y desfavorables, sobre sus contemporáneos.",
+        "status": "verificado",
+        "sourceIds": ["SRC-005"]
+      },
+      "editions": {
+        "text": "Madrid, viuda de Alonso Martín, 1614.",
+        "status": "verificado",
+        "sourceIds": ["SRC-001"]
+      }
+    }
   },
   {
     "id": "work-ocho-comedias",
@@ -46,8 +164,35 @@
     "type": "teatro",
     "publicationYear": 1615,
     "status": "verificado",
-    "summary": "Colección teatral publicada en 1615 (viuda de Alonso Martín, Madrid), con licencia del 25 de julio de ese año. Ficha ampliada pendiente de redacción en Fase 2.",
-    "sourceIds": ["SRC-001"]
+    "summary": "Colección de ocho comedias y ocho entremeses publicada en 1615 (viuda de Alonso Martín, Madrid), con licencia del 25 de julio de ese año.",
+    "sourceIds": ["SRC-001"],
+    "profile": {
+      "context": {
+        "text": "Cervantes tuvo éxito temprano como autor de comedias en la década de 1580, llegando a vender entre veinte y treinta piezas representadas en los corrales de Madrid. La irrupción de Lope de Vega como autor dominante de los teatros hizo que sus comedias, más difíciles para el público, dejaran de venderse. Cervantes las conservó guardadas y solo pudo publicarlas, ocho de ellas, cuando ya había alcanzado fama como novelista — de ahí el desafiante título \"nunca representados\".",
+        "status": "verificado",
+        "sourceIds": ["SRC-005"]
+      },
+      "structure": {
+        "text": "Ocho comedias completas más ocho entremeses (piezas cómicas breves), publicados juntos en un solo volumen.",
+        "status": "verificado",
+        "sourceIds": ["SRC-005"]
+      },
+      "themes": {
+        "text": "Según la crítica especializada, las comedias tratan los mismos temas que aparecen en Don Quijote. Casi todas las demás comedias de Cervantes (fuera de esta colección) se han perdido; sobrevivió, por separado, La Numancia, considerada su obra dramática más influyente después del Quijote.",
+        "status": "verificado",
+        "sourceIds": ["SRC-005"]
+      },
+      "editions": {
+        "text": "Madrid, viuda de Alonso Martín, a costa de Juan de Villarroel, 1615 (licencia del 25 de julio).",
+        "status": "verificado",
+        "sourceIds": ["SRC-001"]
+      },
+      "reception": {
+        "text": "Las comedias recibieron un rechazo casi total de la crítica durante buena parte del siglo XX, mientras que los entremeses, por sus tipos populares, siempre gozaron de mejor acogida. En las últimas décadas las comedias han recibido cada vez más atención crítica seria.",
+        "status": "verificado",
+        "sourceIds": ["SRC-005"]
+      }
+    }
   },
   {
     "id": "work-persiles",
@@ -56,7 +201,29 @@
     "type": "novela",
     "publicationYear": 1617,
     "status": "verificado",
-    "summary": "Novela de publicación póstuma: su viuda la publicó en 1617 (Juan de la Cuesta, Madrid). Cervantes redactó la dedicatoria al conde de Lemos días antes de morir. Ficha ampliada pendiente de redacción en Fase 2.",
-    "sourceIds": ["SRC-001"]
+    "summary": "Novela de publicación póstuma: su viuda la publicó en 1617 (Juan de la Cuesta, Madrid). Cervantes redactó la dedicatoria al conde de Lemos días antes de morir.",
+    "sourceIds": ["SRC-001"],
+    "profile": {
+      "context": {
+        "text": "Cervantes la concibió como un poema épico en prosa, siguiendo el modelo de la recién redescubierta Historia etiópica de Teágenes y Cariclea, del griego Heliodoro. A diferencia de Don Quijote, escrito para el público amplio, Cervantes pensó el Persiles como una obra para lectores eruditos.",
+        "status": "verificado",
+        "sourceIds": ["SRC-005"]
+      },
+      "plot": {
+        "text": "Una pareja que finge ser hermanos vive una prolongada serie de peripecias por distintos escenarios hasta llegar a Roma, donde besan los pies del pontífice y finalmente se casan. Retoma el tema del amor, central también en La Galatea.",
+        "status": "verificado",
+        "sourceIds": ["SRC-005"]
+      },
+      "curiosities": {
+        "text": "Cervantes la consideraba su obra maestra: en la dedicatoria al conde de Lemos, escrita el 19 de abril de 1616 —tres días antes de morir—, afirmó que, según la opinión de sus amigos, \"ha de llegar al extremo de bondad posible\".",
+        "status": "verificado",
+        "sourceIds": ["SRC-001", "SRC-005"]
+      },
+      "editions": {
+        "text": "Madrid, imprenta de Juan de la Cuesta, a costa de Juan de Villarroel, 1617. Publicación póstuma a cargo de su viuda, Catalina de Salazar.",
+        "status": "verificado",
+        "sourceIds": ["SRC-001"]
+      }
+    }
   }
 ]

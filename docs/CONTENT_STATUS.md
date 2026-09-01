@@ -16,7 +16,7 @@ Que una interfaz esté terminada NO implica que su contenido esté aprobado. Est
 | Home (estructura + secciones) | TERMINADO | PARCIAL (ver abajo) | PARCIAL | PENDIENTE | PENDIENTE |
 | Biografía de Cervantes (capítulos, sin prosa) | EN_DESARROLLO | PENDIENTE | PENDIENTE | PENDIENTE | PENDIENTE |
 | Línea de tiempo (12 años ancla) | TERMINADO | **VERIFICADO** (12/12 eventos) | **VERIFICADAS** (SRC-001) | PENDIENTE | PENDIENTE |
-| Obras (6 fichas mínimas: título/tipo/año) | EN_DESARROLLO | **VERIFICADO** (año y datos bibliográficos básicos, 6/6); fichas ampliadas (argumento, personajes, temas...) PENDIENTES | **VERIFICADAS** (SRC-001) | PENDIENTE | PENDIENTE |
+| Obras (6 fichas ampliadas) | TERMINADO | **VERIFICADO** — datos bibliográficos 6/6; ficha ampliada con al menos contexto+argumento en 4/6 (Quijote con las 10 secciones completas); Personajes de obra (no de Fase 3) pendiente en las 6 | **VERIFICADAS** (SRC-001, SRC-004, SRC-005, SRC-006) | PENDIENTE | PENDIENTE |
 | Don Quijote (universo, estructura de subsecciones) | EN_DESARROLLO | PENDIENTE | PENDIENTE | PENDIENTE | PENDIENTE |
 | El mundo de Cervantes | PENDIENTE (placeholder "próximamente") | PENDIENTE | PENDIENTE | PENDIENTE | PENDIENTE |
 | Las vidas de Cervantes (7 perfiles) | TERMINADO | **VERIFICADO** (7/7) | **VERIFICADAS** (SRC-001) | PENDIENTE | PENDIENTE |
