@@ -241,5 +241,18 @@ A petición del usuario ("hay demasiada información... optimizar más el diseñ
 
 ### Estado
 
-Cambio de diseño/UX puro, sin tocar contenido ni fuentes. Sin Preview de producción todavía — pendiente de
-revisión del usuario antes de considerar un nuevo merge a `main` (requiere nueva aprobación explícita).
+Cambio de diseño/UX puro, sin tocar contenido ni fuentes.
+
+---
+
+## 2026-09-01 — v1.1.0-produccion — rama `main`
+
+**Commit:** `10eacb5` (merge `develop` → `main`)
+**Producción:** `https://miguel-de-cervantes-web.vercel.app` (deployment
+`https://miguel-de-cervantes-8uk8az5sr-cdmlabs.vercel.app`)
+**Aprobación:** Usuario, instrucción explícita: "ponlo a producción" (ver ADR-009 en `docs/DECISIONS.md`)
+
+### Estado
+
+Producción refleja la Home optimizada (Resumen/Profundizar, badges minimalistas, secciones acortadas).
+Verificado visualmente tras el despliegue. Aprobación puntual, no permanente para futuros cambios.
