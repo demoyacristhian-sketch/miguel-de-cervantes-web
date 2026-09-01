@@ -64,8 +64,8 @@ Incluido en el plan aprobado (roadmap completo, sujeto a aprobación fase por fa
 
 | Fase | Nombre | Estado |
 |---|---|---|
-| 0 | Descubrimiento y preparación | **COMPLETADA (2026-09-01)** — pendiente aprobación para Fase 1 |
-| 1 | MVP (arquitectura, Home, Bio, Timeline, Obras, Quijote) | PENDIENTE |
+| 0 | Descubrimiento y preparación | **COMPLETADA (2026-09-01)** |
+| 1 | MVP (arquitectura, Home, Bio, Timeline, Obras, Quijote) | **EN CURSO (2026-09-01)** — código implementado, sin Preview todavía |
 | 2 | Contenido (personajes, contexto, curiosidades, vidas de Cervantes) | PENDIENTE |
 | 3 | Experiencia (mapas, timeline avanzado, Explora el Quijote) | PENDIENTE |
 | 4 | Biblioteca Cervantina (documentos, buscador estructurado) | PENDIENTE |
@@ -92,20 +92,42 @@ Incluido en el plan aprobado (roadmap completo, sujeto a aprobación fase por fa
   usuario debe entender que esto autoriza *iniciar el desarrollo del MVP en Preview*, no un despliegue a
   producción real, que requerirá una aprobación adicional al final de Fase 7).
 
+### Fase 1 — MVP (en curso)
+
+- **Fecha de inicio:** 2026-09-01
+- **Fecha de fin:** — (en curso)
+- **Objetivos:** scaffold real de Next.js, layout, navegación, Home, sistema de diseño, Hero, biografía,
+  timeline, obras, Don Quijote, SEO base, accesibilidad base.
+- **Funcionalidades:** ver detalle en `/docs/CHANGELOG.md` (entrada `v0.1.0-mvp-scaffold`).
+- **Decisiones tomadas:** ADR-005 (ESLint 9.x, corrección empírica de Fase 0), ADR-006 (Hero sin vídeo real).
+- **Incidencias:** conflicto de convención entre el `CLAUDE.md` operativo del proyecto y el `CLAUDE.md`
+  auto-generado por `next dev`/`next build` (Next.js 16 usa ese nombre de archivo para instrucciones de
+  agentes); resuelto creando `AGENTS.md` para absorber ese bloque.
+- **Pruebas:** typecheck, lint y build limpios; verificación visual manual en navegador (Home, ficha de
+  obra, responsive, modo oscuro).
+- **Resultado:** código implementado en rama `feature/mvp-scaffold`, sin mergear.
+- **Aprobación:** PENDIENTE — falta confirmación explícita para crear la integración GitHub↔Vercel y generar
+  el primer Preview; tras eso, revisión del usuario sobre el Preview (no aprobación de producción).
+
 ## Arquitectura
 
-_(Se registrará la evolución técnica real a medida que se implemente cada fase. En Fase 0 solo existe la
-propuesta — ver `/docs/ARCHITECTURE.md`.)_
+- **2026-09-01 (Fase 1):** implementado el scaffold propuesto en Fase 0 sin cambios estructurales mayores.
+  Corrección real: ESLint fijado en 9.39.5 en lugar de 10.9.1 (ver ADR-005). Capa de contenido
+  (`src/lib/content.ts` + `src/content/*.json` + `src/types/content.ts`) implementada como se diseñó en
+  `/docs/CONTENT_MODEL.md`, con subconjunto de 4 entidades (`Work`, `TimelineEvent`, `LifeProfile`,
+  `Curiosity`) — el resto se añade en fases posteriores según se necesiten.
 
 ## Diseño
 
-_(Se registrará la evolución visual real a medida que se implemente cada fase. En Fase 0 solo existe la
-dirección de arte preliminar — ver `/docs/DESIGN_SYSTEM.md`.)_
+- **2026-09-01 (Fase 1):** paleta y tipografía finalizadas e implementadas (ver `/docs/DESIGN_SYSTEM.md`):
+  Playfair Display (titulares) + Inter (cuerpo), paleta marfil/ink/burdeos/dorado con soporte de modo oscuro
+  vía `prefers-color-scheme`. Hero cinematográfico implementado sin vídeo real (fallback CSS, ver ADR-006).
 
 ## Contenido
 
-_(Se registrará la evolución del contenido histórico a medida que se cargue y verifique. En Fase 0 no existe
-contenido histórico cargado — solo el modelo de datos, ver `/docs/CONTENT_MODEL.md`.)_
+- **2026-09-01 (Fase 1):** estructura de contenido poblada con datos de placeholder explícitamente marcados
+  `pendiente_de_verificacion` (6 obras, 12 años de timeline, 7 perfiles biográficos, 6 curiosidades). Ningún
+  dato histórico se ha verificado ni se presenta como hecho — la verificación real empieza en Fase 2.
 
 ## Despliegues
 

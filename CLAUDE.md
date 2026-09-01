@@ -26,40 +26,62 @@
 | Librería UI | React | 19.2.8 |
 | Lenguaje | TypeScript | **6.0.3** (NO 7.0.2 — ver ADR-001) |
 | Estilos | Tailwind CSS | 4.3.3 |
-| Linter | ESLint + eslint-config-next | 10.9.1 / 16.3.4 |
+| Linter | ESLint + eslint-config-next | **9.39.5** (no 10.x, ver `ARCHITECTURE.md`) / 16.3.4 |
 | Despliegue | Vercel | CLI 54.4.1 (proyecto Vercel aún no creado) |
 | Contenido | JSON estructurado versionado en Git (ver `/docs/CONTENT_MODEL.md`) | — |
 | Base de datos | Ninguna en MVP (posible migración futura a Supabase/PostgreSQL) | — |
 
-Estado: **NINGÚN CÓDIGO DE APLICACIÓN EXISTE TODAVÍA.** El scaffold de Next.js se creará en Fase 1, tras aprobación explícita.
+Estado: scaffold de Next.js creado en Fase 1 (`create-next-app` + ajustes manuales). `npm run lint`,
+`tsc --noEmit` y `npm run build` pasan limpios; las 19 rutas se generan estáticamente. Sin proyecto Vercel
+todavía (pendiente de aprobación explícita para la integración GitHub↔Vercel, ver §8).
 
 ## 3. Arquitectura del contenido
 
 Entidades definidas (modelo, no datos): `Person`, `Work`, `Character`, `Place`, `HistoricalEvent`, `TimelineEvent`, `Source`, `Document`, `Topic`, `Quote`, `Curiosity`, `HistoricalContext`, `MediaAsset`.
-Detalle y relaciones en [`/docs/CONTENT_MODEL.md`](docs/CONTENT_MODEL.md). **Ningún dato histórico ha sido cargado todavía** — la carga de contenido verificado empieza en Fase 2.
+Detalle y relaciones en [`/docs/CONTENT_MODEL.md`](docs/CONTENT_MODEL.md). Subconjunto implementado en Fase 1
+(`src/types/content.ts`, `src/content/*.json`, `src/lib/content.ts`): `Work`, `TimelineEvent`, `LifeProfile`,
+`Curiosity`. **Ningún dato histórico está verificado todavía** — todo registro incluye
+`status: "pendiente_de_verificacion"` y se renderiza con un badge visible; la verificación contra fuentes
+empieza en Fase 2.
 
 ## 4. Estado del desarrollo
 
 | Área | Estado |
 |---|---|
 | Fundación / documentación | **APROBADO** (Fase 0 ejecutada 2026-09-01) |
-| Arquitectura técnica | EN ANÁLISIS (propuesta documentada, pendiente de validarse al construir Fase 1) |
-| Repositorio GitHub | PRODUCCIÓN (creado, vacío de código de app) |
-| Contenido histórico | PENDIENTE (no iniciado) |
-| Diseño visual | PENDIENTE (dirección de arte definida en `/docs/DESIGN_SYSTEM.md`, sin componentes) |
-| MVP (Home, Bio, Timeline, Obras, Quijote) | PENDIENTE — Fase 1 |
+| Arquitectura técnica | **EN DESARROLLO** (scaffold real creado y validado: lint + typecheck + build limpios) |
+| Repositorio GitHub | PRODUCCIÓN (rama `main`), rama `develop` y `feature/mvp-scaffold` activas |
+| Contenido histórico | PENDIENTE (estructura de datos lista, cero datos verificados) |
+| Diseño visual | **EN DESARROLLO** (tokens Tailwind v4 implementados, tipografía Playfair Display + Inter) |
+| MVP (Home, Bio, Timeline, Obras, Quijote) | **EN REVISIÓN** — implementado en `feature/mvp-scaffold`, sin Preview de Vercel todavía |
 | Pregunta a Cervantes (IA/RAG) | BLOQUEADO — requiere aprobación específica de arquitectura y costes (Fase 5) |
 
 ## 5. Última implementación
 
 - **Fecha:** 2026-09-01
-- **Rama:** `main`
-- **Commit:** `b458800`
-- **Qué se hizo:** Ejecución completa de FASE 0 — auditoría de entorno, verificación de versiones oficiales, creación de estructura documental (`/docs`), definición de arquitectura propuesta, modelo de contenido, política de fuentes/derechos, sistema de diseño preliminar, arquitectura de información, estrategias Git/GitHub y Vercel, roadmap.
-- **Archivos afectados:** `CLAUDE.md`, `docs/*.md`, `.gitignore`, `.env.example`, `README.md`.
-- **Pruebas:** N/A (no hay código ejecutable todavía).
-- **Estado:** Fase 0 completada, pendiente de aprobación explícita para iniciar Fase 1.
-- **Pendientes:** Aprobación del usuario para iniciar Fase 1 (MVP).
+- **Rama:** `feature/mvp-scaffold` (desde `develop`), sin mergear
+- **Commit:** `4c7554d`
+- **Qué se hizo:** Scaffold real de Next.js 16.3.4 (App Router, `src/`) con TypeScript 6.0.3, Tailwind CSS
+  4.3.3, ESLint 9.39.5. Sistema de diseño implementado (paleta, tipografía Playfair Display/Inter, modo
+  oscuro). Layout raíz con skip link, header/nav responsive, footer institucional. Home completo (Hero sin
+  vídeo — fallback CSS, Introducción, Las vidas de Cervantes, Timeline preview, Obras destacadas, teaser del
+  Quijote, secciones pendientes de Lugares/Contexto/Legado/Biblioteca, Curiosidades, CTA). Páginas
+  `/cervantes`, `/linea-de-tiempo`, `/obras`, `/obras/[slug]`, `/quijote`, `/mundo-de-cervantes`, `/legado`,
+  `/biblioteca`. SEO base (`sitemap.ts`, `robots.ts`, metadata por página). Todo el contenido histórico está
+  marcado `pendiente_de_verificacion` con badge visible — cero datos inventados.
+- **Archivos afectados:** ~30 archivos nuevos bajo `src/`, `package.json`, `tsconfig.json`,
+  `eslint.config.mjs`, `next.config.ts`, `postcss.config.mjs`, `AGENTS.md` (nuevo — evita que `next dev`
+  escriba en este `CLAUDE.md`, ver nota en ese archivo), `.gitignore`, `.env.example`, y actualizaciones en
+  `docs/ARCHITECTURE.md`, `docs/DESIGN_SYSTEM.md`.
+- **Pruebas:** `tsc --noEmit` limpio, `npm run lint` limpio (0 errores), `npm run build` exitoso (19 rutas,
+  todas estáticas o SSG), verificación visual en navegador (Home completo, ficha de obra dinámica, modo
+  claro/oscuro, sin errores de consola).
+- **Estado:** Fase 1 implementada a nivel de código, **sin Preview de Vercel todavía** (requiere crear la
+  integración GitHub↔Vercel — acción que pide confirmación explícita por tratarse de una integración
+  persistente con un servicio externo, ver `docs/SECURITY.md`).
+- **Pendientes:** (1) aprobación del usuario para conectar el repositorio a Vercel y generar el primer
+  Preview; (2) merge de `feature/mvp-scaffold` a `develop` tras esa validación; (3) revisión del usuario
+  sobre el Preview (no aprobación de producción, ver regla de Fase 1 en `docs/MASTER_PROJECT.md`).
 
 ## 6. Decisiones vigentes
 
@@ -84,7 +106,19 @@ Estas reglas provienen del prompt maestro del proyecto y son de cumplimiento obl
 8. **Roadmap estricto:** no adelantar fases del roadmap oficial (`/docs/MASTER_PROJECT.md` §Roadmap) sin aprobación.
 9. **Seguridad:** nunca subir `.env`, secretos ni API keys al repositorio. Mantener `.env.example` sin valores reales.
 10. **Fin de sesión:** actualizar `CLAUDE.md`, `CHANGELOG.md`, `CONTENT_STATUS.md`, `SOURCES.md` y `DECISIONS.md` (cuando proceda) antes de cerrar cualquier sesión de trabajo.
+11. **Despliegues Vercel vía CLI:** nunca ejecutar `vercel deploy` sin `--target=preview` explícito (ver ADR-007 — el primer deployment de un proyecto nuevo se promueve automáticamente a producción incluso sin `--prod`). Preferir siempre que el despliegue salga de la integración Git (push de rama).
 
 ## 8. Próximo paso
 
-**Único próximo paso lógico:** esperar aprobación explícita del usuario para iniciar **FASE 1 — MVP** (arquitectura real, layout, navegación, Home, sistema de diseño, Hero, Biografía, Timeline, Obras, Don Quijote, responsive, SEO base, accesibilidad base). No se debe avanzar a Fase 1 sin dicha aprobación.
+Proyecto Vercel `miguel-de-cervantes-web` creado (team CDM Labs) y conectado al repositorio. Preview real de
+`feature/mvp-scaffold` disponible en `https://miguel-de-cervantes-50a0pg9z7-cdmlabs.vercel.app` (protegido
+por Vercel Authentication). **Único próximo paso lógico:** que el usuario revise el Preview y decida si
+quiere (a) seguir en Fase 1 ampliando algo del MVP, o (b) mergear `feature/mvp-scaffold` a `develop` y dar
+por cerrada esta iteración de Fase 1, o (c) empezar la investigación de fuentes de Fase 2. Ninguna de estas
+opciones implica tocar `main`/producción sin la aprobación explícita correspondiente.
+
+**Nota de incidente (ver ADR-007 en `docs/DECISIONS.md`):** el primer despliegue de Vercel quedó publicado
+como producción por un comportamiento automático de la plataforma (primer deployment de un proyecto nuevo),
+no por una acción deliberada sin permiso. Fue comunicado de inmediato y el usuario aceptó dejarlo así por su
+bajo impacto. Regla derivada ya aplicada: no ejecutar `vercel deploy` sin `--target=preview` explícito de
+aquí en adelante.

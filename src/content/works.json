@@ -1,0 +1,62 @@
+[
+  {
+    "id": "work-galatea",
+    "slug": "la-galatea",
+    "title": "La Galatea",
+    "type": "novela",
+    "publicationYear": 1585,
+    "status": "pendiente_de_verificacion",
+    "summary": "Ficha pendiente de redacción y verificación documental (Fase 2).",
+    "sourceIds": []
+  },
+  {
+    "id": "work-quijote",
+    "slug": "don-quijote-de-la-mancha",
+    "title": "Don Quijote de la Mancha",
+    "type": "novela",
+    "publicationYear": 1605,
+    "status": "pendiente_de_verificacion",
+    "summary": "Ficha pendiente de redacción y verificación documental (Fase 2). Sección dedicada ampliada en /quijote.",
+    "sourceIds": []
+  },
+  {
+    "id": "work-novelas-ejemplares",
+    "slug": "novelas-ejemplares",
+    "title": "Novelas ejemplares",
+    "type": "novela corta",
+    "publicationYear": 1613,
+    "status": "pendiente_de_verificacion",
+    "summary": "Ficha pendiente de redacción y verificación documental (Fase 2).",
+    "sourceIds": []
+  },
+  {
+    "id": "work-viaje-parnaso",
+    "slug": "viaje-del-parnaso",
+    "title": "Viaje del Parnaso",
+    "type": "poesía",
+    "publicationYear": 1614,
+    "status": "pendiente_de_verificacion",
+    "summary": "Ficha pendiente de redacción y verificación documental (Fase 2).",
+    "sourceIds": []
+  },
+  {
+    "id": "work-ocho-comedias",
+    "slug": "ocho-comedias-y-ocho-entremeses",
+    "title": "Ocho comedias y ocho entremeses nunca representados",
+    "type": "teatro",
+    "publicationYear": 1615,
+    "status": "pendiente_de_verificacion",
+    "summary": "Ficha pendiente de redacción y verificación documental (Fase 2).",
+    "sourceIds": []
+  },
+  {
+    "id": "work-persiles",
+    "slug": "los-trabajos-de-persiles-y-sigismunda",
+    "title": "Los trabajos de Persiles y Sigismunda",
+    "type": "novela",
+    "publicationYear": 1617,
+    "status": "pendiente_de_verificacion",
+    "summary": "Ficha pendiente de redacción y verificación documental (Fase 2). Publicación póstuma.",
+    "sourceIds": []
+  }
+]

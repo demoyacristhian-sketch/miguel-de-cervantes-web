@@ -1,0 +1,9 @@
+[
+  { "id": "life-escritor", "role": "Escritor", "description": "Contenido biográfico pendiente de verificación documental (Fase 2)." },
+  { "id": "life-soldado", "role": "Soldado", "description": "Contenido biográfico pendiente de verificación documental (Fase 2)." },
+  { "id": "life-cautivo", "role": "Cautivo", "description": "Contenido biográfico pendiente de verificación documental (Fase 2)." },
+  { "id": "life-recaudador", "role": "Recaudador", "description": "Contenido biográfico pendiente de verificación documental (Fase 2)." },
+  { "id": "life-viajero", "role": "Viajero", "description": "Contenido biográfico pendiente de verificación documental (Fase 2)." },
+  { "id": "life-dramaturgo", "role": "Dramaturgo", "description": "Contenido biográfico pendiente de verificación documental (Fase 2)." },
+  { "id": "life-poeta", "role": "Poeta", "description": "Contenido biográfico pendiente de verificación documental (Fase 2)." }
+]

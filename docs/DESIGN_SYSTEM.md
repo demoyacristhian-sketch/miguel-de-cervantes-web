@@ -9,26 +9,32 @@ Fase 1.
 interfaz moderna, cultural, premium e inmersiva que evoca literatura, historia e imprenta sin caer en
 estética turística ni plantilla genérica.
 
-## Paleta (conceptual, pendiente de tokens exactos en Fase 1)
+## Paleta (implementada en Fase 1, `src/app/globals.css`)
 
-| Rol | Color | Uso |
+| Token | Hex | Uso |
 |---|---|---|
-| Fondo claro | Marfil / papel | Fondos principales, lectura larga |
-| Texto / fondo oscuro | Negro / marrón profundo | Texto principal, secciones de contraste |
-| Acento cálido | Burdeos | CTAs, acentos narrativos |
-| Acento de detalle | Dorado (uso moderado) | Detalles, no como color dominante |
+| `--palette-ivory` | `#f4efe4` | Fondo claro por defecto |
+| `--palette-paper` | `#ece4d3` | Superficies (`--surface`), secciones alternas |
+| `--palette-ink` | `#18140f` | Texto en modo claro, fondo en modo oscuro |
+| `--palette-umber` | `#392c22` | Base de bordes sutiles (`--border-subtle`) |
+| `--palette-burgundy` / `-light` | `#6e1423` / `#9c3b4a` | Acento (`--accent`) — claro/oscuro respectivamente |
+| `--palette-gold` | `#ab8a45` | Detalle (`--detail`), uso moderado, no apto para texto de cuerpo (contraste insuficiente en AA) |
 
-Los valores hexadecimales exactos, contraste WCAG y modo oscuro se definirán y documentarán en Fase 1 junto
-con los tokens de Tailwind.
+Modo claro y oscuro definidos vía `prefers-color-scheme`, con tokens semánticos (`--background`,
+`--foreground`, `--surface`, `--accent`, `--detail`) que Tailwind v4 expone como utilidades
+(`bg-background`, `text-accent`, etc.) a través de `@theme inline`.
 
-## Tipografía
+## Tipografía (implementada en Fase 1)
 
-- **Titulares:** serif editorial, literaria, con carácter histórico — candidata a evaluar en Fase 1
-  (verificando licencia, soporte de caracteres españoles/acentos, rendimiento web y disponibilidad, p. ej.
-  vía Google Fonts o self-hosted).
-- **Interfaz y cuerpo:** sans-serif de alta legibilidad para textos largos y UI.
-- Ninguna tipografía se selecciona solo por estética: debe pasar por checklist de licencia, disponibilidad,
-  rendimiento, soporte de caracteres, legibilidad y compatibilidad web antes de adoptarse (Fase 1).
+- **Titulares:** [Playfair Display](https://fonts.google.com/specimen/Playfair+Display) (serif editorial,
+  vía `next/font/google`, self-hosted en build, licencia SIL Open Font License, soporte completo de
+  diacríticos españoles).
+- **Interfaz y cuerpo:** [Inter](https://fonts.google.com/specimen/Inter) (sans-serif de alta legibilidad,
+  vía `next/font/google`, misma licencia, variable font).
+- Ambas cargadas con `display: "swap"` para no bloquear el render ni penalizar el LCP.
+- Checklist cumplido: licencia (OFL, uso comercial libre), disponibilidad (Google Fonts, self-hosted por
+  Next.js), rendimiento (subset `latin`, swap), soporte de caracteres (acentos/ñ verificados), legibilidad
+  (ambas ampliamente usadas en producción editorial), compatibilidad web (soporte universal).
 
 ## Iconografía y animación
 
@@ -42,7 +48,7 @@ con los tokens de Tailwind.
 
 - Vídeo de fondo evocando literatura, historia, manuscritos, tinta, libros, Siglo de Oro, viaje, escritura —
   tono editorial/cultural/premium, nunca turístico ni genérico.
-- Requisitos no negociables (a validar en Fase 1 antes de publicar cualquier Preview):
+- Requisitos no negociables (a validar antes de publicar cualquier vídeo real):
   - Optimizado, no bloqueante para la carga.
   - Fallback de imagen estática.
   - Estrategia específica para móvil (posible vídeo alternativo comprimido o imagen).
@@ -51,6 +57,12 @@ con los tokens de Tailwind.
   - Overlay que garantice legibilidad del texto.
   - Licencia de uso del vídeo verificada y registrada en `public/media/manifest.json` antes de publicarse
     (ningún vídeo se usa sin derechos verificados).
+
+**Estado real (Fase 1):** implementado `src/components/sections/Hero.tsx` **sin vídeo** — no existe todavía
+ningún recurso audiovisual con derechos verificados. Se usa un fallback 100% CSS (degradados radiales sobre
+`--color-ink`, textura sutil) que ya cumple con no bloquear la carga, no afectar CLS/LCP y respetar
+`prefers-reduced-motion` (no hay animación). Sustituir por `<video>` real solo cuando exista un recurso
+aprobado y registrado en `public/media/manifest.json`.
 - Copy de referencia (narrativa a conservar, composición visual puede evolucionar):
 
   > MIGUEL DE CERVANTES

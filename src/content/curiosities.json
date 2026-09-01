@@ -1,0 +1,8 @@
+[
+  { "id": "cur-shakespeare", "question": "¿Cervantes y Shakespeare murieron realmente el mismo día?", "status": "pendiente_de_verificacion", "answer": null },
+  { "id": "cur-manco-lepanto", "question": "¿Por qué se habla del \"manco de Lepanto\"?", "status": "pendiente_de_verificacion", "answer": null },
+  { "id": "cur-restos", "question": "¿Dónde están sus restos?", "status": "pendiente_de_verificacion", "answer": null },
+  { "id": "cur-publicacion-quijote", "question": "¿Cómo llegó a publicar Don Quijote?", "status": "pendiente_de_verificacion", "answer": null },
+  { "id": "cur-ingresos", "question": "¿Qué sabemos de sus ingresos?", "status": "pendiente_de_verificacion", "answer": null },
+  { "id": "cur-aspecto", "question": "¿Qué conocemos realmente de su aspecto físico?", "status": "pendiente_de_verificacion", "answer": null }
+]

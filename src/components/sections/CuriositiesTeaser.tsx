@@ -1,0 +1,25 @@
+import { getCuriosities } from "@/lib/content";
+
+export function CuriositiesTeaser() {
+  const curiosities = getCuriosities().slice(0, 4);
+  return (
+    <section className="mx-auto max-w-6xl px-6 py-20">
+      <p className="font-serif-display text-sm uppercase tracking-[0.25em] text-accent">
+        ¿Sabías que...?
+      </p>
+      <h2 className="mt-3 font-serif-display text-3xl font-semibold sm:text-4xl">Curiosidades</h2>
+      <p className="mt-2 max-w-2xl text-foreground/70">
+        Preguntas abiertas que estamos investigando contra fuentes primarias e institucionales, no
+        respuestas dadas por supuestas.
+      </p>
+      <ul className="mt-8 grid gap-4 sm:grid-cols-2">
+        {curiosities.map((item) => (
+          <li key={item.id} className="rounded-xl border border-border-subtle bg-surface p-5">
+            <p className="font-serif-display text-lg">{item.question}</p>
+            <p className="mt-2 text-xs uppercase tracking-wide text-foreground/50">En investigación</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
