@@ -143,3 +143,36 @@ ADR-007)
 
 Primera iteración de Fase 2 completada. Pendiente: las 4 curiosidades restantes, las fichas ampliadas de
 obra, personajes, contexto histórico y la biografía narrativa completa.
+
+---
+
+## 2026-09-01 — v0.2.1-curiosidades-completas — rama `content/fuentes-timeline-obras-vidas`
+
+**Commit:** pendiente (ver `git log`)
+
+### Añadido
+
+- `docs/SOURCES.md`: SRC-003 (informe oficial del Ayuntamiento de Madrid/Sociedad de Ciencias Aranzadi,
+  2015, sobre la búsqueda de los restos de Cervantes — FUENTE PRIMARIA), SRC-004 (Centro Virtual Cervantes,
+  Instituto Cervantes, sobre el proceso de impresión del Quijote — FUENTE INSTITUCIONAL) y SRC-005 (ensayo
+  académico de Daniel Eisenberg en la Biblioteca Virtual Miguel de Cervantes — FUENTE ACADÉMICA).
+- `src/content/curiosities.json`: las 4 curiosidades restantes quedan verificadas y respondidas — dónde
+  están sus restos (con la cita textual de la conclusión oficial de 2015, sin sobreafirmar identificación
+  individual ni ADN), cómo llegó a publicarse el Quijote, qué se sabe de sus ingresos (con la advertencia
+  académica explícita de que Cervantes solía exagerar su pobreza ante mecenas) y qué se sabe de su aspecto
+  físico (autorretrato del prólogo de las Novelas ejemplares; ningún retrato pictórico de autenticidad
+  confirmada).
+
+### Documentación
+
+- `docs/CONTENT_STATUS.md`: curiosidades marcadas TERMINADO/VERIFICADO (6/6).
+
+### Pruebas
+
+- `tsc --noEmit`, `npm run lint` y `npm run build`: limpios. Verificación visual de las 6 tarjetas de
+  curiosidades en Home, sin errores de consola.
+
+### Estado
+
+Las 6 curiosidades del MVP quedan verificadas contra fuentes primarias/institucionales/académicas. Pendiente
+en Fase 2: fichas ampliadas de obra, personajes, contexto histórico y biografía narrativa completa.

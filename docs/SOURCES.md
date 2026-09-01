@@ -108,3 +108,87 @@ Observaciones: **Discrepancia detectada y no resuelta entre fuentes:** SRC-001 (
   lugar de elegir una sola versión, conforme al protocolo de discrepancias históricas del proyecto.
 Derechos: Se parafrasea el hallazgo, sin reproducir el artículo.
 ```
+
+### SRC-003
+
+```text
+ID: SRC-003
+Título: Proyecto Cervantes: búsqueda, localización y estudio osteológico de los restos mortales de Don
+  Miguel de Cervantes — Informe ejecutivo de la segunda fase (2015)
+Institución: Ayuntamiento de Madrid (Área de Gobierno de las Artes, Deportes y Turismo), con Sociedad de
+  Ciencias Aranzadi, Arzobispado de Madrid y Comunidad de Madrid (Dirección General de Patrimonio Histórico)
+Autor: Equipo dirigido por Francisco Etxeberria Gabilondo (director del proyecto); informe histórico de
+  Francisco José Marín Perellón; informe de excavación de Almudena García Rubio y Francisco Etxeberria
+URL: https://www.madrid.es/UnidadesDescentralizadas/UDCMedios/noticias/2015/03Marzo/17Martes/Notasprensa/restoscervantes/ficheros/Informe%20ejecutivo%20segunda%20fase%20Cervantes07.pdf
+Fecha de consulta: 2026-09-01
+Tipo: FUENTE PRIMARIA (informe oficial de investigación arqueológico-forense encargado por una institución
+  pública)
+Fiabilidad: Alta — documento técnico original, no una nota de prensa que lo resuma.
+Información utilizada: (1) Confirmación documental de que Cervantes murió el 22 de abril de 1616 en la
+  calle del León y fue enterrado al día siguiente en la iglesia del convento de San Ildefonso (Trinitarias
+  Descalzas), incluyendo la transcripción literal del asiento de defunción de la parroquia de San Sebastián.
+  (2) Conclusión oficial sobre el hallazgo de 2015: en la cripta actual se localizó una "reducción" (osario)
+  de huesos mezclados —número mínimo de 10 adultos y 5 infantiles— compatible arqueológicamente con el
+  traslado de los restos de la iglesia primitiva (donde constaba enterrado Cervantes) a la cripta nueva
+  hacia 1730. No fue posible individualizar los restos de Cervantes dentro de ese conjunto ni realizar
+  pruebas de ADN. Cita textual de la conclusión oficial: "es posible considerar que entre los fragmentos de
+  la reducción localizada en el suelo de la cripta de la actual Iglesia de las Trinitarias se encuentren
+  algunos pertenecientes a Miguel de Cervantes."
+Página/sección: pp. 4 (asiento de defunción), 29 (sección "Reducción 4.2/32"), 35–38 (conclusiones finales).
+Observaciones: El informe es explícitamente cauteloso y NO afirma una identificación individual confirmada
+  de los restos de Cervantes — se mantiene esa cautela en el contenido publicado, evitando presentar como
+  hecho cerrado lo que la propia fuente primaria presenta como probable pero no individualizado ni
+  confirmado por ADN.
+Derechos: Documento público difundido por el Ayuntamiento de Madrid; se parafrasea y se cita una frase breve
+  de la conclusión oficial con atribución, sin reproducir el informe completo.
+```
+
+### SRC-004
+
+```text
+ID: SRC-004
+Título: Lectura comentada de la portada — «Don Quijote de la Mancha», Primera Parte
+Institución: Centro Virtual Cervantes (portal oficial del Instituto Cervantes)
+Autor: Instituto Cervantes (equipo editorial del CVC)
+URL: https://cvc.cervantes.es/literatura/clasicos/quijote/edicion/parte1/portada/nota_portada.htm
+Fecha de consulta: 2026-09-01
+Tipo: FUENTE INSTITUCIONAL
+Fiabilidad: Alta.
+Información utilizada: Detalles del proceso de impresión de la Primera Parte de 1605: la imprenta operaba
+  bajo el nombre de Juan de la Cuesta pero pertenecía a María Rodríguez de Rivalde (viuda de Pedro
+  Madrigal), siendo Juan de la Cuesta su yerno y regente; Francisco de Robles (librero del Rey) fue el
+  editor/financiador, relación que se prolongó hasta la Segunda Parte (1615); el libro se publicó "con
+  privilegio real"; la impresión estaba terminada a finales de diciembre de 1604 pese a llevar fecha de 1605
+  en portada.
+Página/sección: Página completa.
+Observaciones: Ninguna.
+Derechos: Se parafrasea, sin reproducir el texto completo.
+```
+
+### SRC-005
+
+```text
+ID: SRC-005
+Título: Cervantes y Don Quijote (ensayo introductorio)
+Institución: Biblioteca Virtual Miguel de Cervantes (alojado en cervantesvirtual.com)
+Autor: Daniel Eisenberg (cervantista, autor de referencia en estudios cervantinos)
+URL: https://www.cervantesvirtual.com/obra-visor/cervantes-y-don-quijote-0/html/ffcf21ae-82b1-11df-acc7-002185ce6064_1.html
+Fecha de consulta: 2026-09-01
+Tipo: FUENTE ACADÉMICA
+Fiabilidad: Alta — ensayo de un especialista reconocido, publicado por la Biblioteca Virtual Miguel de
+  Cervantes.
+Información utilizada: (1) Advertencia metodológica explícita del propio autor: Cervantes "solía cargar las
+  tintas describiendo su mala posición económica, para animar al mecenas a una donación más generosa" — se
+  usa para matizar cualquier curiosidad sobre sus ingresos. (2) Fuentes de ingreso documentadas: venta de
+  "veinte o treinta" comedias representadas en Madrid (mayoría perdidas), venta de La Galatea (1585),
+  empleos remunerados como procurador de la Armada y recaudador de impuestos en Granada, y en su última
+  década el apoyo económico del Conde de Lemos que le permitió dedicarse por completo a escribir. (3)
+  Afirmación explícita: "Contrario a lo que se cree, Cervantes no tuvo dificultad en publicar sus libros
+  acabados, aunque no con las recompensas elevadas que quisiera haber percibido." (4) Confirmación de que no
+  existe representación gráfica auténtica de Cervantes ("No existe una representación gráfica auténtica"),
+  usada para la curiosidad sobre su aspecto físico.
+Página/sección: Secciones "¿Quién fue Cervantes?" y "¿Qué tipo de hombre fue Cervantes?".
+Observaciones: Es un ensayo interpretativo, no una base de datos de cifras; no proporciona montos exactos de
+  ingresos, lo cual se refleja en la respuesta publicada (no se inventan cifras que esta fuente no da).
+Derechos: Se parafrasea, sin reproducir extensamente el ensayo.
+```

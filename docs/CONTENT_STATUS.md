@@ -20,7 +20,7 @@ Que una interfaz esté terminada NO implica que su contenido esté aprobado. Est
 | Don Quijote (universo, estructura de subsecciones) | EN_DESARROLLO | PENDIENTE | PENDIENTE | PENDIENTE | PENDIENTE |
 | El mundo de Cervantes | PENDIENTE (placeholder "próximamente") | PENDIENTE | PENDIENTE | PENDIENTE | PENDIENTE |
 | Las vidas de Cervantes (7 perfiles) | TERMINADO | **VERIFICADO** (7/7) | **VERIFICADAS** (SRC-001) | PENDIENTE | PENDIENTE |
-| Curiosidades (6 preguntas) | EN_DESARROLLO | **VERIFICADO** (2/6: Shakespeare, manco de Lepanto); 4/6 pendientes | PARCIAL | PENDIENTE | PENDIENTE |
+| Curiosidades (6 preguntas) | TERMINADO | **VERIFICADO** (6/6) | **VERIFICADAS** (SRC-001, SRC-002, SRC-003, SRC-004, SRC-005) | PENDIENTE | PENDIENTE |
 | Legado | PENDIENTE (placeholder "próximamente") | PENDIENTE | PENDIENTE | PENDIENTE | PENDIENTE |
 | Biblioteca digital | PENDIENTE (placeholder "próximamente") | PENDIENTE | PENDIENTE | PENDIENTE | PENDIENTE |
 
