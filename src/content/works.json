@@ -1,0 +1,62 @@
+[
+  {
+    "id": "work-galatea",
+    "slug": "la-galatea",
+    "title": "La Galatea",
+    "type": "novela",
+    "publicationYear": 1585,
+    "status": "verificado",
+    "summary": "Primera novela publicada por Cervantes, en 1585. Ficha ampliada (argumento, personajes, temas) pendiente de redacción en Fase 2.",
+    "sourceIds": ["SRC-001"]
+  },
+  {
+    "id": "work-quijote",
+    "slug": "don-quijote-de-la-mancha",
+    "title": "Don Quijote de la Mancha",
+    "type": "novela",
+    "publicationYear": 1605,
+    "status": "verificado",
+    "summary": "La Primera Parte se publicó en 1605 (Juan de la Cuesta, Madrid) y la Segunda Parte en 1615. Sección dedicada ampliada en /quijote. Ficha ampliada pendiente de redacción en Fase 2.",
+    "sourceIds": ["SRC-001"]
+  },
+  {
+    "id": "work-novelas-ejemplares",
+    "slug": "novelas-ejemplares",
+    "title": "Novelas ejemplares",
+    "type": "novela corta",
+    "publicationYear": 1613,
+    "status": "verificado",
+    "summary": "Colección de novelas cortas publicada en 1613 (Juan de la Cuesta, Madrid). Ficha ampliada pendiente de redacción en Fase 2.",
+    "sourceIds": ["SRC-001"]
+  },
+  {
+    "id": "work-viaje-parnaso",
+    "slug": "viaje-del-parnaso",
+    "title": "Viaje del Parnaso",
+    "type": "poesía",
+    "publicationYear": 1614,
+    "status": "verificado",
+    "summary": "Poema publicado en 1614 (viuda de Alonso Martín, Madrid). Ficha ampliada pendiente de redacción en Fase 2.",
+    "sourceIds": ["SRC-001"]
+  },
+  {
+    "id": "work-ocho-comedias",
+    "slug": "ocho-comedias-y-ocho-entremeses",
+    "title": "Ocho comedias y ocho entremeses nunca representados",
+    "type": "teatro",
+    "publicationYear": 1615,
+    "status": "verificado",
+    "summary": "Colección teatral publicada en 1615 (viuda de Alonso Martín, Madrid), con licencia del 25 de julio de ese año. Ficha ampliada pendiente de redacción en Fase 2.",
+    "sourceIds": ["SRC-001"]
+  },
+  {
+    "id": "work-persiles",
+    "slug": "los-trabajos-de-persiles-y-sigismunda",
+    "title": "Los trabajos de Persiles y Sigismunda",
+    "type": "novela",
+    "publicationYear": 1617,
+    "status": "verificado",
+    "summary": "Novela de publicación póstuma: su viuda la publicó en 1617 (Juan de la Cuesta, Madrid). Cervantes redactó la dedicatoria al conde de Lemos días antes de morir. Ficha ampliada pendiente de redacción en Fase 2.",
+    "sourceIds": ["SRC-001"]
+  }
+]

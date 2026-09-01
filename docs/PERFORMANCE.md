@@ -18,8 +18,9 @@ Estado: **PROPUESTA** (Fase 0). Medición real desde Fase 1.
 
 ## Registro de mediciones
 
-_(vacío — se completará desde el primer Preview de Fase 1 con Lighthouse/Web Vitals)_
-
 | Fecha | Página | LCP | CLS | INP | Notas |
 |---|---|---|---|---|---|
-| — | — | — | — | — | — |
+| 2026-09-01 | Todas | — | — | — | `npm run build` genera las 19 rutas como estático/SSG. Sin medición real de Web Vitals todavía (requiere Preview desplegado); pendiente tras crear el proyecto Vercel. |
+
+El Hero no usa vídeo en esta fase (ver ADR-006 en `docs/DECISIONS.md`), por lo que no aplica todavía el
+análisis de rendimiento específico de vídeo — se realizará cuando se incorpore un recurso real.

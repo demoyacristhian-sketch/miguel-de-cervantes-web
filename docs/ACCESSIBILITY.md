@@ -20,9 +20,10 @@ Implementación real desde Fase 1 ("accesibilidad base"), auditorías registrada
 
 ## Registro de auditorías
 
-_(vacío — se completará desde Fase 1 con herramientas como axe-core / Lighthouse y revisión manual de
-teclado y lector de pantalla)_
-
 | Fecha | Página/módulo | Herramienta | Resultado | Issues abiertos |
 |---|---|---|---|---|
-| — | — | — | — | — |
+| 2026-09-01 | Home (revisión informal) | Verificación manual en navegador (Claude Code) | Skip link presente y funcional, landmarks semánticos (`header`/`nav`/`main`/`footer`), `:focus-visible` con contraste de acento, `prefers-reduced-motion` respetado (Hero sin animación), sin errores de consola | Pendiente auditoría formal con axe-core/Lighthouse y prueba real de lector de pantalla (no realizada en esta sesión) |
+
+Esta primera revisión es informal y no sustituye una auditoría formal con herramientas automatizadas
+(axe-core, Lighthouse) ni pruebas reales con lector de pantalla, pendientes antes de cualquier aprobación
+de producción.

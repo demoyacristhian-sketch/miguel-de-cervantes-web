@@ -1,0 +1,44 @@
+[
+  {
+    "id": "cur-shakespeare",
+    "question": "¿Cervantes y Shakespeare murieron realmente el mismo día?",
+    "status": "verificado",
+    "answer": "No en tiempo real, aunque ambos se registraron con la fecha \"23 de abril de 1616\". España ya usaba el calendario gregoriano (reforma de 1582) e Inglaterra siguió con el juliano hasta 1752, con un desfase de 10 días entre ambos. Hay una discrepancia entre nuestras fuentes sobre el orden: la cronología académica de la Biblioteca Virtual Miguel de Cervantes (SRC-001) sitúa la muerte de Cervantes como posterior a la de Shakespeare (\"una semana después\"), mientras que la conversión calendárica juliano→gregoriano reportada por prensa (SRC-002) sitúa la muerte de Cervantes unos 10 días antes que la de Shakespeare en tiempo real. No resolvemos aquí esa discrepancia: lo verificado es que la coincidencia de fecha es un artefacto de calendario, no un mismo día real.",
+    "sourceIds": ["SRC-001", "SRC-002"]
+  },
+  {
+    "id": "cur-manco-lepanto",
+    "question": "¿Por qué se habla del \"manco de Lepanto\"?",
+    "status": "verificado",
+    "answer": "En la batalla de Lepanto (1571), combatiendo desde la galera Marquesa, Cervantes recibió dos disparos en el pecho y uno en la mano izquierda, que quedó inutilizada. De ahí el apodo \"el manco de Lepanto\". El detalle anatómico exacto (amputación vs. pérdida de movilidad por daño nervioso) no está precisado en la fuente consultada y queda como PENDIENTE DE VERIFICACIÓN adicional.",
+    "sourceIds": ["SRC-001"]
+  },
+  {
+    "id": "cur-restos",
+    "question": "¿Dónde están sus restos?",
+    "status": "verificado",
+    "answer": "Cervantes murió el 22 de abril de 1616 y fue enterrado al día siguiente en la iglesia del convento de San Ildefonso (Trinitarias Descalzas), en el actual Barrio de las Letras de Madrid — así consta en el libro de difuntos de la parroquia de San Sebastián. Pero sus restos NO están individualmente identificados: entre 1698 y 1730 la iglesia primitiva fue derribada para ampliar el convento y los cuerpos allí enterrados —incluido, según la documentación, el de Cervantes— fueron trasladados y mezclados en un osario común (una \"reducción\") en la cripta actual. La investigación oficial de 2015, dirigida por el antropólogo forense Francisco Etxeberria por encargo del Ayuntamiento de Madrid, localizó ese osario (con restos de al menos 10 adultos y 5 niños) y concluyó, en sus propias palabras, que \"es posible considerar que entre los fragmentos... se encuentren algunos pertenecientes a Miguel de Cervantes\" — sin poder individualizarlos ni confirmarlo por ADN (el único pariente directo conocido, su hermana Luisa, está en una fosa común en Alcalá de Henares). En resumen: sabemos en qué cripta están, pero no cuáles huesos exactos son los suyos.",
+    "sourceIds": ["SRC-003"]
+  },
+  {
+    "id": "cur-publicacion-quijote",
+    "question": "¿Cómo llegó a publicar Don Quijote?",
+    "status": "verificado",
+    "answer": "La Primera Parte se imprimió a finales de diciembre de 1604 (aunque la portada dice 1605). El proceso siguió los trámites habituales de la época: Cervantes vendió el privilegio de impresión —por diez años, en los territorios de Castilla— al librero Francisco de Robles, \"librero del Rey\", que financió la edición y fue quien realmente se benefició económicamente del éxito inicial. El privilegio real lleva fecha del 26 de septiembre de 1604 y la tasa (autorización de precio) del 20 de diciembre del mismo año. La imprenta que lo produjo se conoce como \"de Juan de la Cuesta\", pero en realidad pertenecía a María Rodríguez de Rivalde, viuda del impresor Pedro Madrigal: Juan de la Cuesta era su yerno y actuaba como regente del taller. Robles siguió siendo el editor de Cervantes hasta la Segunda Parte, en 1615.",
+    "sourceIds": ["SRC-001", "SRC-004"]
+  },
+  {
+    "id": "cur-ingresos",
+    "question": "¿Qué sabemos de sus ingresos?",
+    "status": "verificado",
+    "answer": "Menos de lo que la leyenda del \"genio pobre\" sugiere, y con una advertencia importante: el propio Cervantes solía exagerar su mala situación económica en prólogos y dedicatorias para animar a sus mecenas a ser más generosos, así que sus quejas no deben tomarse literalmente. Lo que sí está documentado: vendió entre veinte y treinta comedias representadas en Madrid (casi todas perdidas), vendió los derechos de La Galatea (1585), tuvo empleos remunerados como procurador de abastos de la Armada y recaudador de impuestos atrasados en Granada, y en su última década recibió el apoyo económico del Conde de Lemos, que le permitió dedicarse por completo a escribir. Sobre el propio Quijote: no existía el concepto moderno de derechos de autor — Cervantes vendió el privilegio de impresión a Francisco de Robles por una suma fija, no por regalías, así que el gran éxito comercial del libro benefició sobre todo al librero, no a él. No hemos encontrado en fuentes académicas una cifra total fiable de sus ingresos de por vida: cualquier cifra exacta que circule (como pagos concretos por el Quijote) debe tratarse con cautela hasta verificarse contra un documento de archivo, no solo contra artículos de divulgación.",
+    "sourceIds": ["SRC-001", "SRC-005"]
+  },
+  {
+    "id": "cur-aspecto",
+    "question": "¿Qué conocemos realmente de su aspecto físico?",
+    "status": "verificado",
+    "answer": "No existe ningún retrato de Cervantes pintado en vida cuya autenticidad esté confirmada — todos los cuadros que circulan bajo su nombre (incluido el más famoso, atribuido a Juan de Jáuregui) son de atribución dudosa o directamente descartada por los especialistas. La única descripción fiable es la que el propio Cervantes escribió de sí mismo, en tercera persona, en el prólogo de las Novelas ejemplares (1613): \"de rostro aguileño, de cabello castaño, frente lisa y desembarazada, de alegres ojos y de nariz corva, aunque bien proporcionada; las barbas de plata, que no ha veinte años que fueron de oro, los bigotes grandes, la boca pequeña\", con solo seis dientes y en mal estado, de estatura media, tez más blanca que morena, algo cargado de espaldas, y \"no muy ligero de pies\". Es un autorretrato literario, no una descripción clínica neutral, pero es lo más cercano a un testimonio de primera mano que tenemos.",
+    "sourceIds": ["SRC-005"]
+  }
+]
