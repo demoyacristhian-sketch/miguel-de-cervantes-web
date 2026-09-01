@@ -10,9 +10,17 @@ Estado: **PROPUESTA** (Fase 0). Se implementará y validará en Fase 1 tras apro
 | `react` / `react-dom` | 19.2.8 | `npm view react version` |
 | `typescript` | **6.0.3** (no 7.0.2) | `npm view typescript version`; ver ADR-001 |
 | `tailwindcss` | 4.3.3 | `npm view tailwindcss version` |
-| `eslint` | 10.9.1 | `npm view eslint version` |
+| `eslint` | **9.39.5** (no 10.9.1) | ver nota debajo |
 | `eslint-config-next` | 16.3.4 | `npm view eslint-config-next version` |
 | Vercel CLI (entorno local) | 54.4.1 | `vercel --version` |
+
+**Nota sobre ESLint 9 vs 10:** aunque 10.9.1 es la versión más reciente en npm, `npm install` con
+`eslint-config-next@16.3.4` y `eslint@10.9.1` produce un árbol de dependencias `invalid` (`npm ls` marca
+`ELSPROBLEMS`): los plugins internos que trae `eslint-config-next` (`eslint-plugin-import`,
+`eslint-plugin-jsx-a11y`, `eslint-plugin-react`) declaran como máximo `eslint@^9.x` en su `peerDependencies`,
+pese a que `eslint-config-next` anuncia `>=9.0.0`. Verificado empíricamente instalando ambas combinaciones:
+con 9.39.5 el árbol resuelve limpio (0 problemas); con 10.9.1 aparecen conflictos de peer dependency. Se fija
+`eslint@9.39.5` (última 9.x estable) hasta que `eslint-config-next` actualice sus plugins internos.
 
 ## Por qué TypeScript 6.0.3 y no 7.0.2
 

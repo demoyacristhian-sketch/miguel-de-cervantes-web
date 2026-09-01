@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+:root {
+  --palette-ivory: #f4efe4;
+  --palette-paper: #ece4d3;
+  --palette-ink: #18140f;
+  --palette-umber: #392c22;
+  --palette-burgundy: #6e1423;
+  --palette-burgundy-light: #9c3b4a;
+  --palette-gold: #ab8a45;
+
+  --background: var(--palette-ivory);
+  --foreground: var(--palette-ink);
+  --surface: var(--palette-paper);
+  --accent: var(--palette-burgundy);
+  --accent-contrast: var(--palette-ivory);
+  --detail: var(--palette-gold);
+  --border-subtle: color-mix(in srgb, var(--palette-umber) 18%, transparent);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: var(--palette-ink);
+    --foreground: var(--palette-ivory);
+    --surface: #221b14;
+    --accent: var(--palette-burgundy-light);
+    --accent-contrast: var(--palette-ivory);
+    --detail: var(--palette-gold);
+    --border-subtle: color-mix(in srgb, var(--palette-ivory) 14%, transparent);
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-accent: var(--accent);
+  --color-accent-contrast: var(--accent-contrast);
+  --color-detail: var(--detail);
+  --color-border-subtle: var(--border-subtle);
+  --color-ink: var(--palette-ink);
+  --color-ivory: var(--palette-ivory);
+  --color-burgundy: var(--palette-burgundy);
+  --font-serif: var(--font-editorial), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-body), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+}
+
+.font-serif-display {
+  font-family: var(--font-serif);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}

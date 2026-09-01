@@ -1,6 +1,6 @@
 # SEO.md — Estrategia SEO
 
-Estado: **PROPUESTA** (Fase 0). Implementación real desde Fase 1 ("SEO base").
+Estado: **PARCIALMENTE IMPLEMENTADO** (Fase 1). Ver progreso en la tabla al final.
 
 ## Elementos a implementar desde arquitectura (Fase 1)
 
@@ -24,3 +24,17 @@ Estado: **PROPUESTA** (Fase 0). Implementación real desde Fase 1 ("SEO base").
 
 Auditoría SEO completa (metadatos, sitemap, structured data, enlaces rotos) antes del Release Candidate,
 registrada en este mismo archivo.
+
+## Progreso (Fase 1)
+
+| Elemento | Estado |
+|---|---|
+| Metadata por página (`generateMetadata`/`export const metadata`) | Implementado en todas las páginas |
+| `sitemap.xml` (`src/app/sitemap.ts`) | Implementado (rutas estáticas + obras) |
+| `robots.txt` (`src/app/robots.ts`) | Implementado |
+| Open Graph / Twitter Cards | Pendiente — sin imagen OG todavía (requiere recurso con derechos verificados) |
+| JSON-LD (`Person`, `Book`, `Article`, `BreadcrumbList`, `WebSite`) | Pendiente — se añade junto con contenido verificado en Fase 2 |
+| Breadcrumbs | Pendiente |
+| URLs semánticas en español | Implementado (`/obras/don-quijote-de-la-mancha`, etc.) |
+| Estructura H1–H6 | Un único H1 por página, verificado manualmente |
+| Enlazado interno | Implementado a nivel de navegación y teasers de Home |

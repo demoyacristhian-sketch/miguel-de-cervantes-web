@@ -79,3 +79,41 @@ sustituye a la anterior, dejando ambas visibles.
   antes de tiempo.
 - **Aprobado por:** Regla explícita del prompt maestro; no requiere decisión adicional.
 - **Estado:** VIGENTE — BLOQUEADO hasta aprobación específica de Fase 5.
+
+---
+
+## ADR-005
+
+- **Fecha:** 2026-09-01
+- **Tema:** ESLint 9.x en lugar de 10.x, verificado empíricamente
+- **Contexto:** `docs/ARCHITECTURE.md` (Fase 0) había propuesto ESLint 10.9.1 por ser la versión más reciente
+  en npm. Al instalar el scaffold real, `eslint-config-next@16.3.4` con `eslint@10.9.1` produjo un árbol
+  `invalid` (`npm ls` → `ELSPROBLEMS`): sus plugins internos (`eslint-plugin-import`,
+  `eslint-plugin-jsx-a11y`, `eslint-plugin-react`) tienen como techo `eslint@^9.x` en `peerDependencies`.
+- **Decisión:** Fijar `eslint@9.39.5` (última 9.x estable). Árbol de dependencias resuelve limpio (0
+  problemas) con esta versión.
+- **Razón:** Verificación empírica (instalación real), no solo lectura de changelog. Corrige ADR/documento
+  previo con datos reales, conforme al protocolo anti-alucinación del proyecto.
+- **Impacto:** Ninguno funcional; ESLint 9 cubre todas las reglas necesarias para el proyecto.
+- **Aprobado por:** Decisión técnica, documentada para trazabilidad.
+- **Estado:** VIGENTE. Revisar cuando `eslint-config-next` actualice sus plugins internos a soportar ESLint 10.
+
+---
+
+## ADR-006
+
+- **Fecha:** 2026-09-01
+- **Tema:** Hero cinematográfico sin vídeo real en Fase 1
+- **Contexto:** El prompt maestro exige un vídeo de fondo cinematográfico en el Hero, pero también prohíbe
+  usar cualquier recurso audiovisual sin derechos verificados y registrados en
+  `public/media/manifest.json`. Ningún vídeo ha sido investigado ni aprobado todavía.
+- **Decisión:** Implementar el Hero (`src/components/sections/Hero.tsx`) con un fallback 100% CSS
+  (degradados radiales sobre la paleta del proyecto + textura sutil) en lugar de inventar o descargar un
+  vídeo de origen dudoso. La copy exacta requerida por el prompt maestro se mantiene íntegra.
+- **Razón:** Cumplimiento del principio "ante cualquier duda de derechos: NO PUBLICAR" — preferible una
+  versión sin vídeo, honesta y de buen aspecto, a arriesgar derechos de autor.
+- **Impacto:** Ninguno negativo — el fallback ya cumple los requisitos de rendimiento/accesibilidad
+  (no bloquea LCP, no afecta CLS, respeta `prefers-reduced-motion` al no tener animación).
+- **Aprobado por:** Decisión técnica alineada con reglas explícitas del prompt maestro (secciones 13 y 15).
+- **Estado:** VIGENTE. Sustituir por `<video>` real solo cuando el usuario apruebe un recurso con licencia
+  verificada.
