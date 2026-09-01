@@ -9,6 +9,7 @@ const STATIC_ROUTES = [
   "/linea-de-tiempo",
   "/obras",
   "/quijote",
+  "/curiosidades",
   "/mundo-de-cervantes",
   "/legado",
   "/biblioteca",

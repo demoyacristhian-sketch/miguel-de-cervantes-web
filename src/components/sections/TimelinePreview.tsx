@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { getTimelineEvents } from "@/lib/content";
+import { getTimelineHighlights } from "@/lib/content";
 import { VerificationBadge } from "@/components/ui/VerificationBadge";
 
 export function TimelinePreview() {
-  const events = getTimelineEvents();
+  const events = getTimelineHighlights();
   return (
     <section className="mx-auto max-w-6xl px-6 py-20">
       <div className="flex flex-wrap items-end justify-between gap-4">
@@ -17,12 +17,9 @@ export function TimelinePreview() {
           Ver línea de tiempo completa →
         </Link>
       </div>
-      <ol className="mt-10 flex snap-x gap-4 overflow-x-auto pb-4">
+      <ol className="mt-10 grid gap-4 sm:grid-cols-3">
         {events.map((event) => (
-          <li
-            key={event.id}
-            className="min-w-[220px] snap-start rounded-xl border border-border-subtle bg-surface p-5"
-          >
+          <li key={event.id} className="rounded-xl border border-border-subtle bg-surface p-5">
             <p className="font-serif-display text-2xl font-semibold text-accent">{event.year}</p>
             <p className="mt-2 text-sm text-foreground/70">{event.title}</p>
             <div className="mt-3">
