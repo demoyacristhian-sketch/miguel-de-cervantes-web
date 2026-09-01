@@ -148,7 +148,9 @@ obra, personajes, contexto histórico y la biografía narrativa completa.
 
 ## 2026-09-01 — v0.2.1-curiosidades-completas — rama `content/fuentes-timeline-obras-vidas`
 
-**Commit:** pendiente (ver `git log`)
+**Commit:** `df024d4`
+**Preview:** `https://miguel-de-cervantes-hhvm0usyq-cdmlabs.vercel.app` (generado automáticamente por la
+integración Git de Vercel)
 
 ### Añadido
 
