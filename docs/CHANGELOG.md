@@ -210,7 +210,8 @@ permanente: cualquier futuro cambio a `main` requiere una nueva aprobación expl
 
 ## 2026-09-01 — v1.1.0-densidad — rama `design/optimizacion-densidad-home`
 
-**Commit:** pendiente (ver `git log`)
+**Commit:** `4304988`
+**Preview:** `https://miguel-de-cervantes-8giupd3ed-cdmlabs.vercel.app`
 
 A petición del usuario ("hay demasiada información... optimizar más el diseño y funcionalidad"):
 
