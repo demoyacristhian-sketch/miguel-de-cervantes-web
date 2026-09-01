@@ -1,5 +1,6 @@
 import { getLifeProfiles } from "@/lib/content";
 import { VerificationBadge } from "@/components/ui/VerificationBadge";
+import { ReadMore } from "@/components/ui/ReadMore";
 
 export function LivesOfCervantes() {
   const lives = getLifeProfiles();
@@ -19,7 +20,7 @@ export function LivesOfCervantes() {
                 <p className="font-serif-display text-lg font-semibold">{life.role}</p>
                 <VerificationBadge status={life.status} />
               </div>
-              <p className="mt-2 text-sm text-foreground/70">{life.description}</p>
+              <ReadMore text={life.description} />
             </li>
           ))}
         </ul>

@@ -205,3 +205,41 @@ actual" (ver ADR-008 en `docs/DECISIONS.md`)
 
 Producción refleja fielmente el estado verificado del proyecto a esta fecha. Esta aprobación es puntual, no
 permanente: cualquier futuro cambio a `main` requiere una nueva aprobación explícita del usuario.
+
+---
+
+## 2026-09-01 — v1.1.0-densidad — rama `design/optimizacion-densidad-home`
+
+**Commit:** `4304988`
+**Preview:** `https://miguel-de-cervantes-8giupd3ed-cdmlabs.vercel.app`
+
+A petición del usuario ("hay demasiada información... optimizar más el diseño y funcionalidad"):
+
+### Añadido
+
+- `src/components/ui/ReadMore.tsx`: patrón Resumen/Profundizar sin JavaScript, usando `<details>` nativo +
+  variante `group-open` de Tailwind. Trunca a ~140 caracteres con "Leer más" / "Leer menos".
+- `src/app/curiosidades/page.tsx`: página dedicada con las 6 curiosidades completas (destino del "Ver
+  todas" de Home).
+- `src/lib/content.ts`: `getTimelineHighlights()` — cura 3 hitos icónicos (nacimiento, Quijote, muerte) para
+  la vista resumida de Home en vez de los 12 años completos.
+
+### Modificado
+
+- `VerificationBadge`: rediseñado de pill con texto a un punto de color mínimo con tooltip accesible
+  (`aria-label` + tooltip CSS en hover/focus, sin JS).
+- `LivesOfCervantes`, `CuriositiesTeaser`: usan `ReadMore` para las descripciones/respuestas largas.
+- `CuriositiesTeaser`, `FeaturedWorks`, `TimelinePreview`: reducidos a 3 elementos en Home (antes 6, 6 y 12
+  respectivamente), cada uno con enlace "ver todo" a su página completa.
+- `SiteFooter`, `sitemap.ts`: añadida la ruta `/curiosidades`.
+
+### Pruebas
+
+- `tsc --noEmit`, `npm run lint` y `npm run build`: limpios (20 rutas). Verificación visual: badges
+  minimalistas, expand/collapse de "Leer más" probado en navegador, `/curiosidades` con las 6 completas,
+  sin errores de consola.
+
+### Estado
+
+Cambio de diseño/UX puro, sin tocar contenido ni fuentes. Sin Preview de producción todavía — pendiente de
+revisión del usuario antes de considerar un nuevo merge a `main` (requiere nueva aprobación explícita).

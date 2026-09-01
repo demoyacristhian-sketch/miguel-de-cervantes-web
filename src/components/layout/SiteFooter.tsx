@@ -23,6 +23,7 @@ export function SiteFooter() {
           <p className="text-sm font-semibold">Recursos</p>
           <ul className="mt-3 space-y-2 text-sm text-foreground/70">
             <li><Link href="/mundo-de-cervantes" className="hover:text-accent">El mundo de Cervantes</Link></li>
+            <li><Link href="/curiosidades" className="hover:text-accent">Curiosidades</Link></li>
             <li><Link href="/legado" className="hover:text-accent">Legado</Link></li>
             <li><Link href="/biblioteca" className="hover:text-accent">Biblioteca digital</Link></li>
           </ul>
