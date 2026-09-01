@@ -65,8 +65,8 @@ Incluido en el plan aprobado (roadmap completo, sujeto a aprobación fase por fa
 | Fase | Nombre | Estado |
 |---|---|---|
 | 0 | Descubrimiento y preparación | **COMPLETADA (2026-09-01)** |
-| 1 | MVP (arquitectura, Home, Bio, Timeline, Obras, Quijote) | **EN CURSO (2026-09-01)** — código implementado, sin Preview todavía |
-| 2 | Contenido (personajes, contexto, curiosidades, vidas de Cervantes) | PENDIENTE |
+| 1 | MVP (arquitectura, Home, Bio, Timeline, Obras, Quijote) | **COMPLETADA (2026-09-01)** — mergeada a `develop`, revisada por el usuario sobre Preview de Vercel |
+| 2 | Contenido (personajes, contexto, curiosidades, vidas de Cervantes) | **EN CURSO (2026-09-01)** |
 | 3 | Experiencia (mapas, timeline avanzado, Explora el Quijote) | PENDIENTE |
 | 4 | Biblioteca Cervantina (documentos, buscador estructurado) | PENDIENTE |
 | 5 | IA — Pregunta a Cervantes (RAG) | BLOQUEADO — requiere aprobación específica |
@@ -105,9 +105,20 @@ Incluido en el plan aprobado (roadmap completo, sujeto a aprobación fase por fa
   agentes); resuelto creando `AGENTS.md` para absorber ese bloque.
 - **Pruebas:** typecheck, lint y build limpios; verificación visual manual en navegador (Home, ficha de
   obra, responsive, modo oscuro).
-- **Resultado:** código implementado en rama `feature/mvp-scaffold`, sin mergear.
-- **Aprobación:** PENDIENTE — falta confirmación explícita para crear la integración GitHub↔Vercel y generar
-  el primer Preview; tras eso, revisión del usuario sobre el Preview (no aprobación de producción).
+- **Resultado:** código mergeado a `develop` (commit de merge tras revisión del usuario). Vercel conectado
+  (proyecto `miguel-de-cervantes-web`, team CDM Labs). Ver incidente ADR-007 (primer deploy promovido a
+  producción por comportamiento propio de Vercel, impacto bajo, aceptado por el usuario).
+- **Aprobación:** APROBADA para cerrar Fase 1 y avanzar a Fase 2 (revisión directa del usuario sobre el
+  Preview, 2026-09-01). No constituye aprobación de producción — `main` sigue sin tocarse.
+
+### Fase 2 — Contenido (en curso)
+
+- **Fecha de inicio:** 2026-09-01
+- **Fecha de fin:** — (en curso)
+- **Objetivos:** investigar y verificar contra fuentes primarias/institucionales los datos placeholder
+  cargados en Fase 1 (años del timeline, obras, vidas de Cervantes, curiosidades); poblar
+  `/docs/SOURCES.md`; añadir personajes y contexto histórico.
+- **Aprobación de inicio:** usuario, 2026-09-01 ("Mergea a develop y empieza Fase 2").
 
 ## Arquitectura
 

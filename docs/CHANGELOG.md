@@ -74,5 +74,27 @@ Fase 0 completada. Pendiente de aprobación explícita del usuario para iniciar 
 
 ### Estado
 
-Implementado en `feature/mvp-scaffold`, sin mergear. **Sin Preview de Vercel todavía** — pendiente
-confirmación explícita del usuario para crear la integración GitHub↔Vercel.
+Implementado en `feature/mvp-scaffold`. Vercel conectado, Preview generado y revisado por el usuario. Ver
+entrada siguiente para el cierre de Fase 1.
+
+---
+
+## 2026-09-01 — v0.1.0 — rama `develop`
+
+**Commit:** `d4ddf1c` (merge de `feature/mvp-scaffold`)
+
+### Añadido
+
+- Merge de `feature/mvp-scaffold` a `develop`: todo lo listado en la entrada `v0.1.0-mvp-scaffold` queda
+  integrado en `develop`.
+
+### Documentación
+
+- `docs/MASTER_PROJECT.md`: Fase 1 marcada como COMPLETADA; Fase 2 (Contenido) marcada como EN CURSO.
+- `CLAUDE.md`: estado de desarrollo, última implementación y próximo paso actualizados para reflejar el
+  cierre de Fase 1 y el inicio de Fase 2 (investigación de fuentes).
+
+### Estado
+
+Fase 1 (MVP) cerrada tras revisión del usuario sobre el Preview de Vercel. `main`/producción sin tocar. Fase
+2 (Contenido — investigación de fuentes reales) iniciada por instrucción explícita del usuario.

@@ -50,17 +50,18 @@ empieza en Fase 2.
 |---|---|
 | Fundación / documentación | **APROBADO** (Fase 0 ejecutada 2026-09-01) |
 | Arquitectura técnica | **EN DESARROLLO** (scaffold real creado y validado: lint + typecheck + build limpios) |
-| Repositorio GitHub | PRODUCCIÓN (rama `main`), rama `develop` y `feature/mvp-scaffold` activas |
-| Contenido histórico | PENDIENTE (estructura de datos lista, cero datos verificados) |
-| Diseño visual | **EN DESARROLLO** (tokens Tailwind v4 implementados, tipografía Playfair Display + Inter) |
-| MVP (Home, Bio, Timeline, Obras, Quijote) | **EN REVISIÓN** — implementado en `feature/mvp-scaffold`, sin Preview de Vercel todavía |
+| Repositorio GitHub | PRODUCCIÓN (rama `main` sin tocar), `develop` al día con el MVP, `feature/mvp-scaffold` mergeada |
+| Vercel | Conectado (proyecto `miguel-de-cervantes-web`, team CDM Labs); ver ADR-007 |
+| Contenido histórico | **EN ANÁLISIS** (Fase 2 iniciada) — estructura lista, cero datos verificados todavía |
+| Diseño visual | APROBADO para MVP (tokens Tailwind v4, Playfair Display + Inter, revisado por el usuario) |
+| MVP (Home, Bio, Timeline, Obras, Quijote) | **APROBADO** — Fase 1 cerrada, mergeada a `develop` |
 | Pregunta a Cervantes (IA/RAG) | BLOQUEADO — requiere aprobación específica de arquitectura y costes (Fase 5) |
 
 ## 5. Última implementación
 
 - **Fecha:** 2026-09-01
-- **Rama:** `feature/mvp-scaffold` (desde `develop`), sin mergear
-- **Commit:** `4c7554d`
+- **Rama:** `develop` (merge de `feature/mvp-scaffold`, commit `d4ddf1c`)
+- **Commit:** `4c7554d` (implementación) — ver `d4ddf1c` para el merge a `develop`
 - **Qué se hizo:** Scaffold real de Next.js 16.3.4 (App Router, `src/`) con TypeScript 6.0.3, Tailwind CSS
   4.3.3, ESLint 9.39.5. Sistema de diseño implementado (paleta, tipografía Playfair Display/Inter, modo
   oscuro). Layout raíz con skip link, header/nav responsive, footer institucional. Home completo (Hero sin
@@ -76,12 +77,12 @@ empieza en Fase 2.
 - **Pruebas:** `tsc --noEmit` limpio, `npm run lint` limpio (0 errores), `npm run build` exitoso (19 rutas,
   todas estáticas o SSG), verificación visual en navegador (Home completo, ficha de obra dinámica, modo
   claro/oscuro, sin errores de consola).
-- **Estado:** Fase 1 implementada a nivel de código, **sin Preview de Vercel todavía** (requiere crear la
-  integración GitHub↔Vercel — acción que pide confirmación explícita por tratarse de una integración
-  persistente con un servicio externo, ver `docs/SECURITY.md`).
-- **Pendientes:** (1) aprobación del usuario para conectar el repositorio a Vercel y generar el primer
-  Preview; (2) merge de `feature/mvp-scaffold` a `develop` tras esa validación; (3) revisión del usuario
-  sobre el Preview (no aprobación de producción, ver regla de Fase 1 en `docs/MASTER_PROJECT.md`).
+- **Estado:** Fase 1 **CERRADA** — revisada por el usuario sobre el Preview de Vercel, mergeada a `develop`.
+  `main`/producción sin tocar (salvo el incidente ADR-007, de bajo impacto y aceptado). Fase 2 (Contenido)
+  iniciada por instrucción explícita del usuario ("Mergea a develop y empieza Fase 2").
+- **Pendientes:** investigación de fuentes reales para el timeline (12 años ancla), las 6 obras, los 7
+  perfiles de "vidas de Cervantes" y las curiosidades — ver `docs/SOURCES.md` (vacío) y
+  `docs/CONTENT_STATUS.md`.
 
 ## 6. Decisiones vigentes
 
@@ -110,12 +111,13 @@ Estas reglas provienen del prompt maestro del proyecto y son de cumplimiento obl
 
 ## 8. Próximo paso
 
-Proyecto Vercel `miguel-de-cervantes-web` creado (team CDM Labs) y conectado al repositorio. Preview real de
-`feature/mvp-scaffold` disponible en `https://miguel-de-cervantes-50a0pg9z7-cdmlabs.vercel.app` (protegido
-por Vercel Authentication). **Único próximo paso lógico:** que el usuario revise el Preview y decida si
-quiere (a) seguir en Fase 1 ampliando algo del MVP, o (b) mergear `feature/mvp-scaffold` a `develop` y dar
-por cerrada esta iteración de Fase 1, o (c) empezar la investigación de fuentes de Fase 2. Ninguna de estas
-opciones implica tocar `main`/producción sin la aprobación explícita correspondiente.
+Fase 1 cerrada y mergeada a `develop`. **Único próximo paso lógico:** ejecutar la investigación documental
+de Fase 2 — para cada año del timeline y cada obra en `src/content/*.json`, buscar y registrar en
+`/docs/SOURCES.md` una fuente `FUENTE PRIMARIA`/`FUENTE INSTITUCIONAL`/`FUENTE ACADÉMICA` real (BNE,
+Biblioteca Virtual Miguel de Cervantes, Instituto Cervantes, RAE, Museo Casa de Cervantes, universidades),
+y solo entonces actualizar el `status` de cada registro de `pendiente_de_verificacion` a `verificado` con su
+`sourceIds` correspondiente. Ninguna fecha o hecho biográfico se publica como definitivo sin esa
+verificación. No toca `main`/producción.
 
 **Nota de incidente (ver ADR-007 en `docs/DECISIONS.md`):** el primer despliegue de Vercel quedó publicado
 como producción por un comportamiento automático de la plataforma (primer deployment de un proyecto nuevo),
