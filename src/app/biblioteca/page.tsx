@@ -107,7 +107,7 @@ export default function LibraryPage() {
                   href={source.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-1 inline-block text-accent hover:underline"
+                  className="mt-1 block break-all text-accent hover:underline"
                 >
                   {source.url}
                 </a>
