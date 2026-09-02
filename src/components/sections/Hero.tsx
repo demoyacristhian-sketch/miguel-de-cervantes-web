@@ -39,7 +39,7 @@ export function Hero() {
         </p>
         <div className="mt-10 flex flex-wrap gap-4">
           <Link
-            href="/cervantes"
+            href="/vida-en-movimiento"
             className="rounded-full bg-accent px-6 py-3 text-sm font-medium text-accent-contrast transition-transform hover:scale-[1.02]"
           >
             Explorar su vida

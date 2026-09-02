@@ -13,8 +13,7 @@ export function SiteFooter() {
         <nav aria-label="Explorar">
           <p className="text-sm font-semibold">Explorar</p>
           <ul className="mt-3 space-y-2 text-sm text-foreground/70">
-            <li><Link href="/cervantes" className="hover:text-accent">Biografía</Link></li>
-            <li><Link href="/linea-de-tiempo" className="hover:text-accent">Línea de tiempo</Link></li>
+            <li><Link href="/vida-en-movimiento" className="hover:text-accent">Una vida en movimiento</Link></li>
             <li><Link href="/obras" className="hover:text-accent">Obras</Link></li>
             <li><Link href="/quijote" className="hover:text-accent">Don Quijote</Link></li>
           </ul>
@@ -22,7 +21,6 @@ export function SiteFooter() {
         <nav aria-label="Recursos">
           <p className="text-sm font-semibold">Recursos</p>
           <ul className="mt-3 space-y-2 text-sm text-foreground/70">
-            <li><Link href="/mundo-de-cervantes" className="hover:text-accent">El mundo de Cervantes</Link></li>
             <li><Link href="/curiosidades" className="hover:text-accent">Curiosidades</Link></li>
             <li><Link href="/legado" className="hover:text-accent">Legado</Link></li>
             <li><Link href="/biblioteca" className="hover:text-accent">Biblioteca digital</Link></li>

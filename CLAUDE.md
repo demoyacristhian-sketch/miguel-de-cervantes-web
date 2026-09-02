@@ -113,13 +113,19 @@ Estas reglas provienen del prompt maestro del proyecto y son de cumplimiento obl
 
 Fase 1 cerrada. Fase 2 en curso: timeline (12/12), obras (6/6 con ficha ampliada) y "vidas de Cervantes"
 (7/7) verificadas; las 6 curiosidades verificadas. Home optimizada (Resumen/Profundizar, badges
-minimalistas, secciones acortadas). **Producción actualizada tres veces con aprobación explícita del
-usuario** (commits `d886473`, `10eacb5` y `572af9c` en `main`) — ver ADR-008 a ADR-010.
+minimalistas, secciones acortadas). **Reestructuración de navegación (2026-09-02, ADR-011):** se eliminó
+"Inicio" y "El mundo de Cervantes" (sin sustituto), y "Miguel de Cervantes" + "Línea de tiempo" se
+fusionaron en `/vida-en-movimiento`, una experiencia interactiva (scroll por 6 etapas narrativas + carril
+horizontal de eventos) que adelanta parte del "timeline avanzado" de Fase 3. Nav principal: Una vida en
+movimiento, Obras, Don Quijote, Legado, Biblioteca. **Producción actualizada tres veces con aprobación
+explícita del usuario** (commits `d886473`, `10eacb5` y `572af9c` en `main`) — ver ADR-008 a ADR-010. El
+cambio de navegación de ADR-011 está implementado en la rama `design/vida-en-movimiento`, **todavía sin
+mergear ni desplegar**.
 
-**Próximo paso lógico:** personajes principales del Quijote (Don Quijote, Sancho Panza, Dulcinea, Rocinante,
-Sansón Carrasco — sección 30 del prompt maestro), contexto histórico general, o biografía narrativa completa
-(15 capítulos en `/cervantes`, hoy sin prosa). Cualquier nuevo merge a `main` requiere de nuevo aprobación
-explícita.
+**Próximo paso lógico:** decidir si se aprueba mergear/desplegar la reestructuración de navegación; después,
+personajes principales del Quijote (Don Quijote, Sancho Panza, Dulcinea, Rocinante, Sansón Carrasco —
+sección 30 del prompt maestro) o contexto histórico general. Cualquier nuevo merge a `main` requiere de
+nuevo aprobación explícita.
 
 **Próximo paso lógico:** continuar Fase 2 con lo que falta — fichas ampliadas de obra (argumento, personajes,
 temas, estructura, recepción, influencia), personajes principales del Quijote (Don Quijote, Sancho Panza,

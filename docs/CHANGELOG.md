@@ -301,3 +301,52 @@ pendiente: contexto histórico general y biografía narrativa completa.
 ### Estado
 
 Producción refleja las fichas ampliadas de las 6 obras. Verificado visualmente tras el despliegue.
+
+---
+
+## 2026-09-02 — v1.4.0-vida-en-movimiento — rama `design/vida-en-movimiento`
+
+**Commit:** pendiente (ver `git log`)
+
+A petición explícita y muy detallada del usuario (ver ADR-011 en `docs/DECISIONS.md`):
+
+### Eliminado
+
+- Nav "Inicio" (redundante con el wordmark) y "El mundo de Cervantes" (sin sustituto ni redistribución de
+  contenido) — quitados de `SiteHeader`, `SiteFooter`, Home y `sitemap.ts`.
+- Rutas `src/app/cervantes/`, `src/app/linea-de-tiempo/`, `src/app/mundo-de-cervantes/`.
+
+### Añadido
+
+- `src/lib/lifeEras.ts`: agrupa los 12 eventos verificados de `timeline.json` en 6 etapas narrativas
+  editoriales (Infancia y formación, Italia y las armas, Cautiverio en Argel, El regreso y los años de
+  oficio, La consagración literaria, Los últimos días). Agrupación de diseño, sin hechos nuevos.
+- `src/app/vida-en-movimiento/page.tsx` + `src/components/life-journey/{LifeJourney,EraScene,EventRail,
+  EventCard}.tsx`: nueva experiencia interactiva que fusiona biografía y timeline — scroll vertical por
+  etapas con tono cromático propio, carril horizontal de eventos con scroll-snap nativo, expansión de nivel
+  3 vía `<details>`, barra de navegación por etapas con resaltado activo (scrollspy por posición de scroll).
+- `next.config.ts`: redirects 301 de `/cervantes` y `/linea-de-tiempo` a `/vida-en-movimiento`.
+
+### Corregido
+
+- Bug de contraste en modo oscuro: los textos de las escenas de etapa usaban tokens de tema
+  (`text-foreground`) sobre fondos de degradado fijos, volviéndose invisibles quand el sistema está en modo
+  oscuro. Corregido usando colores fijos (`text-ink`/`text-ivory`/`text-burgundy`), igual que ya hace
+  `Hero.tsx`.
+- Se retiró `backdrop-blur-sm` de las tarjetas de evento: producía un artefacto de renderizado (bloques
+  grises opacos ocultando el texto) en la verificación visual — se compensó subiendo la opacidad del fondo.
+
+### Pruebas
+
+- `tsc --noEmit`, `npm run lint`, `npm run build`: limpios (18 rutas, sin `/cervantes` ni `/linea-de-tiempo`
+  ni `/mundo-de-cervantes`). `grep` confirma cero referencias obsoletas a las rutas eliminadas.
+- Verificación visual completa en navegador: recorrido de las 6 etapas en desktop y en viewport móvil
+  (scroll vertical, carril horizontal con botones prev/next, expansión de tarjetas), redirects de
+  `/cervantes` y `/linea-de-tiempo` confirmados, `/mundo-de-cervantes` da 404 real, Home sin huecos donde
+  estaban los bloques eliminados, nav/footer sin enlaces obsoletos, modo oscuro corregido, sin errores de
+  consola de la aplicación.
+
+### Estado
+
+Cambio de IA/UX puro sobre contenido ya verificado — ningún dato histórico nuevo. Adelanta parte de "timeline
+avanzado" de Fase 3 a petición del usuario.
