@@ -47,6 +47,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -94,15 +95,18 @@ body {
   animation: hero-in 700ms ease-out forwards;
 }
 
-@keyframes hero-zoom {
-  from {
+@keyframes hero-zoom-loop {
+  0% {
     transform: scale(1);
   }
-  to {
-    transform: scale(1.06);
+  50% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 
-.animate-hero-zoom {
-  animation: hero-zoom 20s ease-out forwards;
+.animate-hero-zoom-loop {
+  animation: hero-zoom-loop 18s ease-in-out infinite;
 }

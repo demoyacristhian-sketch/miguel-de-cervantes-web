@@ -2,46 +2,41 @@ import Image from "next/image";
 import Link from "next/link";
 
 /**
- * Hero editorial de dos zonas — especificación completa en docs/DESIGN_SYSTEM.md.
- * El texto vive siempre sobre fondo sólido (--color-ink), nunca superpuesto al rostro del
- * retrato, para garantizar contraste y legibilidad del nombre. Fondo: retrato tradicionalmente
- * atribuido a Juan de Jáuregui (h. 1600, Real Academia de la Historia), dominio público — ver
- * public/media/manifest.json y docs/SOURCES.md (SRC-007). No hay documentación que confirme que
- * sea obra de Jáuregui ni que represente realmente a Cervantes (ver la curiosidad dedicada en
- * /curiosidades); se presenta explícitamente como el retrato tradicionalmente asociado a él, no
- * como un hecho, con el crédito visible más abajo.
+ * Hero cinematográfico de superficie única — especificación completa en docs/DESIGN_SYSTEM.md.
+ * El retrato ocupa todo el ancho/alto de la sección; un degradado direccional oscurece el lado del
+ * texto y se aclara hacia el rostro, de forma que el fondo sea siempre la misma fotografía (nunca
+ * un panel de color sólido separado). Fondo: retrato tradicionalmente atribuido a Juan de Jáuregui
+ * (h. 1600, Real Academia de la Historia), dominio público — ver public/media/manifest.json y
+ * docs/SOURCES.md (SRC-007). No hay documentación que confirme que sea obra de Jáuregui ni que
+ * represente realmente a Cervantes (ver la curiosidad dedicada en /curiosidades); se presenta
+ * explícitamente como el retrato tradicionalmente asociado a él, no como un hecho, con el crédito
+ * visible más abajo.
  */
 export function Hero() {
   return (
     <section
       aria-label="Presentación de Miguel de Cervantes"
-      className="relative flex min-h-[92vh] flex-col overflow-hidden bg-ink text-ivory lg:flex-row"
+      className="relative flex min-h-screen items-end overflow-hidden bg-ink text-ivory snap-start"
     >
-      <div className="relative h-[38vh] w-full shrink-0 overflow-hidden lg:h-auto lg:w-[42%]">
-        <Image
-          src="/media/hero/cervantes-jauregui-rah.jpg"
-          alt="Retrato tradicionalmente atribuido a Juan de Jáuregui, comúnmente asociado a Miguel de Cervantes (h. 1600)"
-          fill
-          priority
-          sizes="(min-width: 1024px) 42vw, 100vw"
-          className="animate-hero-zoom object-cover"
-          style={{ objectPosition: "center 22%" }}
-        />
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 hidden lg:block"
-          style={{
-            backgroundImage:
-              "linear-gradient(to right, rgba(24,20,15,0.95) 0%, rgba(24,20,15,0) 30%)",
-          }}
-        />
-        <div
-          aria-hidden="true"
-          className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-ink to-transparent lg:hidden"
-        />
-      </div>
+      <Image
+        src="/media/hero/cervantes-jauregui-rah.jpg"
+        alt="Retrato tradicionalmente atribuido a Juan de Jáuregui, comúnmente asociado a Miguel de Cervantes (h. 1600)"
+        fill
+        priority
+        sizes="100vw"
+        className="animate-hero-zoom-loop object-cover"
+        style={{ objectPosition: "right 25%" }}
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0"
+        style={{
+          backgroundImage:
+            "linear-gradient(105deg, rgba(24,20,15,0.97) 0%, rgba(24,20,15,0.9) 32%, rgba(24,20,15,0.55) 55%, rgba(24,20,15,0.15) 78%, rgba(24,20,15,0) 100%), linear-gradient(0deg, rgba(24,20,15,0.85) 0%, rgba(24,20,15,0) 35%)",
+        }}
+      />
 
-      <div className="relative z-10 flex flex-1 items-center bg-ink px-6 py-14 sm:px-10 lg:px-16 lg:py-0">
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-6 pb-20 pt-40 sm:pb-24">
         <div className="max-w-xl">
           <p
             className="animate-hero-in flex items-center gap-3 font-serif-display text-sm uppercase tracking-[0.3em] text-detail opacity-0"

@@ -13,7 +13,7 @@ export function SiteFooter() {
         <nav aria-label="Explorar">
           <p className="text-sm font-semibold">Explorar</p>
           <ul className="mt-3 space-y-2 text-sm text-foreground/70">
-            <li><Link href="/vida-en-movimiento" className="hover:text-accent">Una vida en movimiento</Link></li>
+            <li><Link href="/vida-en-movimiento" className="hover:text-accent">Una vida, una historia</Link></li>
             <li><Link href="/obras" className="hover:text-accent">Obras</Link></li>
             <li><Link href="/quijote" className="hover:text-accent">Don Quijote</Link></li>
           </ul>

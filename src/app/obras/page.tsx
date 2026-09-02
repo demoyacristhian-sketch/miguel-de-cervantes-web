@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getWorks } from "@/lib/content";
 import { WorksFilter } from "@/components/obras/WorksFilter";
+import { BackLink } from "@/components/ui/BackLink";
 
 export const metadata: Metadata = {
   title: "Obras",
@@ -11,6 +12,9 @@ export default function WorksPage() {
   const works = getWorks();
   return (
     <div className="mx-auto max-w-6xl px-6 py-16">
+      <div className="mb-6">
+        <BackLink fallbackHref="/" />
+      </div>
       <p className="font-serif-display text-sm uppercase tracking-[0.25em] text-accent">
         Biblioteca visual
       </p>

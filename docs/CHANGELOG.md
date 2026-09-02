@@ -475,3 +475,48 @@ producción" (2026-09-02). No es una autorización permanente para futuros despl
 
 Implementado y verificado en local, **sin desplegar todavía** — pendiente de merge a `develop` y de
 aprobación explícita del usuario para producción. Ver ADR-014.
+
+---
+
+## 2026-09-02 — v1.8.0-home-cinematografica — rama `design/home-cinematografica`
+
+### Añadido
+
+- Home rediseñada como historia a pantalla completa (estilo Google Arts & Culture): Hero + 4 paneles
+  nuevos ("Una vida, una historia", "Obras", "Don Quijote", "Sigue explorando") con scroll-snap
+  nativo de CSS, imagen de fondo real por panel (todas ya verificadas, ninguna nueva) y rail de
+  progreso vertical en desktop (`StoryProgressNav`).
+- `src/components/home/StorySlide.tsx`, `src/components/home/StoryProgressNav.tsx`.
+- `src/components/ui/BackLink.tsx` — botón "← Volver" añadido a Obras, Don Quijote, Legado,
+  Biblioteca, Curiosidades y Una vida, una historia.
+- Animación `hero-zoom-loop` (zoom lento en loop infinito, antes se ejecutaba una sola vez).
+
+### Modificado
+
+- Hero: de layout de dos paneles a una imagen a pantalla completa con degradado direccional (una
+  sola superficie fotográfica, sin panel de color sólido separado).
+- "Una vida en movimiento" renombrada a **"Una vida, una historia"** en nav, footer, la página y
+  `sources.json`. La ruta `/vida-en-movimiento` no cambia.
+
+### Eliminado
+
+- `Introduction.tsx`, `LivesOfCervantes.tsx`, `TimelinePreview.tsx`, `FeaturedWorks.tsx`,
+  `QuijoteTeaser.tsx`, `CuriositiesTeaser.tsx`, `PendingSection.tsx`, `ComingSoonPage.tsx` — su
+  contenido se reorganizó dentro de los nuevos paneles de Home; sin otro uso en el sitio.
+
+### Pruebas
+
+- `tsc --noEmit`, `npm run lint`, `npm run build`: limpios (18 rutas). Verificación visual y por
+  DOM/`getComputedStyle` (desktop, móvil, claro/oscuro): Hero de superficie única confirmado, zoom
+  en loop confirmado (`animationPlayState: running`), los 5 paneles renderizan con su imagen,
+  degradado y contenido correctos, rail de progreso activo por scroll, botón "Volver" presente y
+  funcional (usa historial real o `fallbackHref`), rebautizo confirmado en el H2 del panel
+  ("Una vida, una historia") vía `getComputedStyle`/DOM. La herramienta de capturas mostró
+  intermitentemente fotogramas en blanco/negro en posiciones de scroll específicas combinadas con
+  viewport emulado — descartado como artefacto de la herramienta (no del código) tras verificar en
+  una pestaña nueva y por inspección directa del DOM en cada caso.
+
+### Estado
+
+Implementado y verificado en local, **sin desplegar todavía** — pendiente de merge a `develop` y de
+aprobación explícita del usuario para producción. Ver ADR-015.

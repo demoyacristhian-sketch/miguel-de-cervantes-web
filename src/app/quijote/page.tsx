@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { getQuijoteEntries } from "@/lib/content";
 import { QuijoteTabs } from "@/components/quijote/QuijoteTabs";
+import { BackLink } from "@/components/ui/BackLink";
 
 export const metadata: Metadata = {
   title: "El universo del Quijote",
@@ -13,6 +14,9 @@ export default function QuijotePage() {
 
   return (
     <div className="mx-auto max-w-6xl px-6 py-16">
+      <div className="mb-6">
+        <BackLink fallbackHref="/" />
+      </div>
       <div className="flex flex-col gap-8 sm:flex-row sm:items-center">
         <div className="relative mx-auto aspect-[3/4] w-32 shrink-0 overflow-hidden rounded-lg border border-border-subtle shadow-sm sm:mx-0">
           <Image

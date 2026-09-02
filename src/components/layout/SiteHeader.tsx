@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const NAV_ITEMS = [
-  { href: "/vida-en-movimiento", label: "Una vida en movimiento" },
+  { href: "/vida-en-movimiento", label: "Una vida, una historia" },
   { href: "/obras", label: "Obras" },
   { href: "/quijote", label: "Don Quijote" },
   { href: "/legado", label: "Legado" },

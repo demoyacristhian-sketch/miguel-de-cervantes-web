@@ -13,7 +13,7 @@ Que una interfaz esté terminada NO implica que su contenido esté aprobado. Est
 
 | Módulo | DEV_STATUS | CONTENT_STATUS | SOURCE_STATUS | REVIEW_STATUS | PRODUCTION_STATUS |
 |---|---|---|---|---|---|
-| Home (estructura + secciones + Hero editorial de dos zonas) | TERMINADO | PARCIAL (ver abajo) | PARCIAL | PENDIENTE | PENDIENTE |
+| Home (historia a pantalla completa: Hero + 4 paneles, scroll-snap) | TERMINADO | PARCIAL (ver abajo) | PARCIAL | PENDIENTE | PENDIENTE |
 | Una vida en movimiento (fusión de biografía + timeline, experiencia interactiva) | TERMINADO | **VERIFICADO** (12/12 eventos, numeración global continua 01-12, agrupados en 6 etapas narrativas con imagen real por etapa) | **VERIFICADAS** (SRC-001 texto; SRC-007 imágenes) | PENDIENTE | PENDIENTE |
 | Obras (6 fichas ampliadas, rediseño en tarjetas con portada + filtro) | TERMINADO | **VERIFICADO** — datos bibliográficos 6/6, 6/6 con portada de primera edición; ficha ampliada con al menos contexto+argumento+temas visibles en 4/6 (Quijote con las 10 secciones completas) | **VERIFICADAS** (SRC-001, SRC-004, SRC-005, SRC-006, SRC-007) | PENDIENTE | PENDIENTE |
 | Don Quijote (personajes, lugares, aventuras, temas, frases — pestañas interactivas) | TERMINADO | **VERIFICADO** (5 personajes, 5 lugares, 3 aventuras, 3 temas, 2 frases — texto primario CVC) | **VERIFICADAS** (SRC-008, SRC-005) | PENDIENTE | PENDIENTE |

@@ -371,3 +371,53 @@ sustituye a la anterior, dejando ambas visibles.
 - **Aprobado por:** Usuario, plan aprobado explícitamente, 2026-09-02.
 - **Estado:** VIGENTE. Igual que siempre, el despliegue a producción de este trabajo requiere una
   aprobación explícita **aparte** de la aprobación del plan — no está incluida en esta ADR.
+
+---
+
+## ADR-015
+
+- **Fecha:** 2026-09-02
+- **Tema:** Home como historia cinematográfica (estilo Google Arts & Culture), Hero de superficie
+  única, rebautizo "Una vida en movimiento" → "Una vida, una historia", y botón "volver atrás"
+- **Contexto:** El usuario revisó el Hero de dos paneles (ADR-014) y pidió, en el mismo mensaje: (1)
+  que el fondo del Hero sea una sola superficie del mismo tono que la imagen, no un panel de color
+  sólido separado, y que la imagen tenga movimiento real (el zoom lento anterior se ejecutaba una
+  vez y se quedaba quieto); (2) renombrar "Una vida en movimiento" a "Una vida, una historia"; (3)
+  que toda la Home adopte el estilo de la misma referencia de Google Arts & Culture que ya había
+  compartido antes (paneles a pantalla completa, imagen de fondo, scroll cinematográfico), usando
+  la información e imágenes que la web ya tiene; (4) un botón "volver atrás" donde haga falta.
+- **Decisión:**
+  - El Hero pasa de un layout de dos paneles a una **imagen a pantalla completa** con un degradado
+    direccional (oscuro hacia el texto, transparente hacia el rostro) — una sola superficie
+    fotográfica, sin costura dura. El zoom lento pasa de una animación de un solo disparo
+    (`forwards`, se paraba a los 20s) a un **loop infinito** (`hero-zoom-loop`, ~18s,
+    `ease-in-out infinite`), reutilizado en el resto de paneles de Home para consistencia visual.
+  - La Home sustituye su antigua sucesión de secciones de tarjetas (`Introduction`,
+    `LivesOfCervantes`, `TimelinePreview`, `FeaturedWorks`, `QuijoteTeaser`, `CuriositiesTeaser`,
+    2× `PendingSection` — todos eliminados, sin otro uso en el sitio) por una **secuencia de 5
+    paneles a pantalla completa** (Hero + 4 nuevos) enlazada con **scroll-snap nativo de CSS**
+    (`scroll-snap-type: y proximity`, sin librerías de scroll-jacking): "Una vida, una historia"
+    (con los 7 roles de "un solo hombre, siete vidas" como chips), "Obras" (con una tira de las 6
+    portadas), "Don Quijote", y un panel de cierre "Sigue explorando" que agrupa Curiosidades,
+    Legado y Biblioteca. Después de la secuencia, `CtaSection` y el footer siguen en flujo normal,
+    igual que una "story" de Google Arts & Culture termina en contenido normal.
+  - **Cero imágenes nuevas**: los 4 paneles reutilizan material ya verificado en
+    `public/media/manifest.json` (Lepanto de Veronese, portada del Quijote 1605, grabado de
+    molinos de viento de Doré, foto de las Trinitarias) — instrucción explícita del usuario de usar
+    lo que la web ya tiene.
+  - Rail de progreso vertical (`StoryProgressNav`) solo en desktop, con el mismo patrón de
+    scrollspy por posición ya probado en `LifeJourney.tsx`.
+  - "Una vida en movimiento" se renombra a **"Una vida, una historia"** en nav, footer, la propia
+    página y la etiqueta de `sources.json`. La ruta `/vida-en-movimiento` no cambia (sin redirects
+    nuevos necesarios). Las ADR/CHANGELOG anteriores que usan el nombre antiguo no se reescriben
+    (registro histórico).
+  - Nuevo `BackLink` (botón "← Volver", usa el historial del navegador con `fallbackHref` si no hay
+    historial) añadido a todas las páginas que no son Home: Obras (índice y ficha), Don Quijote,
+    Legado, Biblioteca, Curiosidades y Una vida, una historia.
+- **Razón:** Instrucción explícita y detallada del usuario, con la misma referencia visual
+  compartida previamente; plan presentado y aprobado antes de implementar (EnterPlanMode/
+  ExitPlanMode).
+- **Impacto:** Cambio grande de presentación/UX en Home; ningún dato histórico nuevo (todo el
+  contenido de los paneles ya estaba verificado en secciones existentes, solo se reorganiza).
+- **Aprobado por:** Usuario, plan aprobado explícitamente, 2026-09-02.
+- **Estado:** VIGENTE. No incluye autorización de despliegue a producción — se pide aparte.
