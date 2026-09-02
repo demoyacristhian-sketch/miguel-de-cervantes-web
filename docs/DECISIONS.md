@@ -421,3 +421,28 @@ sustituye a la anterior, dejando ambas visibles.
   contenido de los paneles ya estaba verificado en secciones existentes, solo se reorganiza).
 - **Aprobado por:** Usuario, plan aprobado explícitamente, 2026-09-02.
 - **Estado:** VIGENTE. No incluye autorización de despliegue a producción — se pide aparte.
+
+---
+
+## ADR-016
+
+- **Fecha:** 2026-09-02
+- **Tema:** Quinta actualización aprobada de producción (secciones completas de ADR-014 + Home
+  cinematográfica de ADR-015)
+- **Contexto:** Tras verificar en Preview el trabajo de ADR-014 (Obras/Don Quijote/Legado/Biblioteca
+  completos) y ADR-015 (Home rediseñada como historia a pantalla completa, Hero de superficie única,
+  rebautizo, botón volver), más una corrección menor (URLs largas desbordando las tarjetas de
+  "Fuentes y créditos" en `/biblioteca`, señalada por el usuario con una captura de pantalla), el
+  usuario dio la instrucción explícita "sí, ponlo a producción".
+- **Decisión:** Se mergeó `develop` → `main` (commit `2b0ff57`), desplegado automáticamente por la
+  integración Git de Vercel (`https://miguel-de-cervantes-iq26eowxf-cdmlabs.vercel.app`, alias
+  `miguel-de-cervantes-web.vercel.app`).
+- **Verificación post-despliegue:** confirmado en producción vía navegador — Home cinematográfica
+  con los 5 paneles y sus imágenes/textos correctos; `/biblioteca` con los 9 enlaces de "Fuentes
+  documentales" verificados por `getBoundingClientRect()` sin desbordar sus tarjetas.
+- **Razón:** Instrucción explícita e inequívoca del usuario.
+- **Impacto:** Ningún dato histórico nuevo respecto a ADR-014/ADR-015; cambio de presentación y
+  contenido ya verificado en Preview, ahora reflejado en producción.
+- **Aprobado por:** Usuario, instrucción explícita ("sí, ponlo a producción"), 2026-09-02.
+- **Estado:** VIGENTE. Como en despliegues anteriores, no es una autorización permanente para
+  futuros despliegues.
