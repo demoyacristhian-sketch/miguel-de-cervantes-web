@@ -80,6 +80,20 @@ body {
   border-radius: 2px;
 }
 
+/* Entrada suave del contenido de un <details> al abrirse (p. ej. acordeón de Curiosidades).
+   @starting-style permite animar desde display:none sin JS. El cierre queda instantáneo, que es
+   el comportamiento nativo aceptable aquí. */
+details > .accordion-content {
+  opacity: 1;
+  transition: opacity 250ms ease;
+}
+
+@starting-style {
+  details[open] > .accordion-content {
+    opacity: 0;
+  }
+}
+
 @keyframes hero-in {
   from {
     opacity: 0;

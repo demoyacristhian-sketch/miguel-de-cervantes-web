@@ -32,7 +32,7 @@ export function StorySlide({
     <section
       id={id}
       aria-label={title}
-      className="relative flex min-h-screen items-end overflow-hidden bg-ink text-ivory snap-start"
+      className="relative flex min-h-dvh items-end overflow-hidden bg-ink text-ivory snap-start"
     >
       <Image
         src={image.src}

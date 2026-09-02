@@ -26,16 +26,28 @@ export default function CuriositiesPage() {
         </Link>
         .
       </p>
-      <ul className="mt-10 space-y-6">
+      <ul className="mt-10 space-y-4">
         {curiosities.map((item) => (
-          <li key={item.id} className="rounded-xl border border-border-subtle bg-surface p-6">
-            <div className="flex items-start justify-between gap-3">
-              <h2 className="font-serif-display text-xl font-semibold">{item.question}</h2>
-              <VerificationBadge status={item.status} />
-            </div>
-            <p className="mt-3 text-foreground/70">
-              {item.answer ?? "En investigación — sin fuente institucional suficiente todavía."}
-            </p>
+          <li key={item.id}>
+            <details className="group rounded-xl border border-border-subtle bg-surface">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5">
+                <span className="flex flex-wrap items-center gap-3">
+                  <span className="font-serif-display text-lg font-semibold sm:text-xl">
+                    {item.question}
+                  </span>
+                  <VerificationBadge status={item.status} />
+                </span>
+                <span
+                  className="relative flex h-5 w-5 shrink-0 items-center justify-center text-xl leading-none text-detail transition-transform duration-300 group-open:rotate-45"
+                  aria-hidden="true"
+                >
+                  +
+                </span>
+              </summary>
+              <div className="accordion-content px-6 pb-6 text-foreground/70">
+                {item.answer ?? "En investigación — sin fuente institucional suficiente todavía."}
+              </div>
+            </details>
           </li>
         ))}
       </ul>
