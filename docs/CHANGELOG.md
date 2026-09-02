@@ -584,5 +584,7 @@ a producción" (2026-09-02). No es una autorización permanente para futuros des
 
 ### Estado
 
-Implementado y verificado en local, **sin desplegar todavía** — pendiente de merge a `develop` y de
-aprobación explícita del usuario para producción.
+**En producción** (commit `6819f2a` en `main`). Aprobación explícita del usuario: "sí, ponlo a
+producción" (2026-09-02). Verificado en producción vía navegador: `min-h-dvh` correcto en móvil
+(altura del Hero = `innerHeight`), encuadre `35% 15%` aplicado, acordeón de Curiosidades cerrado
+por defecto.
