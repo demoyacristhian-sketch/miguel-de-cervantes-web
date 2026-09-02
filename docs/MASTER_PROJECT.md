@@ -157,6 +157,7 @@ Incluido en el plan aprobado (roadmap completo, sujeto a aprobación fase por fa
 | Producción (optimización de densidad de Home) | 2026-09-01 | `10eacb5` (merge `develop` → `main`) | Claude, a petición del usuario | **APROBADA** — instrucción explícita: "ponlo a producción" (2026-09-01), ver ADR-009 |
 | Producción (fichas ampliadas de 6 obras) | 2026-09-02 | `572af9c` (merge `develop` → `main`) | Claude, a petición del usuario | **APROBADA** — instrucción explícita: "sí, ponlo a producción" (2026-09-02), ver ADR-010 |
 | Producción (reestructuración de navegación + cronología continua + Hero fotográfico) | 2026-09-02 | `dd99c1a` (merge `develop` → `main`) | Claude, a petición del usuario | **APROBADA** — instrucción explícita: "Sí, ponlo a producción" (2026-09-02), ver ADR-011, ADR-012 y ADR-013 |
+| Producción (Obras/Don Quijote/Legado/Biblioteca completos + Home cinematográfica + Hero de superficie única) | 2026-09-02 | `2b0ff57` (merge `develop` → `main`) | Claude, a petición del usuario | **APROBADA** — instrucción explícita: "sí, ponlo a producción" (2026-09-02), ver ADR-014, ADR-015 y ADR-016 |
 
 ## Cierre
 

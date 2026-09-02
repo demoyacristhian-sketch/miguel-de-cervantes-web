@@ -520,3 +520,29 @@ aprobación explícita del usuario para producción. Ver ADR-014.
 
 Implementado y verificado en local, **sin desplegar todavía** — pendiente de merge a `develop` y de
 aprobación explícita del usuario para producción. Ver ADR-015.
+
+---
+
+## 2026-09-02 — v1.9.0-produccion — rama `main`
+
+**Commit:** `2b0ff57` (merge `develop` → `main`)
+
+### Añadido / Modificado
+
+- Despliegue a producción de todo lo descrito en v1.7.0-secciones-completas y
+  v1.8.0-home-cinematografica (ver entradas anteriores): Obras/Don Quijote/Legado/Biblioteca
+  completos, Home rediseñada como historia a pantalla completa, Hero de superficie única con zoom
+  en loop, rebautizo "Una vida en movimiento" → "Una vida, una historia", botón "← Volver".
+- Corrección: URLs largas sin espacios (p. ej. el informe del Ayuntamiento de Madrid, SRC-003) ya
+  no desbordan las tarjetas de "Fuentes y créditos" en `/biblioteca` (`word-break: break-all`).
+
+### Pruebas
+
+- Verificación visual y por `getBoundingClientRect()` directa en
+  `https://miguel-de-cervantes-web.vercel.app`: Home cinematográfica con los 5 paneles correctos;
+  `/biblioteca` con los 9 enlaces de "Fuentes documentales" confirmados sin desbordar sus tarjetas.
+
+### Estado
+
+**En producción.** Ver ADR-016 en `docs/DECISIONS.md`. Aprobación explícita del usuario: "sí, ponlo
+a producción" (2026-09-02). No es una autorización permanente para futuros despliegues.
