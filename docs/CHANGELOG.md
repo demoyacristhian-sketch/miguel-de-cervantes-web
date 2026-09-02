@@ -256,3 +256,35 @@ Cambio de diseño/UX puro, sin tocar contenido ni fuentes.
 
 Producción refleja la Home optimizada (Resumen/Profundizar, badges minimalistas, secciones acortadas).
 Verificado visualmente tras el despliegue. Aprobación puntual, no permanente para futuros cambios.
+
+---
+
+## 2026-09-01 — v1.2.0-fichas-obras — rama `content/fichas-ampliadas-obras`
+
+**Commit:** `ae61ab5`
+**Preview:** `https://miguel-de-cervantes-1rmh2jjp4-cdmlabs.vercel.app`
+
+### Añadido
+
+- `docs/SOURCES.md`: SRC-006 (Centro Virtual Cervantes, índice del Quijote — estructura capitular exacta).
+  Se amplía el uso de SRC-005 (ensayo de Daniel Eisenberg) como fuente principal de las fichas ampliadas,
+  ya que cubre con rigor académico la producción completa de Cervantes.
+- `src/types/content.ts`: `Work.profile`, con 10 campos opcionales (contexto, argumento, personajes, temas,
+  estructura, curiosidades, fragmentos, ediciones, recepción, influencia), cada uno con su propio
+  `status`/`sourceIds` — permite verificación granular por campo, no por obra completa.
+- `src/content/works.json`: ficha ampliada para las 6 obras. Don Quijote de la Mancha con las 10 secciones
+  completas (incluida la cita textual de apertura, de dominio público); las otras 5 obras con los campos
+  para los que se encontró información verificable — sin rellenar huecos con contenido genérico.
+- `src/app/obras/[slug]/page.tsx`: renderiza cada campo con su propio `VerificationBadge` y `ReadMore`;
+  cualquier campo sin investigar sigue mostrando "Pendiente de redacción y verificación (Fase 2)".
+
+### Pruebas
+
+- `tsc --noEmit`, `npm run lint` y `npm run build`: limpios (20 rutas). Verificación visual de la ficha
+  completa de Don Quijote y de una ficha con campos mixtos (Viaje del Parnaso), sin errores de consola.
+
+### Estado
+
+Personajes de cada obra individual (campo "Personajes" de la ficha) quedan pendientes — se resolverán junto
+con la construcción de `/quijote` en Fase 3, donde vive el modelo completo de `Character`. Resto de Fase 2
+pendiente: contexto histórico general y biografía narrativa completa.
