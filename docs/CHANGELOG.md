@@ -546,3 +546,43 @@ aprobación explícita del usuario para producción. Ver ADR-015.
 
 **En producción.** Ver ADR-016 en `docs/DECISIONS.md`. Aprobación explícita del usuario: "sí, ponlo
 a producción" (2026-09-02). No es una autorización permanente para futuros despliegues.
+
+---
+
+## 2026-09-02 — v1.9.1-fixes — rama `fix/movil-scroll-menu-curiosidades`
+
+### Corregido
+
+- (Ya en producción, `28e4d9a`, sin entrada previa) `/biblioteca`: el acordeón "Fuentes
+  documentales" ya no se despliega automáticamente al cargar la página — queda cerrado como
+  "Imágenes", hasta que el usuario lo abre.
+- Scroll de Home en móvil: `min-h-screen` → `min-h-dvh` en `Hero.tsx` y `StorySlide.tsx`. `100vh`
+  no descontaba la barra de direcciones del navegador móvil, así que cada panel medía más que el
+  área realmente visible y el scroll-snap nunca encajaba con lo que se veía en pantalla. El
+  scroll-snap por paneles se mantiene igual en todos los tamaños — no se quitó ni se simplificó en
+  móvil, solo se corrigió la unidad de altura.
+- Hero: el encuadre del retrato en móvil (antes `object-position: right 25%`, pensado solo para
+  escritorio) recortaba el rostro casi por completo. Ahora usa un encuadre específico para móvil
+  (`object-[35%_15%]`) que mantiene la cara centrada; escritorio conserva el encuadre original.
+- Menú móvil: `SiteHeader.tsx` usaba `<details>` nativo, que solo se cierra si se vuelve a tocar el
+  propio botón. Nuevo `src/components/layout/MobileNav.tsx` (cliente) cierra el menú al tocar fuera
+  o al elegir cualquier enlace.
+- Curiosidades: las 6 preguntas mostraban su respuesta completa siempre, obligando a mucho scroll
+  en móvil y escritorio. Ahora son un acordeón (`<details>` por pregunta, indicador "+" en dorado
+  que rota al abrir, entrada con fade vía `@starting-style`) — mismo patrón ya usado en Biblioteca
+  y Obras. Ningún dato se pierde, solo queda a un toque de distancia.
+
+### Pruebas
+
+- `tsc --noEmit`, `npm run lint`, `npm run build` limpios. Verificación por JavaScript/DOM en
+  viewport móvil (375×812) y escritorio (1440×900): altura del Hero igual a `window.innerHeight`
+  en ambos, `object-position` correcto por breakpoint, menú confirmado cerrando al tocar fuera y al
+  elegir un enlace (`aria-expanded` verificado antes/después), acordeón de Curiosidades abriendo y
+  con el icono rotando (`getComputedStyle(...).rotate === "45deg"` — Tailwind v4 usa la propiedad
+  CSS `rotate` en vez de `transform` para estas utilidades), sin regresión en escritorio
+  (scroll-snap y encuadre del Hero idénticos a antes).
+
+### Estado
+
+Implementado y verificado en local, **sin desplegar todavía** — pendiente de merge a `develop` y de
+aprobación explícita del usuario para producción.

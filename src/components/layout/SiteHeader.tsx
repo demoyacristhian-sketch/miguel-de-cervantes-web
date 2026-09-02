@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { MobileNav } from "@/components/layout/MobileNav";
 
 const NAV_ITEMS = [
   { href: "/vida-en-movimiento", label: "Una vida, una historia" },
@@ -32,25 +33,7 @@ export function SiteHeader() {
             ))}
           </ul>
         </nav>
-        <details className="relative lg:hidden">
-          <summary className="cursor-pointer list-none rounded border border-border-subtle px-3 py-1.5 text-sm">
-            Menú
-          </summary>
-          <nav
-            aria-label="Navegación principal"
-            className="absolute right-0 top-full mt-2 w-64 rounded-lg border border-border-subtle bg-background p-4 shadow-lg"
-          >
-            <ul className="flex flex-col gap-3 text-sm">
-              {NAV_ITEMS.map((item) => (
-                <li key={item.href}>
-                  <Link href={item.href} className="hover:text-accent">
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </details>
+        <MobileNav items={NAV_ITEMS} />
       </div>
     </header>
   );
