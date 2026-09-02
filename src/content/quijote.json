@@ -1,0 +1,165 @@
+[
+  {
+    "id": "personaje-don-quijote",
+    "category": "personaje",
+    "title": "Don Quijote de la Mancha",
+    "subtitle": "Alonso Quijano",
+    "status": "verificado",
+    "text": "Un hidalgo que, tras leer libros de caballerías sin descanso, concibe \"el más estraño pensamiento que jamás dio loco en el mundo\": convertirse en caballero andante. Elige su propio nombre, don Quijote de la Mancha, tras varios días de deliberación, para declarar \"muy al vivo su linaje y patria\".",
+    "citation": "Primera parte, capítulo I",
+    "sourceIds": ["SRC-008"]
+  },
+  {
+    "id": "personaje-sancho-panza",
+    "category": "personaje",
+    "title": "Sancho Panza",
+    "subtitle": "El escudero",
+    "status": "verificado",
+    "text": "Labrador vecino de Don Quijote, \"hombre de bien\" pero de \"poca sal en la mollera\". Acepta ser su escudero convencido por la promesa de ganar alguna ínsula y gobernarla, dejando a su mujer e hijos por la esperanza de riqueza y poder.",
+    "citation": "Primera parte, capítulo VII",
+    "sourceIds": ["SRC-008"]
+  },
+  {
+    "id": "personaje-dulcinea",
+    "category": "personaje",
+    "title": "Dulcinea del Toboso",
+    "subtitle": "La dama idealizada",
+    "status": "verificado",
+    "text": "En realidad se llama Aldonza Lorenzo, una labradora robusta del Toboso. Sancho la describe sin idealizar (fuerte, de voz potente, poco refinada), pero Don Quijote defiende su amor platónico: la ha visto solo cuatro veces en doce años y sostiene que \"merece ser señora de todo el universo\".",
+    "citation": "Primera parte, capítulo XXV",
+    "sourceIds": ["SRC-008"]
+  },
+  {
+    "id": "personaje-rocinante",
+    "category": "personaje",
+    "title": "Rocinante",
+    "subtitle": "El caballo",
+    "status": "verificado",
+    "text": "El rocín flaco de Don Quijote. Tras cuatro días de deliberación, su amo le da un nombre \"alto, sonoro y significativo\", que exprese lo que había sido antes (un rocín cualquiera) y lo que ahora era (montura de caballero).",
+    "citation": "Primera parte, capítulo I",
+    "sourceIds": ["SRC-008"]
+  },
+  {
+    "id": "personaje-sanson-carrasco",
+    "category": "personaje",
+    "title": "Sansón Carrasco",
+    "subtitle": "El bachiller",
+    "status": "verificado",
+    "text": "Bachiller universitario que comenta, dentro de la propia novela, el libro ya impreso sobre las aventuras de Don Quijote. Más adelante se disfraza de Caballero de la Blanca Luna y lo derrota en Barcelona, obligándolo por las reglas del duelo a retirarse un año sin tomar las armas.",
+    "citation": "Segunda parte, capítulo III y capítulos finales",
+    "sourceIds": ["SRC-008"]
+  },
+  {
+    "id": "lugar-el-toboso",
+    "category": "lugar",
+    "title": "El Toboso",
+    "status": "verificado",
+    "text": "Identificado por Don Quijote como \"un lugar de la Mancha\" y patria de Dulcinea. Varios personajes son enviados allí a lo largo de la novela en busca de su dama.",
+    "citation": "Apéndice \"Lugares y tiempos en el Quijote\", CVC",
+    "sourceIds": ["SRC-008"]
+  },
+  {
+    "id": "lugar-campo-de-montiel",
+    "category": "lugar",
+    "title": "Campo de Montiel",
+    "status": "verificado",
+    "text": "\"El antiguo y conocido campo de Montiel\": la región por la que Don Quijote viaja en su primera salida, y de nuevo, junto a Sancho, en la segunda.",
+    "citation": "Apéndice \"Lugares y tiempos en el Quijote\", CVC",
+    "sourceIds": ["SRC-008"]
+  },
+  {
+    "id": "lugar-sierra-morena",
+    "category": "lugar",
+    "title": "Sierra Morena",
+    "status": "verificado",
+    "text": "Zona montañosa donde Don Quijote se refugia y hace penitencia por amor a Dulcinea, y donde ocurren varios episodios centrales de la trama.",
+    "citation": "Apéndice \"Lugares y tiempos en el Quijote\", CVC",
+    "sourceIds": ["SRC-008"]
+  },
+  {
+    "id": "lugar-barcelona",
+    "category": "lugar",
+    "title": "Barcelona",
+    "status": "verificado",
+    "text": "El único gran escenario urbano real que Don Quijote llega a visitar. Allí es derrotado por el Caballero de la Blanca Luna, el episodio que precipita el final de sus andanzas.",
+    "citation": "Segunda parte, capítulos finales",
+    "sourceIds": ["SRC-008"]
+  },
+  {
+    "id": "aventura-molinos-de-viento",
+    "category": "aventura",
+    "title": "Los molinos de viento",
+    "status": "verificado",
+    "text": "Don Quijote confunde unos molinos con gigantes y carga contra ellos lanza en ristre. Derribado, insiste ante Sancho en que fueron encantadores quienes transformaron a los gigantes en molinos justo antes del golpe.",
+    "citation": "Primera parte, capítulo VIII",
+    "image": {
+      "src": "/media/quijote/dore-molinos-de-viento.jpg",
+      "alt": "Grabado de Gustave Doré: Don Quijote y Rocinante derribados tras embestir contra un molino de viento",
+      "credit": "Gustave Doré, 1863 (dominio público)"
+    },
+    "sourceIds": ["SRC-008"]
+  },
+  {
+    "id": "aventura-yelmo-de-mambrino",
+    "category": "aventura",
+    "title": "El yelmo de Mambrino",
+    "status": "verificado",
+    "text": "Don Quijote toma una bacía de barbero por el legendario yelmo encantado de Mambrino. Sancho reconoce el objeto real, pero su amo insiste en su identidad mágica.",
+    "citation": "Primera parte, capítulo XXI",
+    "sourceIds": ["SRC-008"]
+  },
+  {
+    "id": "aventura-blanca-luna",
+    "category": "aventura",
+    "title": "La derrota ante el Caballero de la Blanca Luna",
+    "status": "verificado",
+    "text": "En Barcelona, el Caballero de la Blanca Luna —en realidad Sansón Carrasco disfrazado— vence a Don Quijote en duelo. La condición pactada: retirarse a su aldea y dejar las armas durante un año. Don Quijote cumple, y poco después muere en su lugar.",
+    "citation": "Segunda parte, capítulos finales",
+    "sourceIds": ["SRC-008"]
+  },
+  {
+    "id": "tema-locura-idealista",
+    "category": "tema",
+    "title": "Locura idealista: realidad y ficción",
+    "status": "verificado",
+    "text": "El eje de la novela es la tensión entre lo que Don Quijote cree ver (gigantes, yelmos encantados) y lo que realmente hay (molinos, una bacía). Cervantes construyó la obra como un ataque irónico a los libros de caballerías que provocan esa confusión.",
+    "citation": "Ensayo de Daniel Eisenberg",
+    "sourceIds": ["SRC-005", "SRC-008"]
+  },
+  {
+    "id": "tema-metaliteratura",
+    "category": "tema",
+    "title": "Un libro que habla de sí mismo",
+    "status": "verificado",
+    "text": "En la Segunda Parte, los propios personajes han leído el libro sobre las aventuras de la Primera Parte: Sansón Carrasco comenta y critica esa historia impresa dentro de la ficción. El Quijote se convierte así en una novela consciente de sí misma como libro.",
+    "citation": "Segunda parte, capítulo III",
+    "sourceIds": ["SRC-008"]
+  },
+  {
+    "id": "tema-libertad",
+    "category": "tema",
+    "title": "La libertad",
+    "status": "verificado",
+    "text": "Tras abandonar el castillo de los duques, Don Quijote reflexiona sobre el valor de la independencia recuperada, en uno de los pasajes más citados de la novela.",
+    "citation": "Segunda parte, capítulo LVIII",
+    "sourceIds": ["SRC-008"]
+  },
+  {
+    "id": "frase-apertura",
+    "category": "frase",
+    "title": "La apertura de la novela",
+    "status": "verificado",
+    "text": "\"En un lugar de la Mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero, adarga antigua, rocín flaco y galgo corredor.\"",
+    "citation": "Primera parte, capítulo I",
+    "sourceIds": ["SRC-008"]
+  },
+  {
+    "id": "frase-libertad",
+    "category": "frase",
+    "title": "Sobre la libertad",
+    "status": "verificado",
+    "text": "\"La libertad, Sancho, es uno de los más preciosos dones que a los hombres dieron los cielos; con ella no pueden igualarse los tesoros que encierra la tierra ni el mar encubre.\"",
+    "citation": "Segunda parte, capítulo LVIII",
+    "sourceIds": ["SRC-008"]
+  }
+]

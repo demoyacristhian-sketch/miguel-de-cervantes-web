@@ -222,7 +222,8 @@ Derechos: Se parafrasea, sin reproducir el texto.
 
 ```text
 ID: SRC-007
-Título: Registro de imágenes de Wikimedia Commons usadas en el Hero y en /vida-en-movimiento
+Título: Registro de imágenes de Wikimedia Commons usadas en el Hero, /vida-en-movimiento, /obras y
+  /quijote
 Institución: Wikimedia Commons (agregador; instituciones de origen de cada obra registradas individualmente
   en public/media/manifest.json — Real Academia de la Historia, Gallerie dell'Accademia de Venecia, etc.)
 Autor: Varios (ver public/media/manifest.json)
@@ -235,13 +236,83 @@ Fiabilidad: Alta para el estado de derechos (verificación por API, plantilla de
   imagen); las propias obras varían en cercanía documental al hecho representado (ver observaciones en cada
   entrada de manifest.json — p. ej., el grabado de Argel es de 1684, un siglo después del cautiverio de
   Cervantes, y se usa como ilustración de contexto, no como registro directo).
-Información utilizada: Contexto visual editorial para el Hero de Home y las 6 etapas de
-  /vida-en-movimiento. Ningún dato histórico textual nuevo se basa en esta fuente — es exclusivamente
-  material gráfico.
+Información utilizada: Contexto visual editorial para el Hero de Home, las 6 etapas de
+  /vida-en-movimiento, las portadas de primeras ediciones en /obras (Novelas ejemplares 1613, Viaje
+  del Parnaso 1614, Ocho comedias y ocho entremeses 1615, Segunda parte del Quijote 1615, Persiles
+  1617) y dos grabados de Gustave Doré (1863) en /quijote (cabecera y aventura de los molinos de
+  viento). Ningún dato histórico textual nuevo se basa en esta fuente — es exclusivamente material
+  gráfico.
 Página/sección: N/A (múltiples archivos).
 Observaciones: Se descartó el repositorio del Museo Casa de Cervantes (cultura.gob.es) como fuente de
   imágenes porque su aviso legal exige permiso explícito por email para cualquier reproducción, y CERES
   (catálogo oficial de museos) limita el uso a fines privados/no comerciales — ninguno es de uso libre por
   defecto. Decisión tomada junto con el usuario, ver docs/DECISIONS.md.
 Derechos: Cada imagen tiene su propio registro completo de derechos en public/media/manifest.json.
+```
+
+### SRC-008
+
+```text
+ID: SRC-008
+Título: Edición anotada de «Don Quijote de la Mancha» (Primera y Segunda parte) — texto completo
+Institución: Centro Virtual Cervantes (portal oficial del Instituto Cervantes)
+Autor: Miguel de Cervantes (texto primario); edición y aparato crítico del CVC
+URL: https://cvc.cervantes.es/literatura/clasicos/quijote/edicion/ — capítulos consultados:
+  parte1/cap01 (decisión de armarse caballero, nombre propio y de Rocinante), parte1/cap07
+  (presentación de Sancho Panza), parte1/cap08 (molinos de viento), parte1/cap21 (yelmo de
+  Mambrino), parte1/cap25 (Dulcinea/Aldonza Lorenzo), parte2/cap03 (Sansón Carrasco), parte2/cap58
+  (cita sobre la libertad), más el apéndice "Lugares y tiempos en el «Quijote»"
+  (introduccion/apendice/casasayas.htm).
+Fecha de consulta: 2026-09-02
+Tipo: FUENTE PRIMARIA (texto original de la novela, alojado y anotado por el Instituto Cervantes)
+Fiabilidad: Máxima — es el propio texto de Cervantes, no una paráfrasis de tercero.
+Información utilizada: Personajes (Don Quijote, Rocinante, Sancho Panza, Dulcinea del
+  Toboso/Aldonza Lorenzo, Sansón Carrasco), lugares (El Toboso, Campo de Montiel, Sierra Morena,
+  Puerto Lápice), aventuras (molinos de viento, yelmo de Mambrino) y las dos frases citadas
+  literalmente en /quijote (apertura de la novela; reflexión sobre la libertad, 2ª parte cap. 58).
+  El desenlace del duelo con el Caballero de la Blanca Luna (Sansón Carrasco disfrazado, derrota en
+  Barcelona, condición de retirarse un año) se corroboró además con un artículo académico
+  ("Presencia y sentido de Sansón Carrasco", Scielo Chile,
+  scielo.cl/scielo.php?pid=S0718-22952005000200004).
+Página/sección: Ver capítulos listados arriba.
+Observaciones: La cita sobre la libertad se confirmó cruzando la página del capítulo LVIII en el
+  propio CVC con transcripciones independientes coincidentes (rinconcastellano.com); no se publicó
+  ninguna cita sin esa doble verificación, para evitar atribuciones erróneas frecuentes en internet
+  (p. ej. "ladran, Sancho, señal que cabalgamos" NO se usó por ser una atribución popular sin
+  respaldo textual verificado).
+Derechos: Se parafrasea y se citan dos frases breves con atribución; no se reproduce el texto
+  completo de ningún capítulo.
+```
+
+### SRC-009
+
+```text
+ID: SRC-009
+Título: Legado de Cervantes y el Quijote — idioma, traducciones, arte y ediciones conmemorativas
+Institución: Real Academia Española (RAE), Instituto Cervantes, Museo Casa Natal de Picasso
+  (Ayuntamiento de Málaga)
+Autor: Varias (ver URLs)
+URL: (1) dle.rae.es/quijotesco y dle.rae.es/dulcinea — Diccionario de la lengua española; (2)
+  cervantes.org — nota de prensa de la exposición "Quijotes por el mundo"; (3)
+  museocasanatalpicasso.malaga.eu — ficha oficial "Don Quijote y Sancho" (1955); (4) cobertura
+  cruzada sobre las ediciones conmemorativas RAE/ASALE de 2004 y 2015.
+Fecha de consulta: 2026-09-02
+Tipo: FUENTE INSTITUCIONAL
+Fiabilidad: Alta — diccionario oficial, nota de prensa del propio Instituto Cervantes y ficha
+  oficial de un museo público.
+Información utilizada: (1) "Quijotesco" y "dulcinea" son entradas reales del DLE. (2) El Instituto
+  Cervantes reunió 185 ediciones del Quijote en 56 lenguas en la exposición "Quijotes por el
+  mundo"; la cifra de "libro más traducido después de la Biblia" se cita ampliamente pero varía
+  según la fuente (entre ~140 y ~172 lenguas/variedades según el recuento), por lo que se presenta
+  con esa cautela, no como cifra cerrada. (3) Picasso dibujó "Don Quijote y Sancho" el 10 de agosto
+  de 1955 para el 350 aniversario de la Primera Parte, publicado en Les Lettres Françaises; la obra
+  se conserva hoy en el Museo Casa Natal de Picasso (Málaga). (4) RAE y ASALE publicaron ediciones
+  conmemorativas del Quijote en 2004 y 2015 (IV centenario de la muerte de Cervantes).
+Página/sección: Páginas indicadas arriba.
+Observaciones: La obra de Picasso (1955) está protegida por derechos de autor vigentes (fallecido
+  en 1973; en España, dominio público a los 80 años tras su muerte según la ley de propiedad
+  intelectual aplicable a autores fallecidos antes de 1987 → 2053, no 2044 como se escribió en el
+  plan de esta sesión, corregido aquí) — **no se reproduce la imagen en el sitio**, solo se
+  menciona en texto con enlace a la ficha oficial del museo.
+Derechos: Se parafrasea, sin reproducir ninguna imagen ni texto extenso de las fuentes.
 ```
