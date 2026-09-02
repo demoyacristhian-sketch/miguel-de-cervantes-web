@@ -201,3 +201,86 @@ sustituye a la anterior, dejando ambas visibles.
   artificialmente.
 - **Aprobado por:** Usuario, instrucción explícita, 2026-09-02.
 - **Estado:** VIGENTE. Como en ADR-008/009, no es una autorización permanente para futuros despliegues.
+
+---
+
+## ADR-011
+
+- **Fecha:** 2026-09-02
+- **Tema:** Reestructuración de navegación — eliminación de "Inicio" y "El mundo de Cervantes", fusión de
+  "Miguel de Cervantes" + "Línea de tiempo" en "Una vida en movimiento"
+- **Contexto:** El usuario pidió, con instrucciones muy detalladas: (1) eliminar "Inicio" (redundante con el
+  logo/wordmark) y "El mundo de Cervantes" de la navegación sin sustituirlos por nada; (2) fusionar
+  `/cervantes` (biografía por capítulos, sin prosa) y `/linea-de-tiempo` (12 eventos verificados) en una
+  única sección "Una vida en movimiento"; (3) que esa sección fuera una experiencia interactiva de nivel
+  editorial (jerarquía de 3 niveles de información, movimiento con propósito), no una página de scroll con
+  bloques de texto.
+- **Decisión:**
+  - Nueva ruta `/vida-en-movimiento`, con redirects 301 desde `/cervantes` y `/linea-de-tiempo` en
+    `next.config.ts` (ambas rutas estuvieron brevemente en producción).
+  - Los 12 eventos ya verificados (SRC-001) se agrupan en 6 "etapas" narrativas editoriales (agrupación de
+    diseño, no nuevos hechos históricos): Infancia y formación, Italia y las armas, Cautiverio en Argel, El
+    regreso y los años de oficio, La consagración literaria, Los últimos días.
+  - Interacción: scroll vertical macro a través de 6 escenas de etapa (cada una con tono cromático propio,
+    construido con la paleta ya existente) + un carril horizontal de tarjetas por etapa (scroll-snap nativo,
+    funciona igual en trackpad y táctil) + expansión de nivel 3 vía `<details>` nativo (mismo patrón que
+    `ReadMore.tsx`) + barra de navegación por etapas con resaltado activo (scrollspy por posición de scroll,
+    sin `IntersectionObserver` por un caso límite detectado con la última sección).
+  - Se descartó el scroll horizontal de página completa (todas las etapas como "slides" con scroll-jacking)
+    por su fragilidad entre dispositivos de entrada y su peor accesibilidad por teclado.
+  - "El mundo de Cervantes" se elimina sin sustituto: ruta, enlaces de nav/footer/Home y entradas de
+    `sitemap.ts` borrados por completo, sin redirigir ni redistribuir su contenido (nunca tuvo contenido
+    real, solo un placeholder "próximamente").
+  - No se escribió biografía narrativa nueva: las descripciones de los 12 eventos ya verificados, más un
+    párrafo de apertura editorial (marco narrativo, no un hecho nuevo), constituyen la "biografía concisa"
+    pedida. Escribir prosa nueva de los 15 capítulos que existían en `/cervantes` habría requerido una
+    investigación de fuentes aparte, fuera del alcance de este cambio de IA/UX.
+- **Razón:** Instrucción explícita y muy detallada del usuario; esta decisión también adelanta parte de la
+  Fase 3 del roadmap ("timeline avanzado") a petición suya.
+- **Impacto:** Reduce la navegación principal de 8 a 5 elementos. Ningún dato histórico nuevo se introduce;
+  el contenido verificado existente se reorganiza y presenta de forma interactiva.
+- **Aprobado por:** Usuario, mediante plan presentado y aprobado antes de implementar (EnterPlanMode/
+  ExitPlanMode), 2026-09-02.
+- **Estado:** VIGENTE.
+
+---
+
+## ADR-012
+
+- **Fecha:** 2026-09-02
+- **Tema:** Coherencia cronológica en "Una vida en movimiento" + Hero fotográfico + fuente de imágenes
+- **Contexto:** El usuario revisó `/vida-en-movimiento` (ADR-011) y señaló que, pese a tener datos
+  verificados, no se leía como una secuencia clara de nacimiento a muerte — las 6 etapas, cada una con su
+  propio carril horizontal y numeración interna, rompían la sensación de una sola vida continua. Pidió
+  aplicar el patrón de pasos numerados continuos de nownlab.es/soluciones, y un Hero fotográfico inspirado
+  en un "story" de Google Arts & Culture, con imágenes del Museo Casa de Cervantes.
+- **Hallazgo de derechos:** el Museo Casa de Cervantes exige permiso explícito por email para reproducir sus
+  imágenes; CERES (catálogo oficial de museos) limita el uso a fines privados/no comerciales salvo
+  autorización expresa. Ninguno es de uso libre por defecto. Comunicado al usuario, que aprobó usar en su
+  lugar Wikimedia Commons, verificando el estado de dominio público de cada imagen vía la API de Wikimedia
+  (campo `Copyrighted: false`) antes de descargarla — mismo rigor que con las fuentes de texto.
+- **Decisión:**
+  - Los 12 eventos verificados pasan a numerarse de forma **continua y global (01/12 → 12/12)**, sin
+    reiniciarse por etapa — arreglo directo de la queja de falta de cronología. El carril horizontal de
+    tarjetas por etapa (`EventRail`/`EventCard`) se elimina; dentro de cada etapa los eventos se listan
+    verticalmente como pasos de un único recorrido (`JourneyStep`, nuevo componente).
+  - Cada etapa gana un panel de imagen real (`position: sticky` en desktop, cabecera no-sticky en móvil —
+    adaptación específica, no solo una reducción de tamaño), verificado con `getBoundingClientRect()` que
+    efectivamente se fija en `top: 112px` mientras el usuario recorre los pasos de esa etapa.
+  - El Hero de Home cambia de degradado CSS a foto: el retrato tradicionalmente atribuido a Juan de Jáuregui
+    (h. 1600, Real Academia de la Historia), con crédito y advertencia de autenticidad no confirmada
+    visibles — coherente con lo que el sitio ya dice en `/curiosidades` sobre su aspecto físico.
+  - 7 imágenes en total, todas verificadas individualmente vía API de Wikimedia (no solo por aparecer en un
+    buscador) y registradas en `public/media/manifest.json` y `docs/SOURCES.md` (SRC-007). Ninguna imagen
+    respalda un dato histórico textual nuevo — son ilustración de contexto editorial.
+  - Corregido en el proceso: un bug real de contraste en modo oscuro heredado del diseño anterior seguía sin
+    aparecer aquí (ya corregido en ADR-011), verificado de nuevo tras el cambio de layout.
+- **Razón:** Instrucción explícita y detallada del usuario, con dos referencias visuales concretas; plan
+  presentado y aprobado antes de implementar (incluida una pregunta de clarificación sobre si el "efecto de
+  scroll" debía ser un carrusel de diapositivas de pantalla completa o combinarse con el patrón de pasos de
+  NOWN — el usuario eligió la combinación).
+- **Impacto:** Ningún dato histórico nuevo. Cambio de presentación/UX + 7 imágenes nuevas con derechos
+  verificados. El Museo Casa de Cervantes queda descartado como fuente de imágenes hasta que exista permiso
+  explícito del Ministerio de Cultura.
+- **Aprobado por:** Usuario, plan aprobado explícitamente (EnterPlanMode/ExitPlanMode), 2026-09-02.
+- **Estado:** VIGENTE.

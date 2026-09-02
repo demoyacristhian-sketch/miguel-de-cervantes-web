@@ -11,7 +11,7 @@ export function CtaSection() {
       </p>
       <div className="mt-8 flex flex-wrap justify-center gap-4">
         <Link
-          href="/cervantes"
+          href="/vida-en-movimiento"
           className="rounded-full bg-accent px-6 py-3 text-sm font-medium text-accent-contrast"
         >
           Conocer al hombre
