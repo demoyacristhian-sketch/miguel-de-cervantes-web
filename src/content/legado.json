@@ -1,0 +1,34 @@
+[
+  {
+    "id": "legado-idioma",
+    "domain": "Idioma",
+    "title": "Palabras que vienen de Cervantes",
+    "status": "verificado",
+    "text": "\"Quijotesco\" y \"dulcinea\" son entradas reales del Diccionario de la lengua española de la RAE: la primera describe lo \"semejante a don Quijote de la Mancha, por sus acciones o por su aspecto\"; la segunda, de uso coloquial, significa \"mujer amada\". Cervantes no solo escribió un libro: dejó huella directa en el idioma.",
+    "sourceIds": ["SRC-009"]
+  },
+  {
+    "id": "legado-traducciones",
+    "domain": "Traducciones",
+    "title": "Una obra traducida a decenas de lenguas",
+    "status": "verificado",
+    "text": "El Instituto Cervantes reunió 185 ediciones del Quijote en 56 lenguas en la exposición \"Quijotes por el mundo\". Se cita ampliamente como la obra más traducida después de la Biblia, aunque la cifra exacta de idiomas varía según la fuente y el criterio de recuento.",
+    "sourceIds": ["SRC-009"]
+  },
+  {
+    "id": "legado-arte",
+    "domain": "Arte",
+    "title": "Picasso y el Quijote",
+    "status": "verificado",
+    "text": "El 10 de agosto de 1955, Pablo Picasso dibujó su célebre \"Don Quijote y Sancho\" para conmemorar el 350 aniversario de la publicación de la novela. La obra original se conserva hoy en el Museo Casa Natal de Picasso, en Málaga.",
+    "sourceIds": ["SRC-009"]
+  },
+  {
+    "id": "legado-ediciones-conmemorativas",
+    "domain": "Ediciones conmemorativas",
+    "title": "La RAE y el Quijote",
+    "status": "verificado",
+    "text": "La Real Academia Española y la Asociación de Academias de la Lengua Española (ASALE) publicaron ediciones conmemorativas del Quijote en 2004 y de nuevo en 2015, con motivo del IV centenario de la muerte de Cervantes.",
+    "sourceIds": ["SRC-009"]
+  }
+]

@@ -310,3 +310,64 @@ sustituye a la anterior, dejando ambas visibles.
   verificado en Preview, ahora reflejado en producción.
 - **Aprobado por:** Usuario, instrucción explícita ("Sí, ponlo a producción"), 2026-09-02.
 - **Estado:** VIGENTE. Como en ADR-008/009/010, no es una autorización permanente para futuros despliegues.
+
+---
+
+## ADR-014
+
+- **Fecha:** 2026-09-02
+- **Tema:** Desarrollo completo de Obras, Don Quijote, Legado y Biblioteca + rediseño de Hero y
+  footer — aceleración explícita de las Fases 3, 4 y 6
+- **Contexto:** El usuario pidió explícitamente completar en la misma sesión ("hoy") las cuatro
+  secciones que quedaban como placeholder o texto denso: `/quijote` (12 subsecciones vacías),
+  `/legado` y `/biblioteca` (pantallas "Próximamente"), y `/obras` (funcional pero sin imágenes ni
+  filtro real). Pidió diseño interactivo (tarjetas, imágenes, animación) sin extenderse demasiado.
+  Además pidió rediseñar el Hero de Home (el nombre no se leía bien, el texto quedaba sobre el
+  rostro) y sustituir el texto final del footer por un crédito de TFG.
+- **Decisión:**
+  - **Contenido nuevo, siempre con fuente real:** Don Quijote (5 personajes, 5 lugares, 3
+    aventuras, 3 temas, 2 frases) se investigó directamente en el texto primario de la novela
+    alojado por el Centro Virtual Cervantes (Instituto Cervantes), capítulo por capítulo —
+    registrado como SRC-008. Las dos frases citadas se verificaron por duplicado (CVC +
+    transcripción independiente) antes de publicarse, precisamente para evitar atribuciones
+    populares incorrectas (se descartó explícitamente "ladran, Sancho, señal que cabalgamos" por no
+    tener respaldo textual). Legado (idioma, traducciones, arte, ediciones conmemorativas) se
+    investigó en RAE, Instituto Cervantes y el Museo Casa Natal de Picasso — registrado como
+    SRC-009.
+  - **Picasso, sin reproducir la imagen:** el dibujo "Don Quijote y Sancho" (1955) se menciona en
+    texto con enlace a la ficha oficial del museo, pero **no se reproduce** en el sitio — Picasso
+    falleció en 1973 y, para autores fallecidos antes de 1987, la ley española aplica 80 años
+    post-mortem (dominio público en 2053), muy lejos de cumplirse.
+  - **7 imágenes nuevas de Wikimedia Commons**, cada una verificada individualmente vía su API
+    antes de descargarse (mismo proceso que ADR-012): 4 portadas de primera edición para completar
+    las 6 obras (Novelas ejemplares 1613, Viaje del Parnaso 1614, Ocho comedias 1615, Persiles
+    1617), la portada de la Segunda Parte del Quijote (1615, como imagen secundaria en la ficha de
+    Don Quijote) y 2 grabados de Gustave Doré (1863, dominio público) para la cabecera de `/quijote`
+    y la tarjeta de los molinos de viento.
+  - **Hero rediseñado como layout editorial de dos zonas** (texto siempre sobre `bg-ink` sólido,
+    retrato contenido en su propio panel) en vez de texto superpuesto a pantalla completa —
+    resuelve directamente la queja de legibilidad del nombre y el texto sobre el rostro, sin
+    cambiar tipografía ni paleta. Incluye una animación de entrada escalonada y un zoom lento
+    (Ken Burns) en el retrato, ambos ya cubiertos por la regla `prefers-reduced-motion` existente.
+  - **Obras rediseñada:** filtro por tipo ahora funcional, tarjetas con portada e imagen, y la
+    ficha de cada obra reduce sus 10 campos a 3 destacados (Contexto, Argumento, Temas) siempre
+    visibles + un acordeón "Más detalles" para el resto — mismo patrón `<details>` que `ReadMore`.
+  - **Biblioteca** incluye una sección pública "Fuentes y créditos" (`/biblioteca#fuentes-y-creditos`)
+    que renderiza directamente las 9 fuentes registradas y las 14 imágenes del manifest — nada
+    oculto, todo trazable desde la propia web, no solo desde el repositorio.
+  - **Footer:** se sustituyó el disclaimer genérico por "Proyecto de TFG desarrollado e
+    implementado por Luis Vidal — Trabajo de Fin de Grado realizado en el marco de sus estudios de
+    posgrado en UNIR (Universidad Internacional de La Rioja)", a petición explícita del usuario
+    (texto base proporcionado por él, ampliado de forma profesional).
+  - **Aceleración de roadmap:** esto adelanta partes de la Fase 3 ("Explora el Quijote"), Fase 4
+    ("Biblioteca") y Fase 6 ("Legado") por instrucción explícita del usuario, no por decisión
+    unilateral — documentado aquí conforme a la regla del prompt maestro que permite aceleración
+    explícita si se documenta como tal.
+- **Razón:** Instrucción explícita, detallada y aprobada mediante plan (EnterPlanMode/ExitPlanMode)
+  antes de implementar.
+- **Impacto:** Ningún dato inventado; todo el contenido histórico/literario nuevo tiene fuente
+  primaria o institucional real. Cambia significativamente la superficie del sitio (4 secciones
+  completas + Hero + footer).
+- **Aprobado por:** Usuario, plan aprobado explícitamente, 2026-09-02.
+- **Estado:** VIGENTE. Igual que siempre, el despliegue a producción de este trabajo requiere una
+  aprobación explícita **aparte** de la aprobación del plan — no está incluida en esta ADR.

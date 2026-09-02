@@ -97,6 +97,34 @@ Recurso multimedia con derechos verificados (ver `SECURITY.md` §Política de im
 id, title, author, date, institution, originalUrl, license, copyrightStatus,
 attributionRequired (boolean), usagePermitted, filePath
 ```
+**Implementado** (2026-09-02): `MediaAsset` en `src/types/content.ts`, leído desde
+`public/media/manifest.json` vía `getMediaManifest()`, renderizado públicamente en
+`/biblioteca#fuentes-y-creditos`.
+
+### QuijoteEntry (implementación simplificada de Character/Place/Quote para `/quijote`)
+En vez de implementar `Character`, `Place` y `Quote` como entidades separadas, `/quijote` usa una
+única entidad más pequeña con un discriminador `category`, suficiente para el alcance actual
+(5 personajes, 5 lugares, 3 aventuras, 3 temas, 2 frases) sin la sobreingeniería de tres modelos
+independientes con relaciones cruzadas que hoy no se necesitan.
+```text
+id, category ("personaje"|"lugar"|"aventura"|"tema"|"frase"), title, subtitle?, status,
+text, citation?, image?, sourceIds[]
+```
+Fuente: `src/content/quijote.json`, vía `getQuijoteEntries()` / `getQuijoteEntriesByCategory()`.
+
+### LegacyEntry (implementación de la sección Legado)
+```text
+id, domain, title, status, text, sourceIds[]
+```
+Fuente: `src/content/legado.json`, vía `getLegacyEntries()`.
+
+### SourceEntry (espejo estructurado de SOURCES.md para la sección pública de créditos)
+```text
+id, title, institution, type, url, dateConsulted
+```
+Fuente: `src/content/sources.json`, vía `getSources()`. Se mantiene sincronizado a mano con
+`docs/SOURCES.md` — es un espejo para la interfaz pública, no la fuente de verdad (que sigue siendo
+`docs/SOURCES.md`, con el detalle completo de cada fuente).
 
 ## Relaciones (ejemplos conceptuales)
 

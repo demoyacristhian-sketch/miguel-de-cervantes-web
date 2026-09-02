@@ -429,3 +429,49 @@ Sin Preview de producción todavía.
 
 **En producción.** Ver ADR-013 en `docs/DECISIONS.md`. Aprobación explícita del usuario: "Sí, ponlo a
 producción" (2026-09-02). No es una autorización permanente para futuros despliegues.
+
+---
+
+## 2026-09-02 — v1.7.0-secciones-completas — rama `content/quijote-legado-biblioteca`
+
+### Añadido
+
+- `/quijote`: pestañas interactivas (Personajes, Lugares, Aventuras, Temas, Frases) con contenido
+  real investigado en el texto primario del Quijote (CVC, Instituto Cervantes) — 5 personajes, 5
+  lugares, 3 aventuras, 3 temas, 2 frases verificadas por duplicado. Reemplaza la lista de 12
+  subsecciones vacías.
+- `/legado`: 4 tarjetas verificadas (idioma, traducciones, arte, ediciones conmemorativas), fuentes
+  RAE/Instituto Cervantes/Museo Casa Natal de Picasso. Reemplaza el placeholder "Próximamente".
+- `/biblioteca`: 5 tarjetas-enlace a repositorios institucionales reales + nueva sección pública
+  "Fuentes y créditos" que renderiza las 9 fuentes y las 14 imágenes registradas del sitio.
+  Reemplaza el placeholder "Próximamente".
+- `/obras`: filtro por tipo funcional, tarjetas con portada de primera edición (6/6 obras).
+- `/obras/[slug]`: cabecera con portada; 3 campos destacados siempre visibles (Contexto, Argumento,
+  Temas) y el resto agrupado en un acordeón "Más detalles".
+- Hero de Home rediseñado como layout editorial de dos zonas (texto sobre `bg-ink` sólido, retrato
+  contenido en su propio panel) con animación de entrada escalonada y zoom lento en la imagen.
+- 7 imágenes nuevas de Wikimedia Commons, verificadas individualmente vía su API antes de usarse:
+  4 portadas de primera edición (Novelas ejemplares 1613, Viaje del Parnaso 1614, Ocho comedias
+  1615, Persiles 1617), la Segunda Parte del Quijote (1615) y 2 grabados de Gustave Doré (1863).
+- `src/content/quijote.json`, `src/content/legado.json`, `src/content/sources.json` y el tipo
+  `MediaAsset` (lee `public/media/manifest.json` desde `getMediaManifest()`).
+- `src/components/ui/Reveal.tsx` (fade-in-on-view), `QuijoteTabs.tsx`, `WorksFilter.tsx`.
+- SRC-008 (texto primario del Quijote en CVC) y SRC-009 (legado) en `docs/SOURCES.md`.
+
+### Modificado
+
+- Footer: se sustituyó el disclaimer genérico por el crédito de TFG del autor del proyecto.
+
+### Pruebas
+
+- `tsc --noEmit`, `npm run lint`, `npm run build`: limpios (18 rutas). Verificación visual: Hero en
+  desktop (dos zonas) y móvil (imagen arriba, texto abajo) en claro/oscuro; pestañas de Quijote
+  funcionando (Personajes/Lugares/Aventuras/Temas/Frases); acordeones de Obras y Biblioteca
+  abriendo correctamente (9 fuentes, 14 imágenes); imágenes nuevas cargando (`complete: true` vía
+  JS) tras descartar un artefacto conocido de la herramienta de capturas (ver notas de sesiones
+  anteriores). Sin errores de consola.
+
+### Estado
+
+Implementado y verificado en local, **sin desplegar todavía** — pendiente de merge a `develop` y de
+aprobación explícita del usuario para producción. Ver ADR-014.

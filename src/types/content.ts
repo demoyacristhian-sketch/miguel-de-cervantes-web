@@ -62,3 +62,51 @@ export interface Curiosity {
   answer: string | null;
   sourceIds: string[];
 }
+
+export type QuijoteCategory = "personaje" | "lugar" | "aventura" | "tema" | "frase";
+
+export interface QuijoteEntry {
+  id: string;
+  category: QuijoteCategory;
+  title: string;
+  subtitle?: string;
+  status: VerificationStatus;
+  text: string;
+  citation?: string;
+  image?: { src: string; alt: string; credit: string };
+  sourceIds: string[];
+}
+
+export interface LegacyEntry {
+  id: string;
+  domain: string;
+  title: string;
+  status: VerificationStatus;
+  text: string;
+  sourceIds: string[];
+}
+
+export interface SourceEntry {
+  id: string;
+  title: string;
+  institution: string;
+  type: "FUENTE PRIMARIA" | "FUENTE INSTITUCIONAL" | "FUENTE ACADÉMICA" | "FUENTE SECUNDARIA VERIFICADA";
+  url: string;
+  dateConsulted: string;
+}
+
+/** Espejo tipado de public/media/manifest.json (registro de derechos de imagen). */
+export interface MediaAsset {
+  id: string;
+  filePath: string;
+  title: string;
+  author: string;
+  date: string;
+  institution: string;
+  originalUrl: string;
+  license: string;
+  copyrightStatus: string;
+  attributionRequired: boolean;
+  usagePermitted: string;
+  observations: string;
+}
