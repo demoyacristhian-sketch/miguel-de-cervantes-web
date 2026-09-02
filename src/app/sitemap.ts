@@ -5,12 +5,10 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
 const STATIC_ROUTES = [
   "",
-  "/cervantes",
-  "/linea-de-tiempo",
+  "/vida-en-movimiento",
   "/obras",
   "/quijote",
   "/curiosidades",
-  "/mundo-de-cervantes",
   "/legado",
   "/biblioteca",
 ];

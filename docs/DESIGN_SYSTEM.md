@@ -58,11 +58,14 @@ Modo claro y oscuro definidos vía `prefers-color-scheme`, con tokens semántico
   - Licencia de uso del vídeo verificada y registrada en `public/media/manifest.json` antes de publicarse
     (ningún vídeo se usa sin derechos verificados).
 
-**Estado real (Fase 1):** implementado `src/components/sections/Hero.tsx` **sin vídeo** — no existe todavía
-ningún recurso audiovisual con derechos verificados. Se usa un fallback 100% CSS (degradados radiales sobre
-`--color-ink`, textura sutil) que ya cumple con no bloquear la carga, no afectar CLS/LCP y respetar
-`prefers-reduced-motion` (no hay animación). Sustituir por `<video>` real solo cuando exista un recurso
-aprobado y registrado en `public/media/manifest.json`.
+**Estado real (Fase 1, actualizado 2026-09-02):** implementado `src/components/sections/Hero.tsx` **sin
+vídeo, con imagen fotográfica real** (a petición explícita del usuario, inspirado en la portada de un
+"story" de Google Arts & Culture) — el retrato tradicionalmente atribuido a Juan de Jáuregui (h. 1600, Real
+Academia de la Historia), dominio público verificado, ver `public/media/manifest.json` y
+`docs/SOURCES.md` (SRC-007). Overlay degradado oscuro para legibilidad, `next/image` con `priority` para no
+penalizar el LCP, sin animación (respeta `prefers-reduced-motion` de forma trivial). Crédito y advertencia de
+autenticidad no confirmada visibles en el propio Hero. Sustituir por `<video>` solo si en el futuro se
+aprueba un recurso audiovisual con licencia verificada — no es una prioridad actual.
 - Copy de referencia (narrativa a conservar, composición visual puede evolucionar):
 
   > MIGUEL DE CERVANTES

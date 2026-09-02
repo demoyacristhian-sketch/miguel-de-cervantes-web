@@ -217,3 +217,31 @@ Página/sección: Página índice completa.
 Observaciones: Ninguna.
 Derechos: Se parafrasea, sin reproducir el texto.
 ```
+
+### SRC-007
+
+```text
+ID: SRC-007
+Título: Registro de imágenes de Wikimedia Commons usadas en el Hero y en /vida-en-movimiento
+Institución: Wikimedia Commons (agregador; instituciones de origen de cada obra registradas individualmente
+  en public/media/manifest.json — Real Academia de la Historia, Gallerie dell'Accademia de Venecia, etc.)
+Autor: Varios (ver public/media/manifest.json)
+URL: Ver cada entrada en public/media/manifest.json
+Fecha de consulta: 2026-09-02
+Tipo: FUENTE SECUNDARIA VERIFICADA (agregador de dominio público; cada imagen se verificó individualmente
+  vía la API de Wikimedia — campo `Copyrighted: false` — antes de usarse, no se asumió libre por aparecer en
+  un buscador)
+Fiabilidad: Alta para el estado de derechos (verificación por API, plantilla de licencia explícita por
+  imagen); las propias obras varían en cercanía documental al hecho representado (ver observaciones en cada
+  entrada de manifest.json — p. ej., el grabado de Argel es de 1684, un siglo después del cautiverio de
+  Cervantes, y se usa como ilustración de contexto, no como registro directo).
+Información utilizada: Contexto visual editorial para el Hero de Home y las 6 etapas de
+  /vida-en-movimiento. Ningún dato histórico textual nuevo se basa en esta fuente — es exclusivamente
+  material gráfico.
+Página/sección: N/A (múltiples archivos).
+Observaciones: Se descartó el repositorio del Museo Casa de Cervantes (cultura.gob.es) como fuente de
+  imágenes porque su aviso legal exige permiso explícito por email para cualquier reproducción, y CERES
+  (catálogo oficial de museos) limita el uso a fines privados/no comerciales — ninguno es de uso libre por
+  defecto. Decisión tomada junto con el usuario, ver docs/DECISIONS.md.
+Derechos: Cada imagen tiene su propio registro completo de derechos en public/media/manifest.json.
+```

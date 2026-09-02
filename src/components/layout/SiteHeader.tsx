@@ -1,12 +1,9 @@
 import Link from "next/link";
 
 const NAV_ITEMS = [
-  { href: "/", label: "Inicio" },
-  { href: "/cervantes", label: "Miguel de Cervantes" },
-  { href: "/linea-de-tiempo", label: "Línea de tiempo" },
+  { href: "/vida-en-movimiento", label: "Una vida en movimiento" },
   { href: "/obras", label: "Obras" },
   { href: "/quijote", label: "Don Quijote" },
-  { href: "/mundo-de-cervantes", label: "El mundo de Cervantes" },
   { href: "/legado", label: "Legado" },
   { href: "/biblioteca", label: "Biblioteca" },
 ];

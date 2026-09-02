@@ -13,8 +13,8 @@ export function TimelinePreview() {
           </p>
           <h2 className="mt-3 font-serif-display text-3xl font-semibold sm:text-4xl">Línea de tiempo</h2>
         </div>
-        <Link href="/linea-de-tiempo" className="text-sm font-medium text-accent hover:underline">
-          Ver línea de tiempo completa →
+        <Link href="/vida-en-movimiento" className="text-sm font-medium text-accent hover:underline">
+          Descubrir su vida completa →
         </Link>
       </div>
       <ol className="mt-10 grid gap-4 sm:grid-cols-3">

@@ -133,6 +133,14 @@ Incluido en el plan aprobado (roadmap completo, sujeto a aprobación fase por fa
 - **2026-09-01 (Fase 1):** paleta y tipografía finalizadas e implementadas (ver `/docs/DESIGN_SYSTEM.md`):
   Playfair Display (titulares) + Inter (cuerpo), paleta marfil/ink/burdeos/dorado con soporte de modo oscuro
   vía `prefers-color-scheme`. Hero cinematográfico implementado sin vídeo real (fallback CSS, ver ADR-006).
+- **2026-09-02 (Fase 2, ADR-011):** rediseño conceptual de la biografía/timeline como "Una vida en
+  movimiento" — experiencia interactiva con 6 escenas narrativas de tono cromático propio, carril horizontal
+  de eventos y navegación por etapas. Navegación principal reducida de 8 a 5 elementos (se elimina "Inicio"
+  y "El mundo de Cervantes", sin sustituto).
+- **2026-09-02 (Fase 2, ADR-012):** iteración sobre lo anterior tras feedback del usuario — el carril
+  horizontal por etapa se reemplaza por un recorrido vertical con numeración global continua (01/12→12/12),
+  y cada etapa gana una imagen real (dominio público, Wikimedia Commons) en un panel `sticky`. El Hero de
+  Home pasa de degradado CSS a fotografía real (retrato tradicionalmente atribuido a Jáuregui).
 
 ## Contenido
 
@@ -147,6 +155,7 @@ Incluido en el plan aprobado (roadmap completo, sujeto a aprobación fase por fa
 | Producción (accidental) | 2026-09-01 | `4c7554d` (vía `vercel deploy` sin flags) | Claude (incidente, ver ADR-007) | No solicitada — comunicado y aceptado por el usuario a posteriori por bajo impacto |
 | Producción (Fase 1 + verificación Fase 2) | 2026-09-01 | `d886473` (merge `develop` → `main`) | Claude, a petición del usuario | **APROBADA** — instrucción explícita del usuario: "Actualiza ya la producción con el contenido verificado actual" (2026-09-01), tras detectar que la producción existente mostraba contenido desactualizado |
 | Producción (optimización de densidad de Home) | 2026-09-01 | `10eacb5` (merge `develop` → `main`) | Claude, a petición del usuario | **APROBADA** — instrucción explícita: "ponlo a producción" (2026-09-01), ver ADR-009 |
+| Producción (fichas ampliadas de 6 obras) | 2026-09-02 | `572af9c` (merge `develop` → `main`) | Claude, a petición del usuario | **APROBADA** — instrucción explícita: "sí, ponlo a producción" (2026-09-02), ver ADR-010 |
 
 ## Cierre
 
