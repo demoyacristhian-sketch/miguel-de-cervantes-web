@@ -50,8 +50,8 @@ empieza en Fase 2.
 |---|---|
 | Fundación / documentación | **APROBADO** (Fase 0 ejecutada 2026-09-01) |
 | Arquitectura técnica | **EN DESARROLLO** (scaffold real creado y validado: lint + typecheck + build limpios) |
-| Repositorio GitHub | `main` = producción real (commit `572af9c`), `develop` al día |
-| Vercel | Producción actualizada y verificada (última vez 2026-09-02, aprobación explícita del usuario); ver ADR-007 a ADR-010 |
+| Repositorio GitHub | `main` = producción real (commit `dd99c1a`), `develop` al día (`c8aa2a9`) |
+| Vercel | Producción actualizada y verificada (última vez 2026-09-02, aprobación explícita del usuario); ver ADR-007 a ADR-013 |
 | Contenido histórico | **EN ANÁLISIS** (Fase 2 iniciada) — estructura lista, cero datos verificados todavía |
 | Diseño visual | APROBADO para MVP (tokens Tailwind v4, Playfair Display + Inter, revisado por el usuario) |
 | MVP (Home, Bio, Timeline, Obras, Quijote) | **APROBADO** — Fase 1 cerrada, mergeada a `develop` |
@@ -60,9 +60,9 @@ empieza en Fase 2.
 ## 5. Última implementación
 
 - **Fecha:** 2026-09-02
-- **Rama:** `design/vida-en-movimiento` (sin mergear a `develop` ni `main` todavía)
-- **Commit:** pendiente de registrar tras el commit de esta sesión (ver `git log design/vida-en-movimiento`)
-- **Qué se hizo:** Ver ADR-011 y ADR-012 en `docs/DECISIONS.md` y las entradas correspondientes en
+- **Rama:** `design/vida-en-movimiento`, mergeada a `develop` (`c8aa2a9`) y a `main` (`dd99c1a`) — **ya en
+  producción**
+- **Qué se hizo:** Ver ADR-011, ADR-012 y ADR-013 en `docs/DECISIONS.md` y las entradas correspondientes en
   `docs/CHANGELOG.md` para el detalle completo. En resumen: eliminación de "Inicio" y "El mundo de
   Cervantes" de la navegación; fusión de la biografía y el timeline en `/vida-en-movimiento`, un recorrido
   vertical con numeración global continua (01/12→12/12) e imagen real (dominio público, Wikimedia Commons)
@@ -71,9 +71,11 @@ empieza en Fase 2.
   `public/media/manifest.json` y `docs/SOURCES.md` (SRC-007).
 - **Pruebas:** `tsc --noEmit`, `npm run lint`, `npm run build` limpios (18 rutas). Verificación visual en
   navegador: desktop y móvil, modo claro/oscuro, numeración continua confirmada, `position: sticky` del
-  panel de imagen confirmado vía `getBoundingClientRect()`, sin errores de consola.
-- **Estado:** Implementado y verificado, **sin desplegar a producción**. Requiere aprobación explícita del
-  usuario para mergear a `main`.
+  panel de imagen confirmado vía `getBoundingClientRect()`, sin errores de consola. Verificación adicional
+  en **producción** tras el despliegue: Hero fotográfico visible, nav de 5 ítems, numeración 01/12→12/12,
+  redirects 308 desde `/cervantes` y `/linea-de-tiempo`, `/mundo-de-cervantes` en 404 sin sustituto.
+- **Estado:** Implementado, verificado y **desplegado a producción** (ADR-013, aprobación explícita del
+  usuario "Sí, ponlo a producción", 2026-09-02).
 - **Pendientes:** fichas de personajes del Quijote, contexto histórico general, y profundizar la biografía
   narrativa dentro de `/vida-en-movimiento` si se desea más allá de los 12 eventos actuales.
 
@@ -106,21 +108,18 @@ Estas reglas provienen del prompt maestro del proyecto y son de cumplimiento obl
 
 Fase 1 cerrada. Fase 2 en curso: timeline (12/12), obras (6/6 con ficha ampliada) y "vidas de Cervantes"
 (7/7) verificadas; las 6 curiosidades verificadas. Home optimizada (Resumen/Profundizar, badges
-minimalistas, secciones acortadas). **Reestructuración de navegación y biografía (2026-09-02, ADR-011 y
-ADR-012):** se eliminó "Inicio" y "El mundo de Cervantes" (sin sustituto); "Miguel de Cervantes" + "Línea de
-tiempo" se fusionaron en `/vida-en-movimiento`, un recorrido vertical con numeración global continua
-(01/12→12/12, arregla la falta de cronología señalada por el usuario) y una imagen real (dominio público)
-por etapa en un panel `sticky`. El Hero de Home pasa de degradado CSS a fotografía real (retrato
-tradicionalmente atribuido a Jáuregui). Nav principal: Una vida en movimiento, Obras, Don Quijote, Legado,
-Biblioteca. Todo esto está en la rama `design/vida-en-movimiento`, **todavía sin mergear ni desplegar a
-producción**.
+minimalistas, secciones acortadas). **Reestructuración de navegación y biografía (2026-09-02, ADR-011,
+ADR-012 y ADR-013) — YA EN PRODUCCIÓN:** se eliminó "Inicio" y "El mundo de Cervantes" (sin sustituto);
+"Miguel de Cervantes" + "Línea de tiempo" se fusionaron en `/vida-en-movimiento`, un recorrido vertical con
+numeración global continua (01/12→12/12, arregla la falta de cronología señalada por el usuario) y una
+imagen real (dominio público) por etapa en un panel `sticky`. El Hero de Home pasa de degradado CSS a
+fotografía real (retrato tradicionalmente atribuido a Jáuregui). Nav principal: Una vida en movimiento,
+Obras, Don Quijote, Legado, Biblioteca.
 
-**Producción actualizada tres veces con aprobación explícita del usuario** (commits `d886473`, `10eacb5` y
-`572af9c` en `main`) — ver ADR-008 a ADR-010. Ninguna de esas incluye todavía la reestructuración de
-navegación/biografía de ADR-011/ADR-012.
+**Producción actualizada cuatro veces con aprobación explícita del usuario** (commits `d886473`, `10eacb5`,
+`572af9c` y `dd99c1a` en `main`) — ver ADR-008 a ADR-013.
 
-**Próximo paso lógico:** decidir si se aprueba mergear/desplegar la reestructuración de navegación y
-biografía; después, personajes principales del Quijote (Don Quijote, Sancho Panza, Dulcinea, Rocinante,
+**Próximo paso lógico:** personajes principales del Quijote (Don Quijote, Sancho Panza, Dulcinea, Rocinante,
 Sansón Carrasco — sección 30 del prompt maestro), contexto histórico general, o biografía narrativa más
 profunda dentro de `/vida-en-movimiento`. Cada nuevo dato histórico debe seguir el mismo protocolo: fuente
 primaria/institucional/académica real (y para imágenes, verificación de dominio público vía API, nunca

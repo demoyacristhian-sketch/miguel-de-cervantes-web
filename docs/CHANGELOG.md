@@ -403,3 +403,29 @@ muerte (ver ADR-012 en `docs/DECISIONS.md`), con dos referencias visuales (nownl
 ### Estado
 
 Sin Preview de producción todavía.
+
+---
+
+## 2026-09-02 — v1.6.0-produccion — rama `main`
+
+**Commit:** `dd99c1a` (merge `develop` → `main`; `develop` en `c8aa2a9`)
+
+### Añadido / Modificado
+
+- Despliegue a producción de todo lo descrito en v1.4.0-vida-en-movimiento y v1.5.0-cronologia-continua
+  (ver entradas anteriores): eliminación de "Inicio" y "El mundo de Cervantes" de la navegación, fusión de
+  biografía y timeline en `/vida-en-movimiento` con numeración global continua (01/12→12/12), panel de
+  imagen `sticky` por etapa, Hero de Home con fotografía real, y 7 imágenes con derechos verificados vía
+  Wikimedia Commons.
+
+### Pruebas
+
+- Verificación visual directa en `https://miguel-de-cervantes-web.vercel.app`: Hero fotográfico con crédito
+  visible; nav principal de 5 ítems (sin Inicio ni El mundo de Cervantes); `/vida-en-movimiento` con
+  numeración continua 01/12→12/12 y las 6 imágenes por etapa; `/cervantes` y `/linea-de-tiempo` responden
+  308 hacia `/vida-en-movimiento`; `/mundo-de-cervantes` responde 404 (sin sustituto, como se pidió).
+
+### Estado
+
+**En producción.** Ver ADR-013 en `docs/DECISIONS.md`. Aprobación explícita del usuario: "Sí, ponlo a
+producción" (2026-09-02). No es una autorización permanente para futuros despliegues.
