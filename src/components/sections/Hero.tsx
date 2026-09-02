@@ -16,7 +16,7 @@ export function Hero() {
   return (
     <section
       aria-label="Presentación de Miguel de Cervantes"
-      className="relative flex min-h-screen items-end overflow-hidden bg-ink text-ivory snap-start"
+      className="relative flex min-h-dvh items-end overflow-hidden bg-ink text-ivory snap-start"
     >
       <Image
         src="/media/hero/cervantes-jauregui-rah.jpg"
@@ -24,8 +24,7 @@ export function Hero() {
         fill
         priority
         sizes="100vw"
-        className="animate-hero-zoom-loop object-cover"
-        style={{ objectPosition: "right 25%" }}
+        className="animate-hero-zoom-loop object-cover object-[35%_15%] lg:object-[right_25%]"
       />
       <div
         aria-hidden="true"
