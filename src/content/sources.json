@@ -1,0 +1,74 @@
+[
+  {
+    "id": "SRC-001",
+    "title": "Cronología de la vida y obra de Miguel de Cervantes Saavedra",
+    "institution": "Biblioteca Virtual Miguel de Cervantes (Universidad de Alicante)",
+    "type": "FUENTE INSTITUCIONAL",
+    "url": "https://www.cervantesvirtual.com/portales/miguel_de_cervantes/autor_cronologia/",
+    "dateConsulted": "2026-09-01"
+  },
+  {
+    "id": "SRC-002",
+    "title": "¿Murieron Shakespeare y Cervantes el mismo día y año?",
+    "institution": "CNN en Español",
+    "type": "FUENTE SECUNDARIA VERIFICADA",
+    "url": "https://cnnespanol.cnn.com/2024/04/23/cervantes-shakespeare-murieron-mismo-dia-libro-orix",
+    "dateConsulted": "2026-09-01"
+  },
+  {
+    "id": "SRC-003",
+    "title": "Proyecto Cervantes: búsqueda, localización y estudio osteológico de los restos mortales de Don Miguel de Cervantes (2015)",
+    "institution": "Ayuntamiento de Madrid / Sociedad de Ciencias Aranzadi",
+    "type": "FUENTE PRIMARIA",
+    "url": "https://www.madrid.es/UnidadesDescentralizadas/UDCMedios/noticias/2015/03Marzo/17Martes/Notasprensa/restoscervantes/ficheros/Informe%20ejecutivo%20segunda%20fase%20Cervantes07.pdf",
+    "dateConsulted": "2026-09-01"
+  },
+  {
+    "id": "SRC-004",
+    "title": "Lectura comentada de la portada — «Don Quijote de la Mancha», Primera Parte",
+    "institution": "Centro Virtual Cervantes (Instituto Cervantes)",
+    "type": "FUENTE INSTITUCIONAL",
+    "url": "https://cvc.cervantes.es/literatura/clasicos/quijote/edicion/parte1/portada/nota_portada.htm",
+    "dateConsulted": "2026-09-01"
+  },
+  {
+    "id": "SRC-005",
+    "title": "Cervantes y Don Quijote (ensayo introductorio)",
+    "institution": "Biblioteca Virtual Miguel de Cervantes — Daniel Eisenberg",
+    "type": "FUENTE ACADÉMICA",
+    "url": "https://www.cervantesvirtual.com/obra-visor/cervantes-y-don-quijote-0/html/ffcf21ae-82b1-11df-acc7-002185ce6064_1.html",
+    "dateConsulted": "2026-09-01"
+  },
+  {
+    "id": "SRC-006",
+    "title": "«Don Quijote de la Mancha». Índice.",
+    "institution": "Centro Virtual Cervantes (Instituto Cervantes)",
+    "type": "FUENTE INSTITUCIONAL",
+    "url": "https://cvc.cervantes.es/literatura/clasicos/quijote/indice.htm",
+    "dateConsulted": "2026-09-01"
+  },
+  {
+    "id": "SRC-007",
+    "title": "Registro de imágenes de Wikimedia Commons (Hero, Una vida, una historia, Obras y Quijote)",
+    "institution": "Wikimedia Commons",
+    "type": "FUENTE SECUNDARIA VERIFICADA",
+    "url": "https://commons.wikimedia.org",
+    "dateConsulted": "2026-09-02"
+  },
+  {
+    "id": "SRC-008",
+    "title": "Edición anotada de «Don Quijote de la Mancha» — texto completo (personajes, lugares, aventuras y frases)",
+    "institution": "Centro Virtual Cervantes (Instituto Cervantes)",
+    "type": "FUENTE PRIMARIA",
+    "url": "https://cvc.cervantes.es/literatura/clasicos/quijote/edicion/",
+    "dateConsulted": "2026-09-02"
+  },
+  {
+    "id": "SRC-009",
+    "title": "Legado de Cervantes: idioma, traducciones, arte y ediciones conmemorativas",
+    "institution": "RAE, Instituto Cervantes, Museo Casa Natal de Picasso",
+    "type": "FUENTE INSTITUCIONAL",
+    "url": "https://dle.rae.es/quijotesco",
+    "dateConsulted": "2026-09-02"
+  }
+]

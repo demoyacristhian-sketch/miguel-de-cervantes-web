@@ -310,3 +310,114 @@ sustituye a la anterior, dejando ambas visibles.
   verificado en Preview, ahora reflejado en producción.
 - **Aprobado por:** Usuario, instrucción explícita ("Sí, ponlo a producción"), 2026-09-02.
 - **Estado:** VIGENTE. Como en ADR-008/009/010, no es una autorización permanente para futuros despliegues.
+
+---
+
+## ADR-014
+
+- **Fecha:** 2026-09-02
+- **Tema:** Desarrollo completo de Obras, Don Quijote, Legado y Biblioteca + rediseño de Hero y
+  footer — aceleración explícita de las Fases 3, 4 y 6
+- **Contexto:** El usuario pidió explícitamente completar en la misma sesión ("hoy") las cuatro
+  secciones que quedaban como placeholder o texto denso: `/quijote` (12 subsecciones vacías),
+  `/legado` y `/biblioteca` (pantallas "Próximamente"), y `/obras` (funcional pero sin imágenes ni
+  filtro real). Pidió diseño interactivo (tarjetas, imágenes, animación) sin extenderse demasiado.
+  Además pidió rediseñar el Hero de Home (el nombre no se leía bien, el texto quedaba sobre el
+  rostro) y sustituir el texto final del footer por un crédito de TFG.
+- **Decisión:**
+  - **Contenido nuevo, siempre con fuente real:** Don Quijote (5 personajes, 5 lugares, 3
+    aventuras, 3 temas, 2 frases) se investigó directamente en el texto primario de la novela
+    alojado por el Centro Virtual Cervantes (Instituto Cervantes), capítulo por capítulo —
+    registrado como SRC-008. Las dos frases citadas se verificaron por duplicado (CVC +
+    transcripción independiente) antes de publicarse, precisamente para evitar atribuciones
+    populares incorrectas (se descartó explícitamente "ladran, Sancho, señal que cabalgamos" por no
+    tener respaldo textual). Legado (idioma, traducciones, arte, ediciones conmemorativas) se
+    investigó en RAE, Instituto Cervantes y el Museo Casa Natal de Picasso — registrado como
+    SRC-009.
+  - **Picasso, sin reproducir la imagen:** el dibujo "Don Quijote y Sancho" (1955) se menciona en
+    texto con enlace a la ficha oficial del museo, pero **no se reproduce** en el sitio — Picasso
+    falleció en 1973 y, para autores fallecidos antes de 1987, la ley española aplica 80 años
+    post-mortem (dominio público en 2053), muy lejos de cumplirse.
+  - **7 imágenes nuevas de Wikimedia Commons**, cada una verificada individualmente vía su API
+    antes de descargarse (mismo proceso que ADR-012): 4 portadas de primera edición para completar
+    las 6 obras (Novelas ejemplares 1613, Viaje del Parnaso 1614, Ocho comedias 1615, Persiles
+    1617), la portada de la Segunda Parte del Quijote (1615, como imagen secundaria en la ficha de
+    Don Quijote) y 2 grabados de Gustave Doré (1863, dominio público) para la cabecera de `/quijote`
+    y la tarjeta de los molinos de viento.
+  - **Hero rediseñado como layout editorial de dos zonas** (texto siempre sobre `bg-ink` sólido,
+    retrato contenido en su propio panel) en vez de texto superpuesto a pantalla completa —
+    resuelve directamente la queja de legibilidad del nombre y el texto sobre el rostro, sin
+    cambiar tipografía ni paleta. Incluye una animación de entrada escalonada y un zoom lento
+    (Ken Burns) en el retrato, ambos ya cubiertos por la regla `prefers-reduced-motion` existente.
+  - **Obras rediseñada:** filtro por tipo ahora funcional, tarjetas con portada e imagen, y la
+    ficha de cada obra reduce sus 10 campos a 3 destacados (Contexto, Argumento, Temas) siempre
+    visibles + un acordeón "Más detalles" para el resto — mismo patrón `<details>` que `ReadMore`.
+  - **Biblioteca** incluye una sección pública "Fuentes y créditos" (`/biblioteca#fuentes-y-creditos`)
+    que renderiza directamente las 9 fuentes registradas y las 14 imágenes del manifest — nada
+    oculto, todo trazable desde la propia web, no solo desde el repositorio.
+  - **Footer:** se sustituyó el disclaimer genérico por "Proyecto de TFG desarrollado e
+    implementado por Luis Vidal — Trabajo de Fin de Grado realizado en el marco de sus estudios de
+    posgrado en UNIR (Universidad Internacional de La Rioja)", a petición explícita del usuario
+    (texto base proporcionado por él, ampliado de forma profesional).
+  - **Aceleración de roadmap:** esto adelanta partes de la Fase 3 ("Explora el Quijote"), Fase 4
+    ("Biblioteca") y Fase 6 ("Legado") por instrucción explícita del usuario, no por decisión
+    unilateral — documentado aquí conforme a la regla del prompt maestro que permite aceleración
+    explícita si se documenta como tal.
+- **Razón:** Instrucción explícita, detallada y aprobada mediante plan (EnterPlanMode/ExitPlanMode)
+  antes de implementar.
+- **Impacto:** Ningún dato inventado; todo el contenido histórico/literario nuevo tiene fuente
+  primaria o institucional real. Cambia significativamente la superficie del sitio (4 secciones
+  completas + Hero + footer).
+- **Aprobado por:** Usuario, plan aprobado explícitamente, 2026-09-02.
+- **Estado:** VIGENTE. Igual que siempre, el despliegue a producción de este trabajo requiere una
+  aprobación explícita **aparte** de la aprobación del plan — no está incluida en esta ADR.
+
+---
+
+## ADR-015
+
+- **Fecha:** 2026-09-02
+- **Tema:** Home como historia cinematográfica (estilo Google Arts & Culture), Hero de superficie
+  única, rebautizo "Una vida en movimiento" → "Una vida, una historia", y botón "volver atrás"
+- **Contexto:** El usuario revisó el Hero de dos paneles (ADR-014) y pidió, en el mismo mensaje: (1)
+  que el fondo del Hero sea una sola superficie del mismo tono que la imagen, no un panel de color
+  sólido separado, y que la imagen tenga movimiento real (el zoom lento anterior se ejecutaba una
+  vez y se quedaba quieto); (2) renombrar "Una vida en movimiento" a "Una vida, una historia"; (3)
+  que toda la Home adopte el estilo de la misma referencia de Google Arts & Culture que ya había
+  compartido antes (paneles a pantalla completa, imagen de fondo, scroll cinematográfico), usando
+  la información e imágenes que la web ya tiene; (4) un botón "volver atrás" donde haga falta.
+- **Decisión:**
+  - El Hero pasa de un layout de dos paneles a una **imagen a pantalla completa** con un degradado
+    direccional (oscuro hacia el texto, transparente hacia el rostro) — una sola superficie
+    fotográfica, sin costura dura. El zoom lento pasa de una animación de un solo disparo
+    (`forwards`, se paraba a los 20s) a un **loop infinito** (`hero-zoom-loop`, ~18s,
+    `ease-in-out infinite`), reutilizado en el resto de paneles de Home para consistencia visual.
+  - La Home sustituye su antigua sucesión de secciones de tarjetas (`Introduction`,
+    `LivesOfCervantes`, `TimelinePreview`, `FeaturedWorks`, `QuijoteTeaser`, `CuriositiesTeaser`,
+    2× `PendingSection` — todos eliminados, sin otro uso en el sitio) por una **secuencia de 5
+    paneles a pantalla completa** (Hero + 4 nuevos) enlazada con **scroll-snap nativo de CSS**
+    (`scroll-snap-type: y proximity`, sin librerías de scroll-jacking): "Una vida, una historia"
+    (con los 7 roles de "un solo hombre, siete vidas" como chips), "Obras" (con una tira de las 6
+    portadas), "Don Quijote", y un panel de cierre "Sigue explorando" que agrupa Curiosidades,
+    Legado y Biblioteca. Después de la secuencia, `CtaSection` y el footer siguen en flujo normal,
+    igual que una "story" de Google Arts & Culture termina en contenido normal.
+  - **Cero imágenes nuevas**: los 4 paneles reutilizan material ya verificado en
+    `public/media/manifest.json` (Lepanto de Veronese, portada del Quijote 1605, grabado de
+    molinos de viento de Doré, foto de las Trinitarias) — instrucción explícita del usuario de usar
+    lo que la web ya tiene.
+  - Rail de progreso vertical (`StoryProgressNav`) solo en desktop, con el mismo patrón de
+    scrollspy por posición ya probado en `LifeJourney.tsx`.
+  - "Una vida en movimiento" se renombra a **"Una vida, una historia"** en nav, footer, la propia
+    página y la etiqueta de `sources.json`. La ruta `/vida-en-movimiento` no cambia (sin redirects
+    nuevos necesarios). Las ADR/CHANGELOG anteriores que usan el nombre antiguo no se reescriben
+    (registro histórico).
+  - Nuevo `BackLink` (botón "← Volver", usa el historial del navegador con `fallbackHref` si no hay
+    historial) añadido a todas las páginas que no son Home: Obras (índice y ficha), Don Quijote,
+    Legado, Biblioteca, Curiosidades y Una vida, una historia.
+- **Razón:** Instrucción explícita y detallada del usuario, con la misma referencia visual
+  compartida previamente; plan presentado y aprobado antes de implementar (EnterPlanMode/
+  ExitPlanMode).
+- **Impacto:** Cambio grande de presentación/UX en Home; ningún dato histórico nuevo (todo el
+  contenido de los paneles ya estaba verificado en secciones existentes, solo se reorganiza).
+- **Aprobado por:** Usuario, plan aprobado explícitamente, 2026-09-02.
+- **Estado:** VIGENTE. No incluye autorización de despliegue a producción — se pide aparte.

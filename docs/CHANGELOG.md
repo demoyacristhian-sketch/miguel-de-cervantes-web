@@ -429,3 +429,94 @@ Sin Preview de producción todavía.
 
 **En producción.** Ver ADR-013 en `docs/DECISIONS.md`. Aprobación explícita del usuario: "Sí, ponlo a
 producción" (2026-09-02). No es una autorización permanente para futuros despliegues.
+
+---
+
+## 2026-09-02 — v1.7.0-secciones-completas — rama `content/quijote-legado-biblioteca`
+
+### Añadido
+
+- `/quijote`: pestañas interactivas (Personajes, Lugares, Aventuras, Temas, Frases) con contenido
+  real investigado en el texto primario del Quijote (CVC, Instituto Cervantes) — 5 personajes, 5
+  lugares, 3 aventuras, 3 temas, 2 frases verificadas por duplicado. Reemplaza la lista de 12
+  subsecciones vacías.
+- `/legado`: 4 tarjetas verificadas (idioma, traducciones, arte, ediciones conmemorativas), fuentes
+  RAE/Instituto Cervantes/Museo Casa Natal de Picasso. Reemplaza el placeholder "Próximamente".
+- `/biblioteca`: 5 tarjetas-enlace a repositorios institucionales reales + nueva sección pública
+  "Fuentes y créditos" que renderiza las 9 fuentes y las 14 imágenes registradas del sitio.
+  Reemplaza el placeholder "Próximamente".
+- `/obras`: filtro por tipo funcional, tarjetas con portada de primera edición (6/6 obras).
+- `/obras/[slug]`: cabecera con portada; 3 campos destacados siempre visibles (Contexto, Argumento,
+  Temas) y el resto agrupado en un acordeón "Más detalles".
+- Hero de Home rediseñado como layout editorial de dos zonas (texto sobre `bg-ink` sólido, retrato
+  contenido en su propio panel) con animación de entrada escalonada y zoom lento en la imagen.
+- 7 imágenes nuevas de Wikimedia Commons, verificadas individualmente vía su API antes de usarse:
+  4 portadas de primera edición (Novelas ejemplares 1613, Viaje del Parnaso 1614, Ocho comedias
+  1615, Persiles 1617), la Segunda Parte del Quijote (1615) y 2 grabados de Gustave Doré (1863).
+- `src/content/quijote.json`, `src/content/legado.json`, `src/content/sources.json` y el tipo
+  `MediaAsset` (lee `public/media/manifest.json` desde `getMediaManifest()`).
+- `src/components/ui/Reveal.tsx` (fade-in-on-view), `QuijoteTabs.tsx`, `WorksFilter.tsx`.
+- SRC-008 (texto primario del Quijote en CVC) y SRC-009 (legado) en `docs/SOURCES.md`.
+
+### Modificado
+
+- Footer: se sustituyó el disclaimer genérico por el crédito de TFG del autor del proyecto.
+
+### Pruebas
+
+- `tsc --noEmit`, `npm run lint`, `npm run build`: limpios (18 rutas). Verificación visual: Hero en
+  desktop (dos zonas) y móvil (imagen arriba, texto abajo) en claro/oscuro; pestañas de Quijote
+  funcionando (Personajes/Lugares/Aventuras/Temas/Frases); acordeones de Obras y Biblioteca
+  abriendo correctamente (9 fuentes, 14 imágenes); imágenes nuevas cargando (`complete: true` vía
+  JS) tras descartar un artefacto conocido de la herramienta de capturas (ver notas de sesiones
+  anteriores). Sin errores de consola.
+
+### Estado
+
+Implementado y verificado en local, **sin desplegar todavía** — pendiente de merge a `develop` y de
+aprobación explícita del usuario para producción. Ver ADR-014.
+
+---
+
+## 2026-09-02 — v1.8.0-home-cinematografica — rama `design/home-cinematografica`
+
+### Añadido
+
+- Home rediseñada como historia a pantalla completa (estilo Google Arts & Culture): Hero + 4 paneles
+  nuevos ("Una vida, una historia", "Obras", "Don Quijote", "Sigue explorando") con scroll-snap
+  nativo de CSS, imagen de fondo real por panel (todas ya verificadas, ninguna nueva) y rail de
+  progreso vertical en desktop (`StoryProgressNav`).
+- `src/components/home/StorySlide.tsx`, `src/components/home/StoryProgressNav.tsx`.
+- `src/components/ui/BackLink.tsx` — botón "← Volver" añadido a Obras, Don Quijote, Legado,
+  Biblioteca, Curiosidades y Una vida, una historia.
+- Animación `hero-zoom-loop` (zoom lento en loop infinito, antes se ejecutaba una sola vez).
+
+### Modificado
+
+- Hero: de layout de dos paneles a una imagen a pantalla completa con degradado direccional (una
+  sola superficie fotográfica, sin panel de color sólido separado).
+- "Una vida en movimiento" renombrada a **"Una vida, una historia"** en nav, footer, la página y
+  `sources.json`. La ruta `/vida-en-movimiento` no cambia.
+
+### Eliminado
+
+- `Introduction.tsx`, `LivesOfCervantes.tsx`, `TimelinePreview.tsx`, `FeaturedWorks.tsx`,
+  `QuijoteTeaser.tsx`, `CuriositiesTeaser.tsx`, `PendingSection.tsx`, `ComingSoonPage.tsx` — su
+  contenido se reorganizó dentro de los nuevos paneles de Home; sin otro uso en el sitio.
+
+### Pruebas
+
+- `tsc --noEmit`, `npm run lint`, `npm run build`: limpios (18 rutas). Verificación visual y por
+  DOM/`getComputedStyle` (desktop, móvil, claro/oscuro): Hero de superficie única confirmado, zoom
+  en loop confirmado (`animationPlayState: running`), los 5 paneles renderizan con su imagen,
+  degradado y contenido correctos, rail de progreso activo por scroll, botón "Volver" presente y
+  funcional (usa historial real o `fallbackHref`), rebautizo confirmado en el H2 del panel
+  ("Una vida, una historia") vía `getComputedStyle`/DOM. La herramienta de capturas mostró
+  intermitentemente fotogramas en blanco/negro en posiciones de scroll específicas combinadas con
+  viewport emulado — descartado como artefacto de la herramienta (no del código) tras verificar en
+  una pestaña nueva y por inspección directa del DOM en cada caso.
+
+### Estado
+
+Implementado y verificado en local, **sin desplegar todavía** — pendiente de merge a `develop` y de
+aprobación explícita del usuario para producción. Ver ADR-015.

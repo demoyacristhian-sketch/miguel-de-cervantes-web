@@ -2,7 +2,21 @@ import worksData from "@/content/works.json";
 import timelineData from "@/content/timeline.json";
 import livesData from "@/content/lives.json";
 import curiositiesData from "@/content/curiosities.json";
-import type { Curiosity, LifeProfile, TimelineEvent, Work } from "@/types/content";
+import quijoteData from "@/content/quijote.json";
+import legadoData from "@/content/legado.json";
+import sourcesData from "@/content/sources.json";
+import manifestData from "../../public/media/manifest.json";
+import type {
+  Curiosity,
+  LegacyEntry,
+  LifeProfile,
+  MediaAsset,
+  QuijoteCategory,
+  QuijoteEntry,
+  SourceEntry,
+  TimelineEvent,
+  Work,
+} from "@/types/content";
 
 /**
  * Capa de acceso a contenido. Hoy lee JSON local; una futura migración a
@@ -38,4 +52,24 @@ export function getLifeProfiles(): LifeProfile[] {
 
 export function getCuriosities(): Curiosity[] {
   return curiositiesData as Curiosity[];
+}
+
+export function getQuijoteEntries(): QuijoteEntry[] {
+  return quijoteData as QuijoteEntry[];
+}
+
+export function getQuijoteEntriesByCategory(category: QuijoteCategory): QuijoteEntry[] {
+  return getQuijoteEntries().filter((entry) => entry.category === category);
+}
+
+export function getLegacyEntries(): LegacyEntry[] {
+  return legadoData as LegacyEntry[];
+}
+
+export function getSources(): SourceEntry[] {
+  return sourcesData as SourceEntry[];
+}
+
+export function getMediaManifest(): MediaAsset[] {
+  return manifestData as MediaAsset[];
 }

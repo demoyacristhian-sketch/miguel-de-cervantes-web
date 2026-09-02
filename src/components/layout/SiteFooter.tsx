@@ -13,7 +13,7 @@ export function SiteFooter() {
         <nav aria-label="Explorar">
           <p className="text-sm font-semibold">Explorar</p>
           <ul className="mt-3 space-y-2 text-sm text-foreground/70">
-            <li><Link href="/vida-en-movimiento" className="hover:text-accent">Una vida en movimiento</Link></li>
+            <li><Link href="/vida-en-movimiento" className="hover:text-accent">Una vida, una historia</Link></li>
             <li><Link href="/obras" className="hover:text-accent">Obras</Link></li>
             <li><Link href="/quijote" className="hover:text-accent">Don Quijote</Link></li>
           </ul>
@@ -30,13 +30,18 @@ export function SiteFooter() {
           <p className="text-sm font-semibold">Fuentes y bibliografía</p>
           <p className="mt-3 text-sm text-foreground/70">
             Cada dato histórico publicado en este sitio está trazado a una fuente primaria, institucional o
-            académica. Consulta el registro completo en el repositorio del proyecto.
+            académica. Consulta el registro completo en{" "}
+            <Link href="/biblioteca#fuentes-y-creditos" className="hover:text-accent">
+              Biblioteca — Fuentes y créditos
+            </Link>
+            .
           </p>
         </div>
       </div>
       <div className="border-t border-border-subtle px-6 py-4 text-center text-xs text-foreground/50">
-        Proyecto en desarrollo — contenido histórico marcado como &quot;pendiente de verificación&quot; aún
-        no ha sido validado documentalmente.
+        Proyecto de TFG desarrollado e implementado por Luis Vidal — Trabajo de Fin de Grado
+        realizado en el marco de sus estudios de posgrado en UNIR (Universidad Internacional de La
+        Rioja).
       </div>
     </footer>
   );
