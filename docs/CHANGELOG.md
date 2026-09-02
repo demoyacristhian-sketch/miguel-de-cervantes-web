@@ -356,7 +356,8 @@ avanzado" de Fase 3 a petición del usuario.
 
 ## 2026-09-02 — v1.5.0-cronologia-continua — rama `design/vida-en-movimiento`
 
-**Commit:** pendiente (ver `git log`)
+**Commit:** `5309920`
+**Preview:** `https://miguel-de-cervantes-enozy98ra-cdmlabs.vercel.app`
 
 A petición del usuario, que señaló que la biografía no se leía como una secuencia clara de nacimiento a
 muerte (ver ADR-012 en `docs/DECISIONS.md`), con dos referencias visuales (nownlab.es/soluciones y un
