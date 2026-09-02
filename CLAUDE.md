@@ -50,8 +50,8 @@ empieza en Fase 2.
 |---|---|
 | Fundación / documentación | **APROBADO** (Fase 0 ejecutada 2026-09-01) |
 | Arquitectura técnica | **EN DESARROLLO** (scaffold real creado y validado: lint + typecheck + build limpios) |
-| Repositorio GitHub | `main` = producción real (commit `d886473`), `develop` al día |
-| Vercel | Producción actualizada y verificada (2026-09-01, aprobación explícita del usuario); ver ADR-007 y ADR-008 |
+| Repositorio GitHub | `main` = producción real (commit `10eacb5`), `develop` al día |
+| Vercel | Producción actualizada y verificada (2026-09-01, aprobación explícita del usuario); ver ADR-007, ADR-008, ADR-009 |
 | Contenido histórico | **EN ANÁLISIS** (Fase 2 iniciada) — estructura lista, cero datos verificados todavía |
 | Diseño visual | APROBADO para MVP (tokens Tailwind v4, Playfair Display + Inter, revisado por el usuario) |
 | MVP (Home, Bio, Timeline, Obras, Quijote) | **APROBADO** — Fase 1 cerrada, mergeada a `develop` |
@@ -112,8 +112,10 @@ Estas reglas provienen del prompt maestro del proyecto y son de cumplimiento obl
 ## 8. Próximo paso
 
 Fase 1 cerrada. Fase 2, primera iteración, completada: timeline (12/12), obras (6/6) y "vidas de Cervantes"
-(7/7) verificadas contra SRC-001; las 6 curiosidades verificadas contra SRC-001 a SRC-005. **Producción
-actualizada con aprobación explícita del usuario** (2026-09-01, commit `d886473` en `main`) — ver ADR-008.
+(7/7) verificadas contra SRC-001; las 6 curiosidades verificadas contra SRC-001 a SRC-005. Home optimizada
+(patrón Resumen/Profundizar, badges minimalistas, secciones acortadas). **Producción actualizada dos veces
+con aprobación explícita del usuario** (2026-09-01, commits `d886473` y `10eacb5` en `main`) — ver ADR-008 y
+ADR-009.
 
 **Próximo paso lógico:** continuar Fase 2 con lo que falta — fichas ampliadas de obra (argumento, personajes,
 temas, estructura, recepción, influencia), personajes principales del Quijote (Don Quijote, Sancho Panza,

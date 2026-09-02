@@ -164,3 +164,21 @@ sustituye a la anterior, dejando ambas visibles.
 - **Aprobado por:** Usuario, instrucción explícita, 2026-09-01.
 - **Estado:** VIGENTE. **No es una autorización permanente**: cualquier futuro merge a `main` requiere una
   nueva aprobación explícita, no se generaliza a partir de esta.
+
+---
+
+## ADR-009
+
+- **Fecha:** 2026-09-01
+- **Tema:** Segunda actualización aprobada de producción (optimización de densidad de Home)
+- **Contexto:** Tras la sesión de diseño que redujo la densidad de información de Home (ReadMore, badges
+  minimalistas, secciones acortadas a 3 elementos + `/curiosidades`), el usuario pidió explícitamente
+  "ponlo a producción".
+- **Decisión:** Se mergeó `design/optimizacion-densidad-home` → `develop` → `main` (commit `10eacb5`), y
+  Vercel desplegó automáticamente a producción (`https://miguel-de-cervantes-8uk8az5sr-cdmlabs.vercel.app`,
+  alias `miguel-de-cervantes-web.vercel.app`). Verificado visualmente tras el despliegue.
+- **Razón:** Instrucción explícita e inequívoca del usuario, sin ambigüedad.
+- **Impacto:** Solo diseño/UX — sin cambios de contenido ni de fuentes. Producción sigue reflejando
+  fielmente el estado verificado del proyecto.
+- **Aprobado por:** Usuario, instrucción explícita ("ponlo a producción"), 2026-09-01.
+- **Estado:** VIGENTE. Igual que ADR-008, no es una autorización permanente para futuros despliegues.

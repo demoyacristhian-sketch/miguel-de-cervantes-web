@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getWorkBySlug, getWorks } from "@/lib/content";
 import { VerificationBadge } from "@/components/ui/VerificationBadge";
+import { ReadMore } from "@/components/ui/ReadMore";
+import type { Work, WorkProfileField } from "@/types/content";
 
 export function generateStaticParams() {
   return getWorks().map((work) => ({ slug: work.slug }));
@@ -21,23 +23,27 @@ export async function generateMetadata({
   };
 }
 
-const PENDING_FIELDS = [
-  "Contexto",
-  "Argumento",
-  "Personajes",
-  "Temas",
-  "Estructura",
-  "Curiosidades",
-  "Fragmentos",
-  "Ediciones",
-  "Recepción",
-  "Influencia",
-];
+const PROFILE_LABELS: Record<keyof NonNullable<Work["profile"]>, string> = {
+  context: "Contexto",
+  plot: "Argumento",
+  characters: "Personajes",
+  themes: "Temas",
+  structure: "Estructura",
+  curiosities: "Curiosidades",
+  fragments: "Fragmentos",
+  editions: "Ediciones",
+  reception: "Recepción",
+  influence: "Influencia",
+};
+
+const FIELD_ORDER = Object.keys(PROFILE_LABELS) as (keyof typeof PROFILE_LABELS)[];
 
 export default async function WorkPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const work = getWorkBySlug(slug);
   if (!work) notFound();
+
+  const profile = work.profile ?? {};
 
   return (
     <div className="mx-auto max-w-3xl px-6 py-16">
@@ -50,12 +56,26 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
       <p className="mt-6 text-foreground/80">{work.summary}</p>
 
       <dl className="mt-10 grid gap-4 sm:grid-cols-2">
-        {PENDING_FIELDS.map((field) => (
-          <div key={field} className="rounded-xl border border-border-subtle bg-surface p-4">
-            <dt className="text-sm font-semibold">{field}</dt>
-            <dd className="mt-1 text-sm text-foreground/60">Pendiente de redacción y verificación (Fase 2).</dd>
-          </div>
-        ))}
+        {FIELD_ORDER.map((field) => {
+          const entry: WorkProfileField | undefined = profile[field];
+          return (
+            <div key={field} className="rounded-xl border border-border-subtle bg-surface p-4">
+              <div className="flex items-center justify-between gap-2">
+                <dt className="text-sm font-semibold">{PROFILE_LABELS[field]}</dt>
+                {entry && <VerificationBadge status={entry.status} />}
+              </div>
+              <dd className="mt-1">
+                {entry ? (
+                  <ReadMore text={entry.text} maxLen={180} />
+                ) : (
+                  <span className="text-sm text-foreground/60">
+                    Pendiente de redacción y verificación (Fase 2).
+                  </span>
+                )}
+              </dd>
+            </div>
+          );
+        })}
       </dl>
     </div>
   );
