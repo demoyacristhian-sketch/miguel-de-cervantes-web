@@ -288,3 +288,16 @@ Verificado visualmente tras el despliegue. Aprobación puntual, no permanente pa
 Personajes de cada obra individual (campo "Personajes" de la ficha) quedan pendientes — se resolverán junto
 con la construcción de `/quijote` en Fase 3, donde vive el modelo completo de `Character`. Resto de Fase 2
 pendiente: contexto histórico general y biografía narrativa completa.
+
+---
+
+## 2026-09-02 — v1.3.0-produccion — rama `main`
+
+**Commit:** `572af9c` (merge `develop` → `main`)
+**Producción:** `https://miguel-de-cervantes-web.vercel.app` (deployment
+`https://miguel-de-cervantes-4k0dmo5uq-cdmlabs.vercel.app`)
+**Aprobación:** Usuario, instrucción explícita: "sí, ponlo a producción" (ver ADR-010)
+
+### Estado
+
+Producción refleja las fichas ampliadas de las 6 obras. Verificado visualmente tras el despliegue.

@@ -147,6 +147,7 @@ Incluido en el plan aprobado (roadmap completo, sujeto a aprobación fase por fa
 | Producción (accidental) | 2026-09-01 | `4c7554d` (vía `vercel deploy` sin flags) | Claude (incidente, ver ADR-007) | No solicitada — comunicado y aceptado por el usuario a posteriori por bajo impacto |
 | Producción (Fase 1 + verificación Fase 2) | 2026-09-01 | `d886473` (merge `develop` → `main`) | Claude, a petición del usuario | **APROBADA** — instrucción explícita del usuario: "Actualiza ya la producción con el contenido verificado actual" (2026-09-01), tras detectar que la producción existente mostraba contenido desactualizado |
 | Producción (optimización de densidad de Home) | 2026-09-01 | `10eacb5` (merge `develop` → `main`) | Claude, a petición del usuario | **APROBADA** — instrucción explícita: "ponlo a producción" (2026-09-01), ver ADR-009 |
+| Producción (fichas ampliadas de 6 obras) | 2026-09-02 | `572af9c` (merge `develop` → `main`) | Claude, a petición del usuario | **APROBADA** — instrucción explícita: "sí, ponlo a producción" (2026-09-02), ver ADR-010 |
 
 ## Cierre
 

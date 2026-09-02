@@ -182,3 +182,22 @@ sustituye a la anterior, dejando ambas visibles.
   fielmente el estado verificado del proyecto.
 - **Aprobado por:** Usuario, instrucción explícita ("ponlo a producción"), 2026-09-01.
 - **Estado:** VIGENTE. Igual que ADR-008, no es una autorización permanente para futuros despliegues.
+
+---
+
+## ADR-010
+
+- **Fecha:** 2026-09-02
+- **Tema:** Tercera actualización aprobada de producción (fichas ampliadas de las 6 obras)
+- **Contexto:** El usuario preguntó si las fichas ampliadas (contexto, argumento, temas, estructura,
+  curiosidades, ediciones, recepción, influencia de las 6 obras) ya estaban en producción. Se verificó que
+  no —`main` seguía en el commit de la optimización de densidad (`10eacb5`)— y se informó con transparencia.
+- **Decisión:** Ante la instrucción explícita "sí, ponlo a producción", se mergeó
+  `content/fichas-ampliadas-obras` → `develop` → `main` (commit `572af9c`), desplegado automáticamente por
+  Vercel. Verificado visualmente que `/obras/don-quijote-de-la-mancha` en producción muestra el contenido
+  real con badges "Verificado" por campo.
+- **Razón:** Instrucción explícita e inequívoca del usuario.
+- **Impacto:** Contenido nuevo verificado (fichas de obra); ningún dato inventado, ningún campo relleno
+  artificialmente.
+- **Aprobado por:** Usuario, instrucción explícita, 2026-09-02.
+- **Estado:** VIGENTE. Como en ADR-008/009, no es una autorización permanente para futuros despliegues.
