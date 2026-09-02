@@ -284,3 +284,29 @@ sustituye a la anterior, dejando ambas visibles.
   explícito del Ministerio de Cultura.
 - **Aprobado por:** Usuario, plan aprobado explícitamente (EnterPlanMode/ExitPlanMode), 2026-09-02.
 - **Estado:** VIGENTE.
+
+---
+
+## ADR-013
+
+- **Fecha:** 2026-09-02
+- **Tema:** Cuarta actualización aprobada de producción (reestructuración de navegación + cronología continua
+  de ADR-011 y ADR-012)
+- **Contexto:** Tras implementar y verificar en Preview el trabajo descrito en ADR-011 (eliminación de
+  "Inicio"/"El mundo de Cervantes", fusión biografía+timeline en `/vida-en-movimiento`) y ADR-012
+  (numeración global continua 01/12→12/12, panel de imagen sticky por etapa, Hero fotográfico, 7 imágenes de
+  Wikimedia Commons con derechos verificados), el usuario dio la instrucción explícita "Sí, ponlo a
+  producción".
+- **Decisión:** Se mergeó `design/vida-en-movimiento` → `develop` (commit `c8aa2a9`) → `main` (commit
+  `dd99c1a`), desplegado automáticamente por la integración Git de Vercel
+  (`https://miguel-de-cervantes-pv0pcozdy-cdmlabs.vercel.app`, alias `miguel-de-cervantes-web.vercel.app`).
+- **Verificación post-despliegue:** confirmado en producción vía navegador — Hero con foto real y crédito
+  visible; nav principal reducida a 5 ítems (Una vida en movimiento, Obras, Don Quijote, Legado, Biblioteca);
+  `/vida-en-movimiento` con numeración continua 01/12→12/12 y las 6 imágenes por etapa; redirects 308 desde
+  `/cervantes` y `/linea-de-tiempo` hacia `/vida-en-movimiento`; `/mundo-de-cervantes` devuelve 404 (sin
+  sustituto, como se pidió).
+- **Razón:** Instrucción explícita e inequívoca del usuario.
+- **Impacto:** Ningún dato histórico nuevo respecto a ADR-011/ADR-012; cambio de navegación y presentación ya
+  verificado en Preview, ahora reflejado en producción.
+- **Aprobado por:** Usuario, instrucción explícita ("Sí, ponlo a producción"), 2026-09-02.
+- **Estado:** VIGENTE. Como en ADR-008/009/010, no es una autorización permanente para futuros despliegues.
