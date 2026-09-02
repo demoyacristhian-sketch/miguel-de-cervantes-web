@@ -14,7 +14,7 @@ Que una interfaz esté terminada NO implica que su contenido esté aprobado. Est
 | Módulo | DEV_STATUS | CONTENT_STATUS | SOURCE_STATUS | REVIEW_STATUS | PRODUCTION_STATUS |
 |---|---|---|---|---|---|
 | Home (estructura + secciones) | TERMINADO | PARCIAL (ver abajo) | PARCIAL | PENDIENTE | PENDIENTE |
-| Una vida en movimiento (fusión de biografía + timeline, experiencia interactiva) | TERMINADO | **VERIFICADO** (12/12 eventos, agrupados en 6 etapas narrativas editoriales) | **VERIFICADAS** (SRC-001) | PENDIENTE | PENDIENTE |
+| Una vida en movimiento (fusión de biografía + timeline, experiencia interactiva) | TERMINADO | **VERIFICADO** (12/12 eventos, numeración global continua 01-12, agrupados en 6 etapas narrativas con imagen real por etapa) | **VERIFICADAS** (SRC-001 texto; SRC-007 imágenes) | PENDIENTE | PENDIENTE |
 | Obras (6 fichas ampliadas) | TERMINADO | **VERIFICADO** — datos bibliográficos 6/6; ficha ampliada con al menos contexto+argumento en 4/6 (Quijote con las 10 secciones completas); Personajes de obra (no de Fase 3) pendiente en las 6 | **VERIFICADAS** (SRC-001, SRC-004, SRC-005, SRC-006) | PENDIENTE | PENDIENTE |
 | Don Quijote (universo, estructura de subsecciones) | EN_DESARROLLO | PENDIENTE | PENDIENTE | PENDIENTE | PENDIENTE |
 | Las vidas de Cervantes (7 perfiles) | TERMINADO | **VERIFICADO** (7/7) | **VERIFICADAS** (SRC-001) | PENDIENTE | PENDIENTE |

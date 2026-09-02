@@ -64,9 +64,23 @@ export function LifeJourney({ eras }: { eras: LifeEra[] }) {
         </ul>
       </div>
 
-      {eras.map((era, index) => (
-        <EraScene key={era.id} era={era} index={index} />
-      ))}
+      {(() => {
+        const totalSteps = eras.reduce((sum, era) => sum + era.events.length, 0);
+        const startingSteps = eras.reduce<number[]>((acc, era, index) => {
+          const previous = index === 0 ? 1 : acc[index - 1] + eras[index - 1].events.length;
+          acc.push(previous);
+          return acc;
+        }, []);
+        return eras.map((era, index) => (
+          <EraScene
+            key={era.id}
+            era={era}
+            index={index}
+            startingStep={startingSteps[index]}
+            totalSteps={totalSteps}
+          />
+        ));
+      })()}
     </div>
   );
 }

@@ -137,6 +137,10 @@ Incluido en el plan aprobado (roadmap completo, sujeto a aprobación fase por fa
   movimiento" — experiencia interactiva con 6 escenas narrativas de tono cromático propio, carril horizontal
   de eventos y navegación por etapas. Navegación principal reducida de 8 a 5 elementos (se elimina "Inicio"
   y "El mundo de Cervantes", sin sustituto).
+- **2026-09-02 (Fase 2, ADR-012):** iteración sobre lo anterior tras feedback del usuario — el carril
+  horizontal por etapa se reemplaza por un recorrido vertical con numeración global continua (01/12→12/12),
+  y cada etapa gana una imagen real (dominio público, Wikimedia Commons) en un panel `sticky`. El Hero de
+  Home pasa de degradado CSS a fotografía real (retrato tradicionalmente atribuido a Jáuregui).
 
 ## Contenido
 

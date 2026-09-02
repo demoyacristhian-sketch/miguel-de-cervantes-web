@@ -351,3 +351,54 @@ A petición explícita y muy detallada del usuario (ver ADR-011 en `docs/DECISIO
 
 Cambio de IA/UX puro sobre contenido ya verificado — ningún dato histórico nuevo. Adelanta parte de "timeline
 avanzado" de Fase 3 a petición del usuario.
+
+---
+
+## 2026-09-02 — v1.5.0-cronologia-continua — rama `design/vida-en-movimiento`
+
+**Commit:** pendiente (ver `git log`)
+
+A petición del usuario, que señaló que la biografía no se leía como una secuencia clara de nacimiento a
+muerte (ver ADR-012 en `docs/DECISIONS.md`), con dos referencias visuales (nownlab.es/soluciones y un
+"story" de Google Arts & Culture):
+
+### Añadido
+
+- 7 imágenes nuevas con derechos verificados individualmente vía la API de Wikimedia Commons (no solo por
+  aparecer en un buscador): retrato de Cervantes (Hero), mapa de Alcalá de Henares, "The Battle of Lepanto"
+  de Veronese, grabado de Jan Luyken sobre cautivos en Argel (1684), portadas de las primeras ediciones de
+  La Galatea (1585) y Don Quijote (1605), y foto del convento de las Trinitarias Descalzas. Todas registradas
+  en `public/media/manifest.json` y `docs/SOURCES.md` (SRC-007).
+- `src/components/life-journey/JourneyStep.tsx`: nuevo componente para cada paso del recorrido, con
+  numeración global (`N / 12`) en vez de numeración reiniciada por etapa.
+- `src/lib/lifeEras.ts`: cada etapa gana un campo `image` (src, alt, crédito).
+
+### Modificado
+
+- `src/components/life-journey/EraScene.tsx`: layout de dos columnas — pasos verticales numerados
+  continuamente + panel de imagen (`position: sticky` en desktop, cabecera no-sticky en móvil).
+- `src/components/life-journey/LifeJourney.tsx`: calcula la numeración global 1-12 y la pasa a cada etapa.
+- `src/components/sections/Hero.tsx`: fondo pasa de degradado CSS a foto (retrato de Jáuregui) con overlay
+  oscuro para legibilidad y crédito visible.
+
+### Eliminado
+
+- `src/components/life-journey/EventCard.tsx` y `EventRail.tsx` (carril horizontal por etapa, reemplazado
+  por el recorrido vertical continuo).
+
+### Hallazgo de derechos
+
+- El Museo Casa de Cervantes (cultura.gob.es) exige permiso explícito por email para reproducir imágenes;
+  CERES limita el uso a fines privados/no comerciales. Se descartó como fuente y se usó Wikimedia Commons en
+  su lugar, con la misma verificación rigurosa que las fuentes de texto — decisión acordada con el usuario.
+
+### Pruebas
+
+- `tsc --noEmit`, `npm run lint`, `npm run build`: limpios (18 rutas). Verificación visual en navegador
+  (desktop y móvil, claro y oscuro): numeración continua 01/12→12/12 sin reiniciarse, panel de imagen
+  confirmado `sticky` vía `getBoundingClientRect()` (se fija en `top: 112px`), Hero con buen contraste,
+  contraste de texto correcto en escenas claras bajo modo oscuro del sistema, sin errores de consola.
+
+### Estado
+
+Sin Preview de producción todavía.

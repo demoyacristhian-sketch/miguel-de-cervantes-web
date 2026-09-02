@@ -1,4 +1,5 @@
-import { EventRail } from "@/components/life-journey/EventRail";
+import Image from "next/image";
+import { JourneyStep } from "@/components/life-journey/JourneyStep";
 import type { LifeEra, EraTone } from "@/lib/lifeEras";
 
 const TONE_STYLES: Record<EraTone, { dark: boolean; background: string; kicker: string }> = {
@@ -39,29 +40,69 @@ const TONE_STYLES: Record<EraTone, { dark: boolean; background: string; kicker: 
   },
 };
 
-export function EraScene({ era, index }: { era: LifeEra; index: number }) {
+export function EraScene({
+  era,
+  index,
+  startingStep,
+  totalSteps,
+}: {
+  era: LifeEra;
+  index: number;
+  startingStep: number;
+  totalSteps: number;
+}) {
   const style = TONE_STYLES[era.tone];
 
   return (
     <section
       id={era.id}
       aria-labelledby={`${era.id}-heading`}
-      className={`scroll-mt-28 py-20 sm:py-28 ${style.dark ? "text-ivory" : "text-ink"}`}
+      className={`scroll-mt-28 py-16 sm:py-24 ${style.dark ? "text-ivory" : "text-ink"}`}
       style={{ backgroundImage: style.background }}
     >
-      <div className="mx-auto max-w-6xl px-6">
-        <p className={`font-serif-display text-sm uppercase tracking-[0.3em] ${style.kicker}`}>
-          {String(index + 1).padStart(2, "0")} — {era.kicker}
-        </p>
-        <h2 id={`${era.id}-heading`} className="mt-3 font-serif-display text-4xl font-semibold sm:text-5xl">
-          {era.title}
-        </h2>
-        <p className={`mt-3 max-w-xl text-lg ${style.dark ? "text-ivory/70" : "text-ink/70"}`}>
-          {era.frame}
-        </p>
+      <div className="mx-auto grid max-w-6xl gap-8 px-6 lg:grid-cols-[1fr_360px] lg:gap-12">
+        {/* Imagen: cabecera no-sticky en móvil, panel sticky en desktop — ver docs/DECISIONS.md */}
+        <div className="order-1 lg:order-2">
+          <div className="overflow-hidden rounded-2xl lg:sticky lg:top-28">
+            <div className="relative aspect-[4/3] w-full">
+              <Image
+                src={era.image.src}
+                alt={era.image.alt}
+                fill
+                sizes="(min-width: 1024px) 360px, 100vw"
+                className="object-cover"
+              />
+            </div>
+            <p
+              className={`px-1 pt-2 text-xs ${style.dark ? "text-ivory/50" : "text-ink/50"}`}
+            >
+              {era.image.credit}
+            </p>
+          </div>
+        </div>
 
-        <div className="mt-10">
-          <EventRail events={era.events} dark={style.dark} />
+        <div className="order-2 lg:order-1">
+          <p className={`font-serif-display text-sm uppercase tracking-[0.3em] ${style.kicker}`}>
+            {String(index + 1).padStart(2, "0")} — {era.kicker}
+          </p>
+          <h2 id={`${era.id}-heading`} className="mt-3 font-serif-display text-4xl font-semibold sm:text-5xl">
+            {era.title}
+          </h2>
+          <p className={`mt-3 max-w-xl text-lg ${style.dark ? "text-ivory/70" : "text-ink/70"}`}>
+            {era.frame}
+          </p>
+
+          <ol className="mt-10 space-y-8">
+            {era.events.map((event, eventIndex) => (
+              <JourneyStep
+                key={event.id}
+                event={event}
+                stepNumber={startingStep + eventIndex}
+                totalSteps={totalSteps}
+                dark={style.dark}
+              />
+            ))}
+          </ol>
         </div>
       </div>
     </section>

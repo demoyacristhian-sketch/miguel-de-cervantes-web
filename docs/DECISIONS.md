@@ -242,3 +242,45 @@ sustituye a la anterior, dejando ambas visibles.
 - **Aprobado por:** Usuario, mediante plan presentado y aprobado antes de implementar (EnterPlanMode/
   ExitPlanMode), 2026-09-02.
 - **Estado:** VIGENTE.
+
+---
+
+## ADR-012
+
+- **Fecha:** 2026-09-02
+- **Tema:** Coherencia cronológica en "Una vida en movimiento" + Hero fotográfico + fuente de imágenes
+- **Contexto:** El usuario revisó `/vida-en-movimiento` (ADR-011) y señaló que, pese a tener datos
+  verificados, no se leía como una secuencia clara de nacimiento a muerte — las 6 etapas, cada una con su
+  propio carril horizontal y numeración interna, rompían la sensación de una sola vida continua. Pidió
+  aplicar el patrón de pasos numerados continuos de nownlab.es/soluciones, y un Hero fotográfico inspirado
+  en un "story" de Google Arts & Culture, con imágenes del Museo Casa de Cervantes.
+- **Hallazgo de derechos:** el Museo Casa de Cervantes exige permiso explícito por email para reproducir sus
+  imágenes; CERES (catálogo oficial de museos) limita el uso a fines privados/no comerciales salvo
+  autorización expresa. Ninguno es de uso libre por defecto. Comunicado al usuario, que aprobó usar en su
+  lugar Wikimedia Commons, verificando el estado de dominio público de cada imagen vía la API de Wikimedia
+  (campo `Copyrighted: false`) antes de descargarla — mismo rigor que con las fuentes de texto.
+- **Decisión:**
+  - Los 12 eventos verificados pasan a numerarse de forma **continua y global (01/12 → 12/12)**, sin
+    reiniciarse por etapa — arreglo directo de la queja de falta de cronología. El carril horizontal de
+    tarjetas por etapa (`EventRail`/`EventCard`) se elimina; dentro de cada etapa los eventos se listan
+    verticalmente como pasos de un único recorrido (`JourneyStep`, nuevo componente).
+  - Cada etapa gana un panel de imagen real (`position: sticky` en desktop, cabecera no-sticky en móvil —
+    adaptación específica, no solo una reducción de tamaño), verificado con `getBoundingClientRect()` que
+    efectivamente se fija en `top: 112px` mientras el usuario recorre los pasos de esa etapa.
+  - El Hero de Home cambia de degradado CSS a foto: el retrato tradicionalmente atribuido a Juan de Jáuregui
+    (h. 1600, Real Academia de la Historia), con crédito y advertencia de autenticidad no confirmada
+    visibles — coherente con lo que el sitio ya dice en `/curiosidades` sobre su aspecto físico.
+  - 7 imágenes en total, todas verificadas individualmente vía API de Wikimedia (no solo por aparecer en un
+    buscador) y registradas en `public/media/manifest.json` y `docs/SOURCES.md` (SRC-007). Ninguna imagen
+    respalda un dato histórico textual nuevo — son ilustración de contexto editorial.
+  - Corregido en el proceso: un bug real de contraste en modo oscuro heredado del diseño anterior seguía sin
+    aparecer aquí (ya corregido en ADR-011), verificado de nuevo tras el cambio de layout.
+- **Razón:** Instrucción explícita y detallada del usuario, con dos referencias visuales concretas; plan
+  presentado y aprobado antes de implementar (incluida una pregunta de clarificación sobre si el "efecto de
+  scroll" debía ser un carrusel de diapositivas de pantalla completa o combinarse con el patrón de pasos de
+  NOWN — el usuario eligió la combinación).
+- **Impacto:** Ningún dato histórico nuevo. Cambio de presentación/UX + 7 imágenes nuevas con derechos
+  verificados. El Museo Casa de Cervantes queda descartado como fuente de imágenes hasta que exista permiso
+  explícito del Ministerio de Cultura.
+- **Aprobado por:** Usuario, plan aprobado explícitamente (EnterPlanMode/ExitPlanMode), 2026-09-02.
+- **Estado:** VIGENTE.

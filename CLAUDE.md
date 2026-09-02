@@ -59,30 +59,23 @@ empieza en Fase 2.
 
 ## 5. Última implementación
 
-- **Fecha:** 2026-09-01
-- **Rama:** `develop` (merge de `feature/mvp-scaffold`, commit `d4ddf1c`)
-- **Commit:** `4c7554d` (implementación) — ver `d4ddf1c` para el merge a `develop`
-- **Qué se hizo:** Scaffold real de Next.js 16.3.4 (App Router, `src/`) con TypeScript 6.0.3, Tailwind CSS
-  4.3.3, ESLint 9.39.5. Sistema de diseño implementado (paleta, tipografía Playfair Display/Inter, modo
-  oscuro). Layout raíz con skip link, header/nav responsive, footer institucional. Home completo (Hero sin
-  vídeo — fallback CSS, Introducción, Las vidas de Cervantes, Timeline preview, Obras destacadas, teaser del
-  Quijote, secciones pendientes de Lugares/Contexto/Legado/Biblioteca, Curiosidades, CTA). Páginas
-  `/cervantes`, `/linea-de-tiempo`, `/obras`, `/obras/[slug]`, `/quijote`, `/mundo-de-cervantes`, `/legado`,
-  `/biblioteca`. SEO base (`sitemap.ts`, `robots.ts`, metadata por página). Todo el contenido histórico está
-  marcado `pendiente_de_verificacion` con badge visible — cero datos inventados.
-- **Archivos afectados:** ~30 archivos nuevos bajo `src/`, `package.json`, `tsconfig.json`,
-  `eslint.config.mjs`, `next.config.ts`, `postcss.config.mjs`, `AGENTS.md` (nuevo — evita que `next dev`
-  escriba en este `CLAUDE.md`, ver nota en ese archivo), `.gitignore`, `.env.example`, y actualizaciones en
-  `docs/ARCHITECTURE.md`, `docs/DESIGN_SYSTEM.md`.
-- **Pruebas:** `tsc --noEmit` limpio, `npm run lint` limpio (0 errores), `npm run build` exitoso (19 rutas,
-  todas estáticas o SSG), verificación visual en navegador (Home completo, ficha de obra dinámica, modo
-  claro/oscuro, sin errores de consola).
-- **Estado:** Fase 1 **CERRADA** — revisada por el usuario sobre el Preview de Vercel, mergeada a `develop`.
-  `main`/producción sin tocar (salvo el incidente ADR-007, de bajo impacto y aceptado). Fase 2 (Contenido)
-  iniciada por instrucción explícita del usuario ("Mergea a develop y empieza Fase 2").
-- **Pendientes:** investigación de fuentes reales para el timeline (12 años ancla), las 6 obras, los 7
-  perfiles de "vidas de Cervantes" y las curiosidades — ver `docs/SOURCES.md` (vacío) y
-  `docs/CONTENT_STATUS.md`.
+- **Fecha:** 2026-09-02
+- **Rama:** `design/vida-en-movimiento` (sin mergear a `develop` ni `main` todavía)
+- **Commit:** pendiente de registrar tras el commit de esta sesión (ver `git log design/vida-en-movimiento`)
+- **Qué se hizo:** Ver ADR-011 y ADR-012 en `docs/DECISIONS.md` y las entradas correspondientes en
+  `docs/CHANGELOG.md` para el detalle completo. En resumen: eliminación de "Inicio" y "El mundo de
+  Cervantes" de la navegación; fusión de la biografía y el timeline en `/vida-en-movimiento`, un recorrido
+  vertical con numeración global continua (01/12→12/12) e imagen real (dominio público, Wikimedia Commons)
+  por etapa en panel `sticky`; Hero de Home con fotografía real (retrato atribuido a Jáuregui) en vez de
+  degradado CSS. 7 imágenes nuevas con derechos verificados vía API de Wikimedia, registradas en
+  `public/media/manifest.json` y `docs/SOURCES.md` (SRC-007).
+- **Pruebas:** `tsc --noEmit`, `npm run lint`, `npm run build` limpios (18 rutas). Verificación visual en
+  navegador: desktop y móvil, modo claro/oscuro, numeración continua confirmada, `position: sticky` del
+  panel de imagen confirmado vía `getBoundingClientRect()`, sin errores de consola.
+- **Estado:** Implementado y verificado, **sin desplegar a producción**. Requiere aprobación explícita del
+  usuario para mergear a `main`.
+- **Pendientes:** fichas de personajes del Quijote, contexto histórico general, y profundizar la biografía
+  narrativa dentro de `/vida-en-movimiento` si se desea más allá de los 12 eventos actuales.
 
 ## 6. Decisiones vigentes
 
@@ -113,29 +106,28 @@ Estas reglas provienen del prompt maestro del proyecto y son de cumplimiento obl
 
 Fase 1 cerrada. Fase 2 en curso: timeline (12/12), obras (6/6 con ficha ampliada) y "vidas de Cervantes"
 (7/7) verificadas; las 6 curiosidades verificadas. Home optimizada (Resumen/Profundizar, badges
-minimalistas, secciones acortadas). **Reestructuración de navegación (2026-09-02, ADR-011):** se eliminó
-"Inicio" y "El mundo de Cervantes" (sin sustituto), y "Miguel de Cervantes" + "Línea de tiempo" se
-fusionaron en `/vida-en-movimiento`, una experiencia interactiva (scroll por 6 etapas narrativas + carril
-horizontal de eventos) que adelanta parte del "timeline avanzado" de Fase 3. Nav principal: Una vida en
-movimiento, Obras, Don Quijote, Legado, Biblioteca. **Producción actualizada tres veces con aprobación
-explícita del usuario** (commits `d886473`, `10eacb5` y `572af9c` en `main`) — ver ADR-008 a ADR-010. El
-cambio de navegación de ADR-011 está implementado en la rama `design/vida-en-movimiento`, **todavía sin
-mergear ni desplegar**.
+minimalistas, secciones acortadas). **Reestructuración de navegación y biografía (2026-09-02, ADR-011 y
+ADR-012):** se eliminó "Inicio" y "El mundo de Cervantes" (sin sustituto); "Miguel de Cervantes" + "Línea de
+tiempo" se fusionaron en `/vida-en-movimiento`, un recorrido vertical con numeración global continua
+(01/12→12/12, arregla la falta de cronología señalada por el usuario) y una imagen real (dominio público)
+por etapa en un panel `sticky`. El Hero de Home pasa de degradado CSS a fotografía real (retrato
+tradicionalmente atribuido a Jáuregui). Nav principal: Una vida en movimiento, Obras, Don Quijote, Legado,
+Biblioteca. Todo esto está en la rama `design/vida-en-movimiento`, **todavía sin mergear ni desplegar a
+producción**.
 
-**Próximo paso lógico:** decidir si se aprueba mergear/desplegar la reestructuración de navegación; después,
-personajes principales del Quijote (Don Quijote, Sancho Panza, Dulcinea, Rocinante, Sansón Carrasco —
-sección 30 del prompt maestro) o contexto histórico general. Cualquier nuevo merge a `main` requiere de
-nuevo aprobación explícita.
+**Producción actualizada tres veces con aprobación explícita del usuario** (commits `d886473`, `10eacb5` y
+`572af9c` en `main`) — ver ADR-008 a ADR-010. Ninguna de esas incluye todavía la reestructuración de
+navegación/biografía de ADR-011/ADR-012.
 
-**Próximo paso lógico:** continuar Fase 2 con lo que falta — fichas ampliadas de obra (argumento, personajes,
-temas, estructura, recepción, influencia), personajes principales del Quijote (Don Quijote, Sancho Panza,
-Dulcinea, Rocinante, Sansón Carrasco), contexto histórico y la biografía narrativa completa (15 capítulos
-definidos en `/cervantes`, hoy sin prosa). Cada nuevo dato histórico debe seguir el mismo protocolo: fuente
-primaria/institucional/académica real antes de marcar `verificado`. Cualquier nuevo merge a `main` requiere
-de nuevo una aprobación explícita — la de hoy no es una autorización permanente para futuros despliegues.
+**Próximo paso lógico:** decidir si se aprueba mergear/desplegar la reestructuración de navegación y
+biografía; después, personajes principales del Quijote (Don Quijote, Sancho Panza, Dulcinea, Rocinante,
+Sansón Carrasco — sección 30 del prompt maestro), contexto histórico general, o biografía narrativa más
+profunda dentro de `/vida-en-movimiento`. Cada nuevo dato histórico debe seguir el mismo protocolo: fuente
+primaria/institucional/académica real (y para imágenes, verificación de dominio público vía API, nunca
+asumir libre por aparecer en un buscador) antes de marcar `verificado`. Cualquier nuevo merge a `main`
+requiere de nuevo una aprobación explícita.
 
-**Nota de incidente (ver ADR-007 en `docs/DECISIONS.md`):** el primer despliegue de Vercel quedó publicado
-como producción por un comportamiento automático de la plataforma (primer deployment de un proyecto nuevo),
-no por una acción deliberada sin permiso. Fue comunicado de inmediato y el usuario aceptó dejarlo así por su
-bajo impacto. Regla derivada ya aplicada: no ejecutar `vercel deploy` sin `--target=preview` explícito de
-aquí en adelante.
+**Nota de incidente histórico (ver ADR-007):** el primer despliegue de Vercel quedó publicado como
+producción por un comportamiento automático de la plataforma, no por una acción deliberada sin permiso —
+comunicado de inmediato, aceptado por el usuario por su bajo impacto. Regla derivada ya aplicada: no
+ejecutar `vercel deploy` sin `--target=preview` explícito.
