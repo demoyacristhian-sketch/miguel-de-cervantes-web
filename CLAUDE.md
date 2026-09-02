@@ -50,7 +50,7 @@ empieza en Fase 2.
 |---|---|
 | Fundación / documentación | **APROBADO** (Fase 0 ejecutada 2026-09-01) |
 | Arquitectura técnica | **EN DESARROLLO** (scaffold real creado y validado: lint + typecheck + build limpios) |
-| Repositorio GitHub | `main` = producción real (commit `2b0ff57`), `develop` al día (`6adbd40`) |
+| Repositorio GitHub | `main` = producción real (commit `6819f2a`), `develop` al día (`71495f4`) |
 | Vercel | Producción actualizada y verificada (última vez 2026-09-02, aprobación explícita del usuario); ver ADR-007 a ADR-016 |
 | Contenido histórico | **AVANZADO** — timeline (12/12), obras (6/6), vidas (7/7), curiosidades (6/6), Quijote (18/18) y legado (4/4) verificados; ver `docs/CONTENT_STATUS.md` |
 | Diseño visual | APROBADO para MVP (tokens Tailwind v4, Playfair Display + Inter, revisado por el usuario) |
@@ -60,21 +60,25 @@ empieza en Fase 2.
 ## 5. Última implementación
 
 - **Fecha:** 2026-09-02
-- **Rama:** `design/home-cinematografica` (creada desde `develop`, sin mergear todavía; incluye
-  también el trabajo de `content/quijote-legado-biblioteca` ya mergeado en `develop`)
-- **Qué se hizo:** Ver ADR-015 en `docs/DECISIONS.md` y la entrada `v1.8.0-home-cinematografica` en
-  `docs/CHANGELOG.md` para el detalle completo. En resumen: Home rediseñada como historia a pantalla
-  completa al estilo Google Arts & Culture (Hero + 4 paneles nuevos, scroll-snap nativo, rail de
-  progreso), reutilizando únicamente imágenes ya verificadas; Hero de superficie única (imagen a
-  pantalla completa con degradado, sin panel de color sólido) con zoom en loop infinito; "Una vida
-  en movimiento" renombrada a "Una vida, una historia" (misma ruta); botón "← Volver" en todas las
-  páginas que no son Home. 8 componentes de sección antiguos eliminados (contenido migrado a los
-  paneles). Instrucción explícita del usuario, plan aprobado antes de implementar.
-- **Pruebas:** `tsc --noEmit`, `npm run lint`, `npm run build` limpios (18 rutas). Verificación
-  visual y por `getComputedStyle`/DOM en navegador local: Hero y paneles en desktop/móvil y
-  claro/oscuro, animación en loop confirmada, botón "Volver" funcional, rebautizo confirmado.
-- **Estado:** Implementado y verificado en local, **sin desplegar todavía**. Requiere aprobación
-  explícita del usuario para mergear a `develop`/`main`.
+- **Rama:** `fix/movil-scroll-menu-curiosidades`, mergeada a `develop` (`71495f4`) y a `main`
+  (`6819f2a`) — **ya en producción**
+- **Qué se hizo:** El usuario probó la Home cinematográfica (ADR-015) en móvil y reportó scroll
+  muy malo, el retrato del Hero descentrado, y el menú que no cerraba al tocar fuera; además pidió
+  simplificar "Curiosidades" (mucho texto/scroll) en móvil y escritorio. Ver la entrada
+  `v1.9.1-fixes` en `docs/CHANGELOG.md` para el detalle completo. En resumen: `min-h-screen` →
+  `min-h-dvh` en Hero/StorySlide (100vh no descontaba la barra de direcciones móvil); encuadre del
+  retrato específico para móvil (`object-[35%_15%]`) sin tocar el de escritorio; nuevo
+  `MobileNav.tsx` que cierra el menú al tocar fuera o al elegir un enlace; Curiosidades convertida
+  en acordeón por pregunta. El scroll-snap cinematográfico se mantuvo igual en todos los tamaños
+  por requisito explícito del usuario ("la versión móvil debe... no perder nada de identidad de la
+  versión escritorio") — no se simplificó, se corrigió en su raíz.
+- **Pruebas:** `tsc --noEmit`, `npm run lint`, `npm run build` limpios. Verificación por
+  `getComputedStyle`/DOM en móvil y escritorio, en local y luego en producción (altura del Hero =
+  `innerHeight`, encuadre correcto por breakpoint, menú cerrando correctamente, acordeón cerrado
+  por defecto con el icono rotando vía la propiedad CSS `rotate` de Tailwind v4).
+- **Estado:** Implementado, verificado y **desplegado a producción** (aprobación explícita del
+  usuario "sí, ponlo a producción", 2026-09-02). No se abrió una ADR nueva — son correcciones de
+  usabilidad, no decisiones de producto.
 - **Pendientes:** fichas de personajes del Quijote más allá de los 5 actuales, contexto histórico
   general, y profundizar la biografía narrativa dentro de `/vida-en-movimiento` si se desea.
 
@@ -117,8 +121,10 @@ reutilizando solo imágenes ya verificadas); "Una vida en movimiento" renombrada
 historia"; botón "← Volver" en todas las páginas que no son Home; footer con crédito de TFG. Esto
 acelera partes de las Fases 3, 4 y 6 por instrucción explícita del usuario.
 
-**Producción actualizada cinco veces con aprobación explícita del usuario** (commits `d886473`,
-`10eacb5`, `572af9c`, `dd99c1a` y `2b0ff57` en `main`) — ver ADR-008 a ADR-016.
+**Producción actualizada seis veces con aprobación explícita del usuario** (commits `d886473`,
+`10eacb5`, `572af9c`, `dd99c1a`, `2b0ff57` y `6819f2a` en `main`) — ver ADR-008 a ADR-016. La última
+tanda (scroll móvil, Hero, menú, Curiosidades) no abrió ADR nueva por ser correcciones de
+usabilidad, no decisiones de producto — documentada en `docs/CHANGELOG.md` (`v1.9.1-fixes`).
 
 **Próximo paso lógico:** más personajes del Quijote más allá de los 5 actuales, contexto histórico
 general, o biografía narrativa más profunda dentro de `/vida-en-movimiento`. Cada nuevo dato
