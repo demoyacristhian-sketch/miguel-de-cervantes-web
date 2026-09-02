@@ -6,6 +6,7 @@ import { WORK_COVERS } from "@/lib/workCovers";
 import { VerificationBadge } from "@/components/ui/VerificationBadge";
 import { ReadMore } from "@/components/ui/ReadMore";
 import { Reveal } from "@/components/ui/Reveal";
+import { BackLink } from "@/components/ui/BackLink";
 import type { Work, WorkProfileField } from "@/types/content";
 
 export function generateStaticParams() {
@@ -56,6 +57,9 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
 
   return (
     <div className="mx-auto max-w-3xl px-6 py-16">
+      <div className="mb-6">
+        <BackLink fallbackHref="/obras" />
+      </div>
       <div className="flex flex-col gap-8 sm:flex-row sm:items-start">
         {cover && (
           <div className="mx-auto w-40 shrink-0 sm:mx-0">

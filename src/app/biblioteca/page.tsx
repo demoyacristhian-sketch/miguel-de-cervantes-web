@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getMediaManifest, getSources } from "@/lib/content";
 import { Reveal } from "@/components/ui/Reveal";
+import { BackLink } from "@/components/ui/BackLink";
 
 export const metadata: Metadata = {
   title: "Biblioteca Cervantina",
@@ -41,6 +42,9 @@ export default function LibraryPage() {
 
   return (
     <div className="mx-auto max-w-6xl px-6 py-16">
+      <div className="mb-6">
+        <BackLink fallbackHref="/" />
+      </div>
       <p className="font-serif-display text-sm uppercase tracking-[0.25em] text-accent">
         Biblioteca Cervantina
       </p>

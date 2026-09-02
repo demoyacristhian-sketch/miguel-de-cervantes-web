@@ -60,18 +60,19 @@ empieza en Fase 2.
 ## 5. Última implementación
 
 - **Fecha:** 2026-09-02
-- **Rama:** `content/quijote-legado-biblioteca` (creada desde `develop`, sin mergear todavía)
-- **Qué se hizo:** Ver ADR-014 en `docs/DECISIONS.md` y la entrada `v1.7.0-secciones-completas` en
-  `docs/CHANGELOG.md` para el detalle completo. En resumen: `/quijote`, `/legado` y `/biblioteca`
-  dejan de ser placeholders y tienen contenido real, sourced e interactivo (pestañas, tarjetas,
-  acordeones); `/obras` gana filtro funcional y portadas; el Hero de Home se rediseña como layout
-  editorial de dos zonas (arregla la queja de legibilidad del nombre); el footer sustituye el
-  disclaimer genérico por el crédito de TFG del autor del proyecto. 7 imágenes nuevas verificadas
-  vía API de Wikimedia. Esto acelera partes de las Fases 3, 4 y 6 por instrucción explícita del
-  usuario ("hazme la propuesta de todo para dejar lista la web hoy", 2026-09-02).
+- **Rama:** `design/home-cinematografica` (creada desde `develop`, sin mergear todavía; incluye
+  también el trabajo de `content/quijote-legado-biblioteca` ya mergeado en `develop`)
+- **Qué se hizo:** Ver ADR-015 en `docs/DECISIONS.md` y la entrada `v1.8.0-home-cinematografica` en
+  `docs/CHANGELOG.md` para el detalle completo. En resumen: Home rediseñada como historia a pantalla
+  completa al estilo Google Arts & Culture (Hero + 4 paneles nuevos, scroll-snap nativo, rail de
+  progreso), reutilizando únicamente imágenes ya verificadas; Hero de superficie única (imagen a
+  pantalla completa con degradado, sin panel de color sólido) con zoom en loop infinito; "Una vida
+  en movimiento" renombrada a "Una vida, una historia" (misma ruta); botón "← Volver" en todas las
+  páginas que no son Home. 8 componentes de sección antiguos eliminados (contenido migrado a los
+  paneles). Instrucción explícita del usuario, plan aprobado antes de implementar.
 - **Pruebas:** `tsc --noEmit`, `npm run lint`, `npm run build` limpios (18 rutas). Verificación
-  visual en navegador (local, `localhost:3110`): Hero en desktop/móvil y claro/oscuro, pestañas de
-  Quijote, acordeones de Obras/Biblioteca, imágenes cargando correctamente, sin errores de consola.
+  visual y por `getComputedStyle`/DOM en navegador local: Hero y paneles en desktop/móvil y
+  claro/oscuro, animación en loop confirmada, botón "Volver" funcional, rebautizo confirmado.
 - **Estado:** Implementado y verificado en local, **sin desplegar todavía**. Requiere aprobación
   explícita del usuario para mergear a `develop`/`main`.
 - **Pendientes:** fichas de personajes del Quijote más allá de los 5 actuales, contexto histórico
@@ -108,24 +109,30 @@ Fase 1 cerrada. Fase 2 en curso. **Reestructuración de navegación y biografía
 PRODUCCIÓN:** nav principal Una vida en movimiento, Obras, Don Quijote, Legado, Biblioteca; Hero
 fotográfico; `/vida-en-movimiento` con numeración global continua.
 
-**Secciones completas (2026-09-02, ADR-014) — implementadas y verificadas en local, SIN DESPLEGAR
-TODAVÍA, rama `content/quijote-legado-biblioteca`:** `/quijote` (5 personajes, 5 lugares, 3
-aventuras, 3 temas, 2 frases, todo sourced en el texto primario del Quijote vía CVC), `/legado` (4
-tarjetas: idioma, traducciones, arte, ediciones conmemorativas), `/biblioteca` (5 recursos
-institucionales + sección pública "Fuentes y créditos" con las 9 fuentes y 14 imágenes del sitio),
-`/obras` con filtro funcional y portadas, Hero rediseñado (layout editorial de dos zonas), y footer
-con crédito de TFG. Esto acelera partes de las Fases 3, 4 y 6 por instrucción explícita del usuario.
+**Secciones completas (2026-09-02, ADR-014) — ya en `develop`:** `/quijote` (5 personajes, 5
+lugares, 3 aventuras, 3 temas, 2 frases, todo sourced en el texto primario del Quijote vía CVC),
+`/legado` (4 tarjetas), `/biblioteca` (5 recursos institucionales + "Fuentes y créditos" con 9
+fuentes y 14 imágenes), `/obras` con filtro y portadas, footer con crédito de TFG.
+
+**Home cinematográfica (2026-09-02, ADR-015) — implementada y verificada en local, SIN DESPLEGAR
+TODAVÍA, rama `design/home-cinematografica`:** Hero de superficie única con zoom en loop; Home
+sustituida por 5 paneles a pantalla completa con scroll-snap nativo (reutilizando imágenes ya
+verificadas, ninguna nueva); "Una vida en movimiento" renombrada a "Una vida, una historia"; botón
+"← Volver" en todas las páginas que no son Home. Esto acelera partes de las Fases 3, 4 y 6 por
+instrucción explícita del usuario.
 
 **Producción actualizada cuatro veces con aprobación explícita del usuario** (commits `d886473`, `10eacb5`,
-`572af9c` y `dd99c1a` en `main`) — ver ADR-008 a ADR-013. El trabajo de ADR-014 (secciones completas)
-**todavía no se ha mergeado ni desplegado** — requiere aprobación explícita aparte.
+`572af9c` y `dd99c1a` en `main`) — ver ADR-008 a ADR-013. El trabajo de ADR-014 (secciones completas,
+ya en `develop`) y ADR-015 (Home cinematográfica, rama `design/home-cinematografica`)
+**todavía no se ha mergeado a `main` ni desplegado a producción** — requiere aprobación explícita
+aparte.
 
-**Próximo paso lógico:** decidir si se aprueba mergear/desplegar el trabajo de ADR-014; después,
-más personajes del Quijote más allá de los 5 actuales, contexto histórico general, o biografía
-narrativa más profunda dentro de `/vida-en-movimiento`. Cada nuevo dato histórico debe seguir el
-mismo protocolo: fuente primaria/institucional/académica real (y para imágenes, verificación de
-dominio público vía API, nunca asumir libre por aparecer en un buscador) antes de marcar
-`verificado`. Cualquier nuevo merge a `main` requiere de nuevo una aprobación explícita.
+**Próximo paso lógico:** decidir si se aprueba mergear/desplegar el trabajo de ADR-014/ADR-015;
+después, más personajes del Quijote más allá de los 5 actuales, contexto histórico general, o
+biografía narrativa más profunda dentro de `/vida-en-movimiento`. Cada nuevo dato histórico debe
+seguir el mismo protocolo: fuente primaria/institucional/académica real (y para imágenes,
+verificación de dominio público vía API, nunca asumir libre por aparecer en un buscador) antes de
+marcar `verificado`. Cualquier nuevo merge a `main` requiere de nuevo una aprobación explícita.
 
 **Nota de incidente histórico (ver ADR-007):** el primer despliegue de Vercel quedó publicado como
 producción por un comportamiento automático de la plataforma, no por una acción deliberada sin permiso —

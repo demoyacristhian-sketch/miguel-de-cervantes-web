@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getLegacyEntries } from "@/lib/content";
 import { VerificationBadge } from "@/components/ui/VerificationBadge";
 import { Reveal } from "@/components/ui/Reveal";
+import { BackLink } from "@/components/ui/BackLink";
 
 export const metadata: Metadata = {
   title: "Legado",
@@ -20,6 +21,9 @@ export default function LegacyPage() {
 
   return (
     <div className="mx-auto max-w-6xl px-6 py-16">
+      <div className="mb-6">
+        <BackLink fallbackHref="/" />
+      </div>
       <p className="font-serif-display text-sm uppercase tracking-[0.25em] text-accent">
         400 años después
       </p>
