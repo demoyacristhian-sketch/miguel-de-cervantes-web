@@ -88,7 +88,7 @@ export default function LibraryPage() {
           verificados.
         </p>
 
-        <details className="group mt-8 rounded-xl border border-border-subtle bg-surface" open>
+        <details className="group mt-8 rounded-xl border border-border-subtle bg-surface">
           <summary className="cursor-pointer list-none px-5 py-4 text-sm font-semibold">
             Fuentes documentales ({sources.length})
           </summary>
