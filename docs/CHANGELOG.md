@@ -306,7 +306,8 @@ Producción refleja las fichas ampliadas de las 6 obras. Verificado visualmente 
 
 ## 2026-09-02 — v1.4.0-vida-en-movimiento — rama `design/vida-en-movimiento`
 
-**Commit:** pendiente (ver `git log`)
+**Commit:** `0090504`
+**Preview:** `https://miguel-de-cervantes-uw75l6jje-cdmlabs.vercel.app`
 
 A petición explícita y muy detallada del usuario (ver ADR-011 en `docs/DECISIONS.md`):
 
