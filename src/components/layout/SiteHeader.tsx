@@ -2,7 +2,7 @@ import Link from "next/link";
 import { MobileNav } from "@/components/layout/MobileNav";
 
 const NAV_ITEMS = [
-  { href: "/vida-en-movimiento", label: "Una vida, una historia" },
+  { href: "/vida-en-movimiento", label: "Biografía" },
   { href: "/obras", label: "Obras" },
   { href: "/quijote", label: "Don Quijote" },
   { href: "/legado", label: "Legado" },

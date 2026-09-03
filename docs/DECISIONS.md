@@ -446,3 +446,131 @@ sustituye a la anterior, dejando ambas visibles.
 - **Aprobado por:** Usuario, instrucción explícita ("sí, ponlo a producción"), 2026-09-02.
 - **Estado:** VIGENTE. Como en despliegues anteriores, no es una autorización permanente para
   futuros despliegues.
+
+---
+
+## ADR-017
+
+- **Fecha:** 2026-09-03
+- **Tema:** Ampliación de contenido en Obras, Quijote y Biografía; rebautizo a "Biografía"; TFM
+- **Contexto:** El usuario pidió, para producción: (1) renombrar "Una vida, una historia" a
+  "Biografía"; (2) más información en cada obra (hoy "muy superficial"); (3) desarrollar mucho más
+  la sección de Don Quijote, su obra maestra; (4) ampliar la biografía; (5) más fuentes verificadas;
+  (6) cambiar "TFG" por "TFM" en el crédito del footer. Tras una primera propuesta, aclaró
+  explícitamente que en Biografía, Quijote y cada Obra debe haber primero un resumen en texto y
+  después los elementos cronológicos/interactivos ya existentes.
+- **Decisión:**
+  - **Obras**: se completaron los campos vacíos de la ficha ampliada en 5 de las 6 obras (La
+    Galatea 4→6/10 campos, Novelas ejemplares 6→7/10, Viaje del Parnaso 3→5/10, Ocho comedias
+    5→7/10, Persiles 4→6/10), con fuentes reales nuevas (SRC-011 a SRC-015): recursos educativos
+    institucionales (Junta de Castilla y León), estudios académicos alojados por la Biblioteca
+    Virtual Miguel de Cervantes y el Instituto Cervantes (revista Criticón, congresos y coloquios
+    cervantinos), la edición digital de teatro de la Universidad de Alcalá, y la edición crítica
+    RAE/Espasa Calpe (2018) del Persiles. No se añadió el campo "characters" a Don Quijote, ya
+    cubierto en profundidad en `/quijote`, para no duplicar contenido.
+  - **Quijote**: expansión real por ser "su obra maestra" — personajes 5→10 (+ el cura y el
+    barbero, Cardenio, Dorotea, Maese Pedro/Ginés de Pasamonte, Teresa Panza), lugares 4→6 (+
+    Zaragoza, la Ínsula Barataria), aventuras 3→7 (+ los galeotes, el retablo de Maese Pedro, el
+    gobierno de la Ínsula Barataria, la cueva de Montesinos), temas 3→5 (+ el amor idealizado, la
+    sátira social), frases 2→3 (+ "Con la iglesia hemos dado, Sancho", verificada por duplicado
+    contra el texto primario y contra transcripciones independientes, descartando expresamente la
+    variante popular incorrecta "con la iglesia hemos topado, amigo Sancho"). Se añadió un
+    sub-filtro Principales/Secundarios en la pestaña de personajes (`QuijoteTabs.tsx`) para no
+    alargar el scroll con 10 tarjetas de golpe. Se añadió un párrafo de síntesis de la novela al
+    inicio de la página, adaptado del campo `plot` ya verificado de `works.json`.
+  - **Biografía** (rebautizada): se añadió un párrafo-resumen biográfico (nacimiento, hitos
+    principales, muerte) al inicio de la página, y 2 eventos nuevos al recorrido cronológico —
+    matrimonio con Catalina de Salazar en Esquivias (1584) y encarcelamiento en la Cárcel Real de
+    Sevilla (1597, con la cita verificada del prólogo del Quijote que conecta ambos hechos)—, más
+    la ampliación del evento ya existente de 1605 con el detalle completo del proceso Ezpeleta en
+    Valladolid. El recorrido pasa de 12 a 14 pasos; la numeración global continua, ya calculada
+    dinámicamente, no necesitó cambios de lógica.
+  - **"Una vida en movimiento"/"Una vida, una historia" se renombra a "Biografía"** en nav, footer,
+    la página, el panel de Home y `sources.json`. Misma ruta `/vida-en-movimiento`.
+  - **Footer**: "TFG"/"Trabajo de Fin de Grado" → "TFM"/"Trabajo de Fin de Máster", a petición
+    explícita del usuario (el proyecto es un TFM, no un TFG).
+  - **6 nuevas fuentes registradas** (SRC-010 a SRC-015) y SRC-008 ampliada con los capítulos y
+    citas nuevas del Quijote consultados.
+- **Razón:** Instrucción explícita y detallada del usuario; plan presentado y aprobado antes de
+  implementar (EnterPlanMode/ExitPlanMode), incluyendo una aclaración de alcance a mitad del
+  proceso (resumen en texto antes de lo interactivo).
+- **Impacto:** Ampliación sustancial de contenido verificado en tres áreas del sitio; ningún dato
+  inventado — cada afirmación nueva cita su fuente. Una fuente (proceso Ezpeleta, Ministerio de
+  Cultura) no pudo cargarse directamente por un error de certificado del servidor y se registró
+  como verificada por triangulación con cobertura periodística independiente, siguiendo el mismo
+  criterio ya usado en SRC-002.
+- **Aprobado por:** Usuario, plan aprobado explícitamente, 2026-09-03.
+- **Estado:** VIGENTE. No incluye autorización de despliegue a producción — se pide aparte.
+
+---
+
+## ADR-018
+
+- **Fecha:** 2026-09-04
+- **Tema:** Segunda ronda de ampliación (Biografía, Obras, Quijote, Legado) — uso de Wikipedia como
+  pista, nunca como fuente final
+- **Contexto:** El usuario consideró insuficiente la ampliación de ADR-017 ("se ha quedado muy
+  corto") y pidió expresamente usar es.wikipedia.org/wiki/Miguel_de_Cervantes como fuente para más
+  información, citándola como referencia, en Biografía, Obras, Quijote y Legado.
+- **Decisión sobre el uso de Wikipedia:** Se aplicó la regla permanente del proyecto (§7.3 de
+  `CLAUDE.md`: "Wikipedia solo como pista inicial, nunca como fuente final para historia
+  relevante"), comunicada al usuario en el momento. El artículo se usó exclusivamente para
+  identificar qué hechos añadir y qué historiadores/archivos los respaldan (Astrana Marín,
+  Canavaggio, Real Academia de la Historia, Biblioteca Nacional de España, Biblioteca Virtual
+  Miguel de Cervantes, Universidad de Alcalá, UNESCO). **Wikipedia no aparece citada como fuente en
+  ningún dato publicado** — cada uno se verificó de forma independiente (SRC-016 a SRC-021).
+- **Contenido añadido:**
+  - **Biografía**: familia completa (padre cirujano, seis hermanos nombrados); los cuatro intentos
+    de fuga durante el cautiverio en Argel, con los delatores "el Dorador" y Juan Blanco de Paz;
+    nacimiento de su hija Isabel de Saavedra (1584, fruto de una relación anterior al matrimonio,
+    fuente: Real Academia de la Historia); un segundo encarcelamiento, en Castro del Río (1592, por
+    las cuentas del trigo requisado, distinto del ya registrado de Sevilla 1597). El recorrido pasa
+    de 14 a 16 pasos; el resumen inicial se amplía para reflejar todo esto.
+  - **Obras**: La Galatea gana el dato de su estructura real en seis libros, verificado contra el
+    propio catálogo de la Biblioteca Nacional de España (título original: "Primera parte de La
+    Galatea, dividida en seis libros").
+  - **Quijote**: nuevo tema, "Una crítica literaria dentro de la novela" — el episodio del canónigo
+    de Toledo censurando los libros de caballerías y las comedias de su época (capítulos XLVII-XLVIII
+    de la Primera Parte), verificado directamente contra el texto primario en el CVC.
+  - **Legado**: dos entradas nuevas — el Premio Cervantes (fuente: Universidad de Alcalá, que acoge
+    la ceremonia) y el Día Internacional del Libro (fuente: UNESCO/Ministerio de Cultura), pasando
+    de 4 a 6 entradas.
+  - **6 fuentes nuevas** (SRC-016 a SRC-021); SRC-008 ampliada con los capítulos XLVII-XLVIII.
+- **Razón:** Instrucción explícita del usuario de añadir más profundidad; el uso de Wikipedia se
+  adaptó (no se ignoró ni se cumplió literalmente) para respetar una regla permanente que el propio
+  usuario estableció al inicio del proyecto.
+- **Impacto:** Ampliación biográfica y de legado significativa; ningún dato inventado ni atribuido
+  a Wikipedia. Un episodio biográfico delicado (hija extramatrimonial) se presenta con naturalidad
+  y rigor documental, sin dramatizar ni omitir, siguiendo el mismo criterio que el resto del sitio.
+- **Aprobado por:** Instrucción directa del usuario, 2026-09-04 (no se usó plan mode por tratarse de
+  una ampliación de contenido sobre un trabajo ya aprobado en su forma, con una única desviación de
+  método —Wikipedia como pista, no como fuente— comunicada de forma transparente antes de proceder).
+- **Estado:** VIGENTE. No incluye autorización de despliegue a producción — se pide aparte.
+
+---
+
+## ADR-019
+
+- **Fecha:** 2026-09-04
+- **Tema:** Textos descriptivos desarrollados en Obras, Quijote y Legado (formato, no solo contenido)
+- **Contexto:** Tras ADR-017 y ADR-018, el usuario insistió en que el problema no era solo la
+  cantidad de datos, sino el **formato**: "no 4 tarjetas con información aislada" — pidió un texto
+  descriptivo de extensión media-alta por obra, más contexto en Quijote, y lo mismo en Legado.
+- **Decisión:** Se añadió un campo nuevo `description` (`WorkProfileField`, varios párrafos) a las
+  6 obras en `works.json`, sintetizando en prosa —sin introducir ningún hecho nuevo— los datos ya
+  verificados en sus fichas (`context`, `plot`, `themes`, `structure`, `curiosities`, `reception`,
+  `influence`). Se muestra en `/obras/[slug]` bajo el título "Sobre la obra", antes de los campos
+  destacados y del acordeón, que pasan a ser referencia estructurada complementaria, no el contenido
+  principal. La misma descripción de Don Quijote (la más extensa, ~370 palabras, dado que "es su
+  obra maestra") se reutiliza en `/quijote` como "Sobre la novela", evitando reescribir el mismo
+  contenido dos veces. En `/legado` se añadió una introducción narrativa de cuatro párrafos
+  (~330 palabras) antes de las 6 tarjetas existentes, sintetizando idioma, traducciones, arte,
+  ediciones conmemorativas, el Premio Cervantes y el Día del Libro en un solo texto legible.
+- **Razón:** Instrucción explícita del usuario sobre el formato de presentación, no sobre datos
+  nuevos — ya había suficiente contenido verificado tras ADR-017/018, pero fragmentado en campos
+  demasiado cortos para sentirse "bien desarrollado".
+- **Impacto:** Ningún dato nuevo ni fuente nueva — es una reorganización editorial de contenido ya
+  verificado. Cambia la jerarquía visual de `/obras/[slug]`, `/quijote` y `/legado` (texto narrativo
+  primero, tarjetas/campos estructurados después), sin tocar el resto del sitio.
+- **Aprobado por:** Instrucción directa del usuario, 2026-09-04.
+- **Estado:** VIGENTE. No incluye autorización de despliegue a producción — se pide aparte.

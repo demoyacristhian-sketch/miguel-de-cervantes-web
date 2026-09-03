@@ -52,35 +52,32 @@ empieza en Fase 2.
 | Arquitectura técnica | **EN DESARROLLO** (scaffold real creado y validado: lint + typecheck + build limpios) |
 | Repositorio GitHub | `main` = producción real (commit `6819f2a`), `develop` al día (`71495f4`) |
 | Vercel | Producción actualizada y verificada (última vez 2026-09-02, aprobación explícita del usuario); ver ADR-007 a ADR-016 |
-| Contenido histórico | **AVANZADO** — timeline (12/12), obras (6/6), vidas (7/7), curiosidades (6/6), Quijote (18/18) y legado (4/4) verificados; ver `docs/CONTENT_STATUS.md` |
+| Contenido histórico | **AVANZADO** — timeline (14/14), obras (6/6 con fichas ampliadas), vidas (7/7), curiosidades (6/6), Quijote (31 entradas) y legado (4/4) verificados; ver `docs/CONTENT_STATUS.md` |
 | Diseño visual | APROBADO para MVP (tokens Tailwind v4, Playfair Display + Inter, revisado por el usuario) |
 | MVP (Home, Bio, Timeline, Obras, Quijote) | **APROBADO** — Fase 1 cerrada, mergeada a `develop` |
 | Pregunta a Cervantes (IA/RAG) | BLOQUEADO — requiere aprobación específica de arquitectura y costes (Fase 5) |
 
 ## 5. Última implementación
 
-- **Fecha:** 2026-09-02
-- **Rama:** `fix/movil-scroll-menu-curiosidades`, mergeada a `develop` (`71495f4`) y a `main`
-  (`6819f2a`) — **ya en producción**
-- **Qué se hizo:** El usuario probó la Home cinematográfica (ADR-015) en móvil y reportó scroll
-  muy malo, el retrato del Hero descentrado, y el menú que no cerraba al tocar fuera; además pidió
-  simplificar "Curiosidades" (mucho texto/scroll) en móvil y escritorio. Ver la entrada
-  `v1.9.1-fixes` en `docs/CHANGELOG.md` para el detalle completo. En resumen: `min-h-screen` →
-  `min-h-dvh` en Hero/StorySlide (100vh no descontaba la barra de direcciones móvil); encuadre del
-  retrato específico para móvil (`object-[35%_15%]`) sin tocar el de escritorio; nuevo
-  `MobileNav.tsx` que cierra el menú al tocar fuera o al elegir un enlace; Curiosidades convertida
-  en acordeón por pregunta. El scroll-snap cinematográfico se mantuvo igual en todos los tamaños
-  por requisito explícito del usuario ("la versión móvil debe... no perder nada de identidad de la
-  versión escritorio") — no se simplificó, se corrigió en su raíz.
-- **Pruebas:** `tsc --noEmit`, `npm run lint`, `npm run build` limpios. Verificación por
-  `getComputedStyle`/DOM en móvil y escritorio, en local y luego en producción (altura del Hero =
-  `innerHeight`, encuadre correcto por breakpoint, menú cerrando correctamente, acordeón cerrado
-  por defecto con el icono rotando vía la propiedad CSS `rotate` de Tailwind v4).
-- **Estado:** Implementado, verificado y **desplegado a producción** (aprobación explícita del
-  usuario "sí, ponlo a producción", 2026-09-02). No se abrió una ADR nueva — son correcciones de
-  usabilidad, no decisiones de producto.
-- **Pendientes:** fichas de personajes del Quijote más allá de los 5 actuales, contexto histórico
-  general, y profundizar la biografía narrativa dentro de `/vida-en-movimiento` si se desea.
+- **Fecha:** 2026-09-04
+- **Rama:** `content/ampliacion-obras-quijote-biografia` (creada desde `develop`, sin mergear
+  todavía; incluye dos rondas de trabajo, ADR-017 y ADR-018)
+- **Qué se hizo:** ADR-017 (2026-09-03): Obras/Quijote/Biografía ampliados, rebautizo a
+  "Biografía", "TFG"→"TFM". ADR-018 (2026-09-04): el usuario consideró la ampliación insuficiente y
+  pidió usar es.wikipedia.org/wiki/Miguel_de_Cervantes como fuente — se usó exclusivamente como
+  pista (regla permanente del proyecto), verificando cada dato contra RAH, BNE, BVMC, Universidad
+  de Alcalá y UNESCO (SRC-016 a SRC-021). Se añadió: familia completa, intentos de fuga en Argel,
+  la hija Isabel de Saavedra, el encarcelamiento en Castro del Río (1592), la estructura de La
+  Galatea, un tema nuevo del Quijote (crítica literaria del canónigo) y 2 entradas en Legado.
+  Biografía pasa de 12 a 16 pasos; Legado de 4 a 6 entradas. Ver `docs/CHANGELOG.md`
+  (`v2.0.0-ampliacion-contenido` y `v2.1.0-ampliacion-wikipedia-como-pista`).
+- **Pruebas:** `tsc --noEmit`, `npm run lint`, `npm run build` limpios en ambas rondas. Verificación
+  por DOM en navegador local: 16/16 pasos en Biografía en orden cronológico correcto, 6 temas en
+  Quijote, 6 entradas en Legado, 21 fuentes en Biblioteca, campo "Estructura" visible en La Galatea.
+- **Estado:** Implementado y verificado en local, **sin desplegar todavía**. Requiere aprobación
+  explícita del usuario para mergear a `develop`/`main`.
+- **Pendientes:** más personajes del Quijote si se desea ampliar aún más, contexto histórico
+  general, y seguir profundizando la biografía narrativa si el usuario lo pide.
 
 ## 6. Decisiones vigentes
 
@@ -113,25 +110,28 @@ Fase 1 cerrada. Fase 2 en curso. **Reestructuración de navegación y biografía
 PRODUCCIÓN:** nav principal Una vida, una historia, Obras, Don Quijote, Legado, Biblioteca.
 
 **Secciones completas + Home cinematográfica (2026-09-02, ADR-014/015/016) — EN PRODUCCIÓN:**
-`/quijote` (5 personajes, 5 lugares, 3 aventuras, 3 temas, 2 frases, sourced en el texto primario
-del Quijote vía CVC), `/legado` (4 tarjetas), `/biblioteca` (5 recursos institucionales + "Fuentes y
-créditos" con 9 fuentes y 14 imágenes), `/obras` con filtro y portadas; Home rediseñada como
-historia a pantalla completa (Hero de superficie única + 4 paneles, scroll-snap nativo,
-reutilizando solo imágenes ya verificadas); "Una vida en movimiento" renombrada a "Una vida, una
-historia"; botón "← Volver" en todas las páginas que no son Home; footer con crédito de TFG. Esto
-acelera partes de las Fases 3, 4 y 6 por instrucción explícita del usuario.
+`/legado` (4 tarjetas), `/biblioteca` (5 recursos institucionales + "Fuentes y créditos"), `/obras`
+con filtro y portadas; Home rediseñada como historia a pantalla completa; botón "← Volver" en todas
+las páginas que no son Home. Esto acelera partes de las Fases 3, 4 y 6 por instrucción explícita.
+
+**Ampliación de contenido (2026-09-03, ADR-017) — implementada y verificada en local, SIN
+DESPLEGAR TODAVÍA, rama `content/ampliacion-obras-quijote-biografia`:** "Una vida, una historia" →
+**"Biografía"**; Obras con campos nuevos en 5/6 fichas; Quijote ampliado a 10 personajes (con
+sub-filtro Principales/Secundarios), 6 lugares, 7 aventuras, 5 temas, 3 frases, más un párrafo de
+síntesis inicial; Biografía con 14 pasos (2 eventos nuevos) y un resumen biográfico inicial;
+footer con "TFM" (antes "TFG"); 6 fuentes nuevas (SRC-010 a SRC-015).
 
 **Producción actualizada seis veces con aprobación explícita del usuario** (commits `d886473`,
-`10eacb5`, `572af9c`, `dd99c1a`, `2b0ff57` y `6819f2a` en `main`) — ver ADR-008 a ADR-016. La última
-tanda (scroll móvil, Hero, menú, Curiosidades) no abrió ADR nueva por ser correcciones de
-usabilidad, no decisiones de producto — documentada en `docs/CHANGELOG.md` (`v1.9.1-fixes`).
+`10eacb5`, `572af9c`, `dd99c1a`, `2b0ff57` y `6819f2a` en `main`) — ver ADR-008 a ADR-016. El
+trabajo de ADR-017 **todavía no se ha mergeado a `main` ni desplegado a producción** — requiere
+aprobación explícita aparte.
 
-**Próximo paso lógico:** más personajes del Quijote más allá de los 5 actuales, contexto histórico
-general, o biografía narrativa más profunda dentro de `/vida-en-movimiento`. Cada nuevo dato
-histórico debe seguir el mismo protocolo: fuente primaria/institucional/académica real (y para
-imágenes, verificación de dominio público vía API, nunca asumir libre por aparecer en un buscador)
-antes de
-marcar `verificado`. Cualquier nuevo merge a `main` requiere de nuevo una aprobación explícita.
+**Próximo paso lógico:** decidir si se aprueba mergear/desplegar el trabajo de ADR-017; después,
+contexto histórico general, o seguir ampliando el Quijote/la biografía si el usuario lo pide. Cada
+nuevo dato histórico debe seguir el mismo protocolo: fuente primaria/institucional/académica real
+(y para imágenes, verificación de dominio público vía API, nunca asumir libre por aparecer en un
+buscador) antes de marcar `verificado`. Cualquier nuevo merge a `main` requiere de nuevo una
+aprobación explícita.
 
 **Nota de incidente histórico (ver ADR-007):** el primer despliegue de Vercel quedó publicado como
 producción por un comportamiento automático de la plataforma, no por una acción deliberada sin permiso —

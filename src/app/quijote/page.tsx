@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { getQuijoteEntries } from "@/lib/content";
+import { getQuijoteEntries, getWorkBySlug } from "@/lib/content";
 import { QuijoteTabs } from "@/components/quijote/QuijoteTabs";
 import { BackLink } from "@/components/ui/BackLink";
+import { VerificationBadge } from "@/components/ui/VerificationBadge";
 
 export const metadata: Metadata = {
   title: "El universo del Quijote",
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
 
 export default function QuijotePage() {
   const entries = getQuijoteEntries();
+  const work = getWorkBySlug("don-quijote-de-la-mancha");
 
   return (
     <div className="mx-auto max-w-6xl px-6 py-16">
@@ -41,7 +43,21 @@ export default function QuijotePage() {
         </div>
       </div>
 
-      <div className="mt-12">
+      {work?.description && (
+        <div className="mt-10 max-w-3xl rounded-xl border border-border-subtle bg-surface p-6">
+          <div className="mb-3 flex items-center justify-between gap-2">
+            <h2 className="font-serif-display text-lg font-semibold">Sobre la novela</h2>
+            <VerificationBadge status={work.description.status} />
+          </div>
+          <div className="space-y-4 leading-relaxed text-foreground/85">
+            {work.description.text.split("\n\n").map((paragraph, index) => (
+              <p key={index}>{paragraph}</p>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <div className="mt-10">
         <QuijoteTabs entries={entries} />
       </div>
     </div>

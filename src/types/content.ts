@@ -21,6 +21,9 @@ export interface Work {
   status: VerificationStatus;
   summary: string;
   sourceIds: string[];
+  /** Descripción narrativa desarrollada (varios párrafos), a diferencia de `summary` (una frase).
+   * Sintetiza en prosa los datos ya verificados de `profile` — no introduce hechos nuevos. */
+  description?: WorkProfileField;
   /** Ficha ampliada (sección 28 del prompt maestro). Cada campo es independiente y puede
    * estar ausente si todavía no se ha investigado — no se rellena con contenido genérico. */
   profile?: {
@@ -71,6 +74,8 @@ export interface QuijoteEntry {
   title: string;
   subtitle?: string;
   status: VerificationStatus;
+  /** Solo relevante para category "personaje": permite un sub-filtro Principales/Secundarios. */
+  tier?: "principal" | "secundario";
   text: string;
   citation?: string;
   image?: { src: string; alt: string; credit: string };
