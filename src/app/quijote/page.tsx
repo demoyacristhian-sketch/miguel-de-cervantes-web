@@ -41,7 +41,18 @@ export default function QuijotePage() {
         </div>
       </div>
 
-      <div className="mt-12">
+      <div className="mt-10 max-w-3xl rounded-xl border border-border-subtle bg-surface p-6">
+        <p className="text-foreground/80">
+          Un hidalgo pierde el juicio leyendo libros de caballerías, se hace pasar por caballero
+          andante y sale en busca de aventuras para defender ideales de justicia, acompañado de su
+          escudero Sancho Panza. La novela se organiza en tres &ldquo;salidas&rdquo; —dos en la
+          Primera Parte (1605), una en la Segunda (1615)—, y termina en Barcelona, donde Don Quijote
+          es derrotado en duelo por el Caballero de la Blanca Luna, en realidad el bachiller Sansón
+          Carrasco disfrazado. Regresa a su aldea, recupera la cordura y muere rodeado de los suyos.
+        </p>
+      </div>
+
+      <div className="mt-10">
         <QuijoteTabs entries={entries} />
       </div>
     </div>

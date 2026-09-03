@@ -446,3 +446,58 @@ sustituye a la anterior, dejando ambas visibles.
 - **Aprobado por:** Usuario, instrucción explícita ("sí, ponlo a producción"), 2026-09-02.
 - **Estado:** VIGENTE. Como en despliegues anteriores, no es una autorización permanente para
   futuros despliegues.
+
+---
+
+## ADR-017
+
+- **Fecha:** 2026-09-03
+- **Tema:** Ampliación de contenido en Obras, Quijote y Biografía; rebautizo a "Biografía"; TFM
+- **Contexto:** El usuario pidió, para producción: (1) renombrar "Una vida, una historia" a
+  "Biografía"; (2) más información en cada obra (hoy "muy superficial"); (3) desarrollar mucho más
+  la sección de Don Quijote, su obra maestra; (4) ampliar la biografía; (5) más fuentes verificadas;
+  (6) cambiar "TFG" por "TFM" en el crédito del footer. Tras una primera propuesta, aclaró
+  explícitamente que en Biografía, Quijote y cada Obra debe haber primero un resumen en texto y
+  después los elementos cronológicos/interactivos ya existentes.
+- **Decisión:**
+  - **Obras**: se completaron los campos vacíos de la ficha ampliada en 5 de las 6 obras (La
+    Galatea 4→6/10 campos, Novelas ejemplares 6→7/10, Viaje del Parnaso 3→5/10, Ocho comedias
+    5→7/10, Persiles 4→6/10), con fuentes reales nuevas (SRC-011 a SRC-015): recursos educativos
+    institucionales (Junta de Castilla y León), estudios académicos alojados por la Biblioteca
+    Virtual Miguel de Cervantes y el Instituto Cervantes (revista Criticón, congresos y coloquios
+    cervantinos), la edición digital de teatro de la Universidad de Alcalá, y la edición crítica
+    RAE/Espasa Calpe (2018) del Persiles. No se añadió el campo "characters" a Don Quijote, ya
+    cubierto en profundidad en `/quijote`, para no duplicar contenido.
+  - **Quijote**: expansión real por ser "su obra maestra" — personajes 5→10 (+ el cura y el
+    barbero, Cardenio, Dorotea, Maese Pedro/Ginés de Pasamonte, Teresa Panza), lugares 4→6 (+
+    Zaragoza, la Ínsula Barataria), aventuras 3→7 (+ los galeotes, el retablo de Maese Pedro, el
+    gobierno de la Ínsula Barataria, la cueva de Montesinos), temas 3→5 (+ el amor idealizado, la
+    sátira social), frases 2→3 (+ "Con la iglesia hemos dado, Sancho", verificada por duplicado
+    contra el texto primario y contra transcripciones independientes, descartando expresamente la
+    variante popular incorrecta "con la iglesia hemos topado, amigo Sancho"). Se añadió un
+    sub-filtro Principales/Secundarios en la pestaña de personajes (`QuijoteTabs.tsx`) para no
+    alargar el scroll con 10 tarjetas de golpe. Se añadió un párrafo de síntesis de la novela al
+    inicio de la página, adaptado del campo `plot` ya verificado de `works.json`.
+  - **Biografía** (rebautizada): se añadió un párrafo-resumen biográfico (nacimiento, hitos
+    principales, muerte) al inicio de la página, y 2 eventos nuevos al recorrido cronológico —
+    matrimonio con Catalina de Salazar en Esquivias (1584) y encarcelamiento en la Cárcel Real de
+    Sevilla (1597, con la cita verificada del prólogo del Quijote que conecta ambos hechos)—, más
+    la ampliación del evento ya existente de 1605 con el detalle completo del proceso Ezpeleta en
+    Valladolid. El recorrido pasa de 12 a 14 pasos; la numeración global continua, ya calculada
+    dinámicamente, no necesitó cambios de lógica.
+  - **"Una vida en movimiento"/"Una vida, una historia" se renombra a "Biografía"** en nav, footer,
+    la página, el panel de Home y `sources.json`. Misma ruta `/vida-en-movimiento`.
+  - **Footer**: "TFG"/"Trabajo de Fin de Grado" → "TFM"/"Trabajo de Fin de Máster", a petición
+    explícita del usuario (el proyecto es un TFM, no un TFG).
+  - **6 nuevas fuentes registradas** (SRC-010 a SRC-015) y SRC-008 ampliada con los capítulos y
+    citas nuevas del Quijote consultados.
+- **Razón:** Instrucción explícita y detallada del usuario; plan presentado y aprobado antes de
+  implementar (EnterPlanMode/ExitPlanMode), incluyendo una aclaración de alcance a mitad del
+  proceso (resumen en texto antes de lo interactivo).
+- **Impacto:** Ampliación sustancial de contenido verificado en tres áreas del sitio; ningún dato
+  inventado — cada afirmación nueva cita su fuente. Una fuente (proceso Ezpeleta, Ministerio de
+  Cultura) no pudo cargarse directamente por un error de certificado del servidor y se registró
+  como verificada por triangulación con cobertura periodística independiente, siguiendo el mismo
+  criterio ya usado en SRC-002.
+- **Aprobado por:** Usuario, plan aprobado explícitamente, 2026-09-03.
+- **Estado:** VIGENTE. No incluye autorización de despliegue a producción — se pide aparte.

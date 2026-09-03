@@ -14,9 +14,18 @@ const TABS: { id: QuijoteCategory; label: string }[] = [
   { id: "frase", label: "Frases" },
 ];
 
+const TIER_FILTERS = [
+  { id: "todos", label: "Todos" },
+  { id: "principal", label: "Principales" },
+  { id: "secundario", label: "Secundarios" },
+] as const;
+
 export function QuijoteTabs({ entries }: { entries: QuijoteEntry[] }) {
   const [active, setActive] = useState<QuijoteCategory>("personaje");
-  const items = entries.filter((entry) => entry.category === active);
+  const [tierFilter, setTierFilter] = useState<(typeof TIER_FILTERS)[number]["id"]>("todos");
+  const items = entries
+    .filter((entry) => entry.category === active)
+    .filter((entry) => active !== "personaje" || tierFilter === "todos" || entry.tier === tierFilter);
 
   return (
     <div>
@@ -42,6 +51,26 @@ export function QuijoteTabs({ entries }: { entries: QuijoteEntry[] }) {
           </button>
         ))}
       </div>
+
+      {active === "personaje" && (
+        <div className="mt-4 flex flex-wrap gap-2" role="group" aria-label="Filtrar personajes">
+          {TIER_FILTERS.map((filter) => (
+            <button
+              key={filter.id}
+              type="button"
+              onClick={() => setTierFilter(filter.id)}
+              aria-current={tierFilter === filter.id ? "true" : undefined}
+              className={`rounded-full border px-3 py-1 text-xs transition-colors ${
+                tierFilter === filter.id
+                  ? "border-detail bg-detail/15 text-foreground"
+                  : "border-border-subtle text-foreground/60 hover:border-detail"
+              }`}
+            >
+              {filter.label}
+            </button>
+          ))}
+        </div>
+      )}
 
       {active === "frase" ? (
         <ul className="mt-8 space-y-6">

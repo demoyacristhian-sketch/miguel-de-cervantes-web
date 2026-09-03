@@ -30,7 +30,7 @@ export default function Home() {
       <StorySlide
         id="vida"
         kicker="1547 — 1616"
-        title="Una vida, una historia"
+        title="Biografía"
         text="Más de cuatro siglos después, Miguel de Cervantes sigue siendo una de las figuras más influyentes de la literatura universal: de Alcalá de Henares a las playas de Argel, de los campos de batalla a las páginas del Quijote."
         ctaHref="/vida-en-movimiento"
         ctaLabel="Explorar su vida"

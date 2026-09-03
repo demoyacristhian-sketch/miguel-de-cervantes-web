@@ -258,30 +258,44 @@ Título: Edición anotada de «Don Quijote de la Mancha» (Primera y Segunda par
 Institución: Centro Virtual Cervantes (portal oficial del Instituto Cervantes)
 Autor: Miguel de Cervantes (texto primario); edición y aparato crítico del CVC
 URL: https://cvc.cervantes.es/literatura/clasicos/quijote/edicion/ — capítulos consultados:
-  parte1/cap01 (decisión de armarse caballero, nombre propio y de Rocinante), parte1/cap07
-  (presentación de Sancho Panza), parte1/cap08 (molinos de viento), parte1/cap21 (yelmo de
-  Mambrino), parte1/cap25 (Dulcinea/Aldonza Lorenzo), parte2/cap03 (Sansón Carrasco), parte2/cap58
-  (cita sobre la libertad), más el apéndice "Lugares y tiempos en el «Quijote»"
+  parte1/prologo (cita sobre la cárcel), parte1/cap01 (decisión de armarse caballero, nombre propio
+  y de Rocinante), parte1/cap07 (presentación de Sancho Panza), parte1/cap08 (molinos de viento),
+  parte1/cap21 (yelmo de Mambrino), parte1/cap22 (liberación de los galeotes), parte1/cap25
+  (Dulcinea/Aldonza Lorenzo), parte1/cap29 (Cardenio, Dorotea y la princesa Micomicona), parte2/cap03
+  (Sansón Carrasco), parte2/cap09 (cita "con la iglesia hemos dado, Sancho"), parte2/cap23 (cueva de
+  Montesinos), parte2/cap26-27 (retablo de Maese Pedro y revelación de Ginés de Pasamonte),
+  parte2/cap45 (juicios de Sancho como gobernador de la Ínsula Barataria), parte2/cap58 (cita sobre
+  la libertad), más el apéndice "Lugares y tiempos en el «Quijote»"
   (introduccion/apendice/casasayas.htm).
-Fecha de consulta: 2026-09-02
+Fecha de consulta: 2026-09-02 y 2026-09-03
 Tipo: FUENTE PRIMARIA (texto original de la novela, alojado y anotado por el Instituto Cervantes)
 Fiabilidad: Máxima — es el propio texto de Cervantes, no una paráfrasis de tercero.
 Información utilizada: Personajes (Don Quijote, Rocinante, Sancho Panza, Dulcinea del
-  Toboso/Aldonza Lorenzo, Sansón Carrasco), lugares (El Toboso, Campo de Montiel, Sierra Morena,
-  Puerto Lápice), aventuras (molinos de viento, yelmo de Mambrino) y las dos frases citadas
-  literalmente en /quijote (apertura de la novela; reflexión sobre la libertad, 2ª parte cap. 58).
-  El desenlace del duelo con el Caballero de la Blanca Luna (Sansón Carrasco disfrazado, derrota en
-  Barcelona, condición de retirarse un año) se corroboró además con un artículo académico
-  ("Presencia y sentido de Sansón Carrasco", Scielo Chile,
-  scielo.cl/scielo.php?pid=S0718-22952005000200004).
+  Toboso/Aldonza Lorenzo, Sansón Carrasco, el cura y el barbero, Cardenio, Dorotea, Maese
+  Pedro/Ginés de Pasamonte, Teresa Panza), lugares (El Toboso, Campo de Montiel, Sierra Morena,
+  Puerto Lápice, Barcelona, Zaragoza, la Ínsula Barataria), aventuras (molinos de viento, yelmo de
+  Mambrino, liberación de los galeotes, el retablo de Maese Pedro, el gobierno de la Ínsula
+  Barataria, la cueva de Montesinos) y las frases citadas literalmente en /quijote (apertura de la
+  novela; reflexión sobre la libertad, 2ª parte cap. 58; "con la iglesia hemos dado, Sancho", 2ª
+  parte cap. 9). El desenlace del duelo con el Caballero de la Blanca Luna (Sansón Carrasco
+  disfrazado, derrota en Barcelona, condición de retirarse un año) se corroboró además con un
+  artículo académico ("Presencia y sentido de Sansón Carrasco", Scielo Chile,
+  scielo.cl/scielo.php?pid=S0718-22952005000200004), la identidad real de Maese Pedro con un
+  artículo del Museo Casa Natal de Cervantes
+  (museocasanataldecervantes.org, "Ginés de Pasamonte, el galeote escritor"), y la elusión
+  deliberada de Zaragoza en la Segunda Parte (para contradecir el Quijote apócrifo de Avellaneda)
+  con el artículo académico "La elusión del apócrifo en la segunda parte del Quijote" (revista
+  Criticón, Instituto Cervantes, cvc.cervantes.es/literatura/criticon/PDF/127/127_093.pdf).
 Página/sección: Ver capítulos listados arriba.
-Observaciones: La cita sobre la libertad se confirmó cruzando la página del capítulo LVIII en el
-  propio CVC con transcripciones independientes coincidentes (rinconcastellano.com); no se publicó
-  ninguna cita sin esa doble verificación, para evitar atribuciones erróneas frecuentes en internet
-  (p. ej. "ladran, Sancho, señal que cabalgamos" NO se usó por ser una atribución popular sin
-  respaldo textual verificado).
-Derechos: Se parafrasea y se citan dos frases breves con atribución; no se reproduce el texto
-  completo de ningún capítulo.
+Observaciones: La cita sobre la libertad y la cita "con la iglesia hemos dado, Sancho" se
+  confirmaron cruzando la página del capítulo correspondiente en el propio CVC con transcripciones
+  independientes coincidentes; la cita del prólogo sobre la cárcel se confirmó directamente en la
+  página del CVC. No se publicó ninguna cita sin esa doble verificación, para evitar atribuciones
+  erróneas frecuentes en internet (p. ej. "ladran, Sancho, señal que cabalgamos" NO se usó por ser
+  una atribución popular sin respaldo textual verificado; tampoco se usó la variante popular "con la
+  iglesia hemos topado, amigo Sancho", que altera la cita real).
+Derechos: Se parafrasea y se citan frases breves con atribución; no se reproduce el texto completo
+  de ningún capítulo.
 ```
 
 ### SRC-009
@@ -315,4 +329,153 @@ Observaciones: La obra de Picasso (1955) está protegida por derechos de autor v
   plan de esta sesión, corregido aquí) — **no se reproduce la imagen en el sitio**, solo se
   menciona en texto con enlace a la ficha oficial del museo.
 Derechos: Se parafrasea, sin reproducir ninguna imagen ni texto extenso de las fuentes.
+```
+
+### SRC-010
+
+```text
+ID: SRC-010
+Título: Biografía ampliada — matrimonio en Esquivias, cárcel de Sevilla y proceso Ezpeleta en
+  Valladolid
+Institución: Ayuntamiento de Esquivias; Agencia Tributaria (AEAT); Museo Casa de Cervantes
+  (Valladolid) / Ministerio de Cultura, triangulado con cobertura periodística independiente
+Autor: Varios (ver URLs)
+URL: (1) esquivias.es/turismo/catalina-de-palacios-salazar — matrimonio; (2)
+  agenciatributaria.es/AEAT.educacion/Satelite/Educacion/Contenidos_Comunes/Ficheros/CERVANTES.PDF —
+  cárcel de Sevilla como recaudador; (3)
+  cultura.gob.es/museocasacervantes/cervantes/cervantes-valladolid/procesoezpeleta.html — proceso
+  Ezpeleta (contenido no accesible directamente por un error de certificado del servidor del
+  Ministerio; triangulado con El Español, MásCyL y Noticias de Gipuzkoa, coincidentes entre sí).
+Fecha de consulta: 2026-09-03
+Tipo: FUENTE INSTITUCIONAL para (1) y (2); FUENTE SECUNDARIA VERIFICADA para (3) por triangulación
+Fiabilidad: Alta. (1) y (2) son páginas oficiales de un ayuntamiento y de la Agencia Tributaria
+  española. (3) no se pudo cargar directamente pero su contenido coincide, en fecha y hechos, con
+  al menos tres coberturas periodísticas independientes.
+Información utilizada: (1) Matrimonio de Cervantes con Catalina de Salazar y Palacios el 12 de
+  diciembre de 1584 en Esquivias (él con 37 años, ella con 19); ni la madre de ella ni los padres de
+  él asistieron (padre enfermo, madre recién viuda). (2) Encarcelamiento en la Cárcel Real de
+  Sevilla entre septiembre de 1597 y abril de 1598, al no poder justificar cuentas como recaudador
+  de impuestos tras la desaparición del banquero Simón Freire con los fondos depositados. (3)
+  Asesinato de don Gaspar de Ezpeleta la noche del 27 de junio de 1605 frente a la vivienda de
+  Cervantes en Valladolid; Cervantes auxilió al herido, declaró como testigo y pasó dos días
+  detenido junto a su familia antes de que el caso se archivara sin identificar al agresor.
+Página/sección: Páginas indicadas arriba.
+Observaciones: La cita literal del prólogo del Quijote que conecta la cárcel de Sevilla con el
+  origen de la novela ("bien como quien se engendró en una cárcel...") está registrada en SRC-008,
+  no aquí — este registro cubre el contexto biográfico, no el texto literario.
+Derechos: Se parafrasea, sin reproducir texto extenso de ninguna fuente.
+```
+
+### SRC-011
+
+```text
+ID: SRC-011
+Título: La Galatea — personajes principales
+Institución: Junta de Castilla y León (portal educativo educa.jcyl.es)
+Autor: Junta de Castilla y León (recurso educativo institucional)
+URL: educa.jcyl.es/educacyl/cm/gallery/Recursos%20Infinity/aplicaciones/16_primaria_cervantes/la-galatea-personajes.html
+Fecha de consulta: 2026-09-03
+Tipo: FUENTE INSTITUCIONAL (nombres); FUENTE SECUNDARIA VERIFICADA (descripciones breves,
+  trianguladas entre varias reseñas literarias independientes y coincidentes)
+Fiabilidad: Alta para los nombres (fuente institucional educativa regional); media-alta para las
+  descripciones (no hay una única fuente académica accesible con descripciones extensas, se
+  triangularon varias reseñas coincidentes entre sí).
+Información utilizada: Personajes principales de La Galatea (1585): Elicio y Erastro, pastores
+  enamorados de Galatea; Florisa, amiga de Galatea; y otros personajes secundarios de la trama
+  pastoril (Damón, Tirsi, Timbrio, Silerio).
+Página/sección: Página completa.
+Observaciones: Es un recurso educativo de nivel escolar, no un estudio académico — coherente con el
+  uso que se le da (una ficha breve de personajes, no un análisis crítico).
+Derechos: Se parafrasea, sin reproducir el texto de la página.
+```
+
+### SRC-012
+
+```text
+ID: SRC-012
+Título: Las novelas ejemplares en el sistema narrativo de Cervantes
+Institución: Biblioteca Virtual Miguel de Cervantes
+Autor: Ver documento (descarga académica alojada en cervantesvirtual.com)
+URL: cervantesvirtual.com/descargaPdf/las-novelas-ejemplares-en-el-sistema-narrativo-de-cervantes-971261/
+Fecha de consulta: 2026-09-03
+Tipo: FUENTE ACADÉMICA
+Fiabilidad: Alta — estudio académico alojado por la Biblioteca Virtual Miguel de Cervantes.
+Información utilizada: Temas de las Novelas ejemplares (1613): la reinterpretación cervantina del
+  género picaresco (nunca narrado en primera persona, a diferencia del canon del género), la
+  división entre novelas "realistas" e "idealistas" según el peso de la observación frente a la
+  imaginación, y la ejemplaridad como reflexión moral no siempre explícita en forma de moraleja.
+Página/sección: Documento completo.
+Observaciones: Ninguna.
+Derechos: Se parafrasea, sin reproducir el texto del estudio.
+```
+
+### SRC-013
+
+```text
+ID: SRC-013
+Título: Estudios académicos sobre el Viaje del Parnaso
+Institución: Centro Virtual Cervantes (Instituto Cervantes) — Congresos y Coloquios Cervantinos
+Autor: Carlos M. Gutiérrez, Elias L. Rivers, Jordi Gracia García, Giuseppe E. Sansone
+URL: cvc.cervantes.es/literatura/cervantistas/congresos/cg_IV/cg_IV_89.pdf;
+  cvc.cervantes.es/literatura/cervantistas/coloquios/cl_II/cl_II_67.pdf;
+  cvc.cervantes.es/literatura/cervantistas/coloquios/cl_I/cl_I_31.pdf;
+  cvc.cervantes.es/literatura/cervantistas/congresos/cg_II/cg_II_06.pdf
+Fecha de consulta: 2026-09-03
+Tipo: FUENTE ACADÉMICA
+Fiabilidad: Alta — cuatro artículos de congresos y coloquios cervantinos organizados por el
+  Instituto Cervantes, autoría identificada.
+Información utilizada: Estructura del Viaje del Parnaso (1614): poema en tercetos encadenados con
+  un apéndice en prosa, "La Adjunta al Parnaso". Temas: recuento satírico-burlesco de los poetas
+  españoles contemporáneos reunidos en un barco imaginario rumbo al Parnaso, interpretado también
+  como una autodefensa y reivindicación de la propia obra poética de Cervantes.
+Página/sección: Documentos completos.
+Observaciones: Ninguna.
+Derechos: Se parafrasea, sin reproducir el texto de los artículos.
+```
+
+### SRC-014
+
+```text
+ID: SRC-014
+Título: Ocho comedias y ocho entremeses — prólogo, contenidos e influencia
+Institución: Centro Virtual Cervantes (Instituto Cervantes, revista Criticón) y Universidad de
+  Alcalá
+Autor: Ver artículo (Criticón, 108, 2010); edición digital de la Universidad de Alcalá
+URL: cvc.cervantes.es/literatura/criticon/PDF/108/108_133.pdf ("El prólogo a las Ocho comedias de
+  Cervantes"); cervantes.uah.es/teatro/ochocome/ochocopre.htm
+Fecha de consulta: 2026-09-03
+Tipo: FUENTE ACADÉMICA
+Fiabilidad: Alta — revista académica del Instituto Cervantes y edición digital universitaria.
+Información utilizada: Las ocho comedias que componen la colección de 1615 (El gallardo español, La
+  casa de los celos, Los baños de Argel, El rufián dichoso, La gran sultana doña Catalina de Oviedo,
+  El laberinto de amor, La entretenida y Pedro de Urdemalas, esta última considerada la más
+  original); los entremeses incluidos (entre ellos El retablo de las maravillas); la influencia de
+  Lope de Rueda en los entremeses cervantinos, con mayor elaboración de tramas y personajes.
+Página/sección: Documentos completos.
+Observaciones: Ninguna.
+Derechos: Se parafrasea, sin reproducir el texto de los artículos.
+```
+
+### SRC-015
+
+```text
+ID: SRC-015
+Título: Los trabajos de Persiles y Sigismunda — edición crítica de referencia
+Institución: Real Academia Española / Espasa Calpe
+Autor: Laura Fernández, Ignacio García Aguilar, Isabel Lozano Renieblas y Carlos Romero Muñoz
+  (edición crítica, anotación y estudio)
+URL: Edición crítica RAE/Espasa Calpe, Madrid-Barcelona, 2018, ISBN 978-84-670-5160-5 (referencia
+  bibliográfica; reseña académica consultada en academia.edu como vía de acceso)
+Fecha de consulta: 2026-09-03
+Tipo: FUENTE ACADÉMICA
+Fiabilidad: Alta — edición crítica de referencia publicada por la RAE, la autoridad académica de
+  mayor peso disponible para esta obra.
+Información utilizada: Estructura del Persiles en cuatro libros, con una discontinuidad formal
+  documentada entre los libros I-II y el libro III; recepción crítica de la obra, que cayó en
+  desprestigio tras el Siglo de Oro y fue objeto de una recuperación académica notable durante el
+  siglo XX.
+Página/sección: Reseña de la edición crítica.
+Observaciones: Se prioriza esta edición crítica institucional sobre artículos de acceso abierto de
+  estatus editorial incierto encontrados durante la misma búsqueda.
+Derechos: Se parafrasea, sin reproducir el texto de la edición ni de su reseña.
 ```
