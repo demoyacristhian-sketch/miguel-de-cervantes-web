@@ -59,25 +59,27 @@ empieza en Fase 2.
 
 ## 5. Última implementación
 
-- **Fecha:** 2026-09-04
-- **Rama:** `content/ampliacion-obras-quijote-biografia` (creada desde `develop`, sin mergear
-  todavía; incluye dos rondas de trabajo, ADR-017 y ADR-018)
-- **Qué se hizo:** ADR-017 (2026-09-03): Obras/Quijote/Biografía ampliados, rebautizo a
-  "Biografía", "TFG"→"TFM". ADR-018 (2026-09-04): el usuario consideró la ampliación insuficiente y
-  pidió usar es.wikipedia.org/wiki/Miguel_de_Cervantes como fuente — se usó exclusivamente como
-  pista (regla permanente del proyecto), verificando cada dato contra RAH, BNE, BVMC, Universidad
-  de Alcalá y UNESCO (SRC-016 a SRC-021). Se añadió: familia completa, intentos de fuga en Argel,
-  la hija Isabel de Saavedra, el encarcelamiento en Castro del Río (1592), la estructura de La
-  Galatea, un tema nuevo del Quijote (crítica literaria del canónigo) y 2 entradas en Legado.
-  Biografía pasa de 12 a 16 pasos; Legado de 4 a 6 entradas. Ver `docs/CHANGELOG.md`
-  (`v2.0.0-ampliacion-contenido` y `v2.1.0-ampliacion-wikipedia-como-pista`).
-- **Pruebas:** `tsc --noEmit`, `npm run lint`, `npm run build` limpios en ambas rondas. Verificación
-  por DOM en navegador local: 16/16 pasos en Biografía en orden cronológico correcto, 6 temas en
-  Quijote, 6 entradas en Legado, 21 fuentes en Biblioteca, campo "Estructura" visible en La Galatea.
+- **Fecha:** 2026-09-03
+- **Rama:** `security/cabeceras-http` (creada desde `develop`, sin mergear todavía)
+- **Qué se hizo:** ADR-021 — endurecimiento de seguridad HTTP a petición explícita del usuario, sin
+  herramientas externas ni de pago. Diagnóstico previo: superficie de ataque ya pequeña por diseño
+  (sin rutas de API, formularios, cookies, `dangerouslySetInnerHTML` ni scripts de terceros;
+  `npm audit` limpio). Añadidas 6 cabeceras nativas de Next.js en `next.config.ts`:
+  `Content-Security-Policy`, `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`,
+  `Permissions-Policy`, `Strict-Transport-Security`, más `poweredByHeader: false`. Se probó y
+  descartó el patrón oficial de Next.js de CSP con nonce por petición (`middleware.ts` +
+  `'strict-dynamic'`): rompe la hidratación de React porque exige renderizado dinámico, incompatible
+  con la arquitectura 100% estática ya aprobada del sitio. Por eso `script-src` usa
+  `'self' 'unsafe-inline'` en producción, mismo criterio ya aceptado para `style-src`.
+- **Pruebas:** `tsc --noEmit`, `npm run lint`, `npm run build` limpios. `curl -sI` sobre servidor de
+  producción local confirma las 6 cabeceras. Verificación en navegador (Home, `/quijote` con
+  pestañas/sub-filtro, `/obras/la-galatea` con acordeón): cero errores de CSP/hidratación en
+  consola, interacción real confirmada (cambio de pestaña sin recarga).
 - **Estado:** Implementado y verificado en local, **sin desplegar todavía**. Requiere aprobación
   explícita del usuario para mergear a `develop`/`main`.
-- **Pendientes:** más personajes del Quijote si se desea ampliar aún más, contexto histórico
-  general, y seguir profundizando la biografía narrativa si el usuario lo pide.
+- **Pendientes:** `security.txt` (RFC 9116) diferido hasta tener un dominio propio y un correo de
+  contacto real proporcionado por el responsable del sitio; más personajes del Quijote si se desea
+  ampliar aún más; contexto histórico general.
 
 ## 6. Decisiones vigentes
 
@@ -126,12 +128,20 @@ Alcalá o UNESCO antes de publicarse.
 **Producción actualizada siete veces con aprobación explícita del usuario** (commits `d886473`,
 `10eacb5`, `572af9c`, `dd99c1a`, `2b0ff57`, `6819f2a` y `7eaab79` en `main`) — ver ADR-008 a ADR-020.
 
-**Próximo paso lógico:** contexto histórico general, o seguir ampliando el Quijote/la biografía si
-el usuario lo pide. Cada nuevo dato histórico debe seguir el mismo protocolo: fuente
-primaria/institucional/académica real (Wikipedia solo como pista, nunca como fuente citada; para
-imágenes, verificación de dominio público vía API, nunca asumir libre por aparecer en un buscador)
-antes de marcar `verificado`. Cualquier nuevo merge a `main` requiere de nuevo una aprobación
-explícita.
+**Endurecimiento de seguridad HTTP (2026-09-03, ADR-021) — EN DESARROLLO, `security/cabeceras-http`,
+sin desplegar:** 6 cabeceras de seguridad nativas de Next.js (CSP, X-Content-Type-Options,
+X-Frame-Options, Referrer-Policy, Permissions-Policy, HSTS) + `poweredByHeader: false`. El patrón de
+CSP con nonce por petición se probó y se descartó por ser incompatible con la arquitectura 100%
+estática del sitio (rompe la hidratación); `script-src` usa `'unsafe-inline'` documentado, mismo
+criterio que `style-src`. `security.txt` diferido hasta tener dominio propio y contacto real.
+Pendiente de verificación en Preview y de aprobación explícita del usuario para producción.
+
+**Próximo paso lógico:** obtener Preview de la rama de seguridad y pedir aprobación para producción;
+después, contexto histórico general o seguir ampliando el Quijote/la biografía si el usuario lo
+pide. Cada nuevo dato histórico debe seguir el mismo protocolo: fuente primaria/institucional/
+académica real (Wikipedia solo como pista, nunca como fuente citada; para imágenes, verificación de
+dominio público vía API, nunca asumir libre por aparecer en un buscador) antes de marcar
+`verificado`. Cualquier nuevo merge a `main` requiere de nuevo una aprobación explícita.
 
 **Nota de incidente histórico (ver ADR-007):** el primer despliegue de Vercel quedó publicado como
 producción por un comportamiento automático de la plataforma, no por una acción deliberada sin permiso —
