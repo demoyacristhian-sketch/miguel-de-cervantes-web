@@ -40,7 +40,7 @@ export function SiteFooter() {
       </div>
       <div className="border-t border-border-subtle px-6 py-4 text-center text-xs text-foreground/50">
         Proyecto de TFM desarrollado e implementado por Luis Vidal — Trabajo de Fin de Máster
-        realizado en el marco de sus estudios de posgrado en UNIR (Universidad Internacional de La
+        realizado en el marco de mis estudios de posgrado en UNIR (Universidad Internacional de La
         Rioja).
       </div>
     </footer>
