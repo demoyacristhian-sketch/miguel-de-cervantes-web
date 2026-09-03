@@ -722,3 +722,31 @@ del usuario para producción. Ver ADR-019.
 
 **En producción.** Ver ADR-020 en `docs/DECISIONS.md`. Aprobación explícita del usuario: "sí, ponlo
 a producción" (2026-09-04). No es una autorización permanente para futuros despliegues.
+
+---
+
+## 2026-09-03 — v2.4.0-seguridad-cabeceras-http — rama `security/cabeceras-http`
+
+### Añadido
+
+- `next.config.ts`: `headers()` con `Content-Security-Policy`, `X-Content-Type-Options: nosniff`,
+  `X-Frame-Options: DENY`, `Referrer-Policy: strict-origin-when-cross-origin`, `Permissions-Policy`
+  (cámara/micrófono/geolocalización/`interest-cohort` desactivados), `Strict-Transport-Security`
+  (HSTS) y `poweredByHeader: false`. Todo nativo de Next.js/Vercel, sin herramientas externas ni de
+  pago.
+- `docs/SECURITY.md`: nuevas secciones "Superficie de ataque" y "Cabeceras de seguridad HTTP",
+  incluyendo la justificación de `'unsafe-inline'` en `script-src`/`style-src` y por qué se descartó
+  el patrón de nonce por petición (rompe la hidratación en una arquitectura 100% estática).
+
+### Pruebas
+
+- `tsc --noEmit`, `npm run lint`, `npm run build` limpios.
+- Servidor de producción local (`next start`): `curl -sI` confirma las 6 cabeceras correctamente
+  formadas y ausencia de `X-Powered-By`.
+- Verificación en navegador: Home, `/quijote` (pestañas + sub-filtro Principales/Secundarios) y
+  `/obras/la-galatea` (acordeón) sin errores de CSP ni de hidratación en consola, con interacción
+  real confirmada.
+
+### Estado
+
+Implementado y verificado en local, **sin desplegar todavía**. Ver ADR-021.
