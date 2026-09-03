@@ -598,3 +598,54 @@ sustituye a la anterior, dejando ambas visibles.
 - **Aprobado por:** Usuario, instrucción explícita ("sí, ponlo a producción"), 2026-09-04.
 - **Estado:** VIGENTE. Como en despliegues anteriores, no es una autorización permanente para
   futuros despliegues.
+
+## ADR-021
+
+- **Fecha:** 2026-09-03
+- **Tema:** Endurecimiento de seguridad del sitio (cabeceras HTTP) sin herramientas externas ni de pago
+- **Contexto:** El usuario pidió endurecer la seguridad del sitio ante posibles vulnerabilidades,
+  aclarando que el sitio nunca tendrá dominio propio pero que quiere seguridad igualmente pensando
+  en un futuro con dominio real, y exigiendo explícitamente no usar ninguna herramienta externa ni
+  de pago.
+- **Diagnóstico de superficie de ataque:** el sitio es una aplicación 100% estática (contenido JSON
+  versionado, sin base de datos): no hay rutas de API, formularios, cookies,
+  `dangerouslySetInnerHTML` ni scripts de terceros; los enlaces externos ya usan
+  `rel="noopener noreferrer"`; `npm audit` no reporta vulnerabilidades. La superficie de ataque real
+  ya era pequeña por diseño; lo que faltaba eran las cabeceras HTTP de seguridad, que Vercel no
+  añade por defecto.
+- **Decisión:** Añadir en `next.config.ts` (`headers()`), nativo de Next.js, sin servicios externos:
+  `Content-Security-Policy`, `X-Content-Type-Options: nosniff`, `X-Frame-Options: DENY`,
+  `Referrer-Policy: strict-origin-when-cross-origin`, `Permissions-Policy` (cámara/micrófono/
+  geolocalización/`interest-cohort` desactivados), `Strict-Transport-Security` (HSTS), y
+  `poweredByHeader: false`.
+- **Intento descartado — CSP con nonce por petición:** se probó primero el patrón oficial de
+  Next.js de `script-src` estricto con nonce + `'strict-dynamic'` vía `middleware.ts`
+  (https://nextjs.org/docs/app/guides/content-security-policy), para evitar `'unsafe-inline'` en
+  `script-src`. Se descartó tras comprobar en pruebas locales que rompe la hidratación de React: ese
+  patrón exige leer el nonce vía `headers()` en un Server Component, lo que fuerza renderizado
+  dinámico — incompatible con la arquitectura 100% estática ya aprobada de este sitio (páginas
+  prerenderizadas en build time). Con páginas estáticas, el nonce de cada petición nunca coincide
+  con el de los scripts de hidratación ya fijados en el HTML generado una sola vez, y el navegador
+  los bloquea (se confirmó con ~14 violaciones de CSP en consola y "Minified React error #412").
+  Adoptarlo correctamente habría exigido forzar renderizado dinámico en todo el sitio — un cambio de
+  arquitectura no solicitado y contrario a la regla de "no sobreingeniería" (`CLAUDE.md` §7.7).
+- **Decisión final sobre `script-src`:** `'self' 'unsafe-inline'` en producción (mismo criterio ya
+  aceptado para `style-src` desde el primer borrador, por los componentes que usan la prop `style`
+  de React) — es una concesión intrínseca a cómo Next.js/React hidratan una app estática, no a
+  código propio, y de bajo riesgo real porque no existe vector para que un atacante inyecte su
+  propio script inline (sin rutas de API, formularios, cookies ni `dangerouslySetInnerHTML`).
+  `'unsafe-eval'` solo se añade en desarrollo (lo exige el Fast Refresh).
+- **Descartado — `security.txt`:** no se creó `/.well-known/security.txt` (RFC 9116) porque exige un
+  contacto de seguridad real, y el proyecto no inventa datos de contacto. Queda pendiente para si el
+  sitio obtiene dominio propio y el responsable (Luis Vidal) proporciona un correo real.
+- **Verificación:** `tsc --noEmit`, `npm run lint`, `npm run build` limpios. Servidor de producción
+  local (`next start`): `curl -sI` confirma las 6 cabeceras correctamente formadas y ausencia de
+  `X-Powered-By`. Navegación completa en el sitio (Home cinematográfica, `/quijote` con pestañas y
+  sub-filtro Principales/Secundarios, `/obras/la-galatea` con acordeón) sin errores de CSP en
+  consola ni de hidratación, con interacción real verificada (cambio de pestaña sin recarga).
+- **Archivos:** `next.config.ts`, `docs/SECURITY.md` (nuevas secciones "Superficie de ataque" y
+  "Cabeceras de seguridad HTTP").
+- **Impacto:** Ningún dato de contenido afectado. Cambio puramente de configuración/infraestructura.
+- **Aprobado por:** Pendiente — implementado en rama `security/cabeceras-http`, no mergeado a
+  `main`; requiere aprobación explícita del usuario antes de producción (regla `CLAUDE.md` §7.1).
+- **Estado:** EN DESARROLLO / verificado en local y pendiente de despliegue a Preview.
