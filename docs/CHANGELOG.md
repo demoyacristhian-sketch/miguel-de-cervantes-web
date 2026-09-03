@@ -667,3 +667,35 @@ publicado. Ver ADR-018.
 
 Implementado y verificado en local, **sin desplegar todavía** — pendiente de merge a `develop` y de
 aprobación explícita del usuario para producción. Ver ADR-018.
+
+---
+
+## 2026-09-04 — v2.2.0-textos-desarrollados — rama `develop`
+
+### Añadido
+
+- `works.json`: campo nuevo `description` (varios párrafos, 200-450 palabras según la obra) en las
+  6 obras, sintetizando en prosa los datos ya verificados de cada ficha — sin ningún hecho nuevo.
+- `/obras/[slug]`: sección "Sobre la obra" con el texto desarrollado, antes de los campos destacados
+  y del acordeón (renombrado "Ficha completa"), que pasan a ser referencia estructurada.
+- `/quijote`: la descripción de Don Quijote se reutiliza como "Sobre la novela", sustituyendo el
+  párrafo de síntesis corto anterior.
+- `/legado`: introducción narrativa de cuatro párrafos antes de las 6 tarjetas existentes.
+
+### Nota metodológica
+
+El usuario insistió en que el problema no era la cantidad de datos sino el formato — "no 4 tarjetas
+con información aislada". No se investigó ni se citó ninguna fuente nueva: es una reorganización
+editorial de contenido ya verificado en ADR-014/017/018. Ver ADR-019.
+
+### Pruebas
+
+- `tsc --noEmit`, `npm run lint`, `npm run build` limpios. Verificación por DOM/`get_page_text`: las
+  6 obras muestran "Sobre la obra" con el texto completo; `/quijote` muestra "Sobre la novela";
+  `/legado` muestra la introducción de 4 párrafos antes de las tarjetas. Contraste verificado en
+  modo oscuro y móvil.
+
+### Estado
+
+Implementado y verificado en local, **sin desplegar todavía** — pendiente de aprobación explícita
+del usuario para producción. Ver ADR-019.

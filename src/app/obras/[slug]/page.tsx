@@ -91,6 +91,20 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
         </div>
       )}
 
+      {work.description && (
+        <Reveal className="mt-10">
+          <div className="flex items-center justify-between gap-2">
+            <h2 className="font-serif-display text-xl font-semibold">Sobre la obra</h2>
+            <VerificationBadge status={work.description.status} />
+          </div>
+          <div className="mt-4 space-y-4 leading-relaxed text-foreground/85">
+            {work.description.text.split("\n\n").map((paragraph, index) => (
+              <p key={index}>{paragraph}</p>
+            ))}
+          </div>
+        </Reveal>
+      )}
+
       <div className="mt-10 grid gap-4 sm:grid-cols-3">
         {HIGHLIGHTED_FIELDS.map((field, index) => {
           const entry: WorkProfileField | undefined = profile[field];
@@ -99,7 +113,7 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
             <Reveal key={field} delay={index * 80}>
               <div className="h-full rounded-xl border border-border-subtle bg-surface p-4">
                 <div className="flex items-center justify-between gap-2">
-                  <h2 className="text-sm font-semibold">{PROFILE_LABELS[field]}</h2>
+                  <h3 className="text-sm font-semibold">{PROFILE_LABELS[field]}</h3>
                   <VerificationBadge status={entry.status} />
                 </div>
                 <p className="mt-2 text-sm text-foreground/80">{entry.text}</p>
@@ -111,7 +125,7 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
 
       <details className="group mt-8 rounded-xl border border-border-subtle bg-surface">
         <summary className="cursor-pointer list-none px-5 py-4 text-sm font-semibold">
-          Más detalles
+          Ficha completa
           <span className="ml-2 text-foreground/50 group-open:hidden">— estructura, curiosidades, ediciones…</span>
         </summary>
         <dl className="grid gap-4 px-5 pb-5 sm:grid-cols-2">

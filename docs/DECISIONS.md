@@ -546,3 +546,31 @@ sustituye a la anterior, dejando ambas visibles.
   una ampliación de contenido sobre un trabajo ya aprobado en su forma, con una única desviación de
   método —Wikipedia como pista, no como fuente— comunicada de forma transparente antes de proceder).
 - **Estado:** VIGENTE. No incluye autorización de despliegue a producción — se pide aparte.
+
+---
+
+## ADR-019
+
+- **Fecha:** 2026-09-04
+- **Tema:** Textos descriptivos desarrollados en Obras, Quijote y Legado (formato, no solo contenido)
+- **Contexto:** Tras ADR-017 y ADR-018, el usuario insistió en que el problema no era solo la
+  cantidad de datos, sino el **formato**: "no 4 tarjetas con información aislada" — pidió un texto
+  descriptivo de extensión media-alta por obra, más contexto en Quijote, y lo mismo en Legado.
+- **Decisión:** Se añadió un campo nuevo `description` (`WorkProfileField`, varios párrafos) a las
+  6 obras en `works.json`, sintetizando en prosa —sin introducir ningún hecho nuevo— los datos ya
+  verificados en sus fichas (`context`, `plot`, `themes`, `structure`, `curiosities`, `reception`,
+  `influence`). Se muestra en `/obras/[slug]` bajo el título "Sobre la obra", antes de los campos
+  destacados y del acordeón, que pasan a ser referencia estructurada complementaria, no el contenido
+  principal. La misma descripción de Don Quijote (la más extensa, ~370 palabras, dado que "es su
+  obra maestra") se reutiliza en `/quijote` como "Sobre la novela", evitando reescribir el mismo
+  contenido dos veces. En `/legado` se añadió una introducción narrativa de cuatro párrafos
+  (~330 palabras) antes de las 6 tarjetas existentes, sintetizando idioma, traducciones, arte,
+  ediciones conmemorativas, el Premio Cervantes y el Día del Libro en un solo texto legible.
+- **Razón:** Instrucción explícita del usuario sobre el formato de presentación, no sobre datos
+  nuevos — ya había suficiente contenido verificado tras ADR-017/018, pero fragmentado en campos
+  demasiado cortos para sentirse "bien desarrollado".
+- **Impacto:** Ningún dato nuevo ni fuente nueva — es una reorganización editorial de contenido ya
+  verificado. Cambia la jerarquía visual de `/obras/[slug]`, `/quijote` y `/legado` (texto narrativo
+  primero, tarjetas/campos estructurados después), sin tocar el resto del sitio.
+- **Aprobado por:** Instrucción directa del usuario, 2026-09-04.
+- **Estado:** VIGENTE. No incluye autorización de despliegue a producción — se pide aparte.

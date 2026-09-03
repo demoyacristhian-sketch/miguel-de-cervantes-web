@@ -48,6 +48,12 @@ UNESCO — SRC-016 a SRC-021). Se añadieron: familia completa, intentos de fuga
 Isabel de Saavedra, el encarcelamiento en Castro del Río (1592), la estructura de La Galatea, un
 tema nuevo del Quijote (crítica literaria del canónigo) y 2 entradas nuevas en Legado.
 
+**Nota sobre textos desarrollados (2026-09-04, ADR-019):** el usuario pidió un formato distinto, no
+más datos — "no 4 tarjetas con información aislada". Se añadió el campo `description` (varios
+párrafos) a las 6 obras, reutilizado en `/quijote` para Don Quijote, y una introducción narrativa de
+4 párrafos en `/legado`. Sin fuentes nuevas: es una reorganización editorial de contenido ya
+verificado.
+
 **Nota sobre la curiosidad "Shakespeare":** existe una discrepancia real entre SRC-001 (institucional) y
 SRC-002 (secundaria verificada) sobre el orden exacto de las muertes — documentada explícitamente en la
 respuesta publicada y en `/docs/SOURCES.md`, sin resolverla artificialmente a favor de una sola versión.
