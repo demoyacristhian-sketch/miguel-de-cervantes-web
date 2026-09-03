@@ -50,9 +50,9 @@ empieza en Fase 2.
 |---|---|
 | Fundación / documentación | **APROBADO** (Fase 0 ejecutada 2026-09-01) |
 | Arquitectura técnica | **EN DESARROLLO** (scaffold real creado y validado: lint + typecheck + build limpios) |
-| Repositorio GitHub | `main` = producción real (commit `6819f2a`), `develop` al día (`71495f4`) |
-| Vercel | Producción actualizada y verificada (última vez 2026-09-02, aprobación explícita del usuario); ver ADR-007 a ADR-016 |
-| Contenido histórico | **AVANZADO** — timeline (14/14), obras (6/6 con fichas ampliadas), vidas (7/7), curiosidades (6/6), Quijote (31 entradas) y legado (4/4) verificados; ver `docs/CONTENT_STATUS.md` |
+| Repositorio GitHub | `main` = producción real (commit `7eaab79`), `develop` al día (`06f3154`) |
+| Vercel | Producción actualizada y verificada (última vez 2026-09-04, aprobación explícita del usuario); ver ADR-007 a ADR-020 |
+| Contenido histórico | **AVANZADO** — timeline (16/16), obras (6/6 con fichas ampliadas y texto "Sobre la obra"), vidas (7/7), curiosidades (6/6), Quijote (32 entradas) y legado (6/6) verificados; ver `docs/CONTENT_STATUS.md` |
 | Diseño visual | APROBADO para MVP (tokens Tailwind v4, Playfair Display + Inter, revisado por el usuario) |
 | MVP (Home, Bio, Timeline, Obras, Quijote) | **APROBADO** — Fase 1 cerrada, mergeada a `develop` |
 | Pregunta a Cervantes (IA/RAG) | BLOQUEADO — requiere aprobación específica de arquitectura y costes (Fase 5) |
@@ -106,32 +106,32 @@ Estas reglas provienen del prompt maestro del proyecto y son de cumplimiento obl
 
 ## 8. Próximo paso
 
-Fase 1 cerrada. Fase 2 en curso. **Reestructuración de navegación y biografía (ADR-011/012/013) — EN
-PRODUCCIÓN:** nav principal Una vida, una historia, Obras, Don Quijote, Legado, Biblioteca.
+Fase 1 cerrada. Fase 2 en curso. **Reestructuración de navegación (ADR-011/012/013) — EN
+PRODUCCIÓN:** nav principal Biografía, Obras, Don Quijote, Legado, Biblioteca.
 
-**Secciones completas + Home cinematográfica (2026-09-02, ADR-014/015/016) — EN PRODUCCIÓN:**
-`/legado` (4 tarjetas), `/biblioteca` (5 recursos institucionales + "Fuentes y créditos"), `/obras`
-con filtro y portadas; Home rediseñada como historia a pantalla completa; botón "← Volver" en todas
-las páginas que no son Home. Esto acelera partes de las Fases 3, 4 y 6 por instrucción explícita.
+**Secciones completas + Home cinematográfica (ADR-014/015/016) — EN PRODUCCIÓN.**
 
-**Ampliación de contenido (2026-09-03, ADR-017) — implementada y verificada en local, SIN
-DESPLEGAR TODAVÍA, rama `content/ampliacion-obras-quijote-biografia`:** "Una vida, una historia" →
-**"Biografía"**; Obras con campos nuevos en 5/6 fichas; Quijote ampliado a 10 personajes (con
-sub-filtro Principales/Secundarios), 6 lugares, 7 aventuras, 5 temas, 3 frases, más un párrafo de
-síntesis inicial; Biografía con 14 pasos (2 eventos nuevos) y un resumen biográfico inicial;
-footer con "TFM" (antes "TFG"); 6 fuentes nuevas (SRC-010 a SRC-015).
+**Ampliación de contenido en tres rondas + textos desarrollados (2026-09-03/04, ADR-017/018/019) —
+EN PRODUCCIÓN:** "Una vida en movimiento"/"Una vida, una historia" → **"Biografía"** (16 pasos,
+resumen biográfico inicial con familia, cautiverio e hija Isabel de Saavedra); Obras con las 6
+fichas completas y una sección "Sobre la obra" de varios párrafos por obra (no solo campos
+fragmentados); Quijote ampliado a 10 personajes (sub-filtro Principales/Secundarios), 6 lugares, 7
+aventuras, 6 temas, 3 frases, más "Sobre la novela" (reutiliza la descripción de Don Quijote);
+Legado con 6 entradas y una introducción narrativa de 4 párrafos; footer con "TFM" en primera
+persona ("mis estudios"); 21 fuentes verificadas en total (SRC-010 a SRC-021 nuevas). La segunda
+ronda (ADR-018) usó es.wikipedia.org/wiki/Miguel_de_Cervantes **solo como pista** —nunca citada—
+por la regla permanente del proyecto; cada dato se verificó contra RAH, BNE, BVMC, Universidad de
+Alcalá o UNESCO antes de publicarse.
 
-**Producción actualizada seis veces con aprobación explícita del usuario** (commits `d886473`,
-`10eacb5`, `572af9c`, `dd99c1a`, `2b0ff57` y `6819f2a` en `main`) — ver ADR-008 a ADR-016. El
-trabajo de ADR-017 **todavía no se ha mergeado a `main` ni desplegado a producción** — requiere
-aprobación explícita aparte.
+**Producción actualizada siete veces con aprobación explícita del usuario** (commits `d886473`,
+`10eacb5`, `572af9c`, `dd99c1a`, `2b0ff57`, `6819f2a` y `7eaab79` en `main`) — ver ADR-008 a ADR-020.
 
-**Próximo paso lógico:** decidir si se aprueba mergear/desplegar el trabajo de ADR-017; después,
-contexto histórico general, o seguir ampliando el Quijote/la biografía si el usuario lo pide. Cada
-nuevo dato histórico debe seguir el mismo protocolo: fuente primaria/institucional/académica real
-(y para imágenes, verificación de dominio público vía API, nunca asumir libre por aparecer en un
-buscador) antes de marcar `verificado`. Cualquier nuevo merge a `main` requiere de nuevo una
-aprobación explícita.
+**Próximo paso lógico:** contexto histórico general, o seguir ampliando el Quijote/la biografía si
+el usuario lo pide. Cada nuevo dato histórico debe seguir el mismo protocolo: fuente
+primaria/institucional/académica real (Wikipedia solo como pista, nunca como fuente citada; para
+imágenes, verificación de dominio público vía API, nunca asumir libre por aparecer en un buscador)
+antes de marcar `verificado`. Cualquier nuevo merge a `main` requiere de nuevo una aprobación
+explícita.
 
 **Nota de incidente histórico (ver ADR-007):** el primer despliegue de Vercel quedó publicado como
 producción por un comportamiento automático de la plataforma, no por una acción deliberada sin permiso —

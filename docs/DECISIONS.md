@@ -574,3 +574,27 @@ sustituye a la anterior, dejando ambas visibles.
   primero, tarjetas/campos estructurados después), sin tocar el resto del sitio.
 - **Aprobado por:** Instrucción directa del usuario, 2026-09-04.
 - **Estado:** VIGENTE. No incluye autorización de despliegue a producción — se pide aparte.
+
+---
+
+## ADR-020
+
+- **Fecha:** 2026-09-04
+- **Tema:** Sexta actualización aprobada de producción (ADR-017/018/019 + footer en primera persona)
+- **Contexto:** Tras verificar en Preview el trabajo de ADR-017 (Obras/Quijote/Biografía ampliados),
+  ADR-018 (segunda ronda con Wikipedia usada solo como pista) y ADR-019 (textos "Sobre la
+  obra"/"Sobre la novela" e introducción narrativa de Legado), el usuario dio la instrucción
+  explícita "sí, ponlo a producción", junto con un ajuste de texto: el footer debía decir "mis
+  estudios" en vez de "sus estudios" (voz en primera persona, coherente con ser un crédito de autor).
+- **Decisión:** Se aplicó el ajuste de texto y se mergeó `develop` → `main` (commit `7eaab79`),
+  desplegado automáticamente por la integración Git de Vercel.
+- **Verificación post-despliegue:** confirmado en producción vía navegador — "Sobre la obra" visible
+  en `/obras/don-quijote-de-la-mancha` con el texto completo; footer con "mis estudios" confirmado
+  por inspección directa del DOM.
+- **Razón:** Instrucción explícita e inequívoca del usuario.
+- **Impacto:** Ningún dato histórico nuevo respecto a ADR-017/018/019; cambio de contenido y
+  presentación ya verificado en Preview, ahora reflejado en producción, más un ajuste menor de
+  redacción en el footer.
+- **Aprobado por:** Usuario, instrucción explícita ("sí, ponlo a producción"), 2026-09-04.
+- **Estado:** VIGENTE. Como en despliegues anteriores, no es una autorización permanente para
+  futuros despliegues.
