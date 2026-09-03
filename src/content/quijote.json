@@ -250,6 +250,15 @@
     "sourceIds": ["SRC-008"]
   },
   {
+    "id": "tema-critica-literaria",
+    "category": "tema",
+    "title": "Una crítica literaria dentro de la novela",
+    "status": "verificado",
+    "text": "El canónigo de Toledo, que \"sabe más de libros de caballerías que de las Súmulas de Villalpando\", dedica un largo pasaje a censurar tanto los libros de caballerías como las comedias de su tiempo, que tacha de \"disparates que no llevan pies ni cabeza\" por no respetar los preceptos del arte, y defiende que hasta una obra popular puede ser buena si está bien escrita.",
+    "citation": "Primera parte, capítulos XLVII-XLVIII",
+    "sourceIds": ["SRC-008"]
+  },
+  {
     "id": "tema-libertad",
     "category": "tema",
     "title": "La libertad",

@@ -118,5 +118,53 @@
     "type": "FUENTE ACADÉMICA",
     "url": "https://www.rae.es",
     "dateConsulted": "2026-09-03"
+  },
+  {
+    "id": "SRC-016",
+    "title": "Isabel de Saavedra (hija de Cervantes)",
+    "institution": "Real Academia de la Historia",
+    "type": "FUENTE INSTITUCIONAL",
+    "url": "https://dbe.rah.es/biografias/71050/isabel-de-saavedra",
+    "dateConsulted": "2026-09-04"
+  },
+  {
+    "id": "SRC-017",
+    "title": "Los cuatro intentos de fuga de Cervantes en Argel",
+    "institution": "Fuentes de divulgación histórica trianguladas",
+    "type": "FUENTE SECUNDARIA VERIFICADA",
+    "url": "http://www.guerrillero.cu/los-intentos-de-fuga-de-cervantes-antes-de-su-cautiverio-en-argel/",
+    "dateConsulted": "2026-09-04"
+  },
+  {
+    "id": "SRC-018",
+    "title": "Encarcelamiento en Castro del Río (1592)",
+    "institution": "Biblioteca Virtual Miguel de Cervantes",
+    "type": "FUENTE INSTITUCIONAL",
+    "url": "https://www.cervantesvirtual.com/portales/red_ciudades_cervantinas/castro_del_rio/",
+    "dateConsulted": "2026-09-04"
+  },
+  {
+    "id": "SRC-019",
+    "title": "Premio de Literatura en Lengua Castellana Miguel de Cervantes",
+    "institution": "Universidad de Alcalá",
+    "type": "FUENTE INSTITUCIONAL",
+    "url": "https://www.uah.es/es/conoce-la-uah/la-universidad/actos-academicos-e-institucionales/premios-cervantes/",
+    "dateConsulted": "2026-09-04"
+  },
+  {
+    "id": "SRC-020",
+    "title": "Día Internacional del Libro y del Derecho de Autor",
+    "institution": "UNESCO / Ministerio de Cultura de España",
+    "type": "FUENTE INSTITUCIONAL",
+    "url": "https://www.cultura.gob.es/cultura/areas/libro/mc/dia-libro/presentacion/2022/dia-libro-derecho-autor.html",
+    "dateConsulted": "2026-09-04"
+  },
+  {
+    "id": "SRC-021",
+    "title": "La Galatea — estructura en seis libros (edición original)",
+    "institution": "Biblioteca Nacional de España / Centro Virtual Cervantes",
+    "type": "FUENTE PRIMARIA",
+    "url": "https://cervantes.bne.es/es/colecciones/impresos-antiguos/primera-parte-galatea-dividida-seis-libros",
+    "dateConsulted": "2026-09-04"
   }
 ]

@@ -261,7 +261,8 @@ URL: https://cvc.cervantes.es/literatura/clasicos/quijote/edicion/ — capítulo
   parte1/prologo (cita sobre la cárcel), parte1/cap01 (decisión de armarse caballero, nombre propio
   y de Rocinante), parte1/cap07 (presentación de Sancho Panza), parte1/cap08 (molinos de viento),
   parte1/cap21 (yelmo de Mambrino), parte1/cap22 (liberación de los galeotes), parte1/cap25
-  (Dulcinea/Aldonza Lorenzo), parte1/cap29 (Cardenio, Dorotea y la princesa Micomicona), parte2/cap03
+  (Dulcinea/Aldonza Lorenzo), parte1/cap29 (Cardenio, Dorotea y la princesa Micomicona),
+  parte1/cap47-48 (crítica literaria del canónigo de Toledo), parte2/cap03
   (Sansón Carrasco), parte2/cap09 (cita "con la iglesia hemos dado, Sancho"), parte2/cap23 (cueva de
   Montesinos), parte2/cap26-27 (retablo de Maese Pedro y revelación de Ginés de Pasamonte),
   parte2/cap45 (juicios de Sancho como gobernador de la Ínsula Barataria), parte2/cap58 (cita sobre
@@ -478,4 +479,157 @@ Página/sección: Reseña de la edición crítica.
 Observaciones: Se prioriza esta edición crítica institucional sobre artículos de acceso abierto de
   estatus editorial incierto encontrados durante la misma búsqueda.
 Derechos: Se parafrasea, sin reproducir el texto de la edición ni de su reseña.
+```
+
+### Nota metodológica sobre el uso de Wikipedia en esta ampliación (2026-09-04)
+
+El usuario pidió expresamente usar es.wikipedia.org/wiki/Miguel_de_Cervantes como fuente y citarla.
+Por la regla permanente del proyecto (§7.3 de `CLAUDE.md`: "Wikipedia solo como pista inicial, nunca
+como fuente final"), el artículo se usó **exclusivamente como pista** para identificar qué hechos
+añadir y qué historiadores/archivos los respaldan — nunca se cita a Wikipedia como fuente en el
+contenido publicado. Cada dato nuevo se verificó de forma independiente contra una fuente primaria,
+institucional o académica real antes de publicarse (ver SRC-016 a SRC-021).
+
+### SRC-016
+
+```text
+ID: SRC-016
+Título: Isabel de Saavedra (hija de Cervantes)
+Institución: Real Academia de la Historia (Diccionario Biográfico Electrónico); Biblioteca Virtual
+  Miguel de Cervantes (artículo académico de Emilio Maganto Pavón)
+Autor: Real Academia de la Historia; Emilio Maganto Pavón
+URL: https://dbe.rah.es/biografias/71050/isabel-de-saavedra;
+  cervantesvirtual.com/obra/-un-punto-oscuro-en-la-vida-de-cervantes-su-amante-ana-de-villafranca-y-la-hija-de-ambos-isabel-de-saavedra-nuevos-documentos-cervantinos-que-desvelan-la-vida-de-isabel-durante-1052914/
+Fecha de consulta: 2026-09-04
+Tipo: FUENTE INSTITUCIONAL (RAH) y FUENTE ACADÉMICA (artículo alojado en BVMC)
+Fiabilidad: Alta — diccionario biográfico oficial de la Real Academia de la Historia.
+Información utilizada: Isabel nació en Madrid hacia 1584, hija de la relación de Cervantes con Ana
+  Franca (o Villafranca) de Rojas, casada con el tabernero Alonso Rodríguez. No fue reconocida por
+  Cervantes hasta después de 1599 (muerte de sus padres Ana Franca y Alonso Rodríguez); antes vivió
+  al cuidado de Magdalena, hermana de Cervantes. Se casó dos veces (Diego Sanz del Águila y Luis de
+  Molina) y en un testamento de 1631 se refiere a sí misma como hija de Miguel de Cervantes y de Ana
+  de Rojas, "ambos difuntos".
+Página/sección: Biografía completa (RAH); artículo completo (Maganto Pavón).
+Observaciones: Es un episodio biográfico real y documentado, no un hecho de novela — se presenta
+  con la misma naturalidad y rigor que el resto de la biografía, sin dramatizar ni omitir.
+Derechos: Se parafrasea, sin reproducir el texto de ninguna de las dos fuentes.
+```
+
+### SRC-017
+
+```text
+ID: SRC-017
+Título: Los cuatro intentos de fuga de Cervantes durante el cautiverio en Argel
+Institución: Ninguna fuente única institucional accesible directamente; triangulado entre varias
+  coberturas de divulgación histórica independientes y coincidentes entre sí
+Autor: Varios (ver URLs)
+URL: guerrillero.cu/los-intentos-de-fuga-de-cervantes-antes-de-su-cautiverio-en-argel/;
+  calvarielperiodicdelcordebenidorm.com/2024/06/09/los-intentos-de-fuga-de-miguel-de-cervantes-de-su-cautiverio-en-argel/;
+  lacasadelrecreador.com/es/blog/143-cervantes-en-argel-1575-1580-historia-de-un-cautiverio-singular
+Fecha de consulta: 2026-09-04
+Tipo: FUENTE SECUNDARIA VERIFICADA (triangulación de varias fuentes independientes coincidentes;
+  mismo criterio que SRC-002)
+Fiabilidad: Media-alta — los hechos concretos (número de intentos, nombres de los delatores,
+  castigos) coinciden en todas las fuentes consultadas, que a su vez remiten a las biografías
+  académicas de referencia sobre Cervantes (Astrana Marín, Canavaggio).
+Información utilizada: Cervantes protagonizó cuatro intentos de fuga documentados durante su
+  cautiverio en Argel (1575-1580). En el segundo, una galera española enviada a rescatarlo fue
+  capturada y el plan fue descubierto por la traición de un cautivo apodado "el Dorador"; Cervantes
+  asumió toda la responsabilidad ante Azán Bajá, que lo encadenó cinco meses en su "baño". En el
+  cuarto, financiado por un mercader valenciano para fletar una fragata con sesenta cautivos, el
+  plan fue delatado por el ex dominico Juan Blanco de Paz, recompensado con un escudo y un tarro de
+  manteca.
+Página/sección: Artículos completos.
+Observaciones: No se pudo acceder directamente a una biografía académica primaria (Astrana Marín,
+  Canavaggio) para esta ampliación puntual; se documenta la limitación explícitamente, siguiendo el
+  protocolo del proyecto de nunca presentar como verificado algo no confirmado con el rigor habitual.
+Derechos: Se parafrasea, sin reproducir el texto de ninguna fuente.
+```
+
+### SRC-018
+
+```text
+ID: SRC-018
+Título: Encarcelamiento en Castro del Río (1592)
+Institución: Biblioteca Virtual Miguel de Cervantes (Red de Ciudades Cervantinas; biografía oficial)
+Autor: Biblioteca Virtual Miguel de Cervantes
+URL: cervantesvirtual.com/portales/red_ciudades_cervantinas/castro_del_rio/;
+  cervantesvirtual.com/portales/miguel_de_cervantes/autor_biografia_2/
+Fecha de consulta: 2026-09-04
+Tipo: FUENTE INSTITUCIONAL
+Fiabilidad: Alta.
+Información utilizada: El 21 de septiembre de 1592, como comisario real de abastos, Cervantes fue
+  encarcelado en Castro del Río acusado de haber vendido parte del trigo requisado que debía ir a la
+  Armada. Salió pronto de la cárcel tras el pago de una fianza por Pedro de Isunza. El requisamiento
+  de grano eclesiástico en Écija le había valido antes una excomunión del vicario general de Sevilla.
+Página/sección: Páginas indicadas.
+Observaciones: Este encarcelamiento es distinto y anterior al de la Cárcel Real de Sevilla (1597,
+  SRC-010), ya registrado; ambos están documentados de forma independiente.
+Derechos: Se parafrasea, sin reproducir el texto de las páginas.
+```
+
+### SRC-019
+
+```text
+ID: SRC-019
+Título: Premio de Literatura en Lengua Castellana Miguel de Cervantes
+Institución: Universidad de Alcalá
+Autor: Universidad de Alcalá (páginas oficiales)
+URL: uah.es/es/conoce-la-uah/la-universidad/actos-academicos-e-institucionales/premios-cervantes/
+Fecha de consulta: 2026-09-04
+Tipo: FUENTE INSTITUCIONAL
+Fiabilidad: Alta — página oficial de la propia universidad que acoge el acto.
+Información utilizada: El Premio Cervantes, creado en 1976, es considerado el galardón más
+  importante de las letras en español. Se entrega cada 23 de abril (Día del Libro y aniversario de
+  la muerte de Cervantes) en el Paraninfo de la Universidad de Alcalá, en una ceremonia presidida
+  por los Reyes de España.
+Página/sección: Página oficial completa.
+Observaciones: Ninguna.
+Derechos: Se parafrasea, sin reproducir el texto de la página.
+```
+
+### SRC-020
+
+```text
+ID: SRC-020
+Título: Día Internacional del Libro y del Derecho de Autor
+Institución: UNESCO; Ministerio de Cultura de España
+Autor: UNESCO (Conferencia General, 1995)
+URL: cultura.gob.es/cultura/areas/libro/mc/dia-libro/presentacion/2022/dia-libro-derecho-autor.html
+Fecha de consulta: 2026-09-04
+Tipo: FUENTE INSTITUCIONAL
+Fiabilidad: Alta — el hecho (proclamación por la Conferencia General de la UNESCO en 1995) se repite
+  de forma consistente en múltiples coberturas periodísticas y en la propia página del Ministerio de
+  Cultura de España.
+Información utilizada: La UNESCO proclamó el 23 de abril Día Internacional del Libro y del Derecho
+  de Autor en 1995, fecha elegida por coincidir con la muerte, en 1616, de Cervantes, Shakespeare y
+  el Inca Garcilaso de la Vega — con la salvedad, ya documentada en la curiosidad correspondiente
+  del sitio, de que las fechas reales difieren por el desfase entre calendarios.
+Página/sección: Página completa.
+Observaciones: Ninguna.
+Derechos: Se parafrasea, sin reproducir el texto de la página.
+```
+
+### SRC-021
+
+```text
+ID: SRC-021
+Título: La Galatea — estructura en seis libros (edición original)
+Institución: Biblioteca Nacional de España; Centro Virtual Cervantes (Instituto Cervantes)
+Autor: Miguel de Cervantes (texto primario, catalogado por la BNE); Melchora Romanos (estudio
+  académico, congreso cervantista)
+URL: cervantes.bne.es/es/colecciones/impresos-antiguos/primera-parte-galatea-dividida-seis-libros;
+  cvc.cervantes.es/literatura/cervantistas/congresos/cg_II/cg_II_15.pdf
+Fecha de consulta: 2026-09-04
+Tipo: FUENTE PRIMARIA (catálogo BNE de la edición original) y FUENTE ACADÉMICA (estudio de
+  estructura narrativa)
+Fiabilidad: Máxima para el dato de estructura — es el propio título de la edición original,
+  catalogada por la Biblioteca Nacional de España: "Primera parte de La Galatea, dividida en seis
+  libros" (1585).
+Información utilizada: La Galatea se organiza en seis libros; el libro VI incluye el "Canto de
+  Calíope", en el que Cervantes elogia a poetas contemporáneos (entre ellos Lope de Vega y Góngora).
+  Cervantes anunció varias veces una segunda parte que nunca llegó a escribir.
+Página/sección: Ficha de catálogo (BNE); artículo completo (CVC).
+Observaciones: Ninguna.
+Derechos: Se parafrasea, sin reproducir el texto de ninguna fuente.
 ```

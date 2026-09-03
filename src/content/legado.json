@@ -30,5 +30,21 @@
     "status": "verificado",
     "text": "La Real Academia Española y la Asociación de Academias de la Lengua Española (ASALE) publicaron ediciones conmemorativas del Quijote en 2004 y de nuevo en 2015, con motivo del IV centenario de la muerte de Cervantes.",
     "sourceIds": ["SRC-009"]
+  },
+  {
+    "id": "legado-premio-cervantes",
+    "domain": "Reconocimientos",
+    "title": "El Premio Cervantes",
+    "status": "verificado",
+    "text": "Creado en 1976, el Premio de Literatura en Lengua Castellana Miguel de Cervantes está considerado el galardón más importante de las letras en español. Se entrega cada 23 de abril —Día del Libro y aniversario de su muerte— en el Paraninfo de la Universidad de Alcalá, en una ceremonia presidida por los Reyes de España.",
+    "sourceIds": ["SRC-019"]
+  },
+  {
+    "id": "legado-dia-del-libro",
+    "domain": "Día Internacional del Libro",
+    "title": "El 23 de abril, fecha simbólica",
+    "status": "verificado",
+    "text": "La UNESCO proclamó el 23 de abril Día Internacional del Libro y del Derecho de Autor en 1995, fecha elegida por coincidir con la muerte, en 1616, de Cervantes, Shakespeare y el Inca Garcilaso de la Vega —aunque, como recoge la curiosidad dedicada, las fechas reales difieren por el desfase entre calendarios.",
+    "sourceIds": ["SRC-020"]
   }
 ]

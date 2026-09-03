@@ -501,3 +501,48 @@ sustituye a la anterior, dejando ambas visibles.
   criterio ya usado en SRC-002.
 - **Aprobado por:** Usuario, plan aprobado explícitamente, 2026-09-03.
 - **Estado:** VIGENTE. No incluye autorización de despliegue a producción — se pide aparte.
+
+---
+
+## ADR-018
+
+- **Fecha:** 2026-09-04
+- **Tema:** Segunda ronda de ampliación (Biografía, Obras, Quijote, Legado) — uso de Wikipedia como
+  pista, nunca como fuente final
+- **Contexto:** El usuario consideró insuficiente la ampliación de ADR-017 ("se ha quedado muy
+  corto") y pidió expresamente usar es.wikipedia.org/wiki/Miguel_de_Cervantes como fuente para más
+  información, citándola como referencia, en Biografía, Obras, Quijote y Legado.
+- **Decisión sobre el uso de Wikipedia:** Se aplicó la regla permanente del proyecto (§7.3 de
+  `CLAUDE.md`: "Wikipedia solo como pista inicial, nunca como fuente final para historia
+  relevante"), comunicada al usuario en el momento. El artículo se usó exclusivamente para
+  identificar qué hechos añadir y qué historiadores/archivos los respaldan (Astrana Marín,
+  Canavaggio, Real Academia de la Historia, Biblioteca Nacional de España, Biblioteca Virtual
+  Miguel de Cervantes, Universidad de Alcalá, UNESCO). **Wikipedia no aparece citada como fuente en
+  ningún dato publicado** — cada uno se verificó de forma independiente (SRC-016 a SRC-021).
+- **Contenido añadido:**
+  - **Biografía**: familia completa (padre cirujano, seis hermanos nombrados); los cuatro intentos
+    de fuga durante el cautiverio en Argel, con los delatores "el Dorador" y Juan Blanco de Paz;
+    nacimiento de su hija Isabel de Saavedra (1584, fruto de una relación anterior al matrimonio,
+    fuente: Real Academia de la Historia); un segundo encarcelamiento, en Castro del Río (1592, por
+    las cuentas del trigo requisado, distinto del ya registrado de Sevilla 1597). El recorrido pasa
+    de 14 a 16 pasos; el resumen inicial se amplía para reflejar todo esto.
+  - **Obras**: La Galatea gana el dato de su estructura real en seis libros, verificado contra el
+    propio catálogo de la Biblioteca Nacional de España (título original: "Primera parte de La
+    Galatea, dividida en seis libros").
+  - **Quijote**: nuevo tema, "Una crítica literaria dentro de la novela" — el episodio del canónigo
+    de Toledo censurando los libros de caballerías y las comedias de su época (capítulos XLVII-XLVIII
+    de la Primera Parte), verificado directamente contra el texto primario en el CVC.
+  - **Legado**: dos entradas nuevas — el Premio Cervantes (fuente: Universidad de Alcalá, que acoge
+    la ceremonia) y el Día Internacional del Libro (fuente: UNESCO/Ministerio de Cultura), pasando
+    de 4 a 6 entradas.
+  - **6 fuentes nuevas** (SRC-016 a SRC-021); SRC-008 ampliada con los capítulos XLVII-XLVIII.
+- **Razón:** Instrucción explícita del usuario de añadir más profundidad; el uso de Wikipedia se
+  adaptó (no se ignoró ni se cumplió literalmente) para respetar una regla permanente que el propio
+  usuario estableció al inicio del proyecto.
+- **Impacto:** Ampliación biográfica y de legado significativa; ningún dato inventado ni atribuido
+  a Wikipedia. Un episodio biográfico delicado (hija extramatrimonial) se presenta con naturalidad
+  y rigor documental, sin dramatizar ni omitir, siguiendo el mismo criterio que el resto del sitio.
+- **Aprobado por:** Instrucción directa del usuario, 2026-09-04 (no se usó plan mode por tratarse de
+  una ampliación de contenido sobre un trabajo ya aprobado en su forma, con una única desviación de
+  método —Wikipedia como pista, no como fuente— comunicada de forma transparente antes de proceder).
+- **Estado:** VIGENTE. No incluye autorización de despliegue a producción — se pide aparte.

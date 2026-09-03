@@ -89,7 +89,7 @@ const ERA_DEFINITIONS: EraDefinition[] = [
       alt: "Portada de la primera edición de La Galatea (1585)",
       credit: "La Galatea, primera edición, Alcalá, 1585 (dominio público)",
     },
-    yearIds: ["tl-1584", "tl-1585", "tl-1597"],
+    yearIds: ["tl-1584-isabel", "tl-1584", "tl-1585", "tl-1592", "tl-1597"],
   },
   {
     id: "consagracion",

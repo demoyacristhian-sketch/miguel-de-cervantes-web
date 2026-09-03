@@ -59,23 +59,21 @@ empieza en Fase 2.
 
 ## 5. Última implementación
 
-- **Fecha:** 2026-09-03
+- **Fecha:** 2026-09-04
 - **Rama:** `content/ampliacion-obras-quijote-biografia` (creada desde `develop`, sin mergear
-  todavía)
-- **Qué se hizo:** El usuario pidió más contenido en Obras ("muy superficial"), desarrollar mucho
-  más el Quijote ("su obra maestra"), ampliar la Biografía, más fuentes verificadas, renombrar
-  "Una vida, una historia" a "Biografía" y cambiar "TFG" por "TFM". Tras una primera propuesta,
-  aclaró que cada sección debe llevar primero un resumen en texto y después los elementos
-  interactivos. Ver ADR-017 y la entrada `v2.0.0-ampliacion-contenido` en `docs/CHANGELOG.md`. En
-  resumen: 5/6 obras con campos nuevos verificados (SRC-011 a SRC-015); Quijote con 5 personajes,
-  2 lugares, 4 aventuras, 2 temas y 1 frase nuevos (sub-filtro Principales/Secundarios en
-  personajes) + párrafo de síntesis; Biografía con 2 eventos nuevos (matrimonio en Esquivias,
-  cárcel de Sevilla) + resumen biográfico inicial, de 12 a 14 pasos; footer con "TFM".
-- **Pruebas:** `tsc --noEmit`, `npm run lint`, `npm run build` limpios. Verificación por
-  `getComputedStyle`/DOM en navegador local: 14/14 pasos en Biografía, 10/6/7/5/3 tarjetas por
-  categoría en Quijote con el filtro de personajes confirmado, campos nuevos visibles en Obras,
-  15 fuentes en Biblioteca, footer con "TFM". Corregido en el proceso: el sub-filtro de personajes
-  ocultaba por error las demás pestañas del Quijote.
+  todavía; incluye dos rondas de trabajo, ADR-017 y ADR-018)
+- **Qué se hizo:** ADR-017 (2026-09-03): Obras/Quijote/Biografía ampliados, rebautizo a
+  "Biografía", "TFG"→"TFM". ADR-018 (2026-09-04): el usuario consideró la ampliación insuficiente y
+  pidió usar es.wikipedia.org/wiki/Miguel_de_Cervantes como fuente — se usó exclusivamente como
+  pista (regla permanente del proyecto), verificando cada dato contra RAH, BNE, BVMC, Universidad
+  de Alcalá y UNESCO (SRC-016 a SRC-021). Se añadió: familia completa, intentos de fuga en Argel,
+  la hija Isabel de Saavedra, el encarcelamiento en Castro del Río (1592), la estructura de La
+  Galatea, un tema nuevo del Quijote (crítica literaria del canónigo) y 2 entradas en Legado.
+  Biografía pasa de 12 a 16 pasos; Legado de 4 a 6 entradas. Ver `docs/CHANGELOG.md`
+  (`v2.0.0-ampliacion-contenido` y `v2.1.0-ampliacion-wikipedia-como-pista`).
+- **Pruebas:** `tsc --noEmit`, `npm run lint`, `npm run build` limpios en ambas rondas. Verificación
+  por DOM en navegador local: 16/16 pasos en Biografía en orden cronológico correcto, 6 temas en
+  Quijote, 6 entradas en Legado, 21 fuentes en Biblioteca, campo "Estructura" visible en La Galatea.
 - **Estado:** Implementado y verificado en local, **sin desplegar todavía**. Requiere aprobación
   explícita del usuario para mergear a `develop`/`main`.
 - **Pendientes:** más personajes del Quijote si se desea ampliar aún más, contexto histórico

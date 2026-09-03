@@ -629,3 +629,41 @@ por defecto.
 
 Implementado y verificado en local, **sin desplegar todavía** — pendiente de merge a `develop` y de
 aprobación explícita del usuario para producción. Ver ADR-017.
+
+---
+
+## 2026-09-04 — v2.1.0-ampliacion-wikipedia-como-pista — rama `content/ampliacion-obras-quijote-biografia`
+
+### Añadido
+
+- Biografía: familia completa de Cervantes (padre cirujano, seis hermanos nombrados); los cuatro
+  intentos de fuga documentados durante el cautiverio en Argel; nacimiento de su hija Isabel de
+  Saavedra (1584, fuente: Real Academia de la Historia); encarcelamiento en Castro del Río (1592,
+  distinto del ya registrado de Sevilla 1597). De 14 a 16 pasos; resumen inicial ampliado.
+- Obras: La Galatea gana el dato de su estructura en seis libros (fuente: catálogo de la Biblioteca
+  Nacional de España).
+- Quijote: nuevo tema "Una crítica literaria dentro de la novela" (el canónigo de Toledo censura
+  los libros de caballerías y las comedias de su época, capítulos XLVII-XLVIII).
+- Legado: 2 entradas nuevas — el Premio Cervantes (Universidad de Alcalá) y el Día Internacional
+  del Libro (UNESCO). De 4 a 6 entradas.
+- SRC-016 a SRC-021 en `docs/SOURCES.md` y su espejo público; SRC-008 ampliada.
+
+### Nota metodológica
+
+El usuario pidió usar es.wikipedia.org/wiki/Miguel_de_Cervantes como fuente y citarla. Por la regla
+permanente del proyecto (Wikipedia solo como pista, nunca como fuente final), el artículo se usó
+exclusivamente para identificar qué añadir y qué historiadores/archivos lo respaldan — cada dato se
+verificó de forma independiente antes de publicarse. Wikipedia no aparece citada en ningún dato
+publicado. Ver ADR-018.
+
+### Pruebas
+
+- `tsc --noEmit`, `npm run lint`, `npm run build` limpios. Verificación por DOM: Biografía con
+  16/16 pasos y los eventos nuevos en orden cronológico correcto dentro de su etapa; Quijote con 6
+  temas; Legado con 6 entradas; Biblioteca con 21 fuentes documentales; La Galatea con el campo
+  "Estructura" visible en el acordeón.
+
+### Estado
+
+Implementado y verificado en local, **sin desplegar todavía** — pendiente de merge a `develop` y de
+aprobación explícita del usuario para producción. Ver ADR-018.

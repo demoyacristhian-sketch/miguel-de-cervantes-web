@@ -29,6 +29,11 @@
         "status": "verificado",
         "sourceIds": ["SRC-011"]
       },
+      "structure": {
+        "text": "Se organiza en seis libros, bajo el título original \"Primera parte de La Galatea, dividida en seis libros\" — la segunda parte anunciada nunca se escribió. El libro VI incluye el \"Canto de Calíope\", donde Cervantes elogia a poetas contemporáneos como Lope de Vega y Góngora.",
+        "status": "verificado",
+        "sourceIds": ["SRC-021"]
+      },
       "influence": {
         "text": "Aunque no tuvo gran éxito comercial en su momento, sentó una base de estilo para la obra posterior de Cervantes y contribuyó al desarrollo de la novela pastoril española, un género en auge desde La Diana de Montemayor.",
         "status": "verificado",
