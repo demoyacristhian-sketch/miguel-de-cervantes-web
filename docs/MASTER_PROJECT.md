@@ -160,6 +160,7 @@ Incluido en el plan aprobado (roadmap completo, sujeto a aprobación fase por fa
 | Producción (Obras/Don Quijote/Legado/Biblioteca completos + Home cinematográfica + Hero de superficie única) | 2026-09-02 | `2b0ff57` (merge `develop` → `main`) | Claude, a petición del usuario | **APROBADA** — instrucción explícita: "sí, ponlo a producción" (2026-09-02), ver ADR-014, ADR-015 y ADR-016 |
 | Producción (corrección de scroll móvil, encuadre del Hero, menú y acordeón de Curiosidades) | 2026-09-02 | `6819f2a` (merge `develop` → `main`) | Claude, a petición del usuario | **APROBADA** — instrucción explícita: "sí, ponlo a producción" (2026-09-02), correcciones de usabilidad sin ADR nueva |
 | Producción (ampliación de Obras/Quijote/Biografía/Legado, rebautizo "Biografía", textos "Sobre la obra") | 2026-09-04 | `7eaab79` (merge `develop` → `main`) | Claude, a petición del usuario | **APROBADA** — instrucción explícita: "sí, ponlo a producción" (2026-09-04), ver ADR-017, ADR-018, ADR-019 y ADR-020 |
+| Producción (endurecimiento de cabeceras de seguridad HTTP) | 2026-09-03 | `cc4c9a6` (merge `develop` → `main`) | Claude, a petición del usuario | **APROBADA** — instrucción explícita: "sí, ponlo a producción" (2026-09-03), ver ADR-021 |
 
 ## Cierre
 

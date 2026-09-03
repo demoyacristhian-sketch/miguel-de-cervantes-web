@@ -646,6 +646,12 @@ sustituye a la anterior, dejando ambas visibles.
 - **Archivos:** `next.config.ts`, `docs/SECURITY.md` (nuevas secciones "Superficie de ataque" y
   "Cabeceras de seguridad HTTP").
 - **Impacto:** Ningún dato de contenido afectado. Cambio puramente de configuración/infraestructura.
-- **Aprobado por:** Pendiente — implementado en rama `security/cabeceras-http`, no mergeado a
-  `main`; requiere aprobación explícita del usuario antes de producción (regla `CLAUDE.md` §7.1).
-- **Estado:** EN DESARROLLO / verificado en local y pendiente de despliegue a Preview.
+- **Aprobado por:** Usuario, instrucción explícita ("sí, ponlo a producción"), 2026-09-03.
+- **Despliegue:** `develop` → `main` (commit `cc4c9a6`), desplegado automáticamente por la
+  integración Git de Vercel.
+- **Verificación post-despliegue:** `curl -sI https://miguel-de-cervantes-web.vercel.app/` confirma
+  las 6 cabeceras correctamente formadas (CSP con `'unsafe-inline'` documentado, HSTS, X-Frame-
+  Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy) y ausencia de `X-Powered-By`;
+  navegación en producción sin errores de consola.
+- **Estado:** VIGENTE, en producción. Como en despliegues anteriores, no es una autorización
+  permanente para futuros despliegues.

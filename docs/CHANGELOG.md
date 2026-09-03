@@ -750,3 +750,25 @@ a producción" (2026-09-04). No es una autorización permanente para futuros des
 ### Estado
 
 Implementado y verificado en local, **sin desplegar todavía**. Ver ADR-021.
+
+---
+
+## 2026-09-03 — v2.5.0-produccion-seguridad — rama `main`
+
+**Commit:** `cc4c9a6` (merge `develop` → `main`)
+
+### Añadido / Modificado
+
+- Despliegue a producción del endurecimiento de cabeceras de seguridad HTTP descrito en
+  v2.4.0-seguridad-cabeceras-http (ver entrada anterior).
+
+### Pruebas
+
+- `curl -sI https://miguel-de-cervantes-web.vercel.app/` confirma las 6 cabeceras de seguridad
+  correctamente formadas y ausencia de `X-Powered-By`; navegación en producción sin errores de
+  consola.
+
+### Estado
+
+**En producción.** Ver ADR-021 en `docs/DECISIONS.md`. Aprobación explícita del usuario: "sí, ponlo
+a producción" (2026-09-03). No es una autorización permanente para futuros despliegues.
