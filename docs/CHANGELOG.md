@@ -699,3 +699,26 @@ editorial de contenido ya verificado en ADR-014/017/018. Ver ADR-019.
 
 Implementado y verificado en local, **sin desplegar todavía** — pendiente de aprobación explícita
 del usuario para producción. Ver ADR-019.
+
+---
+
+## 2026-09-04 — v2.3.0-produccion — rama `main`
+
+**Commit:** `7eaab79` (merge `develop` → `main`)
+
+### Añadido / Modificado
+
+- Despliegue a producción de todo lo descrito en v2.0.0, v2.1.0 y v2.2.0 (ver entradas anteriores):
+  ampliación de Obras/Quijote/Biografía/Legado, rebautizo a "Biografía", textos "Sobre la
+  obra"/"Sobre la novela", introducción narrativa de Legado, footer con "TFM".
+- Footer: "sus estudios" → "mis estudios" (voz en primera persona).
+
+### Pruebas
+
+- Verificación visual y por DOM directa en `https://miguel-de-cervantes-web.vercel.app`: "Sobre la
+  obra" visible en `/obras/don-quijote-de-la-mancha`; footer con "mis estudios" confirmado.
+
+### Estado
+
+**En producción.** Ver ADR-020 en `docs/DECISIONS.md`. Aprobación explícita del usuario: "sí, ponlo
+a producción" (2026-09-04). No es una autorización permanente para futuros despliegues.
