@@ -80,7 +80,7 @@ const ERA_DEFINITIONS: EraDefinition[] = [
   },
   {
     id: "regreso",
-    kicker: "1585",
+    kicker: "1584 — 1597",
     title: "El regreso y los años de oficio",
     frame: "De vuelta en España, entre la escritura y los empleos administrativos.",
     tone: "return",
@@ -89,7 +89,7 @@ const ERA_DEFINITIONS: EraDefinition[] = [
       alt: "Portada de la primera edición de La Galatea (1585)",
       credit: "La Galatea, primera edición, Alcalá, 1585 (dominio público)",
     },
-    yearIds: ["tl-1585"],
+    yearIds: ["tl-1584", "tl-1585", "tl-1597"],
   },
   {
     id: "consagracion",

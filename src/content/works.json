@@ -24,6 +24,16 @@
         "status": "verificado",
         "sourceIds": ["SRC-005"]
       },
+      "characters": {
+        "text": "Elicio y Erastro, dos pastores enamorados de Galatea, protagonizan la trama amorosa central. Los acompañan Florisa, amiga de Galatea, y otras parejas secundarias como Timbrio y Silerio, cuyas historias se entrelazan a lo largo de la novela.",
+        "status": "verificado",
+        "sourceIds": ["SRC-011"]
+      },
+      "influence": {
+        "text": "Aunque no tuvo gran éxito comercial en su momento, sentó una base de estilo para la obra posterior de Cervantes y contribuyó al desarrollo de la novela pastoril española, un género en auge desde La Diana de Montemayor.",
+        "status": "verificado",
+        "sourceIds": ["SRC-011"]
+      },
       "editions": {
         "text": "Primera edición: 1585. No se publicó la prometida segunda parte.",
         "status": "verificado",
@@ -113,6 +123,11 @@
         "status": "verificado",
         "sourceIds": ["SRC-005"]
       },
+      "themes": {
+        "text": "Cervantes reinterpreta el género picaresco sin narrarlo nunca en primera persona, a diferencia del canon del género. Combina novelas \"realistas\" (más peso de la observación social, como \"Rinconete y Cortadillo\") con \"idealistas\" (más peso de la imaginación, como \"La española inglesa\"); la \"ejemplaridad\" del título no siempre se traduce en una moraleja explícita, sino en casos para la reflexión del lector.",
+        "status": "verificado",
+        "sourceIds": ["SRC-012"]
+      },
       "curiosities": {
         "text": "\"El coloquio de los perros\", considerada la más innovadora de la colección, fue leída en castellano por Sigmund Freud y contribuyó, según los especialistas, a la gestación de su teoría psicoanalítica.",
         "status": "verificado",
@@ -150,6 +165,16 @@
         "status": "verificado",
         "sourceIds": ["SRC-005"]
       },
+      "structure": {
+        "text": "Poema en tercetos encadenados, al que Cervantes añadió un apéndice en prosa, \"La Adjunta al Parnaso\", que buena parte de la crítica considera más logrado que el propio poema.",
+        "status": "verificado",
+        "sourceIds": ["SRC-013"]
+      },
+      "themes": {
+        "text": "Un recuento satírico-burlesco de los poetas españoles contemporáneos de 1614, elogiando a unos y censurando a otros; se ha leído también como una autodefensa y reivindicación de la propia obra poética de Cervantes.",
+        "status": "verificado",
+        "sourceIds": ["SRC-013"]
+      },
       "editions": {
         "text": "Madrid, viuda de Alonso Martín, 1614.",
         "status": "verificado",
@@ -177,10 +202,20 @@
         "status": "verificado",
         "sourceIds": ["SRC-005"]
       },
+      "plot": {
+        "text": "Las ocho comedias son El gallardo español, La casa de los celos, Los baños de Argel, El rufián dichoso, La gran sultana doña Catalina de Oviedo, El laberinto de amor, La entretenida y Pedro de Urdemalas —esta última, de tono picaresco, considerada la más original de la colección—. Entre los entremeses figura El retablo de las maravillas.",
+        "status": "verificado",
+        "sourceIds": ["SRC-014"]
+      },
       "themes": {
         "text": "Según la crítica especializada, las comedias tratan los mismos temas que aparecen en Don Quijote. Casi todas las demás comedias de Cervantes (fuera de esta colección) se han perdido; sobrevivió, por separado, La Numancia, considerada su obra dramática más influyente después del Quijote.",
         "status": "verificado",
         "sourceIds": ["SRC-005"]
+      },
+      "influence": {
+        "text": "En los entremeses, Cervantes parte del modelo de Lope de Rueda —el gusto por un lenguaje verosímil y ciertas figuras tipo— pero elabora tramas más complejas y una caracterización más rica de sus personajes populares.",
+        "status": "verificado",
+        "sourceIds": ["SRC-014"]
       },
       "editions": {
         "text": "Madrid, viuda de Alonso Martín, a costa de Juan de Villarroel, 1615 (licencia del 25 de julio).",
@@ -218,6 +253,16 @@
         "text": "Cervantes la consideraba su obra maestra: en la dedicatoria al conde de Lemos, escrita el 19 de abril de 1616 —tres días antes de morir—, afirmó que, según la opinión de sus amigos, \"ha de llegar al extremo de bondad posible\".",
         "status": "verificado",
         "sourceIds": ["SRC-001", "SRC-005"]
+      },
+      "structure": {
+        "text": "Se organiza en cuatro libros. La crítica académica ha señalado una discontinuidad formal entre los libros I-II y el libro III, que algunos estudios interpretan como un cambio en las técnicas narrativas empleadas por Cervantes.",
+        "status": "verificado",
+        "sourceIds": ["SRC-015"]
+      },
+      "reception": {
+        "text": "Cayó en desprestigio tras el Siglo de Oro y fue considerada durante mucho tiempo una obra menor frente al Quijote. Ha sido objeto de una notable recuperación crítica académica durante el siglo XX, con ediciones críticas de referencia.",
+        "status": "verificado",
+        "sourceIds": ["SRC-015"]
       },
       "editions": {
         "text": "Madrid, imprenta de Juan de la Cuesta, a costa de Juan de Villarroel, 1617. Publicación póstuma a cargo de su viuda, Catalina de Salazar.",

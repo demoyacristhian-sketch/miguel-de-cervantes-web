@@ -49,7 +49,7 @@
   },
   {
     "id": "SRC-007",
-    "title": "Registro de imágenes de Wikimedia Commons (Hero, Una vida, una historia, Obras y Quijote)",
+    "title": "Registro de imágenes de Wikimedia Commons (Hero, Biografía, Obras y Quijote)",
     "institution": "Wikimedia Commons",
     "type": "FUENTE SECUNDARIA VERIFICADA",
     "url": "https://commons.wikimedia.org",
@@ -70,5 +70,53 @@
     "type": "FUENTE INSTITUCIONAL",
     "url": "https://dle.rae.es/quijotesco",
     "dateConsulted": "2026-09-02"
+  },
+  {
+    "id": "SRC-010",
+    "title": "Biografía ampliada: matrimonio en Esquivias, cárcel de Sevilla y proceso Ezpeleta",
+    "institution": "Ayuntamiento de Esquivias, Agencia Tributaria, Museo Casa de Cervantes",
+    "type": "FUENTE INSTITUCIONAL",
+    "url": "https://esquivias.es/turismo/catalina-de-palacios-salazar",
+    "dateConsulted": "2026-09-03"
+  },
+  {
+    "id": "SRC-011",
+    "title": "La Galatea — personajes principales",
+    "institution": "Junta de Castilla y León (educa.jcyl.es)",
+    "type": "FUENTE INSTITUCIONAL",
+    "url": "https://www.educa.jcyl.es/educacyl/cm/gallery/Recursos%20Infinity/aplicaciones/16_primaria_cervantes/la-galatea-personajes.html",
+    "dateConsulted": "2026-09-03"
+  },
+  {
+    "id": "SRC-012",
+    "title": "Las novelas ejemplares en el sistema narrativo de Cervantes",
+    "institution": "Biblioteca Virtual Miguel de Cervantes",
+    "type": "FUENTE ACADÉMICA",
+    "url": "https://www.cervantesvirtual.com/descargaPdf/las-novelas-ejemplares-en-el-sistema-narrativo-de-cervantes-971261/",
+    "dateConsulted": "2026-09-03"
+  },
+  {
+    "id": "SRC-013",
+    "title": "Estudios académicos sobre el Viaje del Parnaso",
+    "institution": "Centro Virtual Cervantes (Instituto Cervantes)",
+    "type": "FUENTE ACADÉMICA",
+    "url": "https://cvc.cervantes.es/literatura/cervantistas/congresos/cg_IV/cg_IV_89.pdf",
+    "dateConsulted": "2026-09-03"
+  },
+  {
+    "id": "SRC-014",
+    "title": "Ocho comedias y ocho entremeses — prólogo, contenidos e influencia",
+    "institution": "Centro Virtual Cervantes (Instituto Cervantes) y Universidad de Alcalá",
+    "type": "FUENTE ACADÉMICA",
+    "url": "https://cvc.cervantes.es/literatura/criticon/PDF/108/108_133.pdf",
+    "dateConsulted": "2026-09-03"
+  },
+  {
+    "id": "SRC-015",
+    "title": "Los trabajos de Persiles y Sigismunda — edición crítica de referencia",
+    "institution": "Real Academia Española / Espasa Calpe",
+    "type": "FUENTE ACADÉMICA",
+    "url": "https://www.rae.es",
+    "dateConsulted": "2026-09-03"
   }
 ]

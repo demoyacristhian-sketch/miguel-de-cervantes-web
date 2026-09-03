@@ -5,6 +5,7 @@
     "title": "Don Quijote de la Mancha",
     "subtitle": "Alonso Quijano",
     "status": "verificado",
+    "tier": "principal",
     "text": "Un hidalgo que, tras leer libros de caballerías sin descanso, concibe \"el más estraño pensamiento que jamás dio loco en el mundo\": convertirse en caballero andante. Elige su propio nombre, don Quijote de la Mancha, tras varios días de deliberación, para declarar \"muy al vivo su linaje y patria\".",
     "citation": "Primera parte, capítulo I",
     "sourceIds": ["SRC-008"]
@@ -15,6 +16,7 @@
     "title": "Sancho Panza",
     "subtitle": "El escudero",
     "status": "verificado",
+    "tier": "principal",
     "text": "Labrador vecino de Don Quijote, \"hombre de bien\" pero de \"poca sal en la mollera\". Acepta ser su escudero convencido por la promesa de ganar alguna ínsula y gobernarla, dejando a su mujer e hijos por la esperanza de riqueza y poder.",
     "citation": "Primera parte, capítulo VII",
     "sourceIds": ["SRC-008"]
@@ -25,6 +27,7 @@
     "title": "Dulcinea del Toboso",
     "subtitle": "La dama idealizada",
     "status": "verificado",
+    "tier": "principal",
     "text": "En realidad se llama Aldonza Lorenzo, una labradora robusta del Toboso. Sancho la describe sin idealizar (fuerte, de voz potente, poco refinada), pero Don Quijote defiende su amor platónico: la ha visto solo cuatro veces en doce años y sostiene que \"merece ser señora de todo el universo\".",
     "citation": "Primera parte, capítulo XXV",
     "sourceIds": ["SRC-008"]
@@ -35,6 +38,7 @@
     "title": "Rocinante",
     "subtitle": "El caballo",
     "status": "verificado",
+    "tier": "principal",
     "text": "El rocín flaco de Don Quijote. Tras cuatro días de deliberación, su amo le da un nombre \"alto, sonoro y significativo\", que exprese lo que había sido antes (un rocín cualquiera) y lo que ahora era (montura de caballero).",
     "citation": "Primera parte, capítulo I",
     "sourceIds": ["SRC-008"]
@@ -45,8 +49,64 @@
     "title": "Sansón Carrasco",
     "subtitle": "El bachiller",
     "status": "verificado",
+    "tier": "principal",
     "text": "Bachiller universitario que comenta, dentro de la propia novela, el libro ya impreso sobre las aventuras de Don Quijote. Más adelante se disfraza de Caballero de la Blanca Luna y lo derrota en Barcelona, obligándolo por las reglas del duelo a retirarse un año sin tomar las armas.",
     "citation": "Segunda parte, capítulo III y capítulos finales",
+    "sourceIds": ["SRC-008"]
+  },
+  {
+    "id": "personaje-cura-barbero",
+    "category": "personaje",
+    "title": "El cura y el barbero",
+    "subtitle": "Los amigos",
+    "status": "verificado",
+    "tier": "secundario",
+    "text": "Pero Pérez, el cura del lugar, y maese Nicolás, el barbero, son amigos de Don Quijote. Tras su primera salida, queman buena parte de su biblioteca de caballerías, y a lo largo de la novela urden varios engaños para intentar devolverlo a casa.",
+    "citation": "Primera parte, capítulo VI y siguientes",
+    "sourceIds": ["SRC-008"]
+  },
+  {
+    "id": "personaje-cardenio",
+    "category": "personaje",
+    "title": "Cardenio",
+    "subtitle": "El amante desesperado",
+    "status": "verificado",
+    "tier": "secundario",
+    "text": "Joven que vive medio enloquecido en Sierra Morena tras ser traicionado por su amigo don Fernando, que le arrebató a su prometida Luscinda. Su historia se entrelaza con la de Dorotea hasta resolverse en la venta donde ambas parejas se reencuentran.",
+    "citation": "Primera parte, capítulos XXIII-XXIV y XXIX",
+    "sourceIds": ["SRC-008"]
+  },
+  {
+    "id": "personaje-dorotea",
+    "category": "personaje",
+    "title": "Dorotea",
+    "subtitle": "La princesa Micomicona",
+    "status": "verificado",
+    "tier": "secundario",
+    "text": "Refugiada también en Sierra Morena tras ser engañada por el mismo don Fernando, acepta el plan del cura y el barbero de hacerse pasar por la princesa Micomicona para convencer a Don Quijote de abandonar la sierra y regresar con ellos.",
+    "citation": "Primera parte, capítulo XXIX",
+    "sourceIds": ["SRC-008"]
+  },
+  {
+    "id": "personaje-maese-pedro",
+    "category": "personaje",
+    "title": "Maese Pedro",
+    "subtitle": "En realidad, Ginés de Pasamonte",
+    "status": "verificado",
+    "tier": "secundario",
+    "text": "Titiritero que recorre los caminos con un retablo y un mono adivino. La novela revela después que es, en realidad, Ginés de Pasamonte, uno de los galeotes que Don Quijote había liberado en la Primera Parte.",
+    "citation": "Segunda parte, capítulos XXV-XXVII",
+    "sourceIds": ["SRC-008"]
+  },
+  {
+    "id": "personaje-teresa-panza",
+    "category": "personaje",
+    "title": "Teresa Panza",
+    "subtitle": "La esposa de Sancho",
+    "status": "verificado",
+    "tier": "secundario",
+    "text": "Mujer de Sancho Panza, que recibe con escepticismo las noticias sobre el futuro gobierno de una ínsula que su marido promete conseguir siguiendo a Don Quijote.",
+    "citation": "Segunda parte, varios capítulos",
     "sourceIds": ["SRC-008"]
   },
   {
@@ -83,6 +143,60 @@
     "status": "verificado",
     "text": "El único gran escenario urbano real que Don Quijote llega a visitar. Allí es derrotado por el Caballero de la Blanca Luna, el episodio que precipita el final de sus andanzas.",
     "citation": "Segunda parte, capítulos finales",
+    "sourceIds": ["SRC-008"]
+  },
+  {
+    "id": "lugar-zaragoza",
+    "category": "lugar",
+    "title": "Zaragoza",
+    "status": "verificado",
+    "text": "La ciudad que Don Quijote decide evitar a propósito en la Segunda Parte: al enterarse de que una continuación apócrifa (la de Alonso Fernández de Avellaneda) lo llevaba a las justas de Zaragoza, cambia su rumbo hacia Barcelona para desmentirla.",
+    "citation": "Segunda parte; ver también el estudio académico sobre la elusión del apócrifo",
+    "sourceIds": ["SRC-008"]
+  },
+  {
+    "id": "lugar-insula-barataria",
+    "category": "lugar",
+    "title": "La Ínsula Barataria",
+    "status": "verificado",
+    "text": "El \"gobierno\" que los Duques le dan a Sancho como broma, en realidad un pueblo sin salida al mar. Sancho lo gobierna con sensatez durante unos días antes de renunciar por voluntad propia.",
+    "citation": "Segunda parte, capítulos XLV y siguientes",
+    "sourceIds": ["SRC-008"]
+  },
+  {
+    "id": "aventura-galeotes",
+    "category": "aventura",
+    "title": "La liberación de los galeotes",
+    "status": "verificado",
+    "text": "Don Quijote libera a una cadena de presos condenados a galeras, entre ellos Ginés de Pasamonte, argumentando que nadie debe ser forzado contra su voluntad. Como agradecimiento, los galeotes apedrean a Don Quijote y Sancho y les roban lo que llevan encima.",
+    "citation": "Primera parte, capítulo XXII",
+    "sourceIds": ["SRC-008"]
+  },
+  {
+    "id": "aventura-retablo-maese-pedro",
+    "category": "aventura",
+    "title": "El retablo de Maese Pedro",
+    "status": "verificado",
+    "text": "Durante la función de títeres de Maese Pedro, Don Quijote confunde la representación con una realidad y desenvaina la espada para destrozar el retablo entero, dejando al titiritero \"pobre y mendigo\".",
+    "citation": "Segunda parte, capítulo XXVI",
+    "sourceIds": ["SRC-008"]
+  },
+  {
+    "id": "aventura-gobierno-barataria",
+    "category": "aventura",
+    "title": "El gobierno de la Ínsula Barataria",
+    "status": "verificado",
+    "text": "Como gobernador, Sancho resuelve varios pleitos con un sentido común que sorprende a todos, entre ellos el de un sastre y su cliente, y el de una deuda que un hombre negaba haber cobrado ya.",
+    "citation": "Segunda parte, capítulo XLV",
+    "sourceIds": ["SRC-008"]
+  },
+  {
+    "id": "aventura-cueva-montesinos",
+    "category": "aventura",
+    "title": "La cueva de Montesinos",
+    "status": "verificado",
+    "text": "Don Quijote se hace bajar a una cueva y, tras dormirse, relata haber visto un palacio de cristal donde el anciano Montesinos le muestra el cuerpo del caballero Durandarte, encantados desde hace siglos.",
+    "citation": "Segunda parte, capítulo XXIII",
     "sourceIds": ["SRC-008"]
   },
   {
@@ -145,6 +259,24 @@
     "sourceIds": ["SRC-008"]
   },
   {
+    "id": "tema-amor-idealizado",
+    "category": "tema",
+    "title": "El amor idealizado",
+    "status": "verificado",
+    "text": "Dulcinea no es una persona real para Don Quijote, sino una construcción literaria necesaria: ningún caballero andante puede existir sin una dama a quien dedicar sus hazañas. El amor cortés funciona como convención narrativa, no como relación real.",
+    "citation": "Primera parte, capítulo XXV",
+    "sourceIds": ["SRC-008"]
+  },
+  {
+    "id": "tema-satira-social",
+    "category": "tema",
+    "title": "Sátira social",
+    "status": "verificado",
+    "text": "Los episodios con los Duques, que se divierten a costa de Don Quijote y Sancho organizando burlas elaboradas, funcionan como una crítica a una nobleza ociosa que trata como entretenimiento el sufrimiento ajeno.",
+    "citation": "Segunda parte, episodio de los Duques",
+    "sourceIds": ["SRC-008"]
+  },
+  {
     "id": "frase-apertura",
     "category": "frase",
     "title": "La apertura de la novela",
@@ -160,6 +292,15 @@
     "status": "verificado",
     "text": "\"La libertad, Sancho, es uno de los más preciosos dones que a los hombres dieron los cielos; con ella no pueden igualarse los tesoros que encierra la tierra ni el mar encubre.\"",
     "citation": "Segunda parte, capítulo LVIII",
+    "sourceIds": ["SRC-008"]
+  },
+  {
+    "id": "frase-iglesia",
+    "category": "frase",
+    "title": "Con la iglesia hemos dado",
+    "status": "verificado",
+    "text": "\"Con la iglesia hemos dado, Sancho.\"",
+    "citation": "Segunda parte, capítulo IX — Don Quijote solo señala que han encontrado la iglesia del pueblo, no el palacio de Dulcinea; la variante popular \"con la iglesia hemos topado, amigo Sancho\" altera la cita original.",
     "sourceIds": ["SRC-008"]
   }
 ]

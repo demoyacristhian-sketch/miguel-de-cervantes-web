@@ -71,6 +71,8 @@ export interface QuijoteEntry {
   title: string;
   subtitle?: string;
   status: VerificationStatus;
+  /** Solo relevante para category "personaje": permite un sub-filtro Principales/Secundarios. */
+  tier?: "principal" | "secundario";
   text: string;
   citation?: string;
   image?: { src: string; alt: string; credit: string };

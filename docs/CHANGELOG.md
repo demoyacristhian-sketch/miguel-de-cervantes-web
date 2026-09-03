@@ -588,3 +588,44 @@ a producción" (2026-09-02). No es una autorización permanente para futuros des
 producción" (2026-09-02). Verificado en producción vía navegador: `min-h-dvh` correcto en móvil
 (altura del Hero = `innerHeight`), encuadre `35% 15%` aplicado, acordeón de Curiosidades cerrado
 por defecto.
+
+---
+
+## 2026-09-03 — v2.0.0-ampliacion-contenido — rama `content/ampliacion-obras-quijote-biografia`
+
+### Añadido
+
+- Obras: campos nuevos en 5/6 fichas ampliadas — La Galatea (personajes, influencia), Novelas
+  ejemplares (temas), Viaje del Parnaso (estructura, temas), Ocho comedias y ocho entremeses
+  (argumento, influencia), Persiles (estructura, recepción). Fuentes nuevas SRC-011 a SRC-015.
+- Quijote: 5 personajes nuevos (el cura y el barbero, Cardenio, Dorotea, Maese Pedro/Ginés de
+  Pasamonte, Teresa Panza) con sub-filtro Principales/Secundarios; 2 lugares (Zaragoza, Ínsula
+  Barataria); 4 aventuras (galeotes, retablo de Maese Pedro, gobierno de la Ínsula Barataria, cueva
+  de Montesinos); 2 temas (amor idealizado, sátira social); 1 frase nueva verificada por duplicado
+  ("Con la iglesia hemos dado, Sancho"). Párrafo de síntesis de la novela al inicio de la página.
+- Biografía (antes "Una vida, una historia"): 2 eventos nuevos (matrimonio en Esquivias 1584,
+  cárcel de Sevilla 1597 con la cita verificada del prólogo del Quijote), ampliación del evento de
+  1605 con el proceso Ezpeleta completo, y un párrafo de resumen biográfico al inicio de la página.
+  El recorrido pasa de 12 a 14 pasos.
+- SRC-010 a SRC-015 en `docs/SOURCES.md` y su espejo público en `src/content/sources.json`.
+
+### Modificado
+
+- "Una vida, una historia" renombrada a "Biografía" en nav, footer, la página y el panel de Home.
+- Footer: "TFG"/"Trabajo de Fin de Grado" → "TFM"/"Trabajo de Fin de Máster".
+- SRC-008 ampliada con los nuevos capítulos y citas del Quijote consultados.
+
+### Pruebas
+
+- `tsc --noEmit`, `npm run lint`, `npm run build` limpios. Verificación por DOM/`get_page_text`:
+  Biografía con 14/14 pasos y resumen inicial visible; Quijote con 10/6/7/5/3 tarjetas por
+  categoría, filtro Principales (5) confirmado, las 3 frases visibles con el texto exacto
+  verificado; Obras con los campos nuevos visibles en el acordeón "Más detalles"; Biblioteca con 15
+  fuentes documentales; footer con "TFM". Corregido en el proceso: el sub-filtro de personajes
+  filtraba por error también las demás pestañas (Lugares/Aventuras/Temas/Frases mostraban 0
+  resultados) hasta acotar el filtro a `active === "personaje"`.
+
+### Estado
+
+Implementado y verificado en local, **sin desplegar todavía** — pendiente de merge a `develop` y de
+aprobación explícita del usuario para producción. Ver ADR-017.
