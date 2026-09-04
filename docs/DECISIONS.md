@@ -655,3 +655,31 @@ sustituye a la anterior, dejando ambas visibles.
   navegación en producción sin errores de consola.
 - **Estado:** VIGENTE, en producción. Como en despliegues anteriores, no es una autorización
   permanente para futuros despliegues.
+
+## ADR-022
+
+- **Fecha:** 2026-09-04
+- **Tema:** Fusión de "Curiosidades" dentro de la sección "Legado"
+- **Contexto:** El usuario pidió que las curiosidades aparecieran en la sección de Legado,
+  autorizando explícitamente hacerlo "directamente en producción".
+- **Decisión:** Se sigue el mismo patrón ya usado en ADR-011/012/013 (fusión de `/cervantes` y
+  `/linea-de-tiempo` en `/vida-en-movimiento`): la página independiente `/curiosidades` se elimina y
+  su contenido (las mismas 6 preguntas ya verificadas de `getCuriosities()`, sin ningún dato nuevo)
+  pasa a mostrarse como una sección "¿Sabías que...? / Curiosidades" dentro de `/legado`, con ancla
+  `id="curiosidades"` y el mismo componente de acordeón (`<details>/<summary>` nativo de HTML, sin
+  necesidad de JavaScript para expandir/colapsar). Se añade un redirect permanente
+  `/curiosidades` → `/legado#curiosidades` en `next.config.ts` para no romper enlaces existentes.
+  Se actualizan los dos puntos de entrada que apuntaban a `/curiosidades` (el CTA "¿Sabías que...? →"
+  de la Home y el enlace "Curiosidades" del footer) para que apunten directamente a
+  `/legado#curiosidades`, y se retira `/curiosidades` de `sitemap.ts` (ya no es una ruta propia).
+- **Impacto:** Ningún dato histórico nuevo ni modificado — es una reorganización de navegación y
+  presentación, igual que ADR-019. El contenido de las 6 curiosidades no cambia.
+- **Verificación:** `tsc --noEmit`, `npm run lint`, `npm run build` limpios (17 rutas estáticas, una
+  menos que antes al fusionarse `/curiosidades`). Servidor de producción local: `curl -sI
+  /curiosidades` confirma el redirect 308 a `/legado#curiosidades`; `/legado` muestra las 6
+  preguntas con su badge de verificación tras las tarjetas de legado; footer y CTA de Home
+  verificados por inspección del DOM apuntando a la nueva URL; sin errores de consola.
+- **Aprobado por:** Usuario, instrucción explícita ("quiero que las curiosidades aparezcan en la
+  sección de legado. hazlo directamente en producción"), 2026-09-04.
+- **Estado:** VIGENTE. Como en despliegues anteriores, esta aprobación cubre únicamente este cambio,
+  no futuros despliegues.
