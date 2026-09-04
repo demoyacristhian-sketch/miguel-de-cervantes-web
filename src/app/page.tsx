@@ -123,7 +123,7 @@ export default function Home() {
       >
         <div className="flex flex-wrap gap-3">
           <Link
-            href="/curiosidades"
+            href="/legado#curiosidades"
             className="rounded-full border border-ivory/25 bg-ink/60 px-5 py-2 text-sm text-ivory hover:border-ivory/60"
           >
             ¿Sabías que...? →
