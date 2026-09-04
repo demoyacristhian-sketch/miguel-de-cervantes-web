@@ -772,3 +772,34 @@ Implementado y verificado en local, **sin desplegar todavía**. Ver ADR-021.
 
 **En producción.** Ver ADR-021 en `docs/DECISIONS.md`. Aprobación explícita del usuario: "sí, ponlo
 a producción" (2026-09-03). No es una autorización permanente para futuros despliegues.
+
+---
+
+## 2026-09-04 — v2.6.0-curiosidades-en-legado — rama `main`
+
+### Añadido / Modificado
+
+- `/legado`: nueva sección "¿Sabías que...? / Curiosidades" (ancla `#curiosidades`) tras las
+  tarjetas de legado, con las mismas 6 preguntas ya verificadas, sin datos nuevos.
+- `next.config.ts`: redirect permanente `/curiosidades` → `/legado#curiosidades`.
+- `SiteFooter.tsx` y `src/app/page.tsx`: los enlaces a "Curiosidades"/"¿Sabías que...?" apuntan
+  ahora directamente a `/legado#curiosidades`.
+- `sitemap.ts`: se retira `/curiosidades` (ya no es una ruta propia).
+
+### Eliminado
+
+- Página independiente `src/app/curiosidades/page.tsx` (fusionada en `/legado`, mismo patrón de
+  ADR-011/012/013).
+
+### Pruebas
+
+- `tsc --noEmit`, `npm run lint`, `npm run build` limpios (17 rutas estáticas).
+- `curl -sI` local confirma el redirect 308 de `/curiosidades` a `/legado#curiosidades`.
+- Verificación en navegador: las 6 curiosidades visibles en `/legado`, enlaces de Home y footer
+  actualizados, sin errores de consola.
+
+### Estado
+
+**En producción.** Ver ADR-022 en `docs/DECISIONS.md`. Aprobación explícita del usuario: "quiero
+que las curiosidades aparezcan en la sección de legado. hazlo directamente en producción"
+(2026-09-04).

@@ -8,7 +8,7 @@ import Link from "next/link";
  * un panel de color sólido separado). Fondo: retrato tradicionalmente atribuido a Juan de Jáuregui
  * (h. 1600, Real Academia de la Historia), dominio público — ver public/media/manifest.json y
  * docs/SOURCES.md (SRC-007). No hay documentación que confirme que sea obra de Jáuregui ni que
- * represente realmente a Cervantes (ver la curiosidad dedicada en /curiosidades); se presenta
+ * represente realmente a Cervantes (ver la curiosidad dedicada en /legado#curiosidades); se presenta
  * explícitamente como el retrato tradicionalmente asociado a él, no como un hecho, con el crédito
  * visible más abajo.
  */

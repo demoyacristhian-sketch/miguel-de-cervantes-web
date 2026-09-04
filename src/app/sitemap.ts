@@ -8,7 +8,6 @@ const STATIC_ROUTES = [
   "/vida-en-movimiento",
   "/obras",
   "/quijote",
-  "/curiosidades",
   "/legado",
   "/biblioteca",
 ];

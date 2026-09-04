@@ -21,8 +21,8 @@ export function SiteFooter() {
         <nav aria-label="Recursos">
           <p className="text-sm font-semibold">Recursos</p>
           <ul className="mt-3 space-y-2 text-sm text-foreground/70">
-            <li><Link href="/curiosidades" className="hover:text-accent">Curiosidades</Link></li>
             <li><Link href="/legado" className="hover:text-accent">Legado</Link></li>
+            <li><Link href="/legado#curiosidades" className="hover:text-accent">Curiosidades</Link></li>
             <li><Link href="/biblioteca" className="hover:text-accent">Biblioteca digital</Link></li>
           </ul>
         </nav>
