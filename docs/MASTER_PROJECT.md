@@ -161,7 +161,7 @@ Incluido en el plan aprobado (roadmap completo, sujeto a aprobación fase por fa
 | Producción (corrección de scroll móvil, encuadre del Hero, menú y acordeón de Curiosidades) | 2026-09-02 | `6819f2a` (merge `develop` → `main`) | Claude, a petición del usuario | **APROBADA** — instrucción explícita: "sí, ponlo a producción" (2026-09-02), correcciones de usabilidad sin ADR nueva |
 | Producción (ampliación de Obras/Quijote/Biografía/Legado, rebautizo "Biografía", textos "Sobre la obra") | 2026-09-04 | `7eaab79` (merge `develop` → `main`) | Claude, a petición del usuario | **APROBADA** — instrucción explícita: "sí, ponlo a producción" (2026-09-04), ver ADR-017, ADR-018, ADR-019 y ADR-020 |
 | Producción (endurecimiento de cabeceras de seguridad HTTP) | 2026-09-03 | `cc4c9a6` (merge `develop` → `main`) | Claude, a petición del usuario | **APROBADA** — instrucción explícita: "sí, ponlo a producción" (2026-09-03), ver ADR-021 |
-| Producción (fusión de Curiosidades dentro de Legado) | 2026-09-04 | merge `develop` → `main` | Claude, a petición del usuario | **APROBADA** — instrucción explícita: "quiero que las curiosidades aparezcan en la sección de legado. hazlo directamente en producción" (2026-09-04), ver ADR-022 |
+| Producción (fusión de Curiosidades dentro de Legado) | 2026-09-04 | `98f64d0` (merge `develop` → `main`) | Claude, a petición del usuario | **APROBADA** — instrucción explícita: "quiero que las curiosidades aparezcan en la sección de legado. hazlo directamente en producción" (2026-09-04), ver ADR-022 |
 
 ## Cierre
 

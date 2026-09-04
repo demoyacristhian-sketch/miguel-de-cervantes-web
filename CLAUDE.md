@@ -50,8 +50,8 @@ empieza en Fase 2.
 |---|---|
 | Fundación / documentación | **APROBADO** (Fase 0 ejecutada 2026-09-01) |
 | Arquitectura técnica | **EN DESARROLLO** (scaffold real creado y validado: lint + typecheck + build limpios) |
-| Repositorio GitHub | `main` = producción real (commit `cc4c9a6`), `develop` al día (`459f94d`) |
-| Vercel | Producción actualizada y verificada (última vez 2026-09-03, aprobación explícita del usuario); ver ADR-007 a ADR-021 |
+| Repositorio GitHub | `main` = producción real (commit `98f64d0`), `develop` al día (`e30ecd0`) |
+| Vercel | Producción actualizada y verificada (última vez 2026-09-04, aprobación explícita del usuario); ver ADR-007 a ADR-022 |
 | Contenido histórico | **AVANZADO** — timeline (16/16), obras (6/6 con fichas ampliadas y texto "Sobre la obra"), vidas (7/7), curiosidades (6/6), Quijote (32 entradas) y legado (6/6) verificados; ver `docs/CONTENT_STATUS.md` |
 | Diseño visual | APROBADO para MVP (tokens Tailwind v4, Playfair Display + Inter, revisado por el usuario) |
 | MVP (Home, Bio, Timeline, Obras, Quijote) | **APROBADO** — Fase 1 cerrada, mergeada a `develop` |
@@ -59,26 +59,21 @@ empieza en Fase 2.
 
 ## 5. Última implementación
 
-- **Fecha:** 2026-09-03
-- **Rama:** `security/cabeceras-http` → mergeada a `develop` y a `main` (producción)
-- **Qué se hizo:** ADR-021 — endurecimiento de seguridad HTTP a petición explícita del usuario, sin
-  herramientas externas ni de pago. Diagnóstico previo: superficie de ataque ya pequeña por diseño
-  (sin rutas de API, formularios, cookies, `dangerouslySetInnerHTML` ni scripts de terceros;
-  `npm audit` limpio). Añadidas 6 cabeceras nativas de Next.js en `next.config.ts`:
-  `Content-Security-Policy`, `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`,
-  `Permissions-Policy`, `Strict-Transport-Security`, más `poweredByHeader: false`. Se probó y
-  descartó el patrón oficial de Next.js de CSP con nonce por petición (`middleware.ts` +
-  `'strict-dynamic'`): rompe la hidratación de React porque exige renderizado dinámico, incompatible
-  con la arquitectura 100% estática ya aprobada del sitio. Por eso `script-src` usa
-  `'self' 'unsafe-inline'` en producción, mismo criterio ya aceptado para `style-src`.
-- **Pruebas:** `tsc --noEmit`, `npm run lint`, `npm run build` limpios en local y en `main` tras el
-  merge. `curl -sI` sobre servidor de producción local y sobre
-  `https://miguel-de-cervantes-web.vercel.app/` confirma las 6 cabeceras. Verificación en navegador,
-  local y en producción (Home, `/quijote` con pestañas/sub-filtro, `/obras/la-galatea` con
-  acordeón): cero errores de CSP/hidratación en consola, interacción real confirmada (cambio de
-  pestaña sin recarga).
-- **Estado:** **En producción** (commit `cc4c9a6`). Aprobación explícita del usuario: "sí, ponlo a
-  producción" (2026-09-03).
+- **Fecha:** 2026-09-04
+- **Rama:** `content/curiosidades-en-legado` → mergeada a `develop` y a `main` (producción)
+- **Qué se hizo:** ADR-022 — a petición explícita del usuario ("quiero que las curiosidades
+  aparezcan en la sección de legado. hazlo directamente en producción"), se eliminó la página
+  independiente `/curiosidades` y su contenido (6 preguntas ya verificadas, sin datos nuevos) se
+  integró como una sección "¿Sabías que...? / Curiosidades" dentro de `/legado` (ancla
+  `#curiosidades`), mismo patrón ya usado para fusionar `/cervantes` y `/linea-de-tiempo` en
+  `/vida-en-movimiento` (ADR-011/012/013). Se añadió un redirect permanente `/curiosidades` →
+  `/legado#curiosidades` y se actualizaron los enlaces de Home y footer.
+- **Pruebas:** `tsc --noEmit`, `npm run lint`, `npm run build` limpios (17 rutas). `curl -sI`
+  confirma el redirect 308 tanto en local como en
+  `https://miguel-de-cervantes-web.vercel.app/curiosidades`. Verificación en navegador, local y en
+  producción: las 6 curiosidades visibles en `/legado`, enlaces actualizados, sin errores de
+  consola.
+- **Estado:** **En producción** (commit `98f64d0`). Aprobación explícita del usuario, 2026-09-04.
 - **Pendientes:** `security.txt` (RFC 9116) diferido hasta tener un dominio propio y un correo de
   contacto real proporcionado por el responsable del sitio; más personajes del Quijote si se desea
   ampliar aún más; contexto histórico general.
@@ -134,9 +129,13 @@ probó y se descartó por ser incompatible con la arquitectura 100% estática de
 hidratación); `script-src` usa `'unsafe-inline'` documentado, mismo criterio que `style-src`.
 `security.txt` diferido hasta tener dominio propio y contacto real.
 
-**Producción actualizada ocho veces con aprobación explícita del usuario** (commits `d886473`,
-`10eacb5`, `572af9c`, `dd99c1a`, `2b0ff57`, `6819f2a`, `7eaab79` y `cc4c9a6` en `main`) — ver ADR-008
-a ADR-021.
+**Curiosidades fusionadas dentro de Legado (2026-09-04, ADR-022) — EN PRODUCCIÓN:** la página
+`/curiosidades` se eliminó y su contenido pasó a `/legado#curiosidades`, con redirect permanente
+desde la ruta antigua.
+
+**Producción actualizada nueve veces con aprobación explícita del usuario** (commits `d886473`,
+`10eacb5`, `572af9c`, `dd99c1a`, `2b0ff57`, `6819f2a`, `7eaab79`, `cc4c9a6` y `98f64d0` en `main`) —
+ver ADR-008 a ADR-022.
 
 **Próximo paso lógico:** contexto histórico general, o seguir ampliando el Quijote/la biografía si
 el usuario lo pide. Cada nuevo dato histórico debe seguir el mismo protocolo: fuente
